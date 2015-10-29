@@ -23,14 +23,8 @@ angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $
 
             if (res.status == 200) {
                 //Login user and get accesstoken
-                var loginUrl = window.remote + '/api/users/login';
-                var loginData = {
-                    'username': data.username,
-                    'password': data.password
-                };
-                $http.post(loginUrl, loginData).then(function (res) {
-                    $location.path('/main/signuptwo');
-                });
+               $scope.verification = true;
+              
             }
             else {
                 $scope.err = "Sorry, We are unable to process your request now, Please try again later";

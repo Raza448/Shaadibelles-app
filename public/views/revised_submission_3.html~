@@ -28,7 +28,7 @@
         <h3 class="col-md-7 col-lg-7 col-sm-7" id="review-heading">WRITE A VENDOR REVIEW</h3>
         <ul id="submit-wedding-tab" class="nav nav-tabs col-md-5 col-lg-5 col-sm-5">
           <li><a href="#/main/signuptwo" data-toggle="tab" id="wedding-nav">SUBMIT YOUR WEDDING</a></li>
-          <li class="active"><a href="#vendor-review"  data-toggle="tab"  id="review-nav">VENDOR REVIEW</a></li>
+          <li class="active"><a href="#/main/signupthree"  data-toggle="tab"  id="review-nav">VENDOR REVIEW</a></li>
         </ul>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 tab-pane fade in" id="vendor-review">

@@ -50,9 +50,6 @@
             <div class="col-md-5 col-lg-5 col-sm-5">
               <div class="col-md-12 col-lg-12 col-sm-12">
                 <input type="email" placeholder="E-mail" class="form-input" name="email" ng-model="user.email" required="true" >
-                <div ng-controller="VendorSignupCtrl">
-  {{ greeting }}
-</div>
               </div>
               <div class="col-md-12">
                 <span ng-repeat="er in err">{{er}}</span>

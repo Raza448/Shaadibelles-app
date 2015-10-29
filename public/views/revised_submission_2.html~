@@ -27,8 +27,8 @@
           <h3 class="col-md-7 col-lg-7 col-sm-7" id="wedding-heading">SUBMIT YOUR WEDDING</h3>
 
           <ul id="submit-wedding-tab" class="nav nav-tabs col-md-5 col-lg-5 col-sm-5">
-            <li class="active"><a href="#submit-wedding" data-toggle="tab" id="wedding-nav">SUBMIT YOUR WEDDING</a></li>
-            <li><a href="#vendor-review"  data-toggle="tab"  id="review-nav">VENDOR REVIEW</a></li>
+            <li class="active"><a href="#/main/signuptwo" data-toggle="tab" id="wedding-nav">SUBMIT YOUR WEDDING</a></li>
+            <li><a href="#/main/signupthree"  data-toggle="tab"  id="review-nav">VENDOR REVIEW</a></li>
           </ul>
         </div>
         <div id="submit-wedding-tab-content" class="tab-content col-md-12 col-lg-12 col-sm-12">

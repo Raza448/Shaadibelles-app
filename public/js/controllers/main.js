@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the webApp
  */
-angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $scope, $rootScope, $cookieStore, $location) {
+angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $modalStack, $scope, $rootScope, $cookieStore, $location) {
 
 
 
@@ -68,6 +68,33 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $sco
 		$("#vendor-form-content").modal('hide');
      });
 	};
+
+$scope.loginandprofile = function(userData) {
+		var url = window.remote + '/api/users/login';
+		var data = {
+		  'username': userData.username,
+		  'password': userData.password
+		};
+
+	  $http.post(url, data).then(function(res) {
+
+		  $rootScope.user = {
+			'user' : res.data.userId,
+			'accessToken' : res.data.id, 
+		  };
+         $modalStack.dismissAll();
+            
+             location.href = '#/main/signuptwo';
+     });
+	};
+
+ $scope.loginmodaltwo = function(){
+ var modalInstance = $modal.open({
+                templateUrl: 'public/views/login.html',
+                size: 'md',
+                controller: 'MainCtrl'
+            });
+}
 
 
 	$scope.loginMethod = function(userData) {

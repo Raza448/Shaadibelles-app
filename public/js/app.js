@@ -73,6 +73,19 @@ angular
                 }
             }
         })
+  .state('main.verified', {
+            url: '/verified',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/verified.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: [ 'public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
 
         .state('main.category', {
                 url: '/category/:id',
@@ -633,11 +646,11 @@ angular
    $http.get('/credentials').then(function(res){
   if(res.data.user){
  $rootScope.user.id  = res.data.user.userId;
- $rootScope.user.accessToken = res.data.user.access_token;
+ $rootScope.user.accessToken = res.data.user.accessToken || res.data.user.access_token;
 }
  if(res.data.vendor) {
  $rootScope.vendor.id = res.data.vendor.vendorId;
- $rootScope.vendor.accessToken = res.data.vendor.access_token;
+ $rootScope.vendor.accessToken = res.data.vendor.accessToken || res.data.user.access_token;
 }
 });
    

@@ -22,11 +22,11 @@
     "dataSource": "mongodb",
     "public": false
   },
- "UserCredential": {
+  "userCredential": {
     "dataSource": "mongodb",
     "public": false
   },
-  "UserIdentity": {
+  "userIdentity": {
     "dataSource": "mongodb",
     "public": false
   },
@@ -80,11 +80,17 @@
   },
   "user": {
     "dataSource": "mongodb",
-    "public": true
+    "public": true,
+ "options": {
+      "emailVerificationRequired": true
+    }
   },
   "gallery": {
     "dataSource": "mongodb",
     "public": true
+  },
+"Email": {
+    "dataSource": "emailDs"
   },
   "rating": {
     "dataSource": "mongodb",
@@ -92,7 +98,10 @@
   },
   "vendor": {
     "dataSource": "mongodb",
-    "public": true
+    "public": true,
+ "options": {
+      "emailVerificationRequired": true
+    }
   },
   "admin": {
     "dataSource": "mongodb",

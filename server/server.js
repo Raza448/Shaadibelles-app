@@ -74,7 +74,8 @@ for (var s in config) {
 
 
 app.get('/', function (req, res) {
-  console.log(req.headers.cookie);
+  if(!req.session.user){
+console.log(req.headers.cookie);
   var string = req.headers.cookie;
   var pairs = string.split(";");
 for (var i = 0; i < pairs.length; i++) {
@@ -89,6 +90,7 @@ for (var i = 0; i < pairs.length; i++) {
   if(cookies.access_token){
     req.session.user = cookies;
   }
+}
   fs.createReadStream('public/index.html').pipe(res);
 });
 
@@ -109,6 +111,11 @@ res.status(200).send(data);
 app.get('/admin', function (req, res) {
   fs.createReadStream('admin/index.html').pipe(res);
 });
+
+app.get('/verified', function (req, res) {
+  res.redirect('/#/main/verified');
+});
+
 
 
   // start the server if `$ node server.js`

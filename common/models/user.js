@@ -1,7 +1,31 @@
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 var session = require('express-session');
+var path = require('path');
 
 module.exports = function(UserModel) {
+
+
+ 
+
+  //send password reset link when requested
+  UserModel.on('resetPasswordRequest', function(info) {
+    var url = 'http://' + config.host + ':' + config.port + '/reset-password';
+    var html = 'Click <a href="' + url + '?access_token=' +
+        info.accessToken.id + '">here</a> to reset your password';
+
+    UserModel.app.models.Email.send({
+      to: info.email,
+      from: info.email,
+      subject: 'Password reset',
+      html: html
+    }, function(err) {
+      if (err) return console.log('> error sending password reset email');
+      console.log('> sending password reset email to:', info.email);
+    });
+  });
+
+
+
 UserModel.afterRemote(
       'login',
       function(ctx, ins, next) {
@@ -44,7 +68,26 @@ UserModel.afterRemote(
         if (err) {
           callback(err);
         } else {
+
+
+console.log('> user.afterRemote triggered');
+
+    var options = {
+      type: 'email',
+      to: user.email,
+      from: 'noreply@loopback.com',
+      subject: 'Thanks for registering.',
+      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      redirect: '/verified',
+      user: user
+    };
+
+    user.verify(options, function(err, response, next) {
+      if (err) return next(err);
+      console.log('> verification email sent:', response);
           res.send(user);
+    });
+
         }
       });
     });
