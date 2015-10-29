@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "start": "slc run",
-    "postinstall" : "bower install"
+    "start": "slc run"
   },
   "dependencies": {
     "compression": "^1.0.3",
