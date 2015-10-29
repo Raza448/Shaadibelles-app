@@ -13,6 +13,8 @@ var PassportConfigurator = loopbackPassport.PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
 var bodyParser = require('body-parser');
 var flash      = require('express-flash');
+var session = require('express-session');
+
 
 app.start = function() {
   // start the web server
@@ -34,10 +36,12 @@ passportConfigurator.init();
 
 app.use(flash());
 
+app.use(session({secret: 'ssshhhhh'}));
+
+
 app.use("/public", loopback.static(__dirname + "/../public"));
 
 app.use("/admin", loopback.static(__dirname + "/../admin"));
-
 
 app.use("/components", loopback.static(__dirname + "/../components"));
 
@@ -70,11 +74,39 @@ for (var s in config) {
 
 
 app.get('/', function (req, res) {
+  console.log(req.headers.cookie);
+  var string = req.headers.cookie;
+  var pairs = string.split(";");
+for (var i = 0; i < array.length; i++) {
+     array[i] = array[i].trim();
+ }
+  var cookies = {};
+  for (var i=0; i<pairs.length; i++){
+    var pair = pairs[i].split("=");
+    cookies[pair[0]] = unescape(pair[1]);
+  }
+  console.log(cookies);
+  if(cookies.access_token){
+    req.session.user = cookies;
+  }
   fs.createReadStream('public/index.html').pipe(res);
 });
 
 
-app.get('admin', function (req, res) {
+app.get('/credentials', function (req, res) {
+  var data = {};
+if(req.session.user){
+ data.user = req.session.user;
+if(req.session.vendor){
+ data.vendor = req.session.vendor;
+}
+} 
+res.status(200).send(data);
+
+});
+
+
+app.get('/admin', function (req, res) {
   fs.createReadStream('admin/index.html').pipe(res);
 });
 

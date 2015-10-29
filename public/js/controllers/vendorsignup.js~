@@ -19,7 +19,6 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
 		  'password' : user.password
 		};
   $http.post(url, data).then(function (res) {
-
             if (res.status == 200) {
                 //Login user and get accesstoken
                 var loginUrl = window.remote + '/api/vendors/login';

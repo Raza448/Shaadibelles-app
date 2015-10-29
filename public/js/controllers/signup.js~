@@ -9,6 +9,7 @@
  */
 angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $rootScope, $cookieStore, $location) {
     $scope.submitDisabled = false;
+     $rootScope.showSelect = false;
     $scope.signup = function (user) {
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;

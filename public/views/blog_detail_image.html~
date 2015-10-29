@@ -47,15 +47,11 @@
 			<div  ng-repeat="image in gallery.photos track by $index" class="masonry-brick">
 				<img class="img-width" src="{{image}}" alt="">
 			</div>
-                       <div ng-show="currentEvent" ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
-				<img class="img-width" src="{{image}}" alt="">
-			</div>
+                      
 		</div>
 <div masonry ng-show="currentEvent">
-			<div  ng-repeat="image in gallery.photos track by $index" class="masonry-brick">
-				<img class="img-width" src="{{image}}" alt="">
-			</div>
-                       <div ng-show="currentEvent" ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
+			
+                       <div ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
 				<img class="img-width" src="{{image}}" alt="">
 			</div>
 		</div>

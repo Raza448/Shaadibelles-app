@@ -4,7 +4,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "slc run",
-    "postinstall" : "bower install"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -29,7 +29,8 @@
     "express": "~4.13.3",
     "event-stream": "~3.3.2",
     "crypto": "0.0.3",
-    "bower": "~1.6.5"
+    "bower": "~1.6.5",
+    "express-session": "~1.12.1"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"

@@ -29,8 +29,6 @@ angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $
                     'password': data.password
                 };
                 $http.post(loginUrl, loginData).then(function (res) {
-                    $cookieStore.put('Sbid', res.data.userId);
-                    $cookieStore.put('SbaccessToken', res.data.id);
                     $location.path('/main/signuptwo');
                 });
             }

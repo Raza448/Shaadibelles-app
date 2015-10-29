@@ -590,6 +590,7 @@ angular
         });
         $rootScope.$on('$stateChangeSuccess', function() {
 
+ 
             $rootScope.$watch('vendors', function(vendors) {
 
                 if (vendors) {
@@ -624,26 +625,21 @@ angular
             $rootScope.getPosts();
 
             $rootScope.getVendors();
-  var getCookies = function(){
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=");
-    cookies[pair[0]] = unescape(pair[1]);
-  }
-  return cookies;
-}
-
-             $rootScope.cookie = getCookies();
+ 
  
             $rootScope.getData();
             $rootScope.user = {};
-           if($rootScope.cookie.access_token){
-    $rootScope.user.id = $rootScope.cookie.userId;
-    $rootScope.user.accessToken = $rootScope.cookie.access_token;
-} else {
-             $rootScope.user.id = $cookieStore.get('Sbid');
-            $rootScope.user.accessToken = $cookieStore.get('SbaccessToken');
- }
+            $rootScope.vendor = {};
+   $http.get('/credentials').then(function(res){
+  if(res.data.user){
+ $rootScope.user.id  = res.data.user.userId;
+ $rootScope.user.accessToken = res.data.user.access_token;
+}
+ if(res.data.vendor) {
+ $rootScope.vendor.id = res.data.vendor.vendorId;
+ $rootScope.vendor.accessToken = res.data.vendor.access_token;
+}
+});
+   
         });
     });

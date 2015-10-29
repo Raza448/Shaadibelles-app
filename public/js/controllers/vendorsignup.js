@@ -27,8 +27,6 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
                     'password': data.password
                 };
                 $http.post(loginUrl, loginData).then(function (res) {
-                    $cookieStore.put('Sbid', res.data.userId);
-                    $cookieStore.put('SbaccessToken', res.data.id);
                     $location.path('/main/vendorsignuptwo');
                 });
             }

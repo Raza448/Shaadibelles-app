@@ -1,5 +1,34 @@
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
+var session = require('express-session');
+
 module.exports = function(UserModel) {
+UserModel.afterRemote(
+      'login',
+      function(ctx, ins, next) {
+  console.log(ins);
+       ctx.req.session.user = {
+  'userId' : ins.userId,
+  'accessToken' : ins.id
+
+};
+  next();
+
+      });
+
+UserModel.afterRemote(
+      'logout',
+      function(ctx, ins, next) {
+      console.log(ins);
+
+       delete ctx.req.session.user;
+       if(ctx.req.session.vendor){
+ delete ctx.req.session.vendor;
+}
+  next();
+
+      });
+
+
  UserModel.register = function(body, req, res, callback) {
 
    var newUser = body;

@@ -3,7 +3,23 @@ var nodemailer = require('nodemailer');
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 module.exports = function(UserModel) {
 
+UserModel.afterRemote(
+      'login',
+      function(ctx, ins, next) {
+  console.log(ins);
+       ctx.req.session.user = {
+  'userId' : ins.vendorId,
+  'accessToken' : ins.id
 
+};
+      ctx.req.session.vendor = {
+  'userId' : ins.vendorId,
+  'accessToken' : ins.id
+
+};
+  next();
+
+      });
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

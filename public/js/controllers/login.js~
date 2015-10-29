@@ -20,7 +20,8 @@ angular.module('sbFrontEnd')
         'password': newuser.password
       };
       $http.post(url, data).then(function(res) {
-
+        $cookieStore.put('id', res.data.userId);
+        $cookieStore.put('accessToken', res.data.id);
         location.href = '#/dashboard/home';
 
       });
