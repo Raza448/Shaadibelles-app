@@ -19,7 +19,8 @@ angular
         'ngFileUpload',
         'angular.filter',
         'wu.masonry',
-        'angularPayments'
+        'angularPayments',
+        'ui.sortable'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
         $ocLazyLoadProvider.config({
@@ -38,7 +39,7 @@ angular
             .state('main', {
             url: '/main',
             controller: 'MainCtrl',
-            templateUrl: 'views/main.html',
+            templateUrl: 'public/views/main.html',
             loadMyDirectives: function($ocLazyLoad) {
                 return $ocLazyLoad.load({
                     files: ['public/js/window.js', 'public/js/controllers/main.js']
@@ -68,7 +69,7 @@ angular
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
                         name: 'sbFrontEnd',
-                        files: ['public/js/controllers/blog.js', 'jpublic/s/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
+                        files: ['public/js/controllers/blog.js', 'public/js/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
                     })
                 }
             }
