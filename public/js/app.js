@@ -68,7 +68,7 @@ angular
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
                         name: 'sbFrontEnd',
-                        files: ['public/js/controllers/blog.js', 'jpublic/s/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
+                        files: ['public/js/controllers/blog.js', 'public/js/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
                     })
                 }
             }
