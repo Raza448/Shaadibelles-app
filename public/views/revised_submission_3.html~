@@ -1,0 +1,85 @@
+<!-- header-section-ends --> 
+<div class="header-slider">
+  <a class="callbacks_share" href="#">Previous</a>
+  <div class="slider">
+    <div class="callbacks_container">
+      <ul class="rslides" id="slider">
+        <li>
+          <img src="images/banner_rev.jpg" alt="">
+          <div class="col-md-10 col-sm-10 col-lg-10 col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-12 banner-vendor">
+            <h1>WE REALLY WANT TO HEAR WHAT YOU HAVE TO SAY</h1>
+            <h2>Share your thoughts to help future couples</h2>
+            <h1><a href="#"><i class="heart"> </i></a><a href="#"><i class="heart"> </i></a><a href="#"><i class="heart"> </i></a><a href="#"><i class="heart"> </i></a><a href="#"><i class="heartf"> </i></a></h1>
+            <h1><a href="#"><span>3,456 Vendor Reviews</span></a>&nbsp;&nbsp;<a href="#"><span>      10,032 Wedding Stories</span></a></h1>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!----------->
+<div class="content">
+<!---->
+<div class="container">
+  <div class="sign-up col-md-12 col-lg-12 col-sm-12">
+    <div class="wedding-submission col-md-12 col-lg-12 col-sm-12">
+      <div class="col-md-12 col-lg-12 col-sm-12 bs-example bs-example-tabs">
+
+        <h3 class="col-md-7 col-lg-7 col-sm-7" id="review-heading">WRITE A VENDOR REVIEW</h3>
+        <ul id="submit-wedding-tab" class="nav nav-tabs col-md-5 col-lg-5 col-sm-5">
+          <li><a href="#/main/signuptwo" data-toggle="tab" id="wedding-nav">SUBMIT YOUR WEDDING</a></li>
+          <li class="active"><a href="#vendor-review"  data-toggle="tab"  id="review-nav">VENDOR REVIEW</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 tab-pane fade in" id="vendor-review">
+        <form class="col-lg-12 col-md-12 col-sm-12 form">
+          <div ng-repeat="item in reviews">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <label>{{$index + 1}}. &nbsp;&nbsp;{{item.name}}</label>
+            </div>
+            <div ng-repeat="review in item.contents">
+              <div class="col-lg-3 col-md-3 col-sm-3">
+                <select ng-options="vendor.id as vendor.business.name for vendor in vendors" ng-hide="review.newVendor" ng-model="review.vendorId">
+                  <option value="">Select a vendor</option>
+                </select>
+                <input type="text" placeholder="Enter Name" ng-show="review.newVendor" ng-model="review.name" />
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <input type="text" placeholder="Enter Website" ng-model="review.website" />
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-4">
+                <textarea placeholder="Testimonial Here" ng-model="review.content"></textarea>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-3">
+                <select ng-options="i for i in [1,2,3,4,5]" ng-model="review.rating" >
+                  <option value="">Rate</option>
+                </select>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6" ng-show="review.newVendor">
+                <input type="text" placeholder="Enter vendor Email" ng-model="review.email" />
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6" ng-show="review.newVendor">
+                <input type="text" placeholder="Enter vendor's Address" ng-model="review.address" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <a href="" ng-click="item.contents.push({ vendorId : null, website: null, content: null, rating: null})">
+                  <img src="images/add-plus.png" alt="" />
+                  <p>Add more</p>
+                </a>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <a href="" ng-click="review.newVendor = true">
+                  <img src="images/add-plus.png" alt="" />
+                  <p>Vendor not listed? Click <span>Add Vendor</span> input their information, include a review, rating and we'll add them to community</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 text-center">
+            <input type="button" ng-click="publish()" value="SUBMIT YOUR REVIEW">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

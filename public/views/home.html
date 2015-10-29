@@ -1,0 +1,205 @@
+<!-- header-section-ends -->
+<div class="header-slider">
+  <a class="callbacks_share" href="#">Previous</a>
+  <div class="slider">
+    <div class="callbacks_container">
+      <carousel interval="3000" no-wrap="noWrapSlides">
+        <slide ng-repeat="slide in homeSlider track by $index" >
+          <img src="{{slide.image}}" style="margin:auto;">
+          <div class="col-md-10 col-lg-10 col-sm-12 col-lg-offset-1 col-md-offset-1 banner-matter">
+            <h3>{{slide.title}} </h3>
+            <div class="banner_div">
+              <p>{{slide.description}}</span></p>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Category'" href="#/main/category/{{slide.id}}">See More</a>
+            </div>
+            <div class="clearfix"></div>
+            <p>{{slide.tagline}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
+<div class="amazing">
+  <div class="col-md-4 col-lg-4 col-sm-4 amaze">
+    <div class="portfolio-wrapper ">
+      <div class="ama-bottom">
+        <div class="image-div">
+          <img alt="" class="img-responsive" src="{{homeWidgets[0].cover}}" style="width: 430px; height: 500px;">
+          <div class="hidden_img">
+			 <a ng-if="homeWidgets[0].content.type === 'Post'" href="#/main/post/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			 <a ng-if="homeWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			 <a ng-if="homeWidgets[0].content.type === 'Category'" href="#/main/category/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-lg-3 col-sm-3 amaze">
+    <div class="portfolio-wrapper ">
+
+      <div class="ama-bottom">
+        <ul id="da-thumbs" class="da-thumbs1">
+          <li>
+             <a ng-if="homeWidgets[1].content.type === 'Post'" href="#/main/post/{{homeWidgets[1].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;">
+              <div>
+                <p>{{homeWidgets[1].title}}</p>
+              </div>
+            </a>
+            <a ng-if="homeWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[1].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;">
+              <div>
+                <p>{{homeWidgets[1].title}}</p>
+              </div>
+            </a>
+           <a ng-if="homeWidgets[1].content.type === 'Category'" href="#/main/category/{{homeWidgets[1].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;">
+              <div>
+                <p>{{homeWidgets[1].title}}</p>
+              </div>
+            </a>
+          </li>
+
+<li>
+  <div ng-show="homeWidgets[1].video.type === 'youtube'" ng-bind-html="homeWidgets[1].video.url"></div>
+             <video width="320" height="250" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls>
+
+ 
+Your browser does not support the video tag.
+</video>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5 col-lg-5 col-sm-5 amaze">
+    <div class="portfolio-wrapper ">
+      <div class="ama-bottom">
+        <ul id="da-thumbs" class="da-thumbs">
+          <li>
+            <a ng-if="homeWidgets[2].content.type === 'Post'" href="#/main/post/{{homeWidgets[2].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <div>
+                <p>{{homeWidgets[2].title}}
+                </p>
+              </div>
+            </a>
+
+<a ng-if="homeWidgets[2].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[2].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <div>
+                <p>{{homeWidgets[2].title}}
+                </p>
+              </div>
+            </a>
+
+<a ng-if="homeWidgets[2].content.type === 'Category'" href="#/main/category/{{homeWidgets[2].content.id}}">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <div>
+                <p>{{homeWidgets[2].title}}
+                </p>
+              </div>
+            </a>
+
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="beautifull">
+<div class="col-md-12 col-lg-12 col-sm-12">
+  <div class="col-md-3 col-lg-3 col-sm-3"></div>
+	<div class="col-md-6 col-lg-6 col-sm-6">
+		<div class="row">
+			<div class="featured_vendor">OUR featured vendor</div>
+		</div>
+		</div>
+  <div class="col-md-3 col-lg-3 col-sm-3"></div>
+</div>
+  <div class="beautifull-grids">
+    <div class="col-md-7 col-lg-7 col-sm-7 beautiful-grid" style="border-right:1px solid #bcbcbc;">
+      <div class="col-md-4 col-xs-3 col-sm-4 col-lg-4 icon1">
+        <img src="{{featuredVendor.slides[0]}}" class="img-responsive">
+      </div>
+      <div class="col-md-6 col-xs-9 col-sm-8 col-md-offset-1 col-lg-offset-1 col-lg-6 passion">
+        <h4></h4>
+        <span>{{featuredVendor.title}}</span>
+        <p>&nbsp;</p>
+        <p>{{featuredVendor.description}}</p>
+        <h1><a href="#/main/vendordetail/{{featuredVendor.vendor.id}}/profile">SEE More OF {{featuredVendor.vendor.business.name}} INSPIRING CREATIONS</a> OR <a href="#/main/vendormain">VIEW ALL VENDORS</a></h1>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-5 col-lg-5 col-sm-5 beautiful-grid">
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+        <ul class="social-icons">
+          <li><a href="{{featuredVendor.vendor.social.instagram}}"><span> </span> </a></li>
+          <li class="twitter"><a href="{{featuredVendor.vendor.social.twitter}}"><span> </span></a></li>
+          <li class="gmail"><a href="{{featuredVendor.vendor.social.facebook}}"><span> </span> </a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9 passion"><img src="{{featuredVendor.slides[1]}}" class="img-responsive">
+        </p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="content-bottom">
+  <div class=" col-md-10 col-sm-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-offset-1 container_bottom">
+    <div id="pagewrap">
+      <div class="col-sm-4 col-lg-4 col-md-4"><img src="public/images/logo.png" width="125" height="83"></div>
+      <div class="col-sm-8 col-lg-8 col-md-8">
+        <h1> Sign up with Shaadi Belles</h1>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+          <p>&nbsp;</p>
+          <p>Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration online.
+          </p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <a href="#/main/signup" class="morebtn hvr-sweep-to-top">BRIDE SIGN UP </a>
+        </div>
+      </div>
+      <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+          <p>&nbsp;</p>
+          <p>Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration, with hundreds of thousands of photos of weddings, fashion events, and designer images to choose from, you can quickly and easily find what you're 	looking for, and then create your own inspiration board to share with friends and family. Our visual
+            inspiration tool also connects users to primary vendors, such as photographers, wedding planners, and more.<br>
+            The Belle Blog complements our image galleries
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+          <p>&nbsp;</p>
+          <p>with real stories and real advice, including the latest weddings from around the world. Search, Save & Share your South Asian Inspiration with Shaadi Belles!</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+
+
+          <ul class="social">
+            <li><a href="{{socialLinks.youtube}}"><span> </span> </a></li>
+            <li class="twitter"><a href="{{socialLinks.twitter}}"><span> </span></a></li>
+            <li class="gmail"><a href="{{socialLinks.pinterest}}"><span> </span> </a></li>
+            <li class="print"><a href="{{socialLinks.facebook}}"><span> </span> </a></li>
+          </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<script src="public/js/plugin/custom.js"></script>

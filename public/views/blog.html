@@ -1,0 +1,202 @@
+<style>
+  .carousel-caption {
+
+  }
+</style>
+<div class="header-slider">
+  <a class="callbacks_share" href="#">Previous</a>
+  <div class="slider">
+    <div class="callbacks_container">
+      <carousel interval="3000" no-wrap="noWrapSlides">
+        <slide ng-repeat="slide in blogSlider track by $index" >
+          <img src="{{slide.image}}" style="margin:auto;">
+          <div class="col-md-10 col-lg-10 col-sm-12 col-lg-offset-1 col-md-offset-1 banner-matter">
+            <h3>{{slide.title}} </h3>
+            <div class="banner_div">
+              <p>{{slide.description}}</span></p>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Category'" href="#/main/category/{{slide.id}}">See More</a>
+            </div>
+            <div class="clearfix"></div>
+            <p>{{slide.tagline}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
+<!----------->
+<div class="content" style="">
+  <!---->
+  <div class="container">
+    <div class="top-grid-top">
+      <div class="top-grids">
+        <div class="col-md-4 col-sm-12 col-lg-4">
+          <div class=" top-grid">
+            <a ng-if="blogSmallWidgets[0].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[0].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+            <h3>{{blogSmallWidgets[0].title}}</h3>
+            <p>{{blogSmallWidgets[0].description}}</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-lg-4">
+          <div class=" top-grid">
+<a ng-if="blogSmallWidgets[1].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[1].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+            <h3>{{blogSmallWidgets[1].title}}</h3>
+            <p>{{blogSmallWidgets[1].description}}</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-lg-4" >
+          <div class=" top-grid">
+            <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li ng-repeat="i in blogCategories" class="{{blogCategory === i? 'active': ''}}"><a href=""  ng-click="changeBlogCategory(i)">{{i.name.toUpperCase()}}</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
+              <div class="" id="editor">
+                <ul class="social-icon " >
+                  <li ng-repeat="post in blogCategory.posts"><a href="#/main/post/{{post.id}}"><span><i><br />
+                    {{post.ratings.length}}</i>{{post.title}}</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+          <div class=" top-grid">
+<a ng-if="blogMediumWidgets[0].content.type === 'Post'" href="#/main/post/{{blogMediumWidgets[0].content.id}}"><img  src="{{blogMediumWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogMediumWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogMediumWidgets[0].content.id}}"><img src="{{blogMediumWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogMediumWidgets[0].content.type === 'Category'" href="#/main/category/{{blogMediumWidgets[0].content.id}}"><img src="{{blogMediumWidgets[0].cover}}" title="name" alt=""></a>
+            <h3>{{blogMediumWidgets[0].title}}</h3>
+            <p>{{blogMediumWidgets[0].description}}</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+          <div class=" top-grid">
+<a ng-if="blogMediumWidgets[1].content.type === 'Post'" href="#/main/post/{{blogMediumWidgets[1].content.id}}"><img  src="{{blogMediumWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogMediumWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogMediumWidgets[1].content.id}}"><img  src="{{blogMediumWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogMediumWidgets[1].content.type === 'Category'" href="#/main/category/{{blogMediumWidgets[1].content.id}}"><img  src="{{blogMediumWidgets[1].cover}}" title="name" alt=""></a>
+            <h3>{{blogMediumWidgets[1].title}}</h3>
+            <p>{{blogMediumWidgets[1].description}}</p>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="col-md-12 col-sm-12 col-lg-12 top-grid">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+<a ng-if="blogBigWidgets[0].content.type === 'Post'" href="#/main/post/{{blogBigWidgets[0].content.id}}"><img src="{{blogBigWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogBigWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogBigWidgets[0].content.id}}"><img src="{{blogBigWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogBigWidgets[0].content.type === 'Category'" href="#/main/category/{{blogBigWidgets[0].content.id}}"><img src="{{blogBigWidgets[0].cover}}" title="name" alt=""></a>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <h5>{{blogBigWidgets[0].title}}</h5>
+
+            <h6>{{blogBigWidgets[0].description}}</h6>
+            <span>
+
+            </span>
+<a class="morebtn hvr-sweep-to-top" ng-if="blogBigWidgets[0].content.type === 'Post'" href="#/main/post/{{blogBigWidgets[0].content.id}}">VIEW THIS STORY</a>
+ <a  class="morebtn hvr-sweep-to-top" ng-if="blogBigWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogBigWidgets[0].content.id}}">VIEW THIS STORY</a>
+ <a class="morebtn hvr-sweep-to-top"  ng-if="blogBigWidgets[0].content.type === 'Category'" href="#/main/category/{{blogBigWidgets[0].content.id}}">VIEW THIS STORY</a>
+
+            <p>&nbsp;</p>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
+          <div class=" top-grid">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[2].cover}}" title="name" alt="">
+            <h2>{{blogSmallWidgets[2].title}}
+            </h2>
+            <h1>{{blogSmallWidgets[2].description}}
+            </h1>
+<a  ng-if="blogSmallWidgets[2].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[2].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+ <a   ng-if="blogSmallWidgets[2].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[2].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7>Y</a>
+ <a   ng-if="blogSmallWidgets[2].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[2].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+           
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
+          <div class=" top-grid">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[3].cover}}" title="name" alt="">
+            <h2>{{blogSmallWidgets[3].title}}
+            </h2>
+            <h1>{{blogSmallWidgets[3].description}}
+            </h1>
+<a  ng-if="blogSmallWidgets[3].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+ <a   ng-if="blogSmallWidgets[3].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+ <a   ng-if="blogSmallWidgets[3].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
+          <div class=" top-grid">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[4].cover}}" title="name" alt="">
+            <h2>{{blogSmallWidgets[4].title}}
+            </h2>
+            <h1>{{blogSmallWidgets[4].description}}
+            </h1>
+<a  ng-if="blogSmallWidgets[5].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[5].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+ <a   ng-if="blogSmallWidgets[5].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[5].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7>Y</a>
+ <a   ng-if="blogSmallWidgets[5].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[5].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
+          </div>
+        </div>
+        <div class=" clearfix"></div>
+        <div class="col-md-12 col-sm-12 col-lg-12 top-grid">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <h5>{{blogBigWidgets[1].title}}</h5>
+
+            <h6>{{blogBigWidgets[1].description}}</h6>
+            <span>&nbsp;</span>
+<a class="morebtn hvr-sweep-to-top" ng-if="blogBigWidgets[1].content.type === 'Post'" href="#/main/post/{{blogBigWidgets[1].content.id}}">VIEW THIS STORY</a>
+ <a  class="morebtn hvr-sweep-to-top" ng-if="blogBigWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogBigWidgets[1].content.id}}">VIEW THIS STORY</a>
+ <a class="morebtn hvr-sweep-to-top"  ng-if="blogBigWidgets[1].content.type === 'Category'" href="#/main/category/{{blogBigWidgets[1].content.id}}">VIEW THIS STORY</a>
+            <p>&nbsp;</p>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+<a ng-if="blogBigWidgets[1].content.type === 'Post'" href="#/main/post/{{blogBigWidgets[1].content.id}}"><img src="{{blogBigWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogBigWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogBigWidgets[1].content.id}}"><img src="{{blogBigWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogBigWidgets[1].content.type === 'Category'" href="#/main/category/{{blogBigWidgets[1].content.id}}"><img src="{{blogBigWidgets[1].cover}}" title="name" alt=""></a>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class=" top-grid">
+   <a ng-if="blogSmallWidgets[5].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[5].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[5].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[5].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[5].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[5].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[5].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[5].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[5].cover}}" title="name" alt=""></a>
+            <h3>{{blogSmallWidgets[5].title}}</h3>
+            <p>{{blogSmallWidgets[5].description}}</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class=" top-grid">
+   <a ng-if="blogSmallWidgets[6].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[6].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[6].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[6].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[6].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[6].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[6].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[6].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[6].cover}}" title="name" alt=""></a>
+            <h3>{{blogSmallWidgets[6].title}}</h3>
+            <p>{{blogSmallWidgets[6].description}}</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4" >
+          <div class=" top-grid">
+   <a ng-if="blogSmallWidgets[7].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[7].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[7].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[7].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[7].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[7].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[7].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[7].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[7].cover}}" title="name" alt=""></a>
+            <h3>{{blogSmallWidgets[7].title}}</h3>
+            <p>{{blogSmallWidgets[7].description}}</p>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+         <div style="padding-top:30px; padding-bottom:30px; text-align:center;"><a href="#" class="morebtn hvr-sweep-to-top">LOAD MORE </a></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,225 @@
+@charset "utf-8";
+/* CSS Document */
+
+.banner-matter-center{
+	width: 72%;
+	position: absolute;
+	top: 40%;
+	text-align:center;
+	left:15%;
+}
+.banner-matter-center h3{
+	color: #FFF;
+	font-size: 4.8em;
+    font-family: font_gotham;
+    font-weight:bold;
+    text-align:left;
+    float:left;
+    margin-top:0;
+}
+.banner-matter-center p{
+	color: #FFF;
+    line-height: 1.5em;
+    font-size: 0.8em;
+    text-align: center;
+    margin: 1em 0 1.5em 0;
+}
+.top-grid-top{
+	position: relative;
+}
+
+.top-grids{
+	position: absolute;
+	top: -225px;
+	width: 80%;
+	left: 110px;
+	z-index: 999;
+	background: #fff;
+	padding: 1.5em;
+}
+.page-content{
+	
+}
+.content-bradcrumb p{
+	color: #5e5f61;
+	font-weight: bold;
+	opacity: 0.6;
+	font-size: 0.8em;
+}
+.page-content-heading{
+	color: #f7987b;
+	font-size: 1.5em;
+	text-align: center;
+	line-height: 2em;
+	text-transform: uppercase;
+	padding: 3em 0 1em 0;
+}
+.page-content-text{
+	padding: 0 4em;
+}
+.page-content-text p{
+	font-size: 13px;
+	color: #333;
+	line-height: 27px;
+}
+.page-content-hr{
+	border: 1px solid #ccc;
+	margin: 50px 0;
+}
+.page-content-form{
+	padding: 0 4em;
+}
+.form-input{
+	padding: 10px 5px;
+}
+.page-content-terms{
+	padding: 0px 10px 10px 0px;
+}
+.page-content-form label{
+	font-weight: 600;
+	word-spacing:2px;
+	letter-spacing:2px;
+	color: #f7987b;
+	padding: 0 0 0 30px;
+}
+.page-content-form input[type=text]{
+	font-weight: 400;
+	border: 1px solid #ccc;
+	width: 90%;
+}
+.shaadi-heart{
+	background: transparent url("../images/heart.png") no-repeat scroll 0% 0%;
+	color: #FFF;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	height: 34px;
+	font-weight: bold;
+	padding-top: 5px;
+}
+.btn-pink{
+	background-color: rgb(247, 152, 123);
+	padding: 12px 10px;
+	width: 50%;
+	color: white;
+	font-weight: 500;
+	border: 0px none;
+	border-radius: 0px none;
+}
+.btn-fb{
+	background-color: #1b75bc;
+	padding: 10px 0 10px 4px;
+	width: 50%;
+	color: white;
+	font-weight: 500;
+	border: 0px none;
+	border-radius: 0px none;
+}
+.page-content-terms p{
+	font-size: 15px;
+	word-spacing: 3px;
+	letter-spacing: 2px;
+	padding: 12px 0px 3px 0px;
+	color: #939598;
+}
+.padding-top-40{
+	padding: 40px 0 0 0;
+}
+.padding-right-18{
+	padding-right: 18px;
+}
+.terms-conditions{
+	color: #f7987b
+}
+.blank-heart{
+	background: url(../images/blank-heart.png) no-repeat;
+	height: 25px;
+	display: inline-block;
+	padding: 5px 0 0 40px;
+	float: left;
+}
+.text-or{
+	font-size: 15px;
+	word-spacing: 3px;
+	letter-spacing: 2px;
+	padding: 0px 0px 3px;
+	color: #939598;
+}
+
+
+
+
+.signup-first{
+	padding: 4em 0;
+}
+.step-name{
+	display: block;
+	word-spacing: 2px;
+	letter-spacing:2px;
+	font-weight: bold;
+	padding: 5px 0;
+}
+.disable-step{
+	opacity: 0.6;
+}
+.information-text{
+	padding: 3em 0 0 0;
+}
+.signup1-input{
+	width: 100%;
+}
+.input-container{
+	padding: 0 10px 0 0;
+}
+.input-submit-container{
+	padding: 20px 10px 20px 0;
+}
+.input-submit-container input[type="submit"]{
+	width: 40%;
+}
+.shaadi-label{
+	margin: 0;
+	color: #9C9C92;
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	font-weight: 500;
+}
+.step-padding{
+	padding: 0px 100px 0px 0px;
+}
+.bottom-40{
+	margin-bottom: 40px !important;
+}
+.dashed-border{
+	border: 1px dashed #9C9C92 !important;
+	background: url(../images/add-plus.png) no-repeat scroll 98% !important;
+}
+.signup1-upload{
+	background-color: #98999b;
+	padding: 20px 5px;
+	width: 100%;
+}
+.signup-first input[type="text"], .signup-first select{
+	border: 1px solid #9C9C92;
+}
+.dim-display{
+	opacity: 0.5;
+}
+
+
+.saved-text{
+	color: #58595b;
+}
+.upgrade-container{
+	padding: 4em 0;
+}
+.upgrade-text h2{
+	color: #F7987B;
+	line-height:1.3em;
+}
+.medium-opacity{
+	opacity: 0.6;
+}
+.padding-1-5{
+	padding: 1px 5px;
+}

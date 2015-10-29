@@ -1,0 +1,25 @@
+{
+  "local": {
+    "provider": "local",
+    "module": "passport-local",
+    "usernameField": "username",
+    "passwordField": "password",
+    "authPath": "/auth/local",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/local",
+    "failureFlash": true
+  },
+  "facebook-login": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "clientID": "748452378599729",
+    "clientSecret": "b8b5e32e29f87b86bdf4cdb9704b51e3",
+    "callbackURL": "/auth/facebook/callback",
+    "authPath": "/auth/facebook",
+    "callbackPath": "/auth/facebook/callback",
+    "successRedirect": "http://shaadibelles.herokuapp.com/",
+    "failureRedirect": "http://shaadibelles.herokuapp.com/",
+    "scope": ["email"],
+    "failureFlash": true
+  }
+}

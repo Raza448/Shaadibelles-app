@@ -1,0 +1,15 @@
+module.exports = function(Review) {
+
+Device.afterRemote(
+      'prototype.__get__messages',
+      function(ctx, ins, next) {
+            app.models.message.find({ 'where': { 'userId': ctx.req.accessToken.userId, 'alldevices': true}}, function(err, messagesOne){
+            app.models.message.find({ 'where': { 'deviceId': ctx.req.params.id, 'alldevices': false}}, function(err, messagesTwo){
+                ctx.result = _.union(messagesOne, messagesTwo);
+                next();
+            });
+            });
+
+       });
+
+};

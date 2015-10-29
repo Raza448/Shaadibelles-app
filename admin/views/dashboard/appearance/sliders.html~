@@ -1,0 +1,109 @@
+<div class="row" id="settings" ng-init="init();">
+  <div class="col-lg-12">
+    <div class="panel blank-panel ui-tab">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <form class="form-inline">
+              <div class="form-group">
+                <input class="form-control" type="search" ng-model="searchText" placeholder="Search {{title}}"/>
+              </div>
+              <div class="form-group pull-right">
+                <a ui-sref="dashboard.new-{{buttonText.toLowerCase()}}" class="btn btn-primary btn-sm">New {{buttonText}}</a>
+                <button id="delete" ng-click = "deleteItems()" class="btn btn-primary btn-sm"> Delete Selected</button>
+                <a href="" ng-click="check(1)"><button class="btn btn-primary btn-sm"> <i class="fa fa-filter fa-fw"></i>Filters</button></a>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-sm">SortBy</button>
+                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a ng-click="reverse = false;predicate='name'">Name Ascending</a></li>
+                    <li><a ng-click="reverse = true;predicate='name'">Name Decending</a></li>
+                    <li><a ng-click="order('content')">{{field}}</a></li>
+                    <li><a ng-click="order('created')">Created Date</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                  <li ui-sref-active="active">
+                    <br>
+                    <input type="text" class="form-control" ng-model="searchNametxt" placeholder="Filter with Name">
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <input type="text" class="form-control" ng-model="searchContenttxt" placeholder="Filter with {{field}}">
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <select class="form-control" ng-model="searchVisible">
+                      <option value="true">Show only visible</option>
+                      <option value="false">Show only invisible</option>
+                    </select>
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <button class="btn btn-warning" ng-click="check(1)" >Apply Filter</button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+            </br>
+            <div class="pull-right">
+              <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
+              <a class="btn btn-default" ng-click="pagingFront(result, 10)"><i class="fa fa-arrow-right"></i></a>
+            </div>
+            <br>
+            <table class="ibox-content table table-hover">
+              <!-- shortcuts table header-->
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" id="checkbox-head" class="regular-checkbox-td" ng-model="master"/>
+                    <label for="checkbox-head"></label>
+                  </th>
+                  <th>{{buttonText}}</th>
+                  <th>Description</th>
+                  <th>{{field}}</th>
+                  <th>Visible</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <!--shortcuts table header ends here-->
+              <!-- shortcuts table data-->
+              <tbody>
+                <tr ng-repeat="item in items | filter : searchText">
+                  <td>
+                    <input type="checkbox" id="{{item.id}}" class="regular-checkbox-td" ng-checked="master" />
+                    <label for="{{item.id}}"></label>
+                    <label for="1"></label>
+                  </td>
+                  <td><strong><a>{{item.name}}</a></strong>
+                  </td>
+                  <td><a>{{item.description | limitTo:60}}</a>
+                  </td>
+                  <td>
+                    <a href="#" ng-repeat="i in item.slides">
+                        <img src="{{i}}" height="30px"> 
+                    </a>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-success" ng-show="item.visible" ng-click="visible = false">Yes</a>
+                    <a class="btn btn-sm btn-warning" ng-hide="item.visible" ng-click="visible = true">No</a>
+                  </td>
+                  <td ng-hide="edit">
+                      <a href="#/dashboard/edit-{{buttonText.toLowerCase()}}?id={{item.id}}" ><button class="btn btn-primary btn-sm">Edit</button></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

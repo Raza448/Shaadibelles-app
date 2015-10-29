@@ -1,0 +1,113 @@
+<div class="row" id="settings">
+  <div class="col-lg-12">
+    <div class="panel blank-panel ui-tab">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <br>
+            <form class="form-inline">
+              <div class="form-group">
+                <input class="form-control" type="search" ng-model="searchText" placeholder="Search reviews"/>
+              </div>
+              <div class="form-group pull-right">
+                <a class="btn btn-primary btn-sm" href="#/dashboard/new-review?id={{id}}">New Review</a>
+                <button ng-click = "deleteCategories()" class="btn btn-primary btn-sm"> Delete Selected</button>
+                <a href="" ng-click="check(1)"><button class="btn btn-primary btn-sm"> <i class="fa fa-filter fa-fw"></i>Filters</button></a>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-sm">SortBy</button>
+                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Name Ascending</a></li>
+                    <li><a href="#">Name Decending</a></li>
+                    <li><a href="#">Keywords</a></li>
+                    <li><a href="#">Created Date</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                  <li ui-sref-active="active">
+                    <br>
+                    <input type="text" class="form-control" placeholder="Filter with Name">
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <input type="text" class="form-control" placeholder="Filter with Keywords">
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <select class="form-control">
+                      <option>Example Sub-Category</option>
+                    </select>
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <select class="form-control">
+                      <option>Show only visible</option>
+                      <option>Show only invisible</option>
+                    </select>
+                  </li>
+                  <br>
+                  <li ui-sref-active="active">
+                    <button class="btn btn-warning" ng-click="check(1)" >Apply Filter</button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+            </br>
+            <div class="pull-right">
+              <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
+              <a class="btn btn-default" ng-click="pagingFront(result, 10)"><i class="fa fa-arrow-right"></i></a>
+            </div>
+            <br>
+            <table class="ibox-content table table-hover">
+              <!-- shortcuts table header-->
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" id="checkbox-head" class="regular-checkbox" ng-model="master"/>
+                    <label for="checkbox-head"></label>
+                  </th>
+
+                  <th>marriage</th>
+                  <th>content</th>
+                  <th>Visible</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <!--shortcuts table header ends here-->
+              <!-- shortcuts table data-->
+              <tbody>
+                <tr ng-repeat="item in reviews | filter: searchText">
+                  <td>
+                    <input type="checkbox" id="{{item.id}}" class="regular-checkbox-td" ng-checked="master" />
+                    <label for="{{item.id}}"></label>
+                  </td>
+
+                  </td>
+                  <td><a>{{item.post.title}}</a>
+                  </td>
+                  <td>{{item.content}}
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-success" ng-show="item.visible" ng-click="item.visible = false">Yes</a>
+                    <a class="btn btn-sm btn-warning" ng-hide="item.visible" ng-click="item.visible = true">No</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-primary" href="#/dashboard/edit-review?id={{item.id}}">Edit</a>
+                  </td>
+                </tr>
+              </tbody>
+              <!-- shortcuts table data ends here-->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

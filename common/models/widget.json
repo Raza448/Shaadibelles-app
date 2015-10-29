@@ -1,0 +1,30 @@
+{
+  "name": "widget",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "type": "string"
+    },
+    "visible": {
+      "type": "boolean"
+    },
+    "content": {
+      "type": "object"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

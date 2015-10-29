@@ -1,0 +1,142 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name webApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the webApp
+ */
+angular.module('sbFrontEnd') .controller('SignupTwoCtrl', function($scope, $http, $rootScope, $cookieStore, $location, File) {
+$scope.events = ["mehndi", "Sangeet", "Wedding", "Reception"];
+
+     $rootScope.showSelect = false;
+  $scope.post = {
+      title: null,
+      description: null,
+      tagline: null,
+      category: null,
+      date: null,
+      status: 'Published',
+      cover: null,
+      events : [],
+      contents : {
+
+      }
+    };
+
+$scope.postPublished = false;
+
+  $scope.currentEvent = {
+  name : null,
+  content : null,
+  gallery : []
+}
+
+  $scope.gallery = {
+  title : null,
+  photos : [],
+  cover : null
+};
+
+$http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_token=' + $rootScope.user.accessToken ).then(function(res){
+
+
+  $scope.postPublished = true;
+  $scope.post =  {
+      title: res.data.title || null,
+      description: res.data.description || null,
+      tagline: res.data.tagline || null,
+      category: res.data.category || null,
+      date: res.data.created || null,
+      status: res.data.status || 'Published',
+      cover: res.data.cover || null,
+      events : res.data.events || [],
+      contents : res.data.contents || {},
+      location : res.data.location || null,
+      id : res.data.id,
+      userId : res.data.userId
+    }; 
+     $http.get(window.remote + '/api/posts/' + res.data.id +
+          '/galleries?access_token=' + $rootScope.user.accessToken ).then(function(res){
+         $scope.gallery = res.data;
+});
+});
+
+ $scope.newEvent = function(){
+  $scope.post.events.push($scope.currentEvent);
+  $scope.currentEvent = {
+  content: null,
+  gallery : []
+}
+}
+
+
+
+
+    $scope.uploadCover = function(file) {
+
+      File.upload(file).success(function(res) {
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.post.cover = newfile;
+        $scope.gallery.cover = newfile;
+
+      })
+    }
+
+ $scope.upload = function(file) {
+
+      File.upload(file).success(function(res) {
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.gallery.photos.push(newfile);
+      $scope.currentEvent.gallery.push(newfile);
+      })
+    }
+
+
+    $scope.publish = function(post) {
+
+
+      var data = {
+        "title": post.title,
+        "description": post.description,
+        "location" : post.location,
+        "tagline": post.tagline,
+        "events" : post.events,
+        "category": 'Real Wedding',
+        "cover": post.cover || null,
+        "created": post.date,
+        "status": 'Published',
+        "contents" : post.contents,
+        "userId" : $rootScope.user.id
+      };
+
+
+   var request = $http.post;
+      var url = window.remote + '/api/categories/' + "561bb9ab65ca0e0300ccab92" +
+        '/posts?access_token=' + $rootScope.user.accessToken;
+
+      if(post.id){
+  request = $http.put;
+   var url = window.remote + '/api/posts/' + post.id +'?access_token=' + $rootScope.user.accessToken;
+}
+
+
+
+      request(url, data).then(function(res) {
+        $scope.gallery.title = res.data.title;
+        request(window.remote + '/api/posts/' + res.data.id +
+          '/galleries?access_token=' + $rootScope.user.accessToken,  $scope.gallery);
+           $scope.postPublished = true;
+      });
+    };
+
+
+});
+

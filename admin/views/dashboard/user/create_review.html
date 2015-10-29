@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel blank-panel ui-tab">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h4>{{buttonText}} category</h4>
+          </div>
+          <div class="ibox-content">
+            <br>
+            <div class="col-lg-12">
+              <form role="form">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                   <label>Select a marriage</label>
+                            <select
+                              data-placeholder="Select Post"
+                              class="form-control"
+                              chosen
+                              ng-model="review.postId"
+                              ng-options="item.id as item.title for item in posts">
+                                <option value=""></option>
+                            </select>
+                  </div>
+                  <div class="form-group" ng-init="item.visible = true">
+                    <label for="shortcut">Visiblity</label>
+                    <br>
+                    <a class="btn btn-success" ng-show="review.visible" ng-click="review.visible = false">Visible</a>
+                    <a class="btn btn-danger" ng-hide="review.visible" ng-click="review.visible = true">Not Visible</a>
+                  </div>
+<div class="form-group">
+                    <label>Raring</label>
+                    <select class="form-control" ng-init="review.rating = 4" ng-model="review.rating" ng-options="i for i in [1,2,3,4,5]"></select>
+                  </div>
+                  <div class="form-group">
+                    <label>Content</label>
+                    <textarea cols="50" rows="10" name="Message" class="form-control" id="Message" placeholder="Description" ng-model="review.content" required>
+                    </textarea>
+                  </div>
+              
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary" ng-click="submit(review)">{{buttonText}}</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

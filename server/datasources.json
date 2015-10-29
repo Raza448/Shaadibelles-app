@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "url": "mongodb://userone:userone@ds055772.mongolab.com:55772/heroku_dvpkd9r0",
+    "name": "mongodb",
+    "connector": "loopback-connector-mongodb"
+  }
+}

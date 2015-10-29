@@ -1,0 +1,44 @@
+<div class="row" id="settings">
+  <div class="col-lg-12">
+    <div class="panel blank-panel ui-tab">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">            
+            </br>
+            <div class="pull-right">
+              <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
+              <a class="btn btn-default" ng-click="pagingFront(result, 10)"><i class="fa fa-arrow-right"></i></a>
+            </div>
+            <br>
+            <table class="ibox-content table table-hover">
+              <!-- shortcuts table header-->
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Email</th>
+                  <th>Stars</th>
+                </tr>
+              </thead>
+              <!--shortcuts table header ends here-->
+              <!-- shortcuts table data-->
+              <tbody>
+                <tr ng-repeat="rating in ratings | filter: searchText">
+                    <td><strong>{{rating.name}}</strong>
+                  </td>
+                  <td>{{rating.email}}
+                  </td>
+                  </td>
+                  <td>
+					 {{rating.stars}}
+                  </td>
+
+                </tr>
+              </tbody>
+              <!-- shortcuts table data ends here-->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

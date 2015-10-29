@@ -1,0 +1,117 @@
+'use strict';
+
+angular.module('sbAdminApp')
+  .controller('SettingsCtrl', function($scope, $http, $location, $rootScope,
+    $modal, $modalStack) {
+     
+     $scope.types = ['Vendor', 'Post', 'Gallery','Category'];
+   $scope.saveTxt = 'Save';
+   
+       $scope.getMenus = function(){
+	  var url = window.remote + '/api/menus?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.menus = res.data;
+		  });
+    };
+
+    $scope.getMenus();
+
+     $scope.getVendors = function(){
+	  var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.vendors = res.data;
+		  });
+    };
+
+    $scope.getVendors();
+
+    $scope.getWidgets = function(){
+	  var url = window.remote + '/api/widgets?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.widgets = res.data;
+		  });
+    };
+
+
+ $scope.getPosts = function(){
+	  var url = window.remote + '/api/posts?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.posts = res.data;
+		  });
+    };
+
+$scope.getPosts();
+
+$scope.getCategories = function(){
+	  var url = window.remote + '/api/categories?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.categories = res.data;
+		  });
+    };
+
+$scope.getCategories();
+ $scope.getPages = function(){
+	  var url = window.remote + '/api/pages?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.pages = res.data;
+		  });
+    };
+
+$scope.getPages();
+
+    $scope.getWidgets();
+    
+    	  $scope.getAdverts = function(){
+      var url = window.remote + '/api/adverts?access_token=' + $rootScope.user.accessToken;
+	  $http.get(url).then(function(res){
+		  $scope.adverts = res.data;
+		  });
+    };
+
+    $scope.getAdverts();
+    
+     $scope.getCategories = function() {
+
+      var url = window.remote + '/api/categories?access_token=' + $rootScope.user.accessToken;
+
+      $http.get(url)
+        .then(function(res) {
+          $scope.categories = res.data;
+        })
+    }
+    
+    $scope.getCategories();
+
+$scope.getSliders = function() {
+
+      var url = window.remote + '/api/sliders?access_token=' + $rootScope.user.accessToken;
+
+      $http.get(url)
+        .then(function(res) {
+          $scope.sliders = res.data;
+        })
+    }
+
+ $scope.getSliders();
+
+ $http.get(window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
+      function(res){
+		  $scope.settings = res.data.settings;
+                  if(!res.data.settings.recommended){
+         $scope.settings.recommended = ['', '']
+}
+		  }
+   );
+
+   $scope.save = function(){
+	   $scope.saveTxt = 'Saving';
+	   var url = window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+	   $http.put(url, {
+		   'settings' : $scope.settings,
+
+		   }).then(function(res){
+			   $scope.saveTxt = 'Saved';
+			   });
+	   };
+
+  });

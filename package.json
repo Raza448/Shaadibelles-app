@@ -1,0 +1,46 @@
+{
+  "name": "shaadibelles-api",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "slc run"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "errorhandler": "^1.1.1",
+    "loopback": "^2.14.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-storage": "^1.5.1",
+    "loopback-connector-mongodb": "^1.11.3",
+    "loopback-datasource-juggler": "^2.19.0",
+    "serve-favicon": "^2.0.1",
+    "node-mailer": "~0.1.1",
+    "nodemailer": "~1.8.0",
+    "loopback-component-passport": "~1.5.0",
+    "passport-facebook": "~2.0.0",
+    "loopback-passport": "~1.0.2",
+    "express-flash": "0.0.2",
+    "body-parser": "~1.14.1",
+    "connect-ensure-login": "~0.1.1",
+    "passport-local": "~1.0.0",
+    "stripe": "~4.0.0",
+    "express": "~4.13.3",
+    "event-stream": "~3.3.2",
+    "crypto": "0.0.3"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "description": "Loopback API source code for shaadibelles.com"
+}

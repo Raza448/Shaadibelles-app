@@ -1,0 +1,41 @@
+'use strict';
+
+angular.module('sbAdminApp')
+  .controller('EditSliderCtrl', function($scope, $http, $location, $rootScope , File) {
+   $scope.buttonText = 'Update';
+
+
+  $scope.upload = function(file) {
+     if(file){
+ File.upload(file).success(function(res) {
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.slider.slides.push(newfile);
+      }) 
+  }
+    }
+
+    var query = $location.search();
+    $scope.id = query.id;
+
+    $http.get(window.remote + '/api/sliders/' + $scope.id +
+        '?access_token=' + $rootScope.user.accessToken)
+      .then(function(res) {
+           $scope.slider = res.data;
+      });
+
+    $scope.submitSlider = function(slider) {
+
+      var url = window.remote + '/api/sliders/' + $scope.id +
+        '?access_token=' + $rootScope.user.accessToken;
+
+      $http.put(url, slider)
+        .success(function(res) {
+          location.href = "#/dashboard/sliders";
+        });
+    }
+
+
+  });

@@ -1,0 +1,117 @@
+<div class="header-slider">
+  <div style="height: 305px">
+    <carousel interval="5000" no-wrap="noWrapSlides">
+      <slide ng-repeat="vendor in vendors track by $index" active="vendor.active">
+        <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
+      </slide>
+    </carousel>
+  </div>
+</div>
+<!----------->
+<div class="content">
+  <!---->
+  <div class="container">
+    <div class="grids-tops" style="margin-top: 200px;">
+      <div class="banner-bottom-grids">
+        <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
+          <h1>FEATURED VENDORS</h1>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 bottom-grid" ng-repeat="vendor in vendorstwo">
+          <div id="img_h">
+            <a href="#/main/vendordetail/{{vendor.id}}/profile"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
+            <div class="text">
+              <a href="#/main/vendordetail/{{vendor.id}}/profile"><p>{{vendor.business.name}}</p></a>
+ <div class="stars">
+		  <form action="">
+			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
+			<label class="star star-5"  for="star-5"></label>
+			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
+			<label class="star star-4"  for="star-4"></label>
+			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
+			<label class="star star-3" for="star-3"></label>
+			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
+			<label class="star star-2" for="star-2"></label>
+			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
+			<label class="star star-1" for="star-1"></label>
+		  </form>
+		</div>
+              <a href="#">{{vendor.reviews.length}} Reviews</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="clearfix"> </div>
+        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid"><img src="images/taj.jpg" class="img-width"/>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
+          <h1><a href="#">ALL VENDORS</a></h1>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit">
+        <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}/profile">
+        <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
+        <a href="#/main/vendordetail/{{vendor.id}}/profile" ><h1>{{vendor.business.name}}</h1></a>
+        <div class="stars">
+		  <form action="">
+			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
+			<label class="star star-5" for="star-5"></label>
+			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
+			<label class="star star-4" for="star-4"></label>
+			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
+			<label class="star star-3" for="star-3"></label>
+			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
+			<label class="star star-2" for="star-2"></label>
+			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
+			<label class="star star-1" for="star-1"></label>
+		  </form>
+		</div>
+        <p>{{vendor.reviews.length}} Reviews </p>
+        <hr />
+      </div>
+      <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
+        <a class="morebtn hvr-sweep-to-top" href="" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
+      </div>
+      <div class="clearfix"> </div>
+
+      <div class="col-lg-8 col-md-8 col-sm-8 col-sm-offset-2 col-md-offset-2 thumb">
+        <h3> WHY OUR VENDORS<br />
+          ARE THE PERFECT MATCH <br />
+          FOR OUR BRIDES
+        </h3>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 thumb">
+        <h4>We bring in talent from all over the world. Why? Because our brides are global! Shaadi Belles is proud to showcase the freshest inspiration for our families. We screen every vendor and serve up thousands of professional wedding planners and vendors that will make your day one of the most memorable ever. Whatever you are looking for in your South East Asian inspired wedding, Shaadi Belles has the perfect team for your big day. </h4>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 help-form">
+        <form>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>NEED PERSONAL ATTENTION, LET US HELP BUILD A TEAM FOR YOU</h2>
+          </div>
+          <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Name" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Email" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Wedding Location" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <textarea placeholder="Tell Us About Your Vision For Wedding" rows="6"></textarea>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <input type="submit" value="SEND" />
+          </div>
+        </form>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+</div>
+</div>  
+</div>

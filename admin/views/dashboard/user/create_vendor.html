@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="panel-heading">
+      <h3 class="panel-title">Register New {{buttonText}}</h3>
+    </div>
+    <div class="panel-body col-lg-6">
+      <form role="form" ng-submit="register(formData)">
+        <fieldset>
+          <div class="form-group">
+            <input class="form-control" placeholder="Name" ng-model="formData.name" type="text" autofocus required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Username" ng-model="formData.username" type="text" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="E-mail" ng-model="formData.email" name="email" type="email" required>
+          </div>        
+          <div class="form-group">
+            <input class="form-control" placeholder="Phone " ng-model="formData.business.phone" required>
+          </div>  
+          <div class="form-group">
+            <input class="form-control" placeholder="Business Name" ng-model="formData.business.name" required>
+          </div>     
+          <div class="form-group">
+            <input class="form-control" placeholder="Business Email" ng-model="formData.business.email" required>
+          </div>  
+          <div class="form-group">
+            <input class="form-control" placeholder="City" ng-model="formData.business.city" required>
+          </div>   
+          <div class="form-group">
+            <input class="form-control" placeholder="State" ng-model="formData.business.state" required>	
+          </div>      
+          <div class="form-group">
+			    <select
+              data-placeholder="Select Country"
+              class="form-control"
+              chosen
+              ng-model="formData.business.country"
+              ng-options="item for item in countries">
+            </select> 
+          </div>     
+          <div class="form-group" ng-repeat="item in formData.location">
+	            <input class="form-control" placeholder="State" ng-model="item" required>	
+          </div>                                    
+          <div class="form-group">
+            <input class="form-control" placeholder="facbook" ng-model="formData.social.facebook" required>
+          </div>        
+          <div class="form-group">
+            <input class="form-control" placeholder="twitter " ng-model="formData.social.twitter" required>
+          </div>          
+          <div class="form-group">
+            <input class="form-control" placeholder="instagram " ng-model="formData.social.instagram" required>
+          </div>                                               
+          <div class="form-group">
+            <input class="form-control" placeholder="website" ng-model="formData.website" required>
+          </div>
+          <div class="form-group" ng-repeat="item in formData.category">
+            <label>Category</label>
+            <select
+              data-placeholder="Select Category"
+              class="form-control"
+              chosen
+              ng-model="item"
+              ng-options="item for item in vendorTypes">
+            </select>
+          </div>
+          <!-- Change this to a button or input when using this as a form -->
+          <button type="submit" class="btn btn-lg btn-success btn-block">{{buttonText}}</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

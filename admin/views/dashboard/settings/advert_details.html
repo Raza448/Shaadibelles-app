@@ -1,0 +1,35 @@
+<div class="row" id="scripts">
+  <div class="panel blank-panel ui-tab">
+    <div class="panel-body">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h4>{{buttonText}} Advert</h4>
+        </div>
+        <div class="ibox-content">
+          <form>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label>Advert Title</label>
+                <input type="text" class="form-control" placeholder="advert title" ng-model="advert.title">
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" placeholder="About Advert" ng-model="advert.description" cols="40" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="Message">Post Content</label>
+                  <div text-angular ng-model="advert.content" ta-file-drop="upload"></div>
+                </div>
+              <div class="form-group">
+                <a class="btn btn-primary" ng-click="create(advert)">{{buttonText}}</a>
+                <a class="btn btn-danger">Cancel</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

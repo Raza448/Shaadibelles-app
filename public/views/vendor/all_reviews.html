@@ -1,0 +1,25 @@
+
+        <div class="blobgrid">
+      <div class="clearfix"></div>
+          <h5>READ THE REVIEWS ABOUT {{vendor.business.name.toUpperCase()}}</h5>
+      <div class="clearfix"></div>
+          <div class="col-md-12 col-lg-12 col-sm-12 bottom-grids  margin-top-40" ng-repeat="review in reviews">
+            <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids">
+              <a href="#/main/post/{{review.post.id}}"><img id="bottom_grid_div" class="img-responsive" src="{{review.post.cover}}" title="name" alt=""></a>
+              <h4>{{review.post.title}}
+              </h4>
+              <ul class="star-footer">
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+                <li><a href="#"><i> </i></a></li>
+              </ul>
+            </div>
+            <div ng=show="review.showAll" class="col-md-8 col-lg-8 col-sm-8">
+              <h2>{{review.content}}.</h2>
+         
+            </div>
+          </div>
+ </div>
+

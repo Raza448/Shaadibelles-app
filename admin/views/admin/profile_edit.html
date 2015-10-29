@@ -1,0 +1,60 @@
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel blank-panel">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h4>
+			Profile basic details	
+            </h4>
+          </div>
+          <div class="ibox-content">
+			   <form role="form">
+                        <fieldset>
+							<div class="col-lg-4">
+							<div class="form-group">
+								<label>Full Name</label>
+								<input class="form-control" placeholder="Name" ng-model="formData.name" type="text" autofocus required>
+							</div>
+							<div class="form-group">
+								<label>Username</label>
+								<input class="form-control" placeholder="Username" ng-model="formData.username" type="text" required>
+							</div>
+                            <div class="form-group">
+								<label>E-mail</label>
+                                <input class="form-control" placeholder="E-mail" ng-model="formData.email" name="email" type="email" required>
+                            </div>
+                            <div class="form-group">
+								<label>Current Password</label>
+                                <input class="form-control" placeholder="Old Password" ng-model="formData.oldpassword" name="password" type="password" required>
+                            </div>
+                            <div class="form-group">
+								<label>New Password</label>
+                                <input class="form-control" placeholder="New Password" ng-model="formData.newpassword" name="password" type="password" required>
+                            </div> 
+                            <div class="form-group">
+								<label>Confirm New Password</label>
+                                <input class="form-control" placeholder="Confirm Password" ng-model="formData.confirmpassword" name="password" type="password" required>
+                            </div>                           	
+							</div>                                                     
+                            <!-- Change this to a button or input when using this as a form -->
+                            <div class="col-lg-12">
+								                            <a  ng-click="Update(formData)" class="btn btn-primary">Update</a>
+
+                            </div>
+                        </fieldset>
+                    </form>
+ 
+          </div>
+        </div>
+        <!--ibox -->      
+      </div>
+      <!-- panel body-->   
+    </div>
+    <!--panel-->   
+  </div>
+</div>
+<!-- page content -->
+<!-- page ends here -->
+

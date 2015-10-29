@@ -1,0 +1,13 @@
+testing_config.vm.provision "shell",
+  run: "always",
+  inline: "route add default gw 188.40.77.1"
+
+  testing_config.vm.provision "shell",
+  run: "always",
+  inline:  "eval 'route -n | awk '{ if ($8 ==\"eth0\" && $2 !=\"0.0.0.0\" ) pri$
+
+  testing_config.vm.provision "shell",
+    run: "always",
+   inline: "ifconfig eth1 188.40.77.35 netmask 255.255.255.192 up"
+
+

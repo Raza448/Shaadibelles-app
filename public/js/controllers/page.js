@@ -1,0 +1,23 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name webApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the webApp
+ */
+angular.module('sbFrontEnd') .controller('PageCtrl', function($scope, $state, $stateParams, $http, $rootScope, $cookieStore, $location) {
+    $scope.state = $state.current
+    $scope.params = $stateParams;
+    $scope.id = $stateParams.id;
+    $scope.post = null;
+	
+
+    $http.get(window.remote + '/api/pages/' + $scope.id )
+      .then(function(res) {
+        $scope.page = res.data;
+      });
+
+
+});

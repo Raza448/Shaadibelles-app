@@ -1,0 +1,24 @@
+ 
+
+    <div class="blobgrid">
+
+      <div class="clearfix"></div>
+      <h5>SEE FEATURED WEDDINGS ABOUT {{vendor.business.name.toUpperCase()}}</h5>
+      <div class="clearfix"></div>
+      <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids" ng-imit="limit = 3" ng-repeat="review in reviews | before : limit">
+        <a href="#/main/post/{{review.post.id}}"><img id="bottom_grid_div" class="img-responsive" src="{{review.post.cover}}" title="name" alt=""></a>
+        <h4>{{review.post.title}}
+        </h4>
+                    <a href="#/main/post/{{review.post.id}}" class="morebtn hvr-sweep-to-top">VIEW THIS STORY </a>
+        <p>
+          {{review.post.description.substring(0,40)}}
+        </p>
+
+      </div>
+      <div class="clearfix"></div>
+      <p>&nbsp;</p>
+      <a href="" ng-click="limit += 5" class="morebtn hvr-sweep-to-top">LOAD MORE</a>
+      <p>&nbsp;</p>
+      <div class=" clearfix"></div>
+    </div>
+

@@ -1,0 +1,151 @@
+<div class="col-lg-12 settings">
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Website Mode</label>
+      <div>
+        <a class="btn btn-default btn-danger" ng-click="settings.live = false" ng-show = "settings.live">Change to Maintenance mode</a>
+        <a class="btn btn-default btn-success" ng-click="settings.live = true" ng-hide = "settings.live">Change to Live mode</a>	   
+      </div>
+    </div>
+    <div class="form-group">
+      <label>SIte title</label>
+      <input class="form-control" ng-model="settings.title" type="text" ></input>	   
+    </div>
+    <div class="form-group">
+      <label>Address and phone</label>
+      <textarea class="form-control" ng-model="settings.address" cols="50" rows="5"></textarea>	   
+    </div>
+    <div class="form-group">
+      <label>Contact Email</label>
+      <input class="form-control" ng-model="settings.email" type="email" ></input>	   
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group col-lg-12">
+      <label>Default post category</label>
+      <select
+        data-placeholder="Select Categories"
+        class="form-control"
+        chosen
+        ng-model="settings.category"
+        ng-options="item.id as item.name for item in categories">
+      </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Default Menu</label>
+      <select
+        data-placeholder="Select a menu"
+        class="form-control"
+        chosen
+        ng-model="settings.menu"
+        ng-options="item.id as item.name for item in menus" >
+      </select>
+    </div>
+ <div class="form-group col-lg-12">
+      <label>Default Footer menu</label>
+      <select
+        data-placeholder="Select a menu"
+        class="form-control"
+        chosen
+        ng-model="settings.footerMenu"
+        ng-options="item.id as item.name for item in menus" >
+      </select>
+    </div>
+<div class="form-group col-lg-12">
+      <label>Default Footer second</label>
+      <select
+        data-placeholder="Select a menu"
+        class="form-control"
+        chosen
+        ng-model="settings.footerMenuTwo"
+        ng-options="item.id as item.name for item in menus" >
+      </select>
+    </div>
+
+    <div class="form-group col-lg-12">
+      <label>Default post adverts</label>
+      <select
+        data-placeholder="Select Adverts"
+        class="form-control"
+        chosen
+        multiple
+        ng-model="settings.adverts"
+        ng-options="item.id as item.title for item in adverts">
+      </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Default Slider</label>
+      <select
+        data-placeholder="Select Slider"
+        class="form-control"
+        chosen
+        ng-model="settings.slider"
+        ng-options="item.id as item.name for item in sliders">
+      </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Home Widget One</label>
+      <select
+        data-placeholder="Select Widget"
+        class="form-control"
+        chosen
+        ng-model="settings.widgets[0]"
+        ng-options="item.id as item.title for item in widgets">
+      </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Home Widget Two</label>
+      <select
+        data-placeholder="Select Widget"
+        class="form-control"
+        chosen
+        ng-model="settings.widgets[1]"
+        ng-options="item.id as item.title for item in widgets">
+      </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Home Widget Three</label>
+      <select
+        data-placeholder="Select Widget"
+        class="form-control"
+        chosen
+        ng-model="settings.widgets[2]"
+        ng-options="item.id as item.title for item in widgets">
+      </select>
+    </div>
+  <div class="form-group col-lg-12">
+      <label>Recommended Category one</label>
+      <select
+        data-placeholder="Select Category"
+        class="form-control"
+        chosen
+        ng-model="settings.recommended[0]"
+        ng-options="item.id as item.name for item in categories">
+      </select>
+    </div>
+  <div class="form-group col-lg-12">
+      <label>Recommended Category Two</label>
+      <select
+        data-placeholder="Select Category"
+        class="form-control"
+        chosen
+        ng-model="settings.recommended[1]"
+        ng-options="item.id as item.name for item in categories">
+      </select>
+    </div>
+<div class="form-group col-lg-12">
+      <label>Featured Vendors</label>
+      <select
+        data-placeholder="Select Category"
+        class="form-control"
+        chosen
+        multiple
+        ng-model="settings.featuredVendors"
+        ng-options="item.id as item.business.name for item in vendors">
+      </select>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <a class="btn btn-lg btn-primary" ng-click="save(settings)">{{saveTxt}}</a>
+  </div>
+</div>

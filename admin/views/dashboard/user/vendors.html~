@@ -1,0 +1,103 @@
+<br>
+<!--page content-->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel blank-panel">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>
+              <small>Create a {{buttonText}} by clicking new {{buttonText}} button, Deactivate a selected {{title}} by clicking deactivate button.</small>
+            </h5>
+          </div>
+          <form class="form-inline">
+            <div class="form-group">
+              <input class="form-control" type="search" ng-model="searchText" placeholder="Search vendor vendors"/>
+            </div>
+            <div class="form-group pull-right">
+              <a href="#/dashboard/new-vendor" class="btn btn-primary btn-sm">New vendor</a>
+              <button id="delete" ng-click = "deletevendors()" class="btn btn-primary btn-sm"> Delete Selected</button>
+              <a href="" ng-click="check(1)"><button class="btn btn-primary btn-sm"> <i class="fa fa-filter fa-fw"></i>Filters</button></a>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">SortBy</button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Name Ascending</a></li>
+                  <li><a href="#">Name Decending</a></li>
+                  <li><a href="#">Keywords</a></li>
+                  <li><a href="#">Created Date</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                <li ui-sref-active="active">
+                  <br>
+                  <input type="text" class="form-control" placeholder="Filter with Name">
+                </li>
+                <br>
+                <li ui-sref-active="active">
+                  <input type="text" class="form-control" placeholder="Filter with Keywords">
+                </li>
+                <br>
+                <li ui-sref-active="active">
+                  <button class="btn btn-warning" ng-click="check(1)" >Apply Filter</button>
+                </li>
+              </ul>
+            </div>
+          </form>
+          <div class="pull-right">
+            <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
+            <a class="btn btn-default" ng-click="pagingFront(result, 10)"><i class="fa fa-arrow-right"></i></a>
+          </div>
+          <!--shortcuts table-->
+          <table class="ibox-content table table-hover">
+            <!-- shortcuts table header-->
+            <thead>
+              <tr>
+ <th>
+                        <input type="checkbox" id="checkbox-head" class="regular-checkbox" ng-model="master" />
+                        <label for="checkbox-head"></label>
+                      </th>
+                <th>{{buttonText}}</th>
+                <th>Email</th>
+                <th>Review</th>
+                <th>category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <!--shortcuts table header ends here-->
+            <!-- shortcuts table data-->
+            <tbody>
+              <tr ng-repeat="vendor in vendors track by $index| filter:searchText">
+                     <td>
+                        <input type="checkbox" id="{{vendor.id}}" class="regular-checkbox-td" ng-checked="master" />
+                        <label for="{{vendor.id}}"></label>
+                      </td>
+                <td><strong>{{vendor.business.name}}</strong></td>
+                <td>{{vendor.email}}</td>
+                <td><a class="btn btn-default btn-info" href="#/dashboard/vendor-reviews?id={{vendor.id}}">Reviews</a></td>
+                <td>
+               <span ng-repeat="category in vendor.category">{{category}} </span>
+
+                </td>
+                <td>
+                  <a class="btn btn-sm btn-primary" href="#/dashboard/edit-vendor?id={{vendor.id}}">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+            <!-- shortcuts table data ends here-->
+          </table>
+        </div>
+        <!--ibox -->
+      </div>
+      <!-- panel body-->
+    </div>
+    <!--panel-->
+  </div>
+</div>
+<!-- page content -->
+<!-- page ends here -->

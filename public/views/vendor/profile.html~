@@ -1,0 +1,21 @@
+
+
+    <div class="blobgrid">
+
+      <div class="clearfix"></div>
+        <h4>{{vendor.description}} </h4>
+
+<div masonry>
+			<div ng-repeat="image in gallerytwo track by $index" class="masonry-brick">
+				<img class="img-width" src="{{image}}" alt="">
+			</div>
+                       <div ng-show="currentEvent" ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
+				<img class="img-width" src="{{image}}" alt="">
+			</div>
+		</div>
+
+
+ <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids"><img ng-repeat="" src="{{image}}" class="img-width"  /></div>
+      <div class=" clearfix"></div>
+    </div>
+

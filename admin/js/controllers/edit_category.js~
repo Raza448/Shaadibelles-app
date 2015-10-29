@@ -1,0 +1,61 @@
+'use strict';
+
+angular.module('sbAdminApp')
+  .controller('EditCategoryCtrl', function($scope, $state, $http, $location,
+    $rootScope) {
+    $scope.buttonText = 'Update';
+    $scope.tags = null;
+    $scope.formData = {
+      name: null,
+      description: null,
+      keywords: [],
+      created: null,
+      tags: [],
+      visible: true
+    };
+
+ $scope.getCategories = function() {
+
+      var url = window.remote + '/api/categories?access_token=' + $rootScope.user.accessToken;
+
+      $http.get(url)
+        .then(function(res) {
+          $scope.categories = res.data;
+        })
+    }
+
+    $scope.getCategories();
+
+    var query = $location.search();
+    $scope.id = query.id;
+
+    $http.get(window.remote + '/api/categories/' + $scope.id + '?access_token=' + $rootScope.user.accessToken)
+      .then(function(res) {
+            $scope.formData = res.data;
+      });
+
+   
+
+    $scope.createCategory = function(category) {
+
+
+      var data = {
+        "name": category.name,
+        "description": category.description,
+        "keywords": category.keywords.split(','),
+        "created": category.created,
+        "tags": category.tags,
+        "visible": category.visible,
+       "parentId" : category.parentId
+      };
+
+      var url = window.remote + '/api/categories/' + $scope.id +
+        '?access_token=' + $rootScope.user.accessToken;
+
+      $http.put(url, data)
+        .success(function(res) {
+          location.href = "#/dashboard/categories";
+        });
+    }
+
+  });
