@@ -21,14 +21,11 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
   $http.post(url, data).then(function (res) {
             if (res.status == 200) {
                 //Login user and get accesstoken
-                var loginUrl = window.remote + '/api/vendors/login';
-                var loginData = {
-                    'username': data.username,
-                    'password': data.password
-                };
-                $http.post(loginUrl, loginData).then(function (res) {
-                    $location.path('/main/vendorsignuptwo');
-                });
+               
+
+               $scope.verification = true;
+
+
             }
             else {
                 $scope.err = "Sorry, We are unable to process your request now, Please try again later";

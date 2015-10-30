@@ -87,6 +87,20 @@ angular
             }
         })
 
+.state('main.vendorverified', {
+            url: '/vendorverified',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/vendorVerified.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: [ 'public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
         .state('main.category', {
                 url: '/category/:id',
                 controller: 'CategoriesCtrl',
@@ -650,7 +664,7 @@ angular
 }
  if(res.data.vendor) {
  $rootScope.vendor.id = res.data.vendor.vendorId;
- $rootScope.vendor.accessToken = res.data.vendor.accessToken;
+ $rootScope.vendor.accessToken = res.data.vendor.accessToken || res.data.user.access_token;
 }
 });
    

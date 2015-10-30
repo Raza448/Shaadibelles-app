@@ -69,6 +69,31 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
      });
 	};
 
+
+
+$scope.loginandbusiness = function(userData) {
+		var url = window.remote + '/api/vendors/login';
+		var data = {
+		  'username': userData.username,
+		  'password': userData.password
+		};
+
+	  $http.post(url, data).then(function(res) {
+
+		  $rootScope.user = {
+			'user' : res.data.userId,
+			'accessToken' : res.data.id, 
+		  };
+             $rootScope.vendor = {
+			'user' : res.data.userId,
+			'accessToken' : res.data.id, 
+		  };
+   $modalStack.dismissAll();
+            
+             location.href = '#/main/vendorsignuptwo';
+     });
+	};
+
 $scope.loginandprofile = function(userData) {
 		var url = window.remote + '/api/users/login';
 		var data = {
@@ -91,6 +116,15 @@ $scope.loginandprofile = function(userData) {
  $scope.loginmodaltwo = function(){
  var modalInstance = $modal.open({
                 templateUrl: 'public/views/login.html',
+                size: 'md',
+                controller: 'MainCtrl'
+            });
+}
+
+
+$scope.vendorlogintwo= function(){
+ var modalInstance = $modal.open({
+                templateUrl: 'public/views/vendorlogin.html',
                 size: 'md',
                 controller: 'MainCtrl'
             });

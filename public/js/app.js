@@ -87,6 +87,20 @@ angular
             }
         })
 
+.state('main.vendorverified', {
+            url: '/vendorverified',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/vendorverified.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: [ 'public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
         .state('main.category', {
                 url: '/category/:id',
                 controller: 'CategoriesCtrl',

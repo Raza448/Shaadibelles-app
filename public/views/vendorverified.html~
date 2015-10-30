@@ -5,11 +5,13 @@
     <div class="callbacks_container">
       <ul class="rslides" id="slider">
         <li>
-          <img src="public/images/banner_bride.jpg" alt="">
+          <img src="public/images/banner_sign.jpg" alt="" />
           <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 banner-vendor">
-            <h1>INSIDE SCOOP, HOT DEALS, AND MORE INSPIRATION THAN EVER</h1>
+            <h1>REACH THOUSANDS OF BRIDES FROM ALL OVER THE GLOBE</h1>
             <h2>Email verified, Thanks for signing up with us </h2>
-       <a class="btn btn-success" style="padding: 10px; font-size: 20px;" href="" ng-click="loginvendortwo()"> Continue creating profile </a>
+
+               <a class="btn btn-success" style="padding: 10px; font-size: 20px;" href="" ng-click="loginvendortwo()"> Continue creating profile </a>
+
           </div>
         </li>
       </ul>
@@ -23,23 +25,21 @@
     <div class="sign-up col-md-12 col-lg-12 col-sm-12">
       <div class="sign-up-inner col-md-12 col-lg-12 col-sm-12">
         <div class="col-md-12 col-lg-12 col-sm-12 breadcrumb_margin">
-          <p>HOME/EMAIL VERIFIED</p>
+          <p>HOME/ARE YOU A VENDER</p>
         </div>
         <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-lg-8 col-sm-8">
-          <h3>WE PINKY PROMISE THAT YOU WILL GET ALL THE BEST THAT 
-            SHAADI BELLES HAS TO OFFER! 
-          </h3>
+          <h3>now wedding vendors can reach our growing community of shaadi belles brides</h3>
         </div>
         <div class="col-md-offset-2 col-sm-offset-2 col-md-9 col-lg-9 col-sm-9">
-          <p>Share and spread the love! Our site will only get better with your contributions. Drop us a line and send us your pictures, article ideas, opinions and questions. We love feedback, and we promise to get back to you! </p>
- 
+          <p>We welcome talent from all over world - our brides are global! Shaadi Belles is proud to showcase the fresest inspiration for our users. Reached thousands of engaged visitors instantly by joining the Shaadi Belles community. Whatever your area of expertise, We've launched an easier way for you to submit your work to share with brides. It's easy as 1-2-3! Follow the steps as below to join the Shaadi Belles community.Start now!</p>
+
+
         </div>
 
         <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>
- 
+    
       </div>
     </div>
   </div>
 </div>
-
 

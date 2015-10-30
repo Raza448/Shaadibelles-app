@@ -1,6 +1,7 @@
  var app = require('../../server/server');
 var nodemailer = require('nodemailer');
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
+var path = require('path');
 module.exports = function(UserModel) {
 
 UserModel.afterRemote(
@@ -55,7 +56,7 @@ console.log('> user.afterRemote triggered');
       from: 'noreply@loopback.com',
       subject: 'Thanks for registering.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: '/verified',
+      redirect: '/vendorverified',
       user: user
     };
 
