@@ -73,6 +73,8 @@ UserModel.afterRemote(
 console.log('> user.afterRemote triggered');
 
     var options = {
+      host: 'http://shaadibelles.herokuapp.com',
+      port: 80,
       type: 'email',
       to: user.email,
       from: 'noreply@loopback.com',

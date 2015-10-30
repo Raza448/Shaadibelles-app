@@ -73,12 +73,14 @@ UserModel.afterRemote(
 console.log('> user.afterRemote triggered');
 
     var options = {
+      host: 'http://shaadibelles.herokuapp.com',
+      port: 80,
       type: 'email',
       to: user.email,
       from: 'noreply@loopback.com',
       subject: 'Thanks for registering.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: 'http://0.0.0.0:3000/#/main/verified',
+      redirect: '/verified',
       user: user
     };
 

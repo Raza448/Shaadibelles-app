@@ -8,7 +8,7 @@ UserModel.afterRemote(
       function(ctx, ins, next) {
   console.log(ins);
        ctx.req.session.user = {
-  'userId' : ins.userId,
+  'userId' : ins.vendorId,
   'accessToken' : ins.id
 
 };

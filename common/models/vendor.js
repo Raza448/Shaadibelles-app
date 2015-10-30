@@ -44,7 +44,27 @@ UserModel.register = function(body, req, res, callback) {
         if (err) {
           callback(err);
         } else {
+
+console.log('> user.afterRemote triggered');
+
+    var options = {
+      host: 'http://shaadibelles.herokuapp.com',
+      port: 80,
+      type: 'email',
+      to: user.email,
+      from: 'noreply@loopback.com',
+      subject: 'Thanks for registering.',
+      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      redirect: '/verified',
+      user: user
+    };
+
+    user.verify(options, function(err, response, next) {
+      if (err) return next(err);
+      console.log('> verification email sent:', response);
           res.send(user);
+    });
+
         }
       });
     });
