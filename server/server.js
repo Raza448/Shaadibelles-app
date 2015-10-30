@@ -116,6 +116,10 @@ app.get('/verified', function (req, res) {
   res.redirect('/#/main/verified');
 });
 
+app.get('/vendorverified', function (req, res) {
+  res.redirect('/#/main/vendorverified');
+});
+
 
 
   // start the server if `$ node server.js`
