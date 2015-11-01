@@ -6,6 +6,7 @@ angular.module('sbAdminApp')
     $scope.buttonText = "Update";
     $scope.countries = window.countries
     $scope.formData = {
+      realm : 'vendor',
       name: null,
       username: null,
       email: null,
@@ -38,7 +39,7 @@ angular.module('sbAdminApp')
       var query = $location.search();
       $scope.id = query.id;
 
-      $http.get(window.remote + '/api/vendors/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken)
+      $http.get(window.remote + '/api/users/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken)
       .then(function(res) {
         $scope.vendor = res.data;
         $scope.formData = res.data;
@@ -47,7 +48,7 @@ angular.module('sbAdminApp')
 
     $scope.register = function(vendorData) {
     
-        var url = window.remote + '/api/vendors/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken;
         var request = $http.put;
       request(url, vendorData).then(
       function(){

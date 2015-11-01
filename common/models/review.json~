@@ -11,6 +11,9 @@
     },
     "rating": {
       "type": "number"
+    },
+    "visible": {
+      "type": "boolean"
     }
   },
   "validations": [],
@@ -18,7 +21,12 @@
     "user": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": ""
+      "foreignKey": "userId"
+    },
+    "vendor": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "vendorId"
     },
     "post": {
       "type": "belongsTo",

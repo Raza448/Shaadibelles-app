@@ -139,7 +139,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
         'userId': $rootScope.user.id,
         'token' : response.id
       }
-      $http.post('/api/vendors/subscribe?access_token=' + $rootScope.user.accessToken, data).then(function(res) {
+      $http.post( window.remote + '/api/vendors/subscribe?access_token=' + $rootScope.user.accessToken, data).then(function(res) {
 
          location.href = '#/main/home';
 

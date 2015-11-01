@@ -16,6 +16,8 @@ var flash      = require('express-flash');
 var session = require('express-session');
 
 
+
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -66,6 +68,102 @@ passportConfigurator.setupModels({
 	userIdentityModel: app.models.userIdentity,
 	userCredentialModel: app.models.userCredential
 });
+
+
+app.models.user.create(
+{
+   
+    "username": "admin",
+    "password": "helloworld",
+    "email": "harishkumarchellappa@gmail.com",
+    "emailVerified": true,
+    "status": "active",
+    "settings": {
+        "live": true,
+        "title": "shaadibelles",
+        "address": null,
+        "email": null,
+        "slider": null,
+        "menu": null,
+        "category": null,
+        "widgets": [
+        ],
+        "footerMenu": null,
+        "footerMenuTwo": null,
+        "recommended": [
+        ],
+        "featuredVendors": [
+      
+        ],
+        "blog": {
+            "smallWidgets": [
+            
+            ],
+            "mediumWidgets": [
+              
+            ],
+            "bigWidgets": [
+             
+            ],
+            "categories": [
+              
+            ],
+            "slider": null
+        }
+    },
+    "social": {
+        "facebook": null,
+        "twitter": null,
+        "youtube": null,
+        "pinterest": null
+    },
+    "featured_vendor": {
+        "title": null,
+        "description": null ,
+        "slides": [
+        
+        ],
+        "vendor": null
+    }
+}, function(err, user){
+      app.models.Role.create({
+      name: 'admin'
+    }, function(err, role) {
+      if (err) throw err;
+
+      console.log('Created role:', role);
+
+      //make bob an admin
+      role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+
+        console.log('Created principal:', principal);
+
+
+    app.models.Role.create({
+      name: 'guest'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+ app.models.Role.create({
+      name: 'vendor'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+
+
+
+      });
+    });
+});
+
 for (var s in config) {
 	var c = config[s];
 	c.session = c.session !== false;
@@ -89,7 +187,7 @@ for (var i = 0; i < pairs.length; i++) {
   console.log(cookies);
   if(cookies.access_token){
     req.session.user = cookies;
-  }
+  } 
 }
   fs.createReadStream('public/index.html').pipe(res);
 });
@@ -99,9 +197,6 @@ app.get('/credentials', function (req, res) {
   var data = {};
 if(req.session.user){
  data.user = req.session.user;
-if(req.session.vendor){
- data.vendor = req.session.vendor;
-}
 } 
 res.status(200).send(data);
 

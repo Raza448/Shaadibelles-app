@@ -13,7 +13,7 @@ angular.module('sbAdminApp')
           $scope.reviews = res.data;
 
             $scope.reviews.forEach(function(review){
-    $http.get(window.remote + '/api/posts/' + res.data.postId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
+    $http.get(window.remote + '/api/posts/' + review.postId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
         review.post = res.data;
 });
 });

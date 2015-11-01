@@ -6,7 +6,7 @@ angular.module('sbAdminApp')
     $scope.id = query.id;
     $scope.getReviews = function() {
 
-      var url = window.remote + '/api/vendors/'+ $scope.id + '/reviews?access_token=' + $rootScope.user.accessToken;
+      var url = window.remote + '/api/users/'+ $scope.id + '/reviews?access_token=' + $rootScope.user.accessToken;
 
       $http.get(url)
         .then(function(res) {

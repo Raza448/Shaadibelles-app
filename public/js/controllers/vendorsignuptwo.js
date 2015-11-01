@@ -49,7 +49,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
 });
 
 
-   var url = window.remote + '/api/vendors/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
     $http.get(url).then(function(res){
             $scope.vendor.business = res.data.business || {};
             $scope.vendor.social = res.data.social || {};
@@ -60,7 +60,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
             $scope.locationTwo = res.data.location[1] || null;
             $scope.vendor.website = res.data.website || null;
            $scope.vendor.billing = res.data.billing ||  {};
-         $http.get(window.remote + '/api/vendors/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken).then(function(res){
+         $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken).then(function(res){
            $scope.gallery = res.data;        
     });
     });
@@ -79,7 +79,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
   $rootScope.countries = window.countries;
   $rootScope.vendorCategories = window.vendorTypes;
     $scope.save = function(){
-    var url = window.remote + '/api/vendors/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+    var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
     $http.put(url, $scope.vendor).then(function(res){
             $scope.vendor.business = res.data.business || {};
             $scope.vendor.social = res.data.social || {};
@@ -94,7 +94,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
               if($scope.gallery.id){
                  request  = $http.put;
               }
-               request(window.remote + '/api/vendors/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery).then(function(res){
+               request(window.remote + '/api/users/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery).then(function(res){
             $scope.gallery = res.data;
               });
          
@@ -139,7 +139,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
         'userId': $rootScope.user.id,
         'token' : response.id
       }
-      $http.post( window.remote + '/api/vendors/subscribe?access_token=' + $rootScope.user.accessToken, data).then(function(res) {
+      $http.post( window.remote + '/api/users/subscribe?access_token=' + $rootScope.user.accessToken, data).then(function(res) {
 
          location.href = '#/main/home';
 

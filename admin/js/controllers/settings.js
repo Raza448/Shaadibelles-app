@@ -17,9 +17,9 @@ angular.module('sbAdminApp')
     $scope.getMenus();
 
      $scope.getVendors = function(){
-	  var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+	  var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
 	  $http.get(url).then(function(res){
-		  $scope.vendors = res.data;
+		  $scope.vendors = _.where(res.data, { 'role': 'vendor'});
 		  });
     };
 
@@ -94,7 +94,7 @@ $scope.getSliders = function() {
 
  $scope.getSliders();
 
- $http.get(window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
+ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
 		  $scope.settings = res.data.settings;
                   if(!res.data.settings.recommended){
@@ -105,7 +105,7 @@ $scope.getSliders = function() {
 
    $scope.save = function(){
 	   $scope.saveTxt = 'Saving';
-	   var url = window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+	   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
 	   $http.put(url, {
 		   'settings' : $scope.settings,
 

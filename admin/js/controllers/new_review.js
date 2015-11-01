@@ -49,7 +49,8 @@ angular.module('sbAdminApp')
 
 
     $scope.submit = function(data) {
-      var url = window.remote + '/api/vendors/'+ $scope.id + '/reviews?access_token=' + $rootScope.user.accessToken;
+      data.vendorId = $scope.id;
+      var url = window.remote + '/api/reviews?access_token=' + $rootScope.user.accessToken;
       $http.post(url, data).then(function(res) {      
         location.href = '#/dashboard/vendor-reviews?id=' + $scope.id;
       });

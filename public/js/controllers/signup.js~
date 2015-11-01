@@ -21,7 +21,7 @@ angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $
 		};
   $http.post(url, data).then(function (res) {
 
-            if (res.data) {
+            if (res.status == 200) {
                 //Login user and get accesstoken
                $scope.verification = true;
               

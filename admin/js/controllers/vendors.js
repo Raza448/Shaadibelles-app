@@ -19,10 +19,10 @@ angular.module('sbAdminApp')
 
     $scope.getvendors = function() {
       $http.get(
-        window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken
+        window.remote + '/api/users?access_token=' + $rootScope.user.accessToken
       ).then(
         function(res) {
-                   $scope.vendors = res.data;
+                   $scope.vendors = _.where(res.data, {'role' : 'vendor'});
         }
       );
     }
@@ -33,7 +33,7 @@ angular.module('sbAdminApp')
       var els = angular.element('.regular-checkbox-td:checked');
       Array.prototype.forEach.call(els, function(el) {
         $scope.id = el.id;
-        var url = window.remote + '/api/vendors/' + $scope.id + '?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users/' + $scope.id + '?access_token=' + $rootScope.user.accessToken;
         var request = $http.delete;
         request(url).then(function(res) {
           $scope.getvendors();

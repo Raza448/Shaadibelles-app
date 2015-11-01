@@ -51,6 +51,7 @@ angular.module('sbAdminApp')
 
 
     $scope.submit = function(data) {
+
       var url = window.remote + '/api/reviews/' + $scope.id + '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {      
         location.href = '#/dashboard/vendor-reviews?id=' + $scope.review.vendorId;

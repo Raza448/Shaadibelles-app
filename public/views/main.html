@@ -82,12 +82,11 @@
                 </div>
               </div>
 
-              <a class="btn btn-primary btn-large" ng-hide="user.accessToken" ng-click="vendorLogin()">VENDOR LOGIN</a>
 
-              <a class="btn btn-primary btn-large" ng-hide="user.accessToken" ng-click="loginModal()">LOGIN</a>
+              <a class="btn btn-primary btn-large" ng-hide="user.accessToken || vendor.accessToken" ng-click="loginModal()">LOGIN</a>
             </li>
-            <li><a ui-sref="main.signup" ng-hide="user.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
-            <li><a ng-hide="user.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
+            <li><a ui-sref="main.signup" ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
+            <li><a ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
             <li ng-show="user.accessToken"><a  class="btn btn-primary btn-large" ng-click="logoutMethod()">Logout</a></li>
           </ul>
         </div>

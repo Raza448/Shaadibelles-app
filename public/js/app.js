@@ -61,33 +61,33 @@ angular
         })
 
         .state('main.blog', {
-            url: '/blog',
-            controller: 'PostsCtrl',
-            templateUrl: 'public/views/blog.html',
-            resolve: {
-                loadMyFiles: function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'sbFrontEnd',
-                        files: ['public/js/controllers/blog.js', 'public/js/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
-                    })
+                url: '/blog',
+                controller: 'PostsCtrl',
+                templateUrl: 'public/views/blog.html',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbFrontEnd',
+                            files: ['public/js/controllers/blog.js', 'public/js/window.js', 'public/js/controllers/main.js'] //'js/controllers/home.js'
+                        })
+                    }
                 }
-            }
-        })
-  .state('main.verified', {
-            url: '/verified',
-            controller: 'MainCtrl',
-            templateUrl: 'public/views/verified.html',
-            resolve: {
-                loadMyFiles: function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'sbFrontEnd',
-                        files: [ 'public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
-                    })
+            })
+            .state('main.verified', {
+                url: '/verified',
+                controller: 'MainCtrl',
+                templateUrl: 'public/views/verified.html',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbFrontEnd',
+                            files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                        })
+                    }
                 }
-            }
-        })
+            })
 
-.state('main.vendorverified', {
+        .state('main.vendorverified', {
             url: '/vendorverified',
             controller: 'MainCtrl',
             templateUrl: 'public/views/vendorverified.html',
@@ -95,7 +95,7 @@ angular
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
                         name: 'sbFrontEnd',
-                        files: [ 'public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
                     })
                 }
             }
@@ -407,12 +407,10 @@ angular
         };
 
         $rootScope.getVendors = function() {
-            var url = '/api/vendors';
+            var url = '/api/users';
 
             $http.get(url).then(function(res) {
-                $rootScope.vendors = res.data;
-
-
+                $rootScope.vendors = _.where(res.data, {'role' : 'vendor'});
             })
         };
 
@@ -430,13 +428,14 @@ angular
             $rootScope.currentRecommended = item;
         };
 
- $rootScope.changeBlogCategory = function(item) {
+        $rootScope.changeBlogCategory = function(item) {
             $rootScope.blogCategory = item;
         };
 
         $rootScope.getData = function() {
-            $http.get(window.remote + '/api/admins').then(function(res) {
-                $rootScope.site = res.data[0];
+            $http.get(window.remote + '/api/users').then(function(res) {
+                $rootScope.admins = _.where({'role' : 'admin'});
+                $rootScope.site = $rootScope.admins[0];
                 $rootScope.defaultSlider = $rootScope.site.settings.slider;
                 $rootScope.featuredVendor = $rootScope.site.featured_vendor;
                 $rootScope.socialLinks = $rootScope.site.social;
@@ -446,34 +445,34 @@ angular
                 $http.get(window.remote + '/api/menus/' + $rootScope.site.settings.menu).then(function(res) {
                     $rootScope.menu = res.data;
                 });
-               
+
 
                 $rootScope.blogSmallWidgets = [];
                 $rootScope.blogMediumWidgets = [];
                 $rootScope.blogBigWidgets = [];
-                $rootScope.site.settings.blog.smallWidgets.forEach(function(item){
-                   $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
-                    $rootScope.blogSmallWidgets.push(res.data);
-                });
- 
-                 });
+                $rootScope.site.settings.blog.smallWidgets.forEach(function(item) {
+                    $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
+                        $rootScope.blogSmallWidgets.push(res.data);
+                    });
 
-               $rootScope.site.settings.blog.mediumWidgets.forEach(function(item){
-                   $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
-                    $rootScope.blogMediumWidgets.push(res.data);
                 });
- 
-                 });
 
-                $rootScope.site.settings.blog.bigWidgets.forEach(function(item){
-                   $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
-                    $rootScope.blogBigWidgets.push(res.data);
+                $rootScope.site.settings.blog.mediumWidgets.forEach(function(item) {
+                    $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
+                        $rootScope.blogMediumWidgets.push(res.data);
+                    });
+
                 });
- 
-                 });
-             $rootScope.blogCategories = [];
-             $rootScope.blogCategory;
- $rootScope.site.settings.blog.categories.forEach(function(item) {
+
+                $rootScope.site.settings.blog.bigWidgets.forEach(function(item) {
+                    $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
+                        $rootScope.blogBigWidgets.push(res.data);
+                    });
+
+                });
+                $rootScope.blogCategories = [];
+                $rootScope.blogCategory;
+                $rootScope.site.settings.blog.categories.forEach(function(item) {
                     $http.get(window.remote + '/api/categories/' + item).then(function(resOne) {
 
                         var category = resOne.data;
@@ -487,8 +486,11 @@ angular
                                 name: category.name,
                                 posts: resTwo.data
                             });
-                            
-                            $rootScope.changeBlogCategory({ name: category.name, posts: resTwo.data} );
+
+                            $rootScope.changeBlogCategory({
+                                name: category.name,
+                                posts: resTwo.data
+                            });
 
                         });
 
@@ -541,13 +543,13 @@ angular
                     $rootScope.blogSlider = res.data.slides;
                 });
 
-                $http.get(window.remote + '/api/vendors/' + $rootScope.featuredVendor.vendor).then(function(res) {
+                $http.get(window.remote + '/api/users/' + $rootScope.featuredVendor.vendor).then(function(res) {
                     $rootScope.featuredVendor.vendor = res.data;
                 });
 
                 $rootScope.site.settings.featuredVendors.forEach(function(id) {
-                    $http.get(window.remote + '/api/vendors/' + id).then(function(resOne) {
-                        $http.get(window.remote + '/api/vendors/' + id + '/reviews').then(function(resTwo) {
+                    $http.get(window.remote + '/api/users/' + id).then(function(resOne) {
+                        $http.get(window.remote + '/api/users/' + id + '/reviews').then(function(resTwo) {
                             resOne.data.reviews = resTwo.data;
                             resOne.data.totalratings = 0;
                             resOne.data.reviews.forEach(function(review) {
@@ -617,7 +619,7 @@ angular
         });
         $rootScope.$on('$stateChangeSuccess', function() {
 
- 
+
             $rootScope.$watch('vendors', function(vendors) {
 
                 if (vendors) {
@@ -625,7 +627,7 @@ angular
 
 
                     vendors.forEach(function(vendor) {
-                        $http.get(window.remote + '/api/vendors/' + vendor.id + '/reviews').then(function(res) {
+                        $http.get(window.remote + '/api/users/' + vendor.id + '/reviews').then(function(res) {
                             vendor.reviews = res.data;
                             vendor.totalratings = 0;
                             vendor.reviews.forEach(function(review) {
@@ -652,21 +654,18 @@ angular
             $rootScope.getPosts();
 
             $rootScope.getVendors();
- 
- 
+
+
             $rootScope.getData();
             $rootScope.user = {};
             $rootScope.vendor = {};
-   $http.get('/credentials').then(function(res){
-  if(res.data.user){
- $rootScope.user.id  = res.data.user.userId;
- $rootScope.user.accessToken = res.data.user.accessToken || res.data.user.access_token;
-}
- if(res.data.vendor) {
- $rootScope.vendor.id = res.data.vendor.vendorId;
- $rootScope.vendor.accessToken = res.data.vendor.accessToken || res.data.user.access_token;
-}
-});
-   
+            $http.get('/credentials').then(function(res) {
+                if (res.data.user) {
+                    $rootScope.user.id = res.data.user.userId;
+                    $rootScope.user.accessToken = res.data.user.accessToken || res.data.user.access_token;
+                }
+            
+            });
+
         });
     });

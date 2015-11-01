@@ -9,7 +9,7 @@
           <a href="{{socialLinks.facebook}}"><i class="icon4"></i></a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">{{user}} the perfect team to make your dreams come true</div>
+      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the perfect team to make your dreams come true</div>
       <div class="col-lg-4 col-md-4 col-sm-7">
         <div class="icon">
           <ul>
@@ -82,13 +82,13 @@
                 </div>
               </div>
 
-              <a class="btn btn-primary btn-large" ng-hide="user.accessToken" ng-click="vendorLogin()">VENDOR LOGIN</a>
 
-              <a class="btn btn-primary btn-large" ng-hide="user.accessToken" ng-click="loginModal()">LOGIN</a>
+              <a class="btn btn-primary btn-large" ng-hide="user.accessToken || vendor.accessToken" ng-click="loginModal()">LOGIN</a>
             </li>
-            <li><a ui-sref="main.signup" ng-hide="user.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
-            <li><a ng-hide="user.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
+            <li><a ui-sref="main.signup" ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
+            <li><a ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
             <li ng-show="user.accessToken"><a  class="btn btn-primary btn-large" ng-click="logoutMethod()">Logout</a></li>
+            <li ng-show="vendor.accessToken"><a  class="btn btn-primary btn-large" ng-click="vendorlogoutMethod()">Logout</a></li>
           </ul>
         </div>
       </div>

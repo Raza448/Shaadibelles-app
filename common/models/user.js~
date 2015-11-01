@@ -55,11 +55,12 @@ UserModel.afterRemote(
 
  UserModel.register = function(body, req, res, callback) {
 
-   var newUser = body;
+
     newUser.email = body.email;
     newUser.name = body.name;
     newUser.usePassword = true;
     newUser.password = body.password;
+    newUser.realm = body.realm;
     stripe.customers.create({
       email: body.email
     }).then(function(customer) {
@@ -68,6 +69,32 @@ UserModel.afterRemote(
         if (err) {
           callback(err);
         } else {
+
+  if(user.realm === 'vendor'){
+app.models.Role.findOne({ 'where' : { 'name' : 'admin' }}, function(err, role ){
+ role.principals.create({
+        principalType: RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+
+        console.log('Created principal:', principal); 
+});
+});
+} else {
+app.models.Role.findOne({ 'where' : { 'name' : 'guest' }}, function(err, role ){
+ role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+
+        console.log('Created principal:', principal); 
+});
+});
+}
+
+ 
 
 
 console.log('> user.afterRemote triggered');
@@ -80,9 +107,13 @@ console.log('> user.afterRemote triggered');
       from: 'noreply@loopback.com',
       subject: 'Thanks for registering.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: '/verified',
       user: user
     };
+    if(user.realm === 'guest'){
+      options.redirect =  '/verified';
+} else {
+     options.redirect =  '/vendorverified';
+}
 
     user.verify(options, function(err, response, next) {
       if (err) return next(err);
@@ -125,5 +156,103 @@ console.log('> user.afterRemote triggered');
       }
     }
   );
+
+
+UserModel.contact = function(body, id, res, callback) {
+    app.models.user.find({ 'where' : { 'id' : id } },function(err, vendors){
+  var vendor = vendors[0];
+ if(err){
+  return callback(err);
+}
+
+ transporter.sendMail({
+    from: 'support@shaadibelles.com',
+    to: vendor.email,
+    subject: 'New Contact request from shaadibelles',
+    text: body.content
+     },function(err, mail){
+  if(err){
+  return callback(err);
+}
+   res.send(mail);
+});
+
+  
+});
+ 
+   
+
+  };
+
+
+  UserModel.remoteMethod(
+    'contact', {
+      accepts: [{
+        arg: 'body',
+        type: 'object',
+        http: {
+          source: 'body'
+        }
+      }, {
+        arg: 'id',
+        type: 'string'
+      }, {
+        arg: 'res',
+        type: 'object',
+        http: {
+          source: 'res'
+        }
+      }],
+      http: {
+        path: '/:id/contact',
+        verb: 'post'
+      }
+    }
+  );
+
+
+ UserModel.subscribe = function(body, res, callback) {
+
+        var userId = body.userId;
+        var data = {
+          source: body.token,
+          plan: '1'
+        }
+
+       
+
+          stripe.customers.createSubscription(userId, data).then(function(
+            subscription) {
+
+             app.models.user.updateAll({ 'where': {'id' : userId}}, { 'subscription' : subscription }, function(err, users){
+                res.status(200).send(subscription);
+             });
+          });
+
+      }
+
+
+      UserModel.remoteMethod(
+        'subscribe', {
+          accepts: [{
+            arg: 'body',
+            type: 'object',
+            http: {
+              source: 'body'
+            }
+          }, {
+            arg: 'res',
+            type: 'object',
+            http: {
+              source: 'res'
+            }
+          }],
+          http: {
+            path: '/subscribe',
+            verb: 'post'
+          }
+        }
+      );
+
 
 };

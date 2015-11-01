@@ -76,7 +76,7 @@ $http.get(window.remote +'/api/users/' + res.data.userId + '/reviews?access_toke
 				$scope.reviews = res.data;
 
                              $scope.reviews.forEach(function(review){
-    $http.get(window.remote +'/api/vendors/' + review.vendorId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
+    $http.get(window.remote +'/api/users/' + review.vendorId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
 				review.vendor = res.data;
 			});
 });

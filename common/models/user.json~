@@ -22,6 +22,16 @@
       "type": "hasMany",
       "model": "review",
       "foreignKey": ""
+    },
+ "reviews": {
+      "type": "hasMany",
+      "model": "review",
+      "foreignKey": ""
+    },
+    "galleries": {
+      "type": "hasOne",
+      "model": "gallery",
+      "foreignKey": ""
     }
   },
   "acls": [
@@ -66,12 +76,12 @@
       "permission": "ALLOW",
       "property": "login"
     },
-  {
+    {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "__find__reviews"
+      "property": "__get__reviews"
     }
   ],
   "methods": {}

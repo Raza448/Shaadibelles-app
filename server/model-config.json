@@ -96,17 +96,6 @@
     "dataSource": "mongodb",
     "public": true
   },
-  "vendor": {
-    "dataSource": "mongodb",
-    "public": true,
- "options": {
-      "emailVerificationRequired": true
-    }
-  },
-  "admin": {
-    "dataSource": "mongodb",
-    "public": true
-  },
   "review": {
     "dataSource": "mongodb",
     "public": true

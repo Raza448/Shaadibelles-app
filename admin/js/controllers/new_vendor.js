@@ -6,6 +6,7 @@ angular.module('sbAdminApp')
     $scope.buttonText = "Create";
    $scope.countries = window.countries;
  $scope.formData = {
+      realm : 'vendor',
       name: null,
       username: null,
       password: null,
@@ -37,7 +38,7 @@ angular.module('sbAdminApp')
     $scope.vendorTypes = window.vendorTypes;
 
     $scope.register = function(vendorData) {
-        var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
         var request = $http.post;
       request(url, vendorData).then(
       function(){

@@ -21,7 +21,12 @@
     "user": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": ""
+      "foreignKey": "userId"
+    },
+    "vendor": {
+      "type": "hasOne",
+      "model": "user",
+      "foreignKey": "vendorId"
     },
     "post": {
       "type": "belongsTo",

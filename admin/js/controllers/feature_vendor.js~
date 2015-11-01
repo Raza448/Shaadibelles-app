@@ -37,19 +37,19 @@ angular.module('sbAdminApp')
 
 $scope.getVendors = function() {
 
-      var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+      var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
 
       $http.get(url)
         .then(function(res) {
-          $scope.vendors = res.data;
+          $scope.vendors = _.where(res.data, {'role' : 'vendor'});
         })
     }
 
  $scope.getVendors();
 
-   $scope.save = function(){
+   $scope.submit = function(){
 	   $scope.saveTxt = 'Saving';
-	   var url = window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+	   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
 	   $http.put(url, {
 		   'featured_vendor' : $scope.featuredVendor,
 

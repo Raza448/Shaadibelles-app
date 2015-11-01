@@ -89,7 +89,7 @@
     "dataSource": "mongodb",
     "public": true
   },
-"Email": {
+ "Email": {
     "dataSource": "emailDs"
   },
   "rating": {
@@ -102,10 +102,6 @@
  "options": {
       "emailVerificationRequired": true
     }
-  },
-  "admin": {
-    "dataSource": "mongodb",
-    "public": true
   },
   "review": {
     "dataSource": "mongodb",

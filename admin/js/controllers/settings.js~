@@ -4,7 +4,7 @@ angular.module('sbAdminApp')
   .controller('SettingsCtrl', function($scope, $http, $location, $rootScope,
     $modal, $modalStack) {
      
-     $scope.types = ['vendor', 'Post', 'Gallery','Category'];
+     $scope.types = ['Vendor', 'Post', 'Gallery','Category'];
    $scope.saveTxt = 'Save';
    
        $scope.getMenus = function(){
@@ -17,9 +17,9 @@ angular.module('sbAdminApp')
     $scope.getMenus();
 
      $scope.getVendors = function(){
-	  var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+	  var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
 	  $http.get(url).then(function(res){
-		  $scope.vendors = res.data;
+		  $scope.vendors = _.where(res.data, { 'role': 'vendor'});
 		  });
     };
 

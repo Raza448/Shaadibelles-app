@@ -6,9 +6,9 @@ angular.module('sbAdminApp')
     $scope.buttonText = "Update";
     $scope.countries = window.countries
     $scope.formData = {
+      realm : 'vendor',
       name: null,
       username: null,
-      password: null,
       email: null,
       vendor : {
 		  category : null,

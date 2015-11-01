@@ -1,19 +1,15 @@
  var app = require('../../server/server');
 var nodemailer = require('nodemailer');
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
+var path = require('path');
 module.exports = function(UserModel) {
 
 UserModel.afterRemote(
       'login',
       function(ctx, ins, next) {
   console.log(ins);
-       ctx.req.session.user = {
-  'userId' : ins.vendorId,
-  'accessToken' : ins.id
-
-};
       ctx.req.session.vendor = {
-  'userId' : ins.vendorId,
+  'userId' : ins.userId,
   'accessToken' : ins.id
 
 };
@@ -27,6 +23,21 @@ var transporter = nodemailer.createTransport({
         pass: 'michaelfaraday'
     }
 });
+
+
+UserModel.afterRemote(
+      'logout',
+      function(ctx, ins, next) {
+      console.log(ins);
+
+       delete ctx.req.session.user;
+       if(ctx.req.session.vendor){
+ delete ctx.req.session.vendor;
+}
+  next();
+
+      });
+
 
 
 UserModel.register = function(body, req, res, callback) {

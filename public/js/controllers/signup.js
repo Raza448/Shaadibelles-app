@@ -17,7 +17,8 @@ angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $
 		var data = {
 		  'email' : user.email,
 		  'username' : user.username,
-		  'password' : user.password
+		  'password' : user.password,
+                  'realm' : 'user'
 		};
   $http.post(url, data).then(function (res) {
 

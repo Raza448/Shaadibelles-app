@@ -30,6 +30,8 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
 			});
 		}
 	};
+
+
 	
 
   $scope.loginModal = function(){
@@ -48,31 +50,10 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
   }
 
 
-	$scope.loginVendorMethod = function(userData) {
-		var url = window.remote + '/api/vendors/login';
-		var data = {
-		  'username': userData.username,
-		  'password': userData.password
-		};
-
-	  $http.post(url, data).then(function(res) {
-
-		  $rootScope.user = {
-			'user' : res.data.userId,
-			'accessToken' : res.data.id, 
-		  };
-             $rootScope.vendor = {
-			'user' : res.data.userId,
-			'accessToken' : res.data.id, 
-		  };
-		$("#vendor-form-content").modal('hide');
-     });
-	};
-
 
 
 $scope.loginandbusiness = function(userData) {
-		var url = window.remote + '/api/vendors/login';
+		var url = window.remote + '/api/users/login';
 		var data = {
 		  'username': userData.username,
 		  'password': userData.password
@@ -81,16 +62,16 @@ $scope.loginandbusiness = function(userData) {
 	  $http.post(url, data).then(function(res) {
 
 		  $rootScope.user = {
-			'user' : res.data.userId,
+			'id' : res.data.userId,
 			'accessToken' : res.data.id, 
 		  };
              $rootScope.vendor = {
-			'user' : res.data.userId,
+			'id' : res.data.userId,
 			'accessToken' : res.data.id, 
 		  };
    $modalStack.dismissAll();
             
-             location.href = '#/main/signuptwo';
+             location.href = '#/main/vendorsignuptwo';
      });
 	};
 

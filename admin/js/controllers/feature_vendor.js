@@ -3,7 +3,7 @@
 angular.module('sbAdminApp')
   .controller('FeatureVendorCtrl', function($scope, $http, $location, $rootScope,
     $modal, $modalStack, File) {
-      $http.get(window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
+      $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
                 if(res.data.featured_vendor){
 		  $scope.featuredVendor = res.data.featured_vendor;
@@ -37,11 +37,11 @@ angular.module('sbAdminApp')
 
 $scope.getVendors = function() {
 
-      var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+      var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
 
       $http.get(url)
         .then(function(res) {
-          $scope.vendors = res.data;
+          $scope.vendors = _.where(res.data, {'role' : 'vendor'});
         })
     }
 
@@ -49,7 +49,7 @@ $scope.getVendors = function() {
 
    $scope.submit = function(){
 	   $scope.saveTxt = 'Saving';
-	   var url = window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+	   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
 	   $http.put(url, {
 		   'featured_vendor' : $scope.featuredVendor,
 

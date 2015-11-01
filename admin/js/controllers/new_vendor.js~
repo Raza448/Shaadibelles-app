@@ -17,9 +17,9 @@ angular.module('sbAdminApp')
 			  email: null,
 			  city : null,
 			  state : null,
-			  country : null
+			  country : null,
+                          phone : null
 			  },
-		  phone : null,
 		  website : null,
 		  social : {
 			  facebook : null,
@@ -37,7 +37,7 @@ angular.module('sbAdminApp')
     $scope.vendorTypes = window.vendorTypes;
 
     $scope.register = function(vendorData) {
-        var url = window.remote + '/api/vendors?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
         var request = $http.post;
       request(url, vendorData).then(
       function(){

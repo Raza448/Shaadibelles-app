@@ -17,8 +17,8 @@
     "callbackURL": "/auth/facebook/callback",
     "authPath": "/auth/facebook",
     "callbackPath": "/auth/facebook/callback",
-    "successRedirect": "http://localhost:3000/",
-    "failureRedirect": "http://shaadibelles.herokuapp.com/",
+    "successRedirect": "http://shaadibelles.herokuapp.com/",
+    "failureRedirect": "http://localhost:3000/",
     "scope": ["email"],
     "failureFlash": true
   }

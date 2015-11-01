@@ -12,7 +12,7 @@ angular.module('sbAdminApp')
     $location) {
     if ($cookieStore.get('SbAdminaccessToken')) {
 	  var Token = $cookieStore.get('SbAdminaccessToken');
-      $http.post(window.remote + '/api/admins/logout?access_token=' + Token).then(function() {
+      $http.post(window.remote + '/api/users/logout?access_token=' + Token).then(function() {
         alert('You are logged out');
         $cookieStore.remove('SbAdminid');
         $cookieStore.remove('SbAdminaccessToken');
@@ -21,7 +21,7 @@ angular.module('sbAdminApp')
     }
 
     $scope.login = function(newuser) {
-      var url = window.remote + '/api/admins/login';
+      var url = window.remote + '/api/users/login';
       var data = {
         'username': newuser.username,
         'password': newuser.password
