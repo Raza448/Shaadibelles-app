@@ -10,6 +10,24 @@
 angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $rootScope, $cookieStore, $location) {
     $scope.submitDisabled = false;
      $rootScope.showSelect = false;
+ alert();
+ $scope.newpassword = null;
+    $scope.confirmpassword = null;
+var query = $location.search();
+  $scope.userId = query.id;
+  $scope.token = query.access_token;
+ 
+    $scope.changepassword = function(password){
+
+  if(password === $scope.confirmpassword){
+ var data = {
+  'password' : password 
+}
+ $http.put( window.remote + '/api/users/' + $scope.userId + '?access_token=' + $scope.token, data).then(function(res){
+ $scope.resetconfirm = true;
+});
+}
+}
     $scope.signup = function (user) {
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;
@@ -17,7 +35,8 @@ angular.module('sbFrontEnd').controller('SignupCtrl', function ($scope, $http, $
 		var data = {
 		  'email' : user.email,
 		  'username' : user.username,
-		  'password' : user.password
+		  'password' : user.password,
+                  'realm' : 'guest'
 		};
   $http.post(url, data).then(function (res) {
 

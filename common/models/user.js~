@@ -1,6 +1,7 @@
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 var session = require('express-session');
 var path = require('path');
+var app = require('../../server/server');
 
 module.exports = function(UserModel) {
 
@@ -9,13 +10,13 @@ module.exports = function(UserModel) {
 
   //send password reset link when requested
   UserModel.on('resetPasswordRequest', function(info) {
-    var url = 'http://' + config.host + ':' + config.port + '/reset-password';
-    var html = 'Click <a href="' + url + '?access_token=' +
+    var url = 'http://' + 'shaadibelles.herokuapp.com' + '/#/main/reset';
+    var html = 'Click <a href="' + url + '?id=' + info.accessToken.userId + 'access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 
     UserModel.app.models.Email.send({
       to: info.email,
-      from: info.email,
+      from: 'support@herokuapp.com',
       subject: 'Password reset',
       html: html
     }, function(err) {
@@ -55,7 +56,7 @@ UserModel.afterRemote(
 
  UserModel.register = function(body, req, res, callback) {
 
-
+    var newUser = body;
     newUser.email = body.email;
     newUser.name = body.name;
     newUser.usePassword = true;
@@ -66,6 +67,7 @@ UserModel.afterRemote(
     }).then(function(customer) {
       newUser.id = customer.id;
       UserModel.create(newUser, function(err, user) {
+     console.log(user);       
         if (err) {
           callback(err);
         } else {
@@ -109,10 +111,10 @@ console.log('> user.afterRemote triggered');
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
       user: user
     };
-    if(user.realm === 'guest'){
-      options.redirect =  '/verified';
+    if(user.realm === 'vendor'){
+      options.redirect =  '/vendorverified';
 } else {
-     options.redirect =  '/vendorverified';
+     options.redirect =  '/verified';
 }
 
     user.verify(options, function(err, response, next) {

@@ -28,7 +28,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="text" placeholder="Username" ng-model="userData.username" /></div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="password" placeholder="Password" ng-model="userData.password" /></div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="submit" value="LOGIN" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><a href="#">FORGET PASSWORD?</a></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><a href="#" ng-click="reset()">FORGET PASSWORD?</a></div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -48,9 +48,23 @@
                 </div>
               </div>
 
- <div id="vendor-form-content" class="modal hide fade in" style="display: none;">
+ <div id="form-reset-content" class="modal hide fade in" style="display: none;">
                 <div class="modal-body">
-                  <form class="login-form" name="contact" ng-submit="loginVendorMethod(userData)">
+<form class="login-form" name="contact" ng-show="resetSent">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                      <h3>PASSWORD RESET EMAIL SENT</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                      <h1>Wedding Belles are in the air!</h1>
+                    </div>
+                   
+
+                   
+                   
+                    <div class="clearfix"></div>
+                  </form>    
+                  
+                  <form class="login-form" name="contact" ng-submit="resetpassword(email)" ng-hide="resetSent">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                       <h3>WELCOME BACK</h3>
                     </div>
@@ -59,22 +73,21 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="col-lg-6 col-md-6 col-sm-6 border-right">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="text" placeholder="Username" ng-model="userData.username" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="password" placeholder="Password" ng-model="userData.password" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="submit" value="LOGIN" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><a href="#">FORGET PASSWORD?</a></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="email" placeholder="Email" ng-model="email" /></div>
+                      
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="submit" value="RESET PASSWORD" /></div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="col-lg-12 col-md-12 col-sm-12"><img src="public/images/f_heart.png" alt="" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12"><a href="/auth/facebook"><input type="button" value="LOGIN FACEBOOK" /></a></div>
+
                       </div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <h4>Don't have an account with us? No problem.</h4>
                     </div>
-                    <a href="#/main/vendorsignup">
+                    <a ng-click="signupredirect()" href="">
                       <div class="col-lg-12 col-md-12 col-sm-12"><span>Register</span></div>
                     </a>
                     <div class="clearfix"></div>
@@ -82,13 +95,14 @@
                 </div>
               </div>
 
+ 
+
 
               <a class="btn btn-primary btn-large" ng-hide="user.accessToken || vendor.accessToken" ng-click="loginModal()">LOGIN</a>
             </li>
             <li><a ui-sref="main.signup" ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
             <li><a ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
             <li ng-show="user.accessToken"><a  class="btn btn-primary btn-large" ng-click="logoutMethod()">Logout</a></li>
-            <li ng-show="vendor.accessToken"><a  class="btn btn-primary btn-large" ng-click="vendorlogoutMethod()">Logout</a></li>
           </ul>
         </div>
       </div>

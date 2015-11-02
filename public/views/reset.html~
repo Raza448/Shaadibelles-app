@@ -1,0 +1,63 @@
+
+<!----------->
+<div class="content" >
+  <!---->
+  <div class="container" >
+    <div class="sign-up col-md-12 col-lg-12 col-sm-12" style="margin-top : 400px;">
+      <div class="sign-up-inner col-md-12 col-lg-12 col-sm-12">
+       
+       
+        
+<div class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c" style="margin-top: 20px;" ng-hide="resetconfirm">
+
+                <h6>FILL PASSWORD AND CONFIRM PASSWORD AND SUBMIT TO RESET PASSWORD.</h6>
+              </div>
+<div class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c" style="margin-top: 20px;" ng-show="resetconfirm">
+
+                <h6>PASSWORD CHANGED PLEASE LOGIN</h6>
+              </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>
+        <form class="form" role="form" ng-submit="changepassword(password)" ng-hide="resetconfirm">
+          <div class="col-md-offset-1 col-lg-offset-1 col-md-10 col-lg-10 col-sm-12">
+            <div class="col-md-7 col-lg-7 col-sm-7">
+              <div class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c">
+                <i class="heartin">1</i>
+              </div>
+              <div class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c">
+                <h6>SIGN UP TO SEARCH, SAVE & SHARE YOUR SOUTH ASIAN INSPIRATION.</h6>
+              </div>
+            
+            </div>
+            <div class="col-md-5 col-lg-5 col-sm-5">
+               <div class="col-md-12">
+                <span ng-repeat="er in err">{{er}}</span>
+              </div>
+              <div class="col-md-12 col-lg-12 col-sm-12">
+                <input type="password" class="form-input" placeholder="Password" required ng-model="password" required/>
+              </div>
+              <div class="col-md-12 col-lg-12 col-sm-12">
+                <input type="password" class="form-input" placeholder="Re-enter Password" required ng-model="confirmPassword"  required/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>
+          <div class="col-md-offset-1 col-lg-offset-1 col-md-10 col-lg-10 col-sm-12">
+            <div class="col-md-offset-1 col-md-5 col-lg-5 col-sm-5">
+
+            </div>
+            <div class="col-md-1 col-lg-1 col-sm-1"></div>
+            <div class="col-md-5 col-lg-5 col-sm-5">
+              <div class="col-md-10 col-lg-10 col-sm-10 text-center">
+                <input type="submit" value="RESET PASSWORD">
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

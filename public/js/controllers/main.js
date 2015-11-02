@@ -38,9 +38,22 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
    		$("#form-content").modal('show');
   }
 
-  $scope.vendorLogin = function(){
-   		$("#vendor-form-content").modal('show');
+ $scope.reset = function(){
+   		$("#form-reset-content").modal('show');
+   		$("#form-content").modal('hide');
   }
+
+
+ $scope.resetpassword = function(email){
+   var data = {
+  'email' : email
+ }
+  $http.post( window.remote + '/api/users/reset', data).then(function(res){
+  $scope.resetSent = true;
+
+});
+}
+  
 
 
 

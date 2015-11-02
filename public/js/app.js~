@@ -337,6 +337,21 @@ angular
             }
         })
 
+ .state('main.reset', {
+            url: '/reset',
+            controller: 'SignupCtrl',
+            templateUrl: 'public/views/reset.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
+
 
         .state('main.vendormaintwo', {
             url: '/vendormaintwo',
@@ -664,10 +679,7 @@ angular
                     $rootScope.user.id = res.data.user.userId;
                     $rootScope.user.accessToken = res.data.user.accessToken || res.data.user.access_token;
                 }
-                if (res.data.vendor) {
-                    $rootScope.vendor.id = res.data.vendor.userId;
-                    $rootScope.vendor.accessToken = res.data.vendor.accessToken || res.data.user.access_token;
-                }
+            
             });
 
         });

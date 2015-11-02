@@ -337,6 +337,21 @@ angular
             }
         })
 
+ .state('main.reset', {
+            url: '/reset',
+            controller: 'SignupCtrl',
+            templateUrl: 'public/views/reset.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/signup.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
+
 
         .state('main.vendormaintwo', {
             url: '/vendormaintwo',
