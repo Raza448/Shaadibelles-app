@@ -128,7 +128,7 @@ app.get('/credentials', function (req, res, next) {
   var user = {};
 console.log(req);
   if(req.user && req.signedCookies.access_token){
-  var user = { 'userId' : req.signedCookies.userid, 'accessToken': req.signedCookies.access_token };
+  var user = { 'userId' : req.signedCookies.userId, 'accessToken': req.signedCookies.access_token };
 }
 
   res.status(200).send(user);
@@ -157,6 +157,12 @@ app.start = function() {
 		app.emit('started');
 		console.log('Web server listening at: %s', app.get('url'));
 
+app.models.Role.findOne({where: {name: 'admin'} }, function(err, adminRole) {
+  if(adminRole){
+adminRole.users(function(err, users) {
+    if(users.length >=  0){
+  return users;
+} else {
 app.models.user.create(
 {
    
@@ -250,6 +256,108 @@ app.models.user.create(
       });
     });
 });
+}
+  });
+} else {
+app.models.user.create(
+{
+   
+    "username": "admin",
+    "password": "helloworld",
+    "email": "support@shaadibelles.com",
+    "emailVerified": true,
+    "status": "active",
+    "settings": {
+        "live": true,
+        "title": "shaadibelles",
+        "address": null,
+        "email": null,
+        "slider": null,
+        "menu": null,
+        "category": null,
+        "widgets": [
+        ],
+        "footerMenu": null,
+        "footerMenuTwo": null,
+        "recommended": [
+        ],
+        "featuredVendors": [
+      
+        ],
+        "blog": {
+            "smallWidgets": [
+            
+            ],
+            "mediumWidgets": [
+              
+            ],
+            "bigWidgets": [
+             
+            ],
+            "categories": [
+              
+            ],
+            "slider": null
+        }
+    },
+    "social": {
+        "facebook": null,
+        "twitter": null,
+        "youtube": null,
+        "pinterest": null
+    },
+    "featured_vendor": {
+        "title": null,
+        "description": null ,
+        "slides": [
+        
+        ],
+        "vendor": null
+    }
+}, function(err, user){
+      app.models.Role.create({
+      name: 'admin'
+    }, function(err, role) {
+      if (err) throw err;
+
+      console.log('Created role:', role);
+
+      //make bob an admin
+      role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+
+        console.log('Created principal:', principal);
+
+
+    app.models.Role.create({
+      name: 'guest'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+ app.models.Role.create({
+      name: 'vendor'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+
+
+
+      });
+    });
+});
+}
+});
+
+
+
+
 	});
 };
 
