@@ -33,7 +33,7 @@
           <p>Share and spread the love! Our site will only get better with your contributions. Drop us a line and send us your pictures, article ideas, opinions and questions. We love feedback, and we promise to get back to you! </p>
         </div>
         
-<div class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c" style="margin-top: 20px;">
+<div ng-show="verification" class="col-md-8 col-lg-8 col-sm-8 col-lg-offset-2 col-md-offset-2 txt-align-c" style="margin-top: 20px;">
 
                 <h6>VERIFICATION EMAIL SENT, PLEASE CHECK YOUR INBOX.</h6>
               </div>

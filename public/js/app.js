@@ -19,7 +19,8 @@ angular
         'ngFileUpload',
         'angular.filter',
         'wu.masonry',
-        'angularPayments'
+        'angularPayments',
+        'angular-loading-bar'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
         $ocLazyLoadProvider.config({
@@ -675,9 +676,9 @@ angular
             $rootScope.user = {};
             $rootScope.vendor = {};
             $http.get('/credentials').then(function(res) {
-                if (res.data.user) {
-                    $rootScope.user.id = res.data.user.userId;
-                    $rootScope.user.accessToken = res.data.user.accessToken || res.data.user.access_token;
+                if (res.data) {
+                    $rootScope.user.id = res.data.userId;
+                    $rootScope.user.accessToken = res.data.accessToken || res.data.access_token;
                 }
             
             });

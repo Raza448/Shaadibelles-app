@@ -1,3 +1,9 @@
+<style>
+#loading-bar .bar {
+  top: 175px;
+  height: 5px;
+}
+</style>
 <div class="header" id="home" ng-controller="MainCtrl">
   <div class="header-top" ng-hide="">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -16,7 +22,7 @@
             <li>
               <div id="form-content" class="modal hide fade in" style="display: none;">
                 <div class="modal-body">
-                  <form class="login-form" name="contact" ng-submit="loginMethod(userData)">
+                  <form class="login-form" name="contact" action="/auth/local" method="post">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                       <h3>WELCOME BACK</h3>
                     </div>
@@ -25,8 +31,8 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="col-lg-6 col-md-6 col-sm-6 border-right">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="text" placeholder="Username" ng-model="userData.username" /></div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="password" placeholder="Password" ng-model="userData.password" /></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input name="username" type="text" placeholder="Username" ng-model="userData.username" /></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input name="password" type="password" placeholder="Password" ng-model="userData.password" /></div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="submit" value="LOGIN" /></div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><a href="#" ng-click="reset()">FORGET PASSWORD?</a></div>
                         <div class="clearfix"></div>
@@ -73,7 +79,7 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="col-lg-6 col-md-6 col-sm-6 border-right">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="email" placeholder="Email" ng-model="email" /></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input style="color: #000000;" type="email" placeholder="Email" ng-model="email" /></div>
                       
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8"><input type="submit" value="RESET PASSWORD" /></div>
                         <div class="clearfix"></div>
@@ -102,7 +108,7 @@
             </li>
             <li><a ui-sref="main.signup" ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large">SIGN UP</a></li>
             <li><a ng-hide="user.accessToken || vendor.accessToken" class="btn btn-primary btn-large" href="#/main/vendorsignup">ARE YOU A VENDOR?</a></li>
-            <li ng-show="user.accessToken"><a  class="btn btn-primary btn-large" ng-click="logoutMethod()">Logout</a></li>
+            <li ng-show="user.accessToken"><a  class="btn btn-primary btn-large" href="/auth/logout">Logout</a></li>
           </ul>
         </div>
       </div>
