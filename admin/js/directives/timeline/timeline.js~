@@ -7,12 +7,10 @@
  * # adminPosHeader
  */
 angular.module('sbAdminApp')
-	.directive('header',function(){
-		return {
-        templateUrl:'admin/js/directives/header/header.html',
+	.directive('timeline',function() {
+    return {
+        templateUrl:'js/directives/timeline/timeline.html',
         restrict: 'E',
         replace: true,
-    	}
-	});
-
-
+    }
+  });

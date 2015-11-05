@@ -39,22 +39,19 @@ angular
     $stateProvider
       .state('dashboard', {
         url:'/dashboard',
-        templateUrl: 'views/dashboard/main.html',
+        templateUrl: 'admin/views/dashboard/main.html',
         resolve: {
-			 auth: function(Auth){
-             return Auth.user();
-				},
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
                     name:'sbAdminApp',
                     files:[
-                    'js/directives/header/header.js',
-                    'js/directives/header/header-notification/header-notification.js',
-                    'js/directives/sidebar/sidebar.js',
-                    'js/directives/sidebar/sidebar-search/sidebar-search.js',
-                    'js/controllers/dashboard.js',
-                    'js/services/file.js'
+                    'admin/js/directives/header/header.js',
+                    'admin/js/directives/header/header-notification/header-notification.js',
+                    'admin/js/directives/sidebar/sidebar.js',
+                    'admin/js/directives/sidebar/sidebar-search/sidebar-search.js',
+                    'admin/js/controllers/dashboard.js',
+                    'admin/js/services/file.js'
 
                     ]
                 }),
@@ -91,17 +88,17 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'DashboardCtrl',
-        templateUrl:'views/dashboard/home.html',
+        templateUrl:'admin/views/dashboard/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/dashboard.js',
-              'js/directives/timeline/timeline.js',
-              'js/directives/notifications/notifications.js',
-              'js/directives/chat/chat.js',
-              'js/directives/dashboard/stats/stats.js'
+              'admin/js/controllers/dashboard.js',
+              'admin/js/directives/timeline/timeline.js',
+              'admin/js/directives/notifications/notifications.js',
+              'admin/js/directives/chat/chat.js',
+              'admin/js/directives/dashboard/stats/stats.js'
               ]
             })
           }
@@ -736,13 +733,11 @@ angular
           .state('login',{
        templateUrl:'views/pages/login.html',
        url:'/login',
-       controller: 'LoginCtrl',
        resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/login.js',
               'js/window.js'
               ]
             })
@@ -756,8 +751,9 @@ angular
     });
     $rootScope.$on('$stateChangeSuccess', function() {
       $rootScope.user = {};
-      $rootScope.user.id = $cookieStore.get('SbAdminid');
-      $rootScope.user.accessToken = $cookieStore.get('SbAdminaccessToken');
+       $http.get('/credentials').then(function(res){
+  $rootScope.user = res.data;
+});
       $rootScope.detaults = window.defaults;
     });
   });

@@ -9,7 +9,7 @@
 angular.module('sbAdminApp')
 	.directive('chat',function(){
 		return {
-        templateUrl:'js/directives/chat/chat.html',
+        templateUrl:'admin/js/directives/chat/chat.html',
         restrict: 'E',
         replace: true,
     	}

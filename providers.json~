@@ -9,6 +9,16 @@
     "failureRedirect": "/",
     "failureFlash": true
   },
+ "local-admin": {
+    "provider": "local",
+    "module": "passport-local",
+    "usernameField": "username",
+    "passwordField": "password",
+    "authPath": "/auth/admin",
+    "successRedirect": "/admin",
+    "failureRedirect": "/#/main/blog",
+    "failureFlash": true
+  },
   "facebook-login": {
     "provider": "facebook",
     "module": "passport-facebook",

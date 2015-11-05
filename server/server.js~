@@ -47,8 +47,9 @@ boot(app, __dirname);
 
 app.use("/public", loopback.static(__dirname + "/../public"));
 
-app.use("/admin", loopback.static(__dirname + "/../admin"));
-
+app.use("/admin/js", loopback.static(__dirname + "/../admin/js"));
+app.use("/admin/css", loopback.static(__dirname + "/../admin/css"));
+app.use("/admin/views", loopback.static(__dirname + "/../admin/views"));
 app.use("/components", loopback.static(__dirname + "/../components"));
 
  var ds = app.loopback.createDataSource({
@@ -101,14 +102,43 @@ for (var s in config) {
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 app.get('/', function (req, res) {
-
+ 
   fs.createReadStream('public/index.html').pipe(res);
 });
 
 
+
 app.get('/admin', function (req, res) {
-  fs.createReadStream('admin/index.html').pipe(res);
+ if(req.user){
+app.models.Role.getRoles({principalType: app.models.RoleMapping.USER, principalId: req.user.id}, function(err, roles) {
+
+
+  app.models.Role.findOne({'where' : {'id' : roles[2]}}, function(err, r){
+  if(err){
+return console.log(err);
+  res.redirect('/');
+}
+if(r){
+if(r.name === 'admin'){
+  console.log(r.name);
+    fs.createReadStream('admin/index.html').pipe(res);
+}
+}
+ 
 });
+
+
+  });
+} else {
+  res.redirect('/');
+}
+
+});
+
+app.get('/admintest', function (req, res) {
+   fs.createReadStream('admin/index.html').pipe(res);
+});
+
 
 app.get('/verified', function (req, res) {
   res.redirect('/#/main/verified');
@@ -126,7 +156,6 @@ app.get('/auth/logout', function (req, res, next) {
 
 app.get('/credentials', function (req, res, next) {
   var user = {};
-console.log(req);
   if(req.user && req.signedCookies.access_token){
   var user = { 'userId' : req.signedCookies.userId, 'accessToken': req.signedCookies.access_token };
 }

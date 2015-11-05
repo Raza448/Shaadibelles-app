@@ -9,7 +9,7 @@
 angular.module('sbAdminApp')
 	.directive('timeline',function() {
     return {
-        templateUrl:'js/directives/timeline/timeline.html',
+        templateUrl:'admin/js/directives/timeline/timeline.html',
         restrict: 'E',
         replace: true,
     }

@@ -7,9 +7,9 @@
  * # adminPosHeader
  */
 angular.module('sbAdminApp')
-	.directive('header',function(){
+	.directive('notifications',function(){
 		return {
-        templateUrl:'admin/js/directives/header/header.html',
+        templateUrl:'js/directives/notifications/notifications.html',
         restrict: 'E',
         replace: true,
     	}

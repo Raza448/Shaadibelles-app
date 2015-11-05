@@ -6,7 +6,17 @@
     "passwordField": "password",
     "authPath": "/auth/local",
     "successRedirect": "/",
-    "failureRedirect": "/#/main/blog",
+    "failureRedirect": "/",
+    "failureFlash": true
+  },
+ "local-admin": {
+    "provider": "local",
+    "module": "passport-local",
+    "usernameField": "username",
+    "passwordField": "password",
+    "authPath": "/auth/admin",
+    "successRedirect": "/admin",
+    "failureRedirect": "/admin",
     "failureFlash": true
   },
   "facebook-login": {

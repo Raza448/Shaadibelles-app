@@ -9,7 +9,7 @@
 angular.module('sbAdminApp')
 	.directive('notifications',function(){
 		return {
-        templateUrl:'js/directives/notifications/notifications.html',
+        templateUrl:'admin/js/directives/notifications/notifications.html',
         restrict: 'E',
         replace: true,
     	}
