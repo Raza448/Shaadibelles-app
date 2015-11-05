@@ -88,7 +88,7 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'DashboardCtrl',
-        templateUrl:'views/dashboard/home.html',
+        templateUrl:'admin/views/dashboard/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -105,7 +105,7 @@ angular
         }
       })
       .state('dashboard.users',{
-        templateUrl:'views/dashboard/user/users.html',
+        templateUrl:'admin/views/dashboard/user/users.html',
         url:'/users',
         controller: "UsersCtrl",
         resolve: {
@@ -113,15 +113,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/users.js',
-              'js/window.js'
+              'admin/js/controllers/users.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
     })
     .state('dashboard.new-user',{
-        templateUrl:'views/dashboard/user/create_user.html',
+        templateUrl:'admin/views/dashboard/user/create_user.html',
         url:'/new-user',
         controller: "NewUserCtrl",
         resolve: {
@@ -129,15 +129,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_user.js',
-              'js/window.js'
+              'admin/js/controllers/new_user.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
     })
     .state('dashboard.edit-user',{
-        templateUrl:'views/dashboard/user/create_user.html',
+        templateUrl:'admin/views/dashboard/user/create_user.html',
         url:'/edit-user',
         controller: "EditUserCtrl",
         resolve: {
@@ -145,15 +145,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_user.js',
-              'js/window.js'
+              'admin/js/controllers/edit_user.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
     })
   .state('dashboard.social',{
-        templateUrl:'views/dashboard/blog/social.html',
+        templateUrl:'admin/views/dashboard/blog/social.html',
         url:'/social',
         controller: "SocialCtrl",
         resolve: {
@@ -161,8 +161,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/social.js',
-              'js/window.js'
+              'admin/js/controllers/social.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -170,7 +170,7 @@ angular
     })    
 
   .state('dashboard.vendors',{
-        templateUrl:'views/dashboard/user/vendors.html',
+        templateUrl:'admin/views/dashboard/user/vendors.html',
         url:'/vendors',
         controller: "VendorsCtrl",
         resolve: {
@@ -178,15 +178,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/vendors.js',
-              'js/window.js'
+              'admin/js/controllers/vendors.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
     })
     .state('dashboard.new-vendor',{
-        templateUrl:'views/dashboard/user/create_vendor.html',
+        templateUrl:'admin/views/dashboard/user/create_vendor.html',
         url:'/new-vendor',
         controller: "NewVendorCtrl",
         resolve: {
@@ -194,15 +194,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_vendor.js',
-              'js/window.js'
+              'admin/js/controllers/new_vendor.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
     })
     .state('dashboard.edit-vendor',{
-        templateUrl:'views/dashboard/user/create_vendor.html',
+        templateUrl:'admin/views/dashboard/user/create_vendor.html',
         url:'/edit-vendor',
         controller: "EditVendorCtrl",
         resolve: {
@@ -210,8 +210,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_vendor.js',
-              'js/window.js'
+              'admin/js/controllers/edit_vendor.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -236,7 +236,7 @@ angular
     })
 
       .state('dashboard.posts',{
-        templateUrl:'views/dashboard/blog/posts.html',
+        templateUrl:'admin/views/dashboard/blog/posts.html',
         controller: 'PostsCtrl',
         url:'/posts',
         resolve: {
@@ -244,8 +244,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/posts.js',
-              'js/window.js'
+              'admin/js/controllers/posts.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -253,7 +253,7 @@ angular
     })
 
       .state('dashboard.categories',{
-        templateUrl:'views/dashboard/blog/categories.html',
+        templateUrl:'admin/views/dashboard/blog/categories.html',
         url:'/categories',
         controller: 'CategoriesCtrl',
         resolve: {
@@ -261,14 +261,14 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/categories.js',
-              'js/window.js'              ]
+              'admin/js/controllers/categories.js',
+              'admin/js/window.js'              ]
             })
           }
         }
     })
     .state('dashboard.new-category',{
-      templateUrl:'views/dashboard/blog/category_details.html',
+      templateUrl:'admin/views/dashboard/blog/category_details.html',
       url:'/new-category',
       controller: 'NewCategoryCtrl',
       resolve: {
@@ -276,14 +276,14 @@ angular
           return $ocLazyLoad.load({
             name:'sbAdminApp',
             files:[
-            'js/controllers/create_category.js',
-            'js/window.js'              ]
+            'admin/js/controllers/create_category.js',
+            'admin/js/window.js'              ]
           })
         }
       }
   })
   .state('dashboard.edit-category',{
-    templateUrl:'views/dashboard/blog/category_details.html',
+    templateUrl:'admin/views/dashboard/blog/category_details.html',
     url:'/edit-category',
     controller : 'EditCategoryCtrl',
     resolve: {
@@ -291,8 +291,8 @@ angular
         return $ocLazyLoad.load({
           name:'sbAdminApp',
           files:[
-          'js/controllers/edit_category.js',
-          'js/window.js'              ]
+          'admin/js/controllers/edit_category.js',
+          'admin/js/window.js'              ]
         })
       }
     }
@@ -300,7 +300,7 @@ angular
 
 
 .state('dashboard.pages',{
-        templateUrl:'views/dashboard/blog/pages.html',
+        templateUrl:'admin/views/dashboard/blog/pages.html',
         url:'/pages',
         controller: 'PagesCtrl',
         resolve: {
@@ -308,14 +308,14 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/pages.js',
-              'js/window.js'              ]
+              'admin/js/controllers/pages.js',
+              'admin/js/window.js'              ]
             })
           }
         }
     })
     .state('dashboard.new-page',{
-      templateUrl:'views/dashboard/blog/page_details.html',
+      templateUrl:'admin/views/dashboard/blog/page_details.html',
       url:'/new-page',
       controller: 'NewPageCtrl',
       resolve: {
@@ -323,14 +323,14 @@ angular
           return $ocLazyLoad.load({
             name:'sbAdminApp',
             files:[
-            'js/controllers/new_page.js',
-            'js/window.js'              ]
+            'admin/js/controllers/new_page.js',
+            'admin/js/window.js'              ]
           })
         }
       }
   })
   .state('dashboard.edit-page',{
-    templateUrl:'views/dashboard/blog/page_details.html',
+    templateUrl:'admin/views/dashboard/blog/page_details.html',
     url:'/edit-page',
     controller : 'EditPageCtrl',
     resolve: {
@@ -338,8 +338,8 @@ angular
         return $ocLazyLoad.load({
           name:'sbAdminApp',
           files:[
-          'js/controllers/edit_page.js',
-          'js/window.js'              ]
+          'admin/js/controllers/edit_page.js',
+          'admin/js/window.js'              ]
         })
       }
     }
@@ -347,22 +347,22 @@ angular
 
 
       .state('dashboard.profile',{
-       templateUrl:'views/admin/profile_edit.html',
+       templateUrl:'admin/views/admin/profile_edit.html',
        url:'/profile',
        resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/profile.js',
-              'js/window.js'
+              'admin/js/controllers/profile.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
      .state('dashboard.new-widget',{
-       templateUrl:'views/dashboard/appearance/widget_details.html',
+       templateUrl:'admin/views/dashboard/appearance/widget_details.html',
        url:'/new-widget',
        controller: 'NewWidgetCtrl',
        resolve: {
@@ -370,8 +370,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_widget.js',
-              'js/window.js'
+              'admin/js/controllers/new_widget.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -379,7 +379,7 @@ angular
    })
 
   .state('dashboard.edit-widget',{
-       templateUrl:'views/dashboard/appearance/widget_details.html',
+       templateUrl:'admin/views/dashboard/appearance/widget_details.html',
        url:'/edit-widget',
        controller: 'EditWidgetCtrl',
        resolve: {
@@ -387,8 +387,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_widget.js',
-              'js/window.js'
+              'admin/js/controllers/edit_widget.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -396,7 +396,7 @@ angular
    })
 
  .state('dashboard.feature-vendor',{
-       templateUrl:'views/dashboard/appearance/feature_vendor.html',
+       templateUrl:'admin/views/dashboard/appearance/feature_vendor.html',
        url:'/feature_vendor',
        controller: 'FeatureVendorCtrl',
        resolve: {
@@ -404,8 +404,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/feature_vendor.js',
-              'js/window.js'
+              'admin/js/controllers/feature_vendor.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -414,7 +414,7 @@ angular
 
 
   .state('dashboard.widgets',{
-       templateUrl:'views/dashboard/appearance/widgets.html',
+       templateUrl:'admin/views/dashboard/appearance/widgets.html',
        url:'/widgets',
        controller: 'WidgetsCtrl',
        resolve: {
@@ -422,8 +422,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/widgets.js',
-              'js/window.js'
+              'admin/js/controllers/widgets.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -431,7 +431,7 @@ angular
    })
 
      .state('dashboard.new-slider',{
-       templateUrl:'views/dashboard/appearance/slider_details.html',
+       templateUrl:'admin/views/dashboard/appearance/slider_details.html',
        url:'/new-slider',
        controller: 'NewSliderCtrl',
        resolve: {
@@ -439,8 +439,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_slider.js',
-              'js/window.js'
+              'admin/js/controllers/new_slider.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -448,7 +448,7 @@ angular
    })
 
   .state('dashboard.edit-slider',{
-       templateUrl:'views/dashboard/appearance/slider_details.html',
+       templateUrl:'admin/views/dashboard/appearance/slider_details.html',
        url:'/edit-slider',
        controller: 'EditSliderCtrl',
        resolve: {
@@ -456,8 +456,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_slider.js',
-              'js/window.js'
+              'admin/js/controllers/edit_slider.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -465,7 +465,7 @@ angular
    })
 
   .state('dashboard.sliders',{
-       templateUrl:'views/dashboard/appearance/sliders.html',
+       templateUrl:'admin/views/dashboard/appearance/sliders.html',
        url:'/sliders',
        controller: 'SlidersCtrl',
        resolve: {
@@ -473,8 +473,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/sliders.js',
-              'js/window.js'
+              'admin/js/controllers/sliders.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -482,7 +482,7 @@ angular
    })
 
  .state('dashboard.vendor-profile',{
-       templateUrl:'views/dashboard/user/reviews.html',
+       templateUrl:'admin/views/dashboard/user/reviews.html',
        url:'/vendor-reviews',
        controller: 'ReviewsCtrl',
        resolve: {
@@ -490,8 +490,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/reviews.js',
-              'js/window.js'
+              'admin/js/controllers/reviews.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -501,7 +501,7 @@ angular
 
    
        .state('dashboard.menus',{
-       templateUrl:'views/dashboard/appearance/menus.html',
+       templateUrl:'admin/views/dashboard/appearance/menus.html',
        url:'/menus',
        controller: 'MenusCtrl',
        resolve: {
@@ -509,15 +509,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/menus.js',
-              'js/window.js'
+              'admin/js/controllers/menus.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
           .state('dashboard.new-post',{
-       templateUrl:'views/dashboard/blog/create_post.html',
+       templateUrl:'admin/views/dashboard/blog/create_post.html',
        url:'/new-post',
        controller: 'NewPostCtrl',
        resolve: {
@@ -525,15 +525,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_post.js',
-              'js/window.js'
+              'admin/js/controllers/new_post.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
           .state('dashboard.edit-post',{
-       templateUrl:'views/dashboard/blog/create_post.html',
+       templateUrl:'admin/views/dashboard/blog/create_post.html',
        url:'/edit-post',
        controller: 'EditPostCtrl',
        resolve: {
@@ -541,8 +541,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_post.js',
-              'js/window.js'
+              'admin/js/controllers/edit_post.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -550,7 +550,7 @@ angular
    })
 
           .state('dashboard.new-review',{
-       templateUrl:'views/dashboard/user/create_review.html',
+       templateUrl:'admin/views/dashboard/user/create_review.html',
        url:'/new-review',
        controller: 'NewReviewCtrl',
        resolve: {
@@ -558,15 +558,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_review.js',
-              'js/window.js'
+              'admin/js/controllers/new_review.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
           .state('dashboard.edit-review',{
-       templateUrl:'views/dashboard/user/create_review.html',
+       templateUrl:'admin/views/dashboard/user/create_review.html',
        url:'/edit-review',
        controller: 'EditReviewCtrl',
        resolve: {
@@ -574,8 +574,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_review.js',
-              'js/window.js'
+              'admin/js/controllers/edit_review.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -583,7 +583,7 @@ angular
    })
 
       .state('dashboard.contact',{
-       templateUrl:'views/dashboard/settings/contact.html',
+       templateUrl:'admin/views/dashboard/settings/contact.html',
        url:'/contact',
        controller: 'SiteInfoCtrl',
        resolve: {
@@ -591,8 +591,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/site_info.js',
-              'js/window.js'
+              'admin/js/controllers/site_info.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -600,7 +600,7 @@ angular
    })
 
     .state('dashboard.new-menu',{
-       templateUrl:'views/dashboard/appearance/menu_details.html',
+       templateUrl:'admin/views/dashboard/appearance/menu_details.html',
        url:'/new-menu',
        controller: 'NewMenuCtrl',
        resolve: {
@@ -608,15 +608,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/new_menu.js',
-              'js/window.js'
+              'admin/js/controllers/new_menu.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
       .state('dashboard.edit-menu',{
-       templateUrl:'views/dashboard/appearance/menu_details.html',
+       templateUrl:'admin/views/dashboard/appearance/menu_details.html',
        url:'/edit-menu',
        controller: 'EditMenuCtrl',
        resolve: {
@@ -624,8 +624,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/edit_menu.js',
-              'js/window.js'
+              'admin/js/controllers/edit_menu.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -634,7 +634,7 @@ angular
 
  
     .state('dashboard.adverts',{
-        templateUrl:'views/dashboard/settings/adverts.html',
+        templateUrl:'admin/views/dashboard/settings/adverts.html',
         url:'/adverts',
         controller: 'AdvertsCtrl',
         resolve: {
@@ -642,15 +642,15 @@ angular
              return $ocLazyLoad.load({
                name:'sbAdminApp',
                files:[
-               'js/controllers/adverts.js',
-               'js/window.js'
+               'admin/js/controllers/adverts.js',
+               'admin/js/window.js'
                ]
              })
            }
          }
     })
     .state('dashboard.new-advert',{
-        templateUrl:'views/dashboard/settings/advert_details.html',
+        templateUrl:'admin/views/dashboard/settings/advert_details.html',
         url:'/new-advert',
         controller: 'NewAdvertCtrl',
         resolve: {
@@ -658,15 +658,15 @@ angular
              return $ocLazyLoad.load({
                name:'sbAdminApp',
                files:[
-               'js/controllers/new_advert.js',
-               'js/window.js'
+               'admin/js/controllers/new_advert.js',
+               'admin/js/window.js'
                ]
              })
            }
          }
     })
     .state('dashboard.edit-advert',{
-        templateUrl:'views/dashboard/settings/advert_details.html',
+        templateUrl:'admin/views/dashboard/settings/advert_details.html',
         url:'/edit-advert',
         controller: 'EditAdvertCtrl',
         resolve: {
@@ -674,15 +674,15 @@ angular
              return $ocLazyLoad.load({
                name:'sbAdminApp',
                files:[
-               'js/controllers/edit_advert.js',
-               'js/window.js'
+               'admin/js/controllers/edit_advert.js',
+               'admin/js/window.js'
                ]
              })
            }
          }
     })
  .state('dashboard.settings',{
-       templateUrl:'views/dashboard/settings/settings.html',
+       templateUrl:'admin/views/dashboard/settings/settings.html',
        url:'/settings',
        controller: 'SettingsCtrl',
        resolve: {
@@ -690,15 +690,15 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/settings.js',
-              'js/window.js'
+              'admin/js/controllers/settings.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })    
 .state('dashboard.blogpage',{
-       templateUrl:'views/dashboard/settings/blogpage.html',
+       templateUrl:'admin/views/dashboard/settings/blogpage.html',
        url:'/blogpage',
        controller: 'SettingsCtrl',
        resolve: {
@@ -706,8 +706,8 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/settings.js',
-              'js/window.js'
+              'admin/js/controllers/settings.js',
+              'admin/js/window.js'
               ]
             })
           }
@@ -715,7 +715,7 @@ angular
    })    
        
        .state('dashboard.ratings',{
-       templateUrl:'views/dashboard/blog/ratings.html',
+       templateUrl:'admin/views/dashboard/blog/ratings.html',
        url:'/ratings',
        controller: 'RatingsCtrl',
        resolve: {
@@ -723,32 +723,17 @@ angular
             return $ocLazyLoad.load({
               name:'sbAdminApp',
               files:[
-              'js/controllers/ratings.js',
-              'js/window.js'
+              'admin/js/controllers/ratings.js',
+              'admin/js/window.js'
               ]
             })
           }
         }
    })
-          .state('login',{
-       templateUrl:'views/pages/login.html',
-       url:'/login',
-       resolve: {
-          loadMyFiles:function($ocLazyLoad) {
-            return $ocLazyLoad.load({
-              name:'sbAdminApp',
-              files:[
-              'js/window.js'
-              ]
-            })
-          }
-        }
-   })
+      
   }])
 .run(function($rootScope, $state, $log, $cookieStore, $http, $window) {
-    $rootScope.$on('$stateChangeError', function() {
-      $state.go('login');
-    });
+    
     $rootScope.$on('$stateChangeSuccess', function() {
       $rootScope.user = {};
        $http.get('/credentials').then(function(res){
