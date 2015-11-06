@@ -72,9 +72,19 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
 }
 
 
-
-
     $scope.uploadCover = function(file) {
+
+var text = "";
+    var ext = file.name.split('.').pop();
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+
+    file.fileName = text + '.' + ext;
 
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
@@ -88,6 +98,17 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
     }
 
  $scope.upload = function(file) {
+var text = "";
+    var ext = file.name.split('.').pop();
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+
+    file.fileName = text + '.' + ext;
 
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
