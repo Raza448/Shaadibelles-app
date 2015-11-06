@@ -20,7 +20,8 @@ angular
         'angular.filter',
         'wu.masonry',
         'angularPayments',
-        'angular-loading-bar'
+        'angular-loading-bar',
+         'djds4rce.angular-socialshare'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
         $ocLazyLoadProvider.config({
@@ -399,7 +400,9 @@ angular
             }
         })
     }])
-    .run(function($rootScope, $state, $log, $cookieStore, $http) {
+    .run(function($rootScope, $state, $log, $cookieStore, $http, $FB) {
+  $FB.init('748452378599729');
+
         $rootScope.homeSlider = null;
         $rootScope.homeWidgets = [];
         $rootScope.featuredVendor = null;

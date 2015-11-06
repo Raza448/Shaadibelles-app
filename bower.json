@@ -15,6 +15,7 @@
     "angular-resource": "1.2.16",
     "angular-route": "1.2.16",
     "angular-sanitize": "1.2.16",
+    "angular-socialshare": "~1.4.4",
     "angular-toggle-switch": "~1.2.1",
     "angular-touch": "1.2.16",
     "angular-ui-bootstrap": "~0.13.0",
