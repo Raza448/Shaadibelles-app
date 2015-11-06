@@ -178,7 +178,8 @@
             </div>
           </div>
           <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
-          <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid"><img src="images/taj.jpg" class="img-width"/>
+        <div  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content">
+          <div><img src="public/images/taj.jpg" class="img-width"/>
           </div>
         </div>
       </div>

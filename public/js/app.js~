@@ -487,12 +487,15 @@ angular
                     });
 
                 });
+
                $rootScope.site.settings.adverts.forEach(function(item) {
                     $http.get(window.remote + '/api/adverts/' + item).then(function(res) {
                         $rootScope.adverts.push(res.data);
                     });
 
                 });
+                $rootScope.advertLive = _.shuffle(randomArray)[0];
+
                 $rootScope.blogCategories = [];
                 $rootScope.blogCategory;
                 $rootScope.site.settings.blog.categories.forEach(function(item) {
