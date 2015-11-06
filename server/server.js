@@ -99,6 +99,110 @@ for (var s in config) {
 	c.session = c.session !== false;
 	passportConfigurator.configureProvider(s, c);
 }
+
+
+app.models.Role.find({where: {name: 'admin'} }, function(err, roles) {
+ if(err){
+ console.log(err);
+}
+console.log(roles.length);
+  if(roles.length === 0){
+app.models.user.create(
+{
+   
+    "username": "admin",
+    "password": "helloworld",
+    "email": "support@shaadibelles.com",
+    "emailVerified": true,
+    "status": "active",
+    "settings": {
+        "live": true,
+        "title": "shaadibelles",
+        "address": null,
+        "email": null,
+        "slider": null,
+        "menu": null,
+        "category": null,
+        "widgets": [
+        ],
+        "footerMenu": null,
+        "footerMenuTwo": null,
+        "recommended": [
+        ],
+        "featuredVendors": [
+      
+        ],
+        "blog": {
+            "smallWidgets": [
+            
+            ],
+            "mediumWidgets": [
+              
+            ],
+            "bigWidgets": [
+             
+            ],
+            "categories": [
+              
+            ],
+            "slider": null
+        }
+    },
+    "social": {
+        "facebook": null,
+        "twitter": null,
+        "youtube": null,
+        "pinterest": null
+    },
+    "featured_vendor": {
+        "title": null,
+        "description": null ,
+        "slides": [
+        
+        ],
+        "vendor": null
+    }
+}, function(err, user){
+      app.models.Role.create({
+      name: 'admin'
+    }, function(err, role) {
+      if (err) throw err;
+
+      console.log('Created role:', role);
+
+      //make bob an admin
+      role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+
+        console.log('Created principal:', principal);
+
+
+    app.models.Role.create({
+      name: 'guest'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+ app.models.Role.create({
+      name: 'vendor'
+    }, function(err, role) {
+      if (err) throw err;
+      console.log('Created role:', role);
+    });
+
+
+
+
+      });
+    });
+});
+
+} 
+});
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 app.get('/', function (req, res) {
@@ -191,208 +295,8 @@ app.start = function() {
 		app.emit('started');
 		console.log('Web server listening at: %s', app.get('url'));
 
-app.models.Role.findOne({where: {name: 'admin'} }, function(err, adminRole) {
-  if(adminRole){
-adminRole.users(function(err, users) {
-    if(users.length >=  0){
-  return users;
-} else {
-app.models.user.create(
-{
-   
-    "username": "admin",
-    "password": "helloworld",
-    "email": "support@shaadibelles.com",
-    "emailVerified": true,
-    "status": "active",
-    "settings": {
-        "live": true,
-        "title": "shaadibelles",
-        "address": null,
-        "email": null,
-        "slider": null,
-        "menu": null,
-        "category": null,
-        "widgets": [
-        ],
-        "footerMenu": null,
-        "footerMenuTwo": null,
-        "recommended": [
-        ],
-        "featuredVendors": [
-      
-        ],
-        "blog": {
-            "smallWidgets": [
-            
-            ],
-            "mediumWidgets": [
-              
-            ],
-            "bigWidgets": [
-             
-            ],
-            "categories": [
-              
-            ],
-            "slider": null
-        }
-    },
-    "social": {
-        "facebook": null,
-        "twitter": null,
-        "youtube": null,
-        "pinterest": null
-    },
-    "featured_vendor": {
-        "title": null,
-        "description": null ,
-        "slides": [
-        
-        ],
-        "vendor": null
-    }
-}, function(err, user){
-      app.models.Role.create({
-      name: 'admin'
-    }, function(err, role) {
-      if (err) throw err;
 
-      console.log('Created role:', role);
-
-      //make bob an admin
-      role.principals.create({
-        principalType: app.models.RoleMapping.USER,
-        principalId: user.id
-      }, function(err, principal) {
-        if (err) throw err;
-
-        console.log('Created principal:', principal);
-
-
-    app.models.Role.create({
-      name: 'guest'
-    }, function(err, role) {
-      if (err) throw err;
-      console.log('Created role:', role);
-    });
-
- app.models.Role.create({
-      name: 'vendor'
-    }, function(err, role) {
-      if (err) throw err;
-      console.log('Created role:', role);
-    });
-
-
-
-
-      });
-    });
 });
-}
-  });
-} else {
-app.models.user.create(
-{
-   
-    "username": "admin",
-    "password": "helloworld",
-    "email": "support@shaadibelles.com",
-    "emailVerified": true,
-    "status": "active",
-    "settings": {
-        "live": true,
-        "title": "shaadibelles",
-        "address": null,
-        "email": null,
-        "slider": null,
-        "menu": null,
-        "category": null,
-        "widgets": [
-        ],
-        "footerMenu": null,
-        "footerMenuTwo": null,
-        "recommended": [
-        ],
-        "featuredVendors": [
-      
-        ],
-        "blog": {
-            "smallWidgets": [
-            
-            ],
-            "mediumWidgets": [
-              
-            ],
-            "bigWidgets": [
-             
-            ],
-            "categories": [
-              
-            ],
-            "slider": null
-        }
-    },
-    "social": {
-        "facebook": null,
-        "twitter": null,
-        "youtube": null,
-        "pinterest": null
-    },
-    "featured_vendor": {
-        "title": null,
-        "description": null ,
-        "slides": [
-        
-        ],
-        "vendor": null
-    }
-}, function(err, user){
-      app.models.Role.create({
-      name: 'admin'
-    }, function(err, role) {
-      if (err) throw err;
-
-      console.log('Created role:', role);
-
-      //make bob an admin
-      role.principals.create({
-        principalType: app.models.RoleMapping.USER,
-        principalId: user.id
-      }, function(err, principal) {
-        if (err) throw err;
-
-        console.log('Created principal:', principal);
-
-
-    app.models.Role.create({
-      name: 'guest'
-    }, function(err, role) {
-      if (err) throw err;
-      console.log('Created role:', role);
-    });
-
- app.models.Role.create({
-      name: 'vendor'
-    }, function(err, role) {
-      if (err) throw err;
-      console.log('Created role:', role);
-    });
-
-
-
-
-      });
-    });
-});
-}
-});
-
-
-
-
-	});
 };
 
 // start the server if `$ node server.js`
