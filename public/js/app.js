@@ -466,6 +466,7 @@ angular
                 $rootScope.blogSmallWidgets = [];
                 $rootScope.blogMediumWidgets = [];
                 $rootScope.blogBigWidgets = [];
+                $rootScope.adverts = [];
                 $rootScope.site.settings.blog.smallWidgets.forEach(function(item) {
                     $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
                         $rootScope.blogSmallWidgets.push(res.data);
@@ -483,6 +484,12 @@ angular
                 $rootScope.site.settings.blog.bigWidgets.forEach(function(item) {
                     $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
                         $rootScope.blogBigWidgets.push(res.data);
+                    });
+
+                });
+               $rootScope.site.settings.adverts.forEach(function(item) {
+                    $http.get(window.remote + '/api/adverts/' + item).then(function(res) {
+                        $rootScope.adverts.push(res.data);
                     });
 
                 });

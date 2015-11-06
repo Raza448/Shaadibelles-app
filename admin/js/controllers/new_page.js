@@ -13,6 +13,17 @@ angular.module('sbAdminApp')
 
 
     $scope.uploadCover = function(file) {
+  var text = "";
+    var ext = file.name.split('.').pop();
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+
+    file.fileName = text + '.' + ext;
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
@@ -24,6 +35,17 @@ angular.module('sbAdminApp')
 
 
  $scope.upload = function(file, insertAction) {
+  var text = "";
+    var ext = file.name.split('.').pop();
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+
+    file.fileName = text + '.' + ext;
 
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;

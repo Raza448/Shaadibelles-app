@@ -136,12 +136,24 @@
 <div class="form-group col-lg-12">
       <label>Featured Vendors</label>
       <select
-        data-placeholder="Select Category"
+        data-placeholder="Select Vendors"
         class="form-control"
         chosen
-        mulitiple
+        multiple
         ng-model="settings.featuredVendors"
         ng-options="item.id as item.business.name for item in vendors">
+      </select>
+    </div>
+
+<div class="form-group col-lg-12">
+      <label>Featured Adverts</label>
+      <select
+        data-placeholder="Select Adverts"
+        class="form-control"
+        chosen
+        multiple
+        ng-model="settings.adverts"
+        ng-options="item.id as item.title for item in adverts">
       </select>
     </div>
   </div>

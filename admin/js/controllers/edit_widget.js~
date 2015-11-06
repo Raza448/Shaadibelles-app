@@ -4,19 +4,6 @@ angular.module('sbAdminApp')
   .controller('EditWidgetCtrl', function($scope, $http, $location, $rootScope , File, $modal, $modalStack, $sce) {
    $scope.buttonText = 'Update';
 
-
-$scope.setYoutubeUrl = function(url){
-  delete $scope.widget.video;
-  $scope.widget.youtube = $sce.trustAsHtml(url);
-
-}
-
-$scope.setUrl = function(url){
-  delete $scope.widget.youtube;
-  $scope.widget.video = url;
-
-}
-
  $scope.getCategories = function() {
 
       var url = window.remote + '/api/categories?access_token=' +
@@ -81,6 +68,17 @@ $scope.setUrl = function(url){
 
  $scope.uploadVideo = function(file) {
      if(file){
+  var text = "";
+    var ext = file.name.split('.').pop();
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+
+    file.fileName = text + '.' + ext;
  File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;

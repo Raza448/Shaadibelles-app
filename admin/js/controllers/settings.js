@@ -94,6 +94,18 @@ $scope.getSliders = function() {
 
  $scope.getSliders();
 
+$scope.getAdverts = function() {
+
+      var url = window.remote + '/api/adverts?access_token=' + $rootScope.user.accessToken;
+
+      $http.get(url)
+        .then(function(res) {
+          $scope.adverts = res.data;
+        })
+    }
+
+ $scope.getAdverts();
+
  $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
 		  $scope.settings = res.data.settings;
