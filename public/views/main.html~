@@ -1,6 +1,6 @@
 <style>
 #loading-bar .bar {
-  top: 175px;
+  top: 178px;
   height: 5px;
 }
 </style>
@@ -22,7 +22,7 @@
             <li>
               <div id="form-content" class="modal hide fade in" style="display: none;">
                 <div class="modal-body">
-                  <form class="login-form" name="contact" action="/auth/local" method="post">
+                  <form class="login-form" name="contact" ng-submit="loginMethod(userData)">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                       <h3>WELCOME BACK</h3>
                     </div>

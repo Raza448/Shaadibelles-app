@@ -1,52 +1,13 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var app = module.exports = loopback();
- var fs = require('fs');
-
-// Passport configurators..
-var loopbackPassport = require('loopback-component-passport');
-var PassportConfigurator = loopbackPassport.PassportConfigurator;
-var passportConfigurator = new PassportConfigurator(app);
-
-/*
- * body-parser is a piece of express middleware that
- *   reads a form's input and stores it as a javascript
- *   object accessible through `req.body`
- *
- */
+var fs = require('fs');
 var bodyParser = require('body-parser');
-
-/**
- * Flash messages for passport
- *
- * Setting the failureFlash option to true instructs Passport to flash an
- * error message using the message given by the strategy's verify callback,
- * if any. This is often the best approach, because the verify callback
- * can make the most accurate determination of why authentication failed.
- */
-var flash      = require('express-flash');
-
-// attempt to build the providers/passport config
-var config = {};
-try {
-	config = require('../providers.json');
-} catch (err) {
-	console.trace(err);
-	process.exit(1); // fatal
-}
-
-// -- Add your pre-processing middleware here --
-
-// Setup the view engine (jade)
 var path = require('path');
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
-// boot scripts mount components like REST API
+
 boot(app, __dirname);
-
 app.use("/public", loopback.static(__dirname + "/../public"));
-
 app.use("/admin/js", loopback.static(__dirname + "/../admin/js"));
 app.use("/admin/css", loopback.static(__dirname + "/../admin/css"));
 app.use("/admin/views", loopback.static(__dirname + "/../admin/views"));
@@ -63,50 +24,21 @@ app.use("/components", loopback.static(__dirname + "/../components"));
     var container = ds.createModel('container');
     app.model(container);
 
-// to support JSON-encoded bodies
+app.middleware('session', loopback.session({ saveUninitialized: true,
+  resave: true, secret: 'keyboard cat' }));
+
 app.middleware('parse', bodyParser.json());
-// to support URL-encoded bodies
+
 app.middleware('parse', bodyParser.urlencoded({
 	extended: true
 }));
-
-// The access token is only available after boot
-app.middleware('auth', loopback.token({
-  model: app.models.accessToken
-}));
-
-
-
-
-app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
-app.middleware('session', loopback.session({
-	secret: 'kitty',
-	saveUninitialized: true,
-	resave: true
-}));
-passportConfigurator.init();
-
-// We need flash messages to see passport errors
-app.use(flash());
-
-passportConfigurator.setupModels({
-	userModel: app.models.user,
-	userIdentityModel: app.models.userIdentity,
-	userCredentialModel: app.models.userCredential
-});
-for (var s in config) {
-	var c = config[s];
-	c.session = c.session !== false;
-	passportConfigurator.configureProvider(s, c);
-}
-
 
 app.models.Role.find({where: {name: 'admin'} }, function(err, roles) {
  if(err){
  console.log(err);
 }
 console.log(roles.length);
-  if(roles.length === 0){
+  if(!roles.length  > 0){
 app.models.user.create(
 {
    
@@ -203,18 +135,21 @@ app.models.user.create(
 
 } 
 });
-var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 app.get('/', function (req, res) {
- 
+  console.log(req.session);
+  if(!req.session.user){
+ req.session.user = null;
+ console.log(req.session.user);
+}
   fs.createReadStream('public/index.html').pipe(res);
 });
 
 
 
 app.get('/admin', function (req, res) {
- if(req.user){
-app.models.Role.getRoles({principalType: app.models.RoleMapping.USER, principalId: req.user.id}, function(err, roles) {
+ if(req.session.user && req.session.user.userId){
+app.models.Role.getRoles({principalType: app.models.RoleMapping.USER, principalId: req.session.user.id}, function(err, roles) {
 
 
   app.models.Role.findOne({'where' : {'id' : roles[2]}}, function(err, r){
@@ -244,9 +179,6 @@ if(r.name === 'admin'){
 
 });
 
-app.get('/admintest', function (req, res) {
-   fs.createReadStream('admin/index.html').pipe(res);
-});
 
 
 app.get('/verified', function (req, res) {
@@ -257,38 +189,17 @@ app.get('/vendorverified', function (req, res) {
   res.redirect('/#/main/vendorverified');
 });
 
-
-app.get('/auth/logout', function (req, res, next) {
-  req.logout();
-  res.redirect('/');
-});
-
 app.get('/credentials', function (req, res, next) {
   var user = {};
-  if(req.user && req.signedCookies.access_token){
-  var user = { 'userId' : req.signedCookies.userId, 'accessToken': req.signedCookies.access_token };
+  if(req.session.user && req.session.user.accessToken){
+  var user = { 'userId' : req.session.user.userId, 'accessToken': req.session.user.accessToken };
 }
 
   res.status(200).send(user);
 });
-
-
-
-// -- Mount static files here--
-// All static middleware should be registered at the end, as all requests
-// passing the static middleware are hitting the file system
-// Example:
 var path = require('path');
-app.use(loopback.static(path.resolve(__dirname, '../client/public')));
-
-// Requests that get this far won't be handled
-// by any middleware. Convert them into a 404 error
-// that will be handled later down the chain.
 app.use(loopback.urlNotFound());
-
-// The ultimate error handler.
 app.use(loopback.errorHandler());
-
 app.start = function() {
 	// start the web server
 	return app.listen(function() {

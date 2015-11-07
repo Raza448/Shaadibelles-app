@@ -10,21 +10,22 @@
 angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $modalStack, $scope, $rootScope, $cookieStore, $location) {
 
 
+$scope.loginMethod = function(user) {
+		if (!$rootScope.user.accessToken) {
 
+		  $http.post(window.remote + '/api/users/login', user).then(function(res) {
+			$rootScope.user = {
+  'userId': res.data.userId,
+  'accessToken' : res.data.id
+ }
+			$location.path('/main/home');
+			});
+		}
+	};
 	$scope.logoutMethod = function() {
 		if ($rootScope.user.accessToken) {
 
 		  $http.post(window.remote + '/api/users/logout?access_token=' + $rootScope.user.accessToken).then(function() {
-
-    var cookies = document.cookie.split(";");
-
-    for (var i = 0; i < cookies.length; i++) {
-    	var cookie = cookies[i];
-    	var eqPos = cookie.indexOf("=");
-    	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
-
 			$rootScope.user = {};
 			$location.path('/main/home');
 			});
@@ -38,7 +39,7 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
    		$("#form-content").modal('show');
   }
 
- $scope.resetpassword = function(){
+ $scope.reset = function(){
    		$("#form-reset-content").modal('show');
    		$("#form-content").modal('hide');
   }

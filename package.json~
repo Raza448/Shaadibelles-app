@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "start": "slc run"
+    "start": "slc run",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -17,18 +18,17 @@
     "serve-favicon": "^2.0.1",
     "node-mailer": "~0.1.1",
     "nodemailer": "~1.8.0",
-    "loopback-component-passport": "~1.5.0",
     "passport-facebook": "~2.0.0",
-    "loopback-passport": "~1.0.2",
     "express-flash": "0.0.2",
     "body-parser": "~1.14.1",
-    "connect-ensure-login": "~0.1.1",
-    "passport-local": "~1.0.0",
     "stripe": "~4.0.0",
     "express": "~4.13.3",
     "event-stream": "~3.3.2",
     "crypto": "0.0.3",
-    "bower": "~1.6.5"
+    "bower": "~1.6.5",
+    "express-session": "~1.12.1",
+    "cookie-parser": "~1.4.0",
+    "passport-google-oauth": "~0.2.0"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"

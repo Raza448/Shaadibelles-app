@@ -8,16 +8,6 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "identities": {
-      "type": "hasMany",
-      "model": "userIdentity",
-      "foreignKey": "userId"
-    },
-    "credentials": {
-      "type": "hasMany",
-      "model": "userCredential",
-      "foreignKey": "userId"
-    },
     "post": {
       "type": "hasOne",
       "model": "post",

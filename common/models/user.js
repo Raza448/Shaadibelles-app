@@ -5,6 +5,23 @@ var app = require('../../server/server');
 
 module.exports = function(UserModel) {
 
+   UserModel.afterRemote(
+      'login',
+      function(ctx, ins, next) { 
+          ctx.req.session.user = {
+          'userId' : ins.userId,
+          'accessToken' : ins.id
+        }
+       console.log(ctx.req.session.user);
+       next();
+      });
+
+ UserModel.afterRemote(
+      'logout',
+      function(ctx, ins, next) {
+            ctx.req.session.user = null;
+       next();
+      });
 
  
 
