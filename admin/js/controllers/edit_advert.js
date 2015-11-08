@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('EditAdvertCtrl', function($scope, $http, $location, $rootScope, $modal) {
+  .controller('EditAdvertCtrl', function($scope, $http, $location, $rootScope, $modal, File) {
     $scope.check = function(x) {
       if (x == $scope.collapseVar)
         $scope.collapseVar = 0;

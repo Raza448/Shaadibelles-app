@@ -2,8 +2,9 @@
 
 angular.module('sbAdminApp')
   .controller('NewMenuCtrl', function($scope, $http, $location, $rootScope) {
+
   $scope.buttonText = 'Create';
-  $scope.types = ['URL', 'Post', 'Gallery','Category', 'Page', 'Vendors','Galleries' , 'Blog', 'Home', 'Contact', 'Review'];
+  $scope.types = ['URL', 'Post', 'Gallery','Category', 'Page', 'Vendors', 'Galleries' , 'Blog', 'Home', 'Contact', 'Review'];
   $scope.typesTwo = ['URL', 'Post', 'Gallery', 'Page', 'Category'];
   $scope.posts = null;
   $scope.pages = null;
@@ -27,6 +28,10 @@ angular.module('sbAdminApp')
 		  $scope.pages = res.data;
 		  });
     };
+
+ $scope.newItem = function(){
+$scope.menu.items.push({ type: 'URL', sub : false})
+}
 
 $scope.getPages();
 

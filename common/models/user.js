@@ -250,4 +250,46 @@ UserModel.contact = function(body, id, res, callback) {
       );
 
 
+ UserModel.admin = function(req, res, callback) {
+app.models.Role.findOne({where: {name: 'admin'}}, function(err, adminRole) {
+  console.log(adminRole);
+  app.models.RoleMapping.find({ where: { principalType : "USER", roleId : adminRole.id}}, function(err, users){
+ console.log(users);
+ if(users.length >= 0){
+ app.models.user.findOne({ where : { id : users[0].principalId }}, function(err , user){
+  if(err){
+ console.log(err);
+}
+ res.status(200).send(user);
+})
+ }
+});
+});
+
+      }
+
+
+      UserModel.remoteMethod(
+        'admin', {
+          accepts: [{
+            arg: 'req',
+            type: 'object',
+            http: {
+              source: 'req'
+            }
+          }, {
+            arg: 'res',
+            type: 'object',
+            http: {
+              source: 'res'
+            }
+          }],
+          http: {
+            path: '/admin',
+            verb: 'get'
+          }
+        }
+      );
+
+
 };

@@ -16,6 +16,10 @@ angular.module('sbAdminApp')
       visible: true
     };
 
+ $scope.newItem = function(){
+$scope.menu.items.push({ order: $scope.menu.items.length + 1, type: 'URL', sub : false})
+}
+
        $scope.addSubitem = function(item){
       if(item.subitems){
         item.subitems.push({ order: $scope.menu.items.length + 1, type: 'URL'});

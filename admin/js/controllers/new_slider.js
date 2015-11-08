@@ -57,6 +57,7 @@ $scope.getCategories = function() {
 
   $scope.upload = function(file) {
      if(file){
+ 
    var text = "";
     var ext = file.name.split('.').pop();
 
@@ -67,7 +68,7 @@ $scope.getCategories = function() {
     }
 
 
-    file.fileName = text + '.' + ext;
+    file.filename = text + '.' + ext;
 
  File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;

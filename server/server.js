@@ -37,7 +37,7 @@ app.models.Role.find({where: {name: 'admin'} }, function(err, roles) {
  if(err){
  console.log(err);
 }
-console.log(roles.length);
+
   if(!roles.length  > 0){
 app.models.user.create(
 {

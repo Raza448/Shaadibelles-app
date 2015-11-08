@@ -202,4 +202,4 @@ Your browser does not support the video tag.
   <div class="clearfix"></div>
 </div>
 
-<script src="js/plugin/custom.js"></script>
+<script src="public/js/plugin/custom.js"></script>

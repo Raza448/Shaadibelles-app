@@ -13,7 +13,8 @@ angular.module('sbAdminApp')
 
 
     $scope.uploadCover = function(file) {
-  var text = "";
+  if(file){
+var text = "";
     var ext = file.name.split('.').pop();
 
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -31,11 +32,13 @@ angular.module('sbAdminApp')
           fileName;
         $scope.page.cover = newfile;
       })
+}
     }
 
 
  $scope.upload = function(file, insertAction) {
-  var text = "";
+  if(file){
+ var text = "";
     var ext = file.name.split('.').pop();
 
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -55,6 +58,7 @@ angular.module('sbAdminApp')
         insertAction('insertImage', newfile, true);
       })
       return true;
+}
 
     }
 

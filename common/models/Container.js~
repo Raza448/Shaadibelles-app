@@ -1,0 +1,17 @@
+module.exports = function(Container) {
+Container.beforeRemote('upload', function(ctx,  modelInstance, next){
+       var app       = Container.app;
+       var container = ctx.req.params.container;
+       //IF u have large image then. use this to avoid timeout..    
+       ctx.req.connection.setTimeout(16000);
+
+       //Checking if the container name is valid or not..
+       var Customer = app.models.Customer;
+       //http://apidocs.strongloop.com/loopback/#persistedmodel-exists
+       //Now manually uploading to the provider and first converting the file to the thumbnail..
+       upload(app, ctx.req, ctx.res, function(err, data){
+         console.log("Image loaded successfully..");
+       });                      
+
+    });
+};

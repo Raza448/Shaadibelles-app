@@ -401,7 +401,7 @@ angular
         })
     }])
     .run(function($rootScope, $state, $log, $cookieStore, $http, $FB) {
-  $FB.init('YOUR_APPID');
+  $FB.init('748452378599729');
 
         $rootScope.homeSlider = null;
         $rootScope.homeWidgets = [];
@@ -452,9 +452,9 @@ angular
         };
 
         $rootScope.getData = function() {
-            $http.get(window.remote + '/api/users').then(function(res) {
-                $rootScope.admins = _.where({'role' : 'admin'});
-                $rootScope.site = $rootScope.admins[0];
+            $http.get(window.remote + '/api/users/admin').then(function(res) {
+
+                $rootScope.site = res.data;
                 $rootScope.defaultSlider = $rootScope.site.settings.slider;
                 $rootScope.featuredVendor = $rootScope.site.featured_vendor;
                 $rootScope.socialLinks = $rootScope.site.social;
@@ -476,6 +476,8 @@ angular
                     });
 
                 });
+
+ alert();
 
                 $rootScope.site.settings.blog.mediumWidgets.forEach(function(item) {
                     $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
@@ -554,7 +556,7 @@ angular
 
                 });
 
-
+  alert();
 
 
                 $http.get(window.remote + '/api/menus/' + $rootScope.site.settings.footerMenu).then(function(res) {

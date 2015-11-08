@@ -17,7 +17,8 @@ var query = $location.search();
 
 
     $scope.uploadCover = function(file) {
-  var text = "";
+ if(file){
+ var text = "";
     var ext = file.name.split('.').pop();
 
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -35,11 +36,13 @@ var query = $location.search();
           fileName;
         $scope.page.cover = newfile;
       })
+}
     }
 
  $scope.upload = function(file, insertAction) {
 
-  var text = "";
+ if(new){
+ var text = "";
     var ext = file.name.split('.').pop();
 
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -60,6 +63,7 @@ var query = $location.search();
       })
       return true;
 
+}
     }
 
 

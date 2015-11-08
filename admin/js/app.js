@@ -734,17 +734,14 @@ angular
   }])
 .run(function($rootScope, $state, $log, $cookieStore, $http, $window, $location) {
     
-    $rootScope.$on('$stateChangeSuccess', function() {
-      $rootScope.user = {};
-       $http.get('/credentials').then(function(res){
+     $http.get('/credentials').then(function(res){
   if(res.data.accessToken){
- $rootScope.user = res.data;
+
+ $rootScope.user = { 'id': res.data.userId, 'accessToken': res.data.accessToken };
 }
  else {
  location.href = '/';
 }
 });
-      $rootScope.detaults = window.defaults;
-    });
   });
 

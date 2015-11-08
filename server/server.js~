@@ -149,7 +149,7 @@ app.get('/', function (req, res) {
 
 app.get('/admin', function (req, res) {
  if(req.session.user && req.session.user.userId){
-app.models.Role.getRoles({principalType: app.models.RoleMapping.USER, principalId: req.session.user.id}, function(err, roles) {
+app.models.Role.getRoles({principalType: app.models.RoleMapping.USER, principalId: req.session.user.userId}, function(err, roles) {
 
 
   app.models.Role.findOne({'where' : {'id' : roles[2]}}, function(err, r){

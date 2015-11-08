@@ -3,7 +3,7 @@
 angular.module('sbAdminApp')
   .controller('EditMenuCtrl', function($scope, $http, $location, $rootScope) {
    $scope.buttonText = 'Update';
-  $scope.types = ['URL', 'Post', 'Gallery','Category', 'Page', 'Vendors', 'Blog', 'Home', 'Contact', 'Review'];
+  $scope.types = ['URL', 'Post', 'Gallery','Category', 'Page', 'Vendors', 'Galleries', 'Blog', 'Home', 'Contact', 'Review'];
   $scope.typesTwo = ['URL', 'Post', 'Gallery', 'Page', 'Category'];
   $scope.pages = null;
   $scope.posts = null;
