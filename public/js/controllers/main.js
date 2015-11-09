@@ -7,18 +7,21 @@
  * # AboutCtrl
  * Controller of the webApp
  */
-angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $modalStack, $scope, $rootScope, $cookieStore, $location) {
+angular.module('sbFrontEnd').controller('MainCtrl', function($http, $state, $modal, $modalStack, $scope, $rootScope, $cookieStore, $location) {
 
 
 
 	$scope.logoutMethod = function() {
+           $rootScope.startLoading();
 		if ($rootScope.user.accessToken) {
 
 		  $http.post(window.remote + '/api/users/logout?access_token=' + $rootScope.user.accessToken).then(function() {
 			$rootScope.user = {};
-			$location.path('/main/home');
+                        $rootScope.stopLoading();
+                        $state.reload();
 			});
 		}
+            
 	};
 
 
@@ -35,12 +38,13 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
 
 
  $scope.resetpassword = function(email){
+  $rootScope.startLoading();
    var data = {
   'email' : email
  }
   $http.post( window.remote + '/api/users/reset', data).then(function(res){
   $scope.resetSent = true;
-
+  $rootScope.stopLoading();
 });
 }
   
@@ -56,6 +60,7 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $modal, $mod
 
 
 $scope.loginandbusiness = function(userData) {
+     $rootScope.startLoading();
 		var url = window.remote + '/api/users/login';
 		var data = {
 		  'username': userData.username,
@@ -70,12 +75,13 @@ $scope.loginandbusiness = function(userData) {
 		  };
            
    $modalStack.dismissAll();
-            
+             $rootScope.stopLoading();
              location.href = '#/main/vendorsignuptwo';
      });
 	};
 
 $scope.loginandprofile = function(userData) {
+ $rootScope.startLoading();
 		var url = window.remote + '/api/users/login';
 		var data = {
 		  'username': userData.username,
@@ -89,7 +95,7 @@ $scope.loginandprofile = function(userData) {
 			'accessToken' : res.data.id, 
 		  };
          $modalStack.dismissAll();
-            
+            $rootScope.stopLoading();
              location.href = '#/main/signuptwo';
      });
 	};
@@ -113,6 +119,7 @@ $scope.vendorlogintwo= function(){
 
 
 	$scope.loginMethod = function(userData) {
+              $rootScope.startLoading();
 		var url = window.remote + '/api/users/login';
 		var data = {
 		  'username': userData.username,
@@ -125,11 +132,14 @@ $scope.vendorlogintwo= function(){
 			'user' : res.data.userId,
 			'accessToken' : res.data.id, 
 		  };
+             $rootScope.stopLoading();
+               $state.reload();
 		$("#form-content").modal('hide');
      });
 	};
 	
 	$rootScope.search = function(searchKeyword) {
+        
 	   location.href = '#/main/searchresult?key=' + searchKeyword;
 	};
 	

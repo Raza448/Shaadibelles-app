@@ -39,6 +39,7 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
     }
   };
   $scope.submitReview = function(review) {
+  $rootScope.startLoading();
     $http.get(window.remote + '/api/users/' + $rootScope.user.id +
       '/post?access_token=' + $rootScope.user.accessToken).then(
       function(res) {
@@ -54,6 +55,7 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
         request(url, review).then(function(res) {
           $modalStack.dismissAll();
           $scope.userReview = res.data;
+         $rootScope.stopLoading();
         });
       });
   };
@@ -65,6 +67,7 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
   }
   $scope.subrating = function(value) {
     if($rootScope.user.id){
+ $rootScope.startLoading();
 $http.get(window.remote + '/api/users/' + $rootScope.user.id +
       '/post?access_token=' + $rootScope.user.accessToken).then(
       function(res) {

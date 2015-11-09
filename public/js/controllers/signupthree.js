@@ -23,6 +23,7 @@ angular.module('sbFrontEnd') .controller('SignupThreeCtrl', function($scope, $ht
 });
 
  $scope.publish = function(){
+ $rootScope.startLoading();
    $scope.reviews.forEach(function(item){
       item.contents.forEach(function(review){
        
@@ -42,7 +43,7 @@ angular.module('sbFrontEnd') .controller('SignupThreeCtrl', function($scope, $ht
 });
 
 });
-
+ $rootScope.stopLoading();
 }
 
 });

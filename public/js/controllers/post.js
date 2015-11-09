@@ -25,7 +25,7 @@ angular.module('sbFrontEnd') .controller('PostCtrl', function($scope, $state, $s
 	 
 	$scope.rating = function(value){
 		if($rootScope.user.id){
-			
+			 $rootScope.startLoading();
 			
 			if($scope.postRating && $scope.postRating.id){
 				var url = window.remote +'/api/ratings/' + $scope.postRating.id + '?access_token='+ $rootScope.user.accessToken;
@@ -34,7 +34,7 @@ angular.module('sbFrontEnd') .controller('PostCtrl', function($scope, $state, $s
 			};
 			$http.put(url, data).then(function(res){
 				 $scope.postRating = res.data;
-	               
+	                       $rootScope.stopLoading();
 			});
 			}
 			else {
@@ -47,7 +47,8 @@ angular.module('sbFrontEnd') .controller('PostCtrl', function($scope, $state, $s
 			};
 			$http.post(url, data).then(function(res){
 				 $scope.postRating = res.data;
-	               
+                                 $rootScope.stopLoading();
+	                         
 			});	
 			}
 		}else{

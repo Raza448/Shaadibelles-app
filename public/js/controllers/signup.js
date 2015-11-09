@@ -29,6 +29,7 @@ var query = $location.search();
 }
 }
     $scope.signup = function (user) {
+         $rootScope.startLoading();
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;
         if(user.password === user.confirmPassword) {
@@ -43,19 +44,22 @@ var query = $location.search();
             if (res.status == 200) {
                 //Login user and get accesstoken
                $scope.verification = true;
-              
+               $rootScope.stopLoading();
             }
             else {
                 $scope.err = "Sorry, We are unable to process your request now, Please try again later";
+               $rootScope.stopLoading();
             }
         }, function(res){ 
 
 		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
                               $scope.submitDisabled = false;     
 		});
+               $rootScope.stopLoading();
        } else {
           $scope.err = ['Paswords not matching'];
           $scope.submitDisabled = false;
+               $rootScope.stopLoading();
       }
 
       

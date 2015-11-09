@@ -10,7 +10,7 @@
 angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $http, $rootScope, $cookieStore, $location) {
     $scope.submitDisabled = false;
     $scope.vendorSignup = function (user) {
-     
+        $rootScope.startLoading();
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;
         if(user.password === user.confirmPassword) {
@@ -23,7 +23,7 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
   $http.post(url, data).then(function (res) {
             if (res.status == 200) {
                 //Login user and get accesstoken
-               
+                $rootScope.stopLoading();
 
                $scope.verification = true;
 
@@ -31,13 +31,15 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
             }
             else {
                 $scope.err = "Sorry, We are unable to process your request now, Please try again later";
+            $rootScope.stopLoading();
             }
         }, function(res){ 
-
+               $rootScope.stopLoading();
 		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
                               $scope.submitDisabled = false;     
 		});
        } else {
+          $rootScope.stopLoading();
           $scope.err = ['Paswords not matching'];
           $scope.submitDisabled = false;
       }

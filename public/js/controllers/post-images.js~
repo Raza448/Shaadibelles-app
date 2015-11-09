@@ -27,7 +27,7 @@ $http.get(window.remote + '/api/posts/' + $scope.id +'/ratings')
 	 
 	$scope.rating = function(value){
 		if($rootScope.user.id){
-			
+			 $rootScope.startLoading();
 			
 			if($scope.postRating && $scope.postRating.id){
 				var url = window.remote +'/api/ratings/' + $scope.postRating.id + '?access_token='+ $rootScope.user.accessToken;
@@ -36,7 +36,7 @@ $http.get(window.remote + '/api/posts/' + $scope.id +'/ratings')
 			};
 			$http.put(url, data).then(function(res){
 				 $scope.postRating = res.data;
-	               
+	                         $rootScope.stopLoading();
 			});
 			}
 			else {
@@ -81,7 +81,7 @@ $http.get(window.remote +'/api/users/' + res.data.userId + '/reviews?access_toke
 				$scope.reviews = res.data;
 
                              $scope.reviews.forEach(function(review){
-    $http.get(window.remote +'/api/users/' + review.userId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
+    $http.get(window.remote +'/api/users/' + review.vendorId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
 				review.vendor = res.data;
 			});
 });

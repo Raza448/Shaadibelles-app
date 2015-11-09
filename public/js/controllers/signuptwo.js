@@ -68,7 +68,9 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
          $scope.gallery = res.data;
 });
 });
-                }
+                } else {
+ location.href = '#/main/home';
+}
             
             });
 
@@ -76,17 +78,20 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
 
 
  $scope.newEvent = function(){
+$rootScope.startLoading();
   $scope.post.events.push($scope.currentEvent);
   $scope.currentEvent = {
   content: null,
   gallery : []
 }
+ $rootScope.stopLoading();
 }
 
 
     $scope.uploadCover = function(file) {
 
 if(file){
+  $rootScope.startLoading();
 var text = "";
     var ext = file.name.split('.').pop();
 
@@ -106,13 +111,14 @@ var text = "";
           fileName;
         $scope.post.cover = newfile;
         $scope.gallery.cover = newfile;
-
+         $rootScope.stopLoading();
       })
 }
     }
 
  $scope.upload = function(file) {
   if(file){
+ $rootScope.startLoading();
 var text = "";
     var ext = file.name.split('.').pop();
 
@@ -132,6 +138,7 @@ var text = "";
           fileName;
         $scope.gallery.photos.push(newfile);
       $scope.currentEvent.gallery.push(newfile);
+      $rootScope.stopLoading();
       })
 }
     }
@@ -139,7 +146,7 @@ var text = "";
 
     $scope.publish = function(post) {
 
-
+       $rootScope.startLoading();
       var data = {
         "title": post.title,
         "description": post.description,
@@ -171,6 +178,7 @@ var text = "";
         request(window.remote + '/api/posts/' + res.data.id +
           '/galleries?access_token=' + $rootScope.user.accessToken,  $scope.gallery);
            $scope.postPublished = true;
+          $rootScope.stopLoading();
       });
     };
 

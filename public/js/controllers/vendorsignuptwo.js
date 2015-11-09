@@ -90,8 +90,10 @@ $http.get('/credentials').then(function(res) {
   $rootScope.countries = window.countries;
   $rootScope.vendorCategories = window.vendorTypes;
     $scope.save = function(){
+   $rootScope.startLoading();
     var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
     $http.put(url, $scope.vendor).then(function(res){
+            $rootScope.stopLoading();
             $scope.vendor.business = res.data.business || {};
             $scope.vendor.social = res.data.social || {};
             $scope.vendor.gallery = res.data.gallery || [];      
@@ -114,29 +116,11 @@ $http.get('/credentials').then(function(res) {
     
    };
 
+
+
  $scope.upload = function(file) {
            if(file){
-$scope.uploadCover = function(file) {
-  var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
-      File.upload(file).success(function(res) {
-
-        var containerName = res.result.files.img[0].container;
-        var fileName = res.result.files.img[0].name;
-        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
-          fileName;
-        $scope.post.cover = newfile;
-      })
-    }
+$rootScope.startLoading();
 
      File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
@@ -145,6 +129,7 @@ $scope.uploadCover = function(file) {
           fileName;
         $scope.vendor.gallery.push(newfile);
         $scope.gallery.photos.push(newfile);
+           $rootScope.stopLoading();
       })
 }
     }
@@ -164,16 +149,17 @@ $scope.uploadCover = function(file) {
    };
 
    $scope.handleStripe = function(status, response) {
-
+     $rootScope.startLoading();
     if (response.error) {
-  
+    $rootScope.stopLoading();
     } else {
+      $rootScope.startLoading();
       var data = {
         'userId': $rootScope.user.id,
         'token' : response.id
       }
       $http.post( window.remote + '/api/users/subscribe?access_token=' + $rootScope.user.accessToken, data).then(function(res) {
-
+         $rootScope.stopLoading();
          location.href = '#/main/home';
 
       });
