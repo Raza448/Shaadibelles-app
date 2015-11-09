@@ -4,8 +4,15 @@
   height: 5px;
 }
 </style>
+
 <div class="header" id="home" ng-controller="MainCtrl">
+    <div id="loading" ng-show="loading">
+<div id="loading-txt">
+    <h1><img src="public/images/logo.png" class="img-responsive"> Loading ...</h1>
+</div>
+</div>
   <div class="header-top" ng-hide="">
+
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="col-lg-4 col-md-4 col-sm-5">
         <div class="social-icons">
@@ -113,6 +120,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <div class="clearfix"></div>
   <div class="container">
@@ -266,4 +274,5 @@
   </div>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 footer">    © 2015 Shaadi Belles</div>
+
 <script src="public/js/plugin/custom.js"></script>

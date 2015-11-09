@@ -20,7 +20,6 @@ angular
         'angular.filter',
         'wu.masonry',
         'angularPayments',
-        'angular-loading-bar',
          'djds4rce.angular-socialshare'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
@@ -400,8 +399,14 @@ angular
             }
         })
     }])
-    .run(function($rootScope, $state, $log, $cookieStore, $http, $FB) {
+    .run(function($rootScope, $state, $log, $cookieStore, $http) {
+ $rootScope.startLoading = function(){
+  $rootScope.loading = true;
+}
 
+$rootScope.stopLoading = function(){
+ $rootScope.loading = false;
+}
 
  $http.get('/credentials').then(function(res) {
                 if (res.data) {
@@ -436,7 +441,7 @@ angular
             var url = '/api/users';
 
             $http.get(url).then(function(res) {
-                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});
+                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});``
             })
         };
 
@@ -459,6 +464,7 @@ angular
         };
 
         $rootScope.getData = function() {
+           $rootScope.startLoading();
             $http.get(window.remote + '/api/users/admin').then(function(res) {
 
                 $rootScope.site = res.data;

@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="public/css/jquery.bxslider.css" />
     <link rel="stylesheet" href="public/css/hover.css" />
     <link rel="stylesheet" href="public/css/style.css" />
+   
 <link rel='stylesheet' href='components/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel='stylesheet' href="components/angular-socialshare/angular-socialshare.min.css">
-
     <script src="https://js.stripe.com/v2/"></script>
     <script>
 Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci'); 
@@ -22,6 +22,7 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
     <script src="public/js/plugin/jquery.mixitup.min.js" ></script>
     <script src="public/js/plugin/jquery.swipebox.min.js" ></script>
     <script src="public/js/plugin/owl.carousel.js" ></script>
+
     <script src="public/js/plugin/responsiveslides.min.js" ></script>
     <script src="public/js/plugin/responsiveslides.min.js"></script>
     <script src="public/js/plugin/bootstrap.min.js"></script>
@@ -39,6 +40,7 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
       <script type="text/javascript" src="public/js/plugin/custom.js"></script>
      <script type="text/javascript" src="public/js/plugin/e-smart-zoom-jquery.min.js"></script>
       <script src="components/angular/angular.min.js"></script>
+
       <script src="components/angular-route/angular-route.js"></script>
       <script src="components/angular-resource/angular-resource.js"></script>
       <script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -48,7 +50,6 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
       <script src="components/angular-cookies/angular-cookies.js"></script>
       <script src="components/angular-filter/dist/angular-filter.js"></script>
 <script src="components/angular-socialshare/angular-socialshare.min.js"></script>
-
 
 <script type='text/javascript' src='components/angular-loading-bar/build/loading-bar.min.js'></script>
 <script type="text/javascript" src="components/angular-ui-sortable/sortable.js"></script>
@@ -61,6 +62,23 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
 	  <script src="components/angular-masonry/angular-masonry.js"></script>
   </head>
   <body ng-app="sbFrontEnd">
+  <style>
+ #loading {
+ width: 100%;
+ height: 2000px;
+ background-color: gray;
+ opacity: 0.6;
+ font-size : 20px;
+ position: absolute;
+ color: #ffffff;
+}
+ 
+ #loading-txt {
+ margin-left: 40%;
+ margin-top: 30%;
+}
+</style>
+   
    <div ui-view>
    </div>
   </body>
