@@ -21,12 +21,12 @@
     "user": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": "userId"
+      "foreignKey": "reviewId"
     },
     "vendor": {
       "type": "belongsTo",
       "model": "user",
-      "foreignKey": "vendorId"
+      "foreignKey": "userReviewId"
     },
     "post": {
       "type": "belongsTo",

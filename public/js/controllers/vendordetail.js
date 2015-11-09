@@ -43,10 +43,9 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
       '/post?access_token=' + $rootScope.user.accessToken).then(
       function(res) {
         review.postId = res.data.id;
-        var url = window.remote + '/api/reviews?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users/' + $scope.vendor.id +'/userReviews?access_token=' + $rootScope.user.accessToken;
         var request = $http.post;
         review.userId = $rootScope.user.id;
-        review.vendorId = $scope.vendor.id;
         if ($scope.userReview.id) {
           request = $http.put;
           url = window.remote + '/api/reviews/' + $scope.userReview.id +
@@ -71,10 +70,9 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id +
       function(res) {
         $scope.userReview.postId = res.data.id;
         $scope.userReview.rating = value;
-         $scope.userReview.vendorId = $scope.vendor.id;
         $scope.userReview.userId = $rootScope.user.id;
         var request = $http.post;
-        var url = window.remote + '/api/reviews?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users/' + $scope.vendor.id + '/userReviews?access_token=' + $rootScope.user.accessToken;
         if ($scope.userReview.id) {
           request = $http.put;
           url = window.remote + '/api/reviews/' + $scope.userReview.id +
@@ -100,7 +98,7 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id +
       $scope.vendor = res.data;
       $scope.gallerytwo = _.shuffle(res.data.gallery);
       $http.get(window.remote + '/api/users/' + res.data.id +
-        '/reviews?access_token=' + $rootScope.user.accessToken).then(
+        '/userReviews?access_token=' + $rootScope.user.accessToken).then(
         function(res) {
           $scope.reviews = res.data;
 

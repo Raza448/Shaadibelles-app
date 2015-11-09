@@ -21,12 +21,12 @@
     "userReviews": {
       "type": "hasMany",
       "model": "review",
-      "foreignKey": "userReviewId"
+      "foreignKey": "vendorId"
     },
     "reviews": {
       "type": "hasMany",
       "model": "review",
-      "foreignKey": "reviewId"
+      "foreignKey": "userId"
     },
     "galleries": {
       "type": "hasOne",
@@ -96,6 +96,20 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "subscribe"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__userReviews"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__create__userReviews"
     }
   ],
   "methods": {}
