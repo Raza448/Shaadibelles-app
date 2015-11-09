@@ -18,10 +18,15 @@
       "model": "rating",
       "foreignKey": ""
     },
+    "userReviews": {
+      "type": "hasMany",
+      "model": "review",
+      "foreignKey": "userReviewId"
+    },
     "reviews": {
       "type": "hasMany",
       "model": "review",
-      "foreignKey": ""
+      "foreignKey": "reviewId"
     },
     "galleries": {
       "type": "hasOne",
@@ -84,6 +89,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "admin"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "subscribe"
     }
   ],
   "methods": {}

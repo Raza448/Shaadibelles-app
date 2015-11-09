@@ -257,7 +257,10 @@ app.models.Role.findOne({where: {name: 'admin'}}, function(err, adminRole) {
  console.log(users);
  if(users.length >= 0){
  app.models.user.findOne({ where : { id : users[0].principalId }}, function(err , user){
-  
+  if(err){
+ console.log(err);
+}
+ res.status(200).send(user);
 })
  }
 });

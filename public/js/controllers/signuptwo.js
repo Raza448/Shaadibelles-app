@@ -39,6 +39,12 @@ $scope.postPublished = false;
   cover : null
 };
 
+
+$http.get('/credentials').then(function(res) {
+                if (res.data) {
+                    $rootScope.user = { id : res.data.userId,
+                    accessToken :  res.data.accessToken }
+
 $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_token=' + $rootScope.user.accessToken ).then(function(res){
 
 
@@ -62,6 +68,12 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
          $scope.gallery = res.data;
 });
 });
+                }
+            
+            });
+
+
+
 
  $scope.newEvent = function(){
   $scope.post.events.push($scope.currentEvent);
@@ -74,6 +86,7 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/post?access_tok
 
     $scope.uploadCover = function(file) {
 
+if(file){
 var text = "";
     var ext = file.name.split('.').pop();
 
@@ -95,9 +108,11 @@ var text = "";
         $scope.gallery.cover = newfile;
 
       })
+}
     }
 
  $scope.upload = function(file) {
+  if(file){
 var text = "";
     var ext = file.name.split('.').pop();
 
@@ -118,6 +133,7 @@ var text = "";
         $scope.gallery.photos.push(newfile);
       $scope.currentEvent.gallery.push(newfile);
       })
+}
     }
 
 
@@ -140,7 +156,7 @@ var text = "";
 
 
    var request = $http.post;
-      var url = window.remote + '/api/categories/' + "561bb9ab65ca0e0300ccab92" +
+      var url = window.remote + '/api/categories/' + $rootScope.site.settings.category +
         '/posts?access_token=' + $rootScope.user.accessToken;
 
       if(post.id){

@@ -401,8 +401,15 @@ angular
         })
     }])
     .run(function($rootScope, $state, $log, $cookieStore, $http, $FB) {
-  $FB.init('748452378599729');
 
+
+ $http.get('/credentials').then(function(res) {
+                if (res.data) {
+                    $rootScope.user = { id : res.data.userId,
+                    accessToken :  res.data.accessToken }
+                }
+            
+            });
         $rootScope.homeSlider = null;
         $rootScope.homeWidgets = [];
         $rootScope.featuredVendor = null;
@@ -429,7 +436,7 @@ angular
             var url = '/api/users';
 
             $http.get(url).then(function(res) {
-                $rootScope.vendors = _.where(res.data, {'role' : 'vendor'});
+                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});
             })
         };
 
@@ -477,7 +484,6 @@ angular
 
                 });
 
- alert();
 
                 $rootScope.site.settings.blog.mediumWidgets.forEach(function(item) {
                     $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
@@ -485,6 +491,7 @@ angular
                     });
 
                 });
+
 
                 $rootScope.site.settings.blog.bigWidgets.forEach(function(item) {
                     $http.get(window.remote + '/api/widgets/' + item).then(function(res) {
@@ -555,8 +562,6 @@ angular
                     });
 
                 });
-
-  alert();
 
 
                 $http.get(window.remote + '/api/menus/' + $rootScope.site.settings.footerMenu).then(function(res) {
@@ -688,15 +693,9 @@ angular
 
 
             $rootScope.getData();
-            $rootScope.user = {};
-            $rootScope.vendor = {};
-            $http.get('/credentials').then(function(res) {
-                if (res.data) {
-                    $rootScope.user.id = res.data.userId;
-                    $rootScope.user.accessToken = res.data.accessToken || res.data.access_token;
-                }
-            
-            });
+
+
+           
 
         });
     });

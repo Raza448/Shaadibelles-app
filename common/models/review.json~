@@ -24,7 +24,7 @@
       "foreignKey": "userId"
     },
     "vendor": {
-      "type": "hasMany",
+      "type": "belongsTo",
       "model": "user",
       "foreignKey": "vendorId"
     },

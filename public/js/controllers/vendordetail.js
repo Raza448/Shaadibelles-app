@@ -30,7 +30,7 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
   $scope.review = function() {
     if ($rootScope.user.id) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/vendor/review.html',
+        templateUrl: 'public/views/vendor/review.html',
         size: 'lg',
         controller: 'VendorDetailCtrl'
       });

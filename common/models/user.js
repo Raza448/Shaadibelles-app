@@ -68,7 +68,7 @@ module.exports = function(UserModel) {
   if(user.realm === 'vendor'){
 app.models.Role.findOne({ 'where' : { 'name' : 'admin' }}, function(err, role ){
  role.principals.create({
-        principalType: RoleMapping.USER,
+        principalType: app.models.RoleMapping.USER,
         principalId: user.id
       }, function(err, principal) {
         if (err) throw err;

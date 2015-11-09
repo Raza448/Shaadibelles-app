@@ -30,7 +30,7 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
   $scope.review = function() {
     if ($rootScope.user.id) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/vendor/review.html',
+        templateUrl: 'public/views/vendor/review.html',
         size: 'lg',
         controller: 'VendorDetailCtrl'
       });
@@ -74,8 +74,7 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id +
          $scope.userReview.vendorId = $scope.vendor.id;
         $scope.userReview.userId = $rootScope.user.id;
         var request = $http.post;
-        var url = window.remote + '/api/users/' + $scope.vendor.id +
-          '/reviews?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/reviews?access_token=' + $rootScope.user.accessToken;
         if ($scope.userReview.id) {
           request = $http.put;
           url = window.remote + '/api/reviews/' + $scope.userReview.id +

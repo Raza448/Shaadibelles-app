@@ -34,6 +34,7 @@ app.middleware('parse', bodyParser.urlencoded({
 }));
 
 app.models.Role.find({where: {name: 'admin'} }, function(err, roles) {
+
  if(err){
  console.log(err);
 }
@@ -137,10 +138,9 @@ app.models.user.create(
 });
 
 app.get('/', function (req, res) {
-  console.log(req.session);
+
   if(!req.session.user){
  req.session.user = null;
- console.log(req.session.user);
 }
   fs.createReadStream('public/index.html').pipe(res);
 });

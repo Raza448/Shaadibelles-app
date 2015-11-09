@@ -49,7 +49,12 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
 });
 
 
-   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+$http.get('/credentials').then(function(res) {
+                if (res.data) {
+                    $rootScope.user = { id : res.data.userId,
+                    accessToken :  res.data.accessToken }
+
+ var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
     $http.get(url).then(function(res){
             $scope.vendor.business = res.data.business || {};
             $scope.vendor.social = res.data.social || {};
@@ -64,7 +69,13 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
            $scope.gallery = res.data;        
     });
     });
-   
+                }
+            
+            });
+
+
+
+ 
 
  $scope.$watch('categoryTwo', function(category){
   if(category){

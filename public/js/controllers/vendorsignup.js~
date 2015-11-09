@@ -10,13 +10,15 @@
 angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $http, $rootScope, $cookieStore, $location) {
     $scope.submitDisabled = false;
     $scope.vendorSignup = function (user) {
+     
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;
         if(user.password === user.confirmPassword) {
 		var data = {
 		  'email' : user.email,
 		  'username' : user.username,
-		  'password' : user.password
+		  'password' : user.password,
+                   'realm' : user.vendor
 		};
   $http.post(url, data).then(function (res) {
             if (res.status == 200) {
