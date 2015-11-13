@@ -3,7 +3,7 @@
 angular.module('sbAdminApp')
   .controller('FeatureVendorCtrl', function($scope, $http, $location, $rootScope,
     $modal, $modalStack, File) {
-      $http.get(window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
+      $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
                 if(res.data.featured_vendor){
 		  $scope.featuredVendor = res.data.featured_vendor;

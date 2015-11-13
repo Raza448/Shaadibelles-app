@@ -17,9 +17,37 @@
             <div class="form-group pull-right">
               <a href="#/dashboard/new-user" class="btn btn-primary btn-sm">New User</a>
               <button id="delete" ng-click = "deleteUsers()" class="btn btn-primary btn-sm"> Delete Selected</button>
-             
+              <a href="" ng-click="check(1)"><button class="btn btn-primary btn-sm"> <i class="fa fa-filter fa-fw"></i>Filters</button></a>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">SortBy</button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Name Ascending</a></li>
+                  <li><a href="#">Name Decending</a></li>
+                  <li><a href="#">Keywords</a></li>
+                  <li><a href="#">Created Date</a></li>
+                </ul>
+              </div>
             </div>
-          
+            <div class="col-lg-12">
+              <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                <li ui-sref-active="active">
+                  <br>
+                  <input type="text" class="form-control" placeholder="Filter with Name">
+                </li>
+                <br>
+                <li ui-sref-active="active">
+                  <input type="text" class="form-control" placeholder="Filter with Keywords">
+                </li>
+                <br>
+                <li ui-sref-active="active">
+                  <button class="btn btn-warning" ng-click="check(1)" >Apply Filter</button>
+                </li>
+              </ul>
+            </div>
           </form>
 
           <div class="pull-right">

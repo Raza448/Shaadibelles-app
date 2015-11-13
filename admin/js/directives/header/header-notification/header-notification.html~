@@ -1,6 +1,6 @@
 <ul class="nav navbar-top-links navbar-right">
     <!-- /.dropdown -->
-    <li><a class="btn btn-danger" href="#/login">Logout</a>
+    <li><a class="btn btn-danger" href="logout()">Logout</a>
     <li>
     
     <!-- /.dropdown -->

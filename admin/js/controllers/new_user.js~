@@ -13,7 +13,6 @@ angular.module('sbAdminApp')
 
     $scope.register = function(userData) {
       var data = {
-         'realm' : 'guest',
         'name': userData.name,
         'username': userData.username,
         'email': userData.email,

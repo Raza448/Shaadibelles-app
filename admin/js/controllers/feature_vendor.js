@@ -41,7 +41,7 @@ $scope.getVendors = function() {
 
       $http.get(url)
         .then(function(res) {
-          $scope.vendors = _.where(res.data, {'role' : 'vendor'});
+          $scope.vendors = _.where(res.data, {'realm' : 'vendor'});
         })
     }
 

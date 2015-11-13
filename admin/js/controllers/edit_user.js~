@@ -7,7 +7,7 @@ angular.module('sbAdminApp')
 
 
     $scope.formData = {
-      realm : 'guest',
+      realm : 'guest'
       name: null,
       username: null,
       password: null,

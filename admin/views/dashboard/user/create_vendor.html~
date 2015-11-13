@@ -14,61 +14,17 @@
           </div>
           <div class="form-group">
             <input class="form-control" placeholder="E-mail" ng-model="formData.email" name="email" type="email" required>
-          </div>
-          <div class="form-group">
-            <input class="form-control" placeholder="password" ng-model="formData.password" name="email" type="password" required>
-          </div>          
-          <div class="form-group">
-            <input class="form-control" placeholder="Phone " ng-model="formData.business.phone" required>
-          </div>  
-          <div class="form-group">
-            <input class="form-control" placeholder="Business Name" ng-model="formData.business.name" required>
-          </div>     
-          <div class="form-group">
-            <input class="form-control" placeholder="Business Email" ng-model="formData.business.email" required>
-          </div>  
-          <div class="form-group">
-            <input class="form-control" placeholder="City" ng-model="formData.business.city" required>
-          </div>   
-          <div class="form-group">
-            <input class="form-control" placeholder="State" ng-model="formData.business.state" required>	
-          </div>      
-          <div class="form-group">
-			    <select
-              data-placeholder="Select Country"
-              class="form-control"
-              chosen
-              ng-model="formData.business.country"
-              ng-options="item for item in countries">
-            </select> 
-          </div>     
-          <div class="form-group" ng-repeat="item in formData.location">
-	            <input class="form-control" placeholder="State" ng-model="item" required>	
-          </div>                                    
-          <div class="form-group">
-            <input class="form-control" placeholder="facbook" ng-model="formData.social.facebook" required>
           </div>        
+                                         
+           <div class="form-group">
+            <input class="form-control" ng-if="!formData.id" placeholder="password" ng-model="formData.password" name="email" type="email" required>
+          </div>  
           <div class="form-group">
-            <input class="form-control" placeholder="twitter " ng-model="formData.social.twitter" required>
-          </div>          
-          <div class="form-group">
-            <input class="form-control" placeholder="instagram " ng-model="formData.social.instagram" required>
-          </div>                                               
-          <div class="form-group">
-            <input class="form-control" placeholder="website" ng-model="formData.website" required>
-          </div>
-          <div class="form-group" ng-repeat="item in formData.category">
-            <label>Category</label>
-            <select
-              data-placeholder="Select Category"
-              class="form-control"
-              chosen
-              ng-model="item"
-              ng-options="item for item in vendorTypes">
-            </select>
-          </div>
+            <input class="form-control" ng-if="!formData.id" placeholder="confirm password" ng-model="confirmpassword" name="email" type="email" required>
+          </div>   
+         
           <!-- Change this to a button or input when using this as a form -->
-          <button type="submit" class="btn btn-lg btn-success btn-block">{{buttonText}}</button>
+          <button type="submit" ng-disabled="formData.password != confirmpassword" class="btn btn-lg btn-success btn-block">{{buttonText}}</button>
         </fieldset>
       </form>
     </div>

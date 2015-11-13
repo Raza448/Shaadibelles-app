@@ -22,11 +22,7 @@ angular.module('sbAdminApp')
         window.remote + '/api/users?access_token=' + $rootScope.user.accessToken
       ).then(
         function(res) {
-         res.data.forEach(function(item){
-			 if(!item.vendor){
-				 $scope.users.push(item);
-				 }
-			 });
+                         $scope.users = _.where(res.data, {'realm' : 'guest'});
         }
       );
     }

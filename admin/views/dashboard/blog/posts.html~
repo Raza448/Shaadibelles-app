@@ -4,12 +4,12 @@
   <div class="col-lg-12">
     <form class="form-inline col-lg-12">
       <div class="form-group">
-        <input class="form-control" type="search" ng-model="searchText" placeholder="Search Pages"/>
+        <input class="form-control" type="search" ng-model="searchText" placeholder="Search Posts"/>
       </div>
       <div class="form-group pull-right">
-        <a ui-sref="dashboard.new-page" class="btn btn-primary btn-sm">Create Page</a>
-        <button id="delete" ng-click = "deletePages()" class="btn btn-primary btn-sm"> Delete Selected</button>
-  
+        <a ui-sref="dashboard.new-post" class="btn btn-primary btn-sm">Create Post</a>
+        <button id="delete" ng-click = "deletePosts()" class="btn btn-primary btn-sm"> Delete Selected</button>
+      
         <!-- /.nav-second-level -->
       </div>
      
@@ -23,7 +23,7 @@
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <h5>
-              <small>Create a page by clicking create page button, Delete a selected page by clicking delete selected button.</small>
+              <small>Create a post by clicking create post button, Delete a selected post by clicking delete selected button.</small>
             </h5>
             <div class="pull-right">
               <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
@@ -41,24 +41,28 @@
                 </th>
                 <th>Title</th>
                 <th>Description</th>
-           
+                <th>Created Date</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
             <!--shortcuts table header ends here-->
             <!-- shortcuts table data-->
             <tbody>
-              <tr ng-repeat="page in pages | filter: searchText">
+              <tr ng-repeat="post in posts | filter: searchText">
                 <td>
-                  <input type="checkbox" id="{{page.id}}" class="regular-checkbox-td" ng-checked="master" />
-                  <label for="{{page.id}}"></label>
+                  <input type="checkbox" id="{{post.id}}" class="regular-checkbox-td" ng-checked="master" />
+                  <label for="{{post.id}}"></label>
                 </td>
-                <td><strong>{{page.title}}</strong></td>
-                <td>{{page.description}}</td>
-                
+                <td><strong>{{post.title}}</strong></td>
+                <td>{{post.description.substring(0, 100)}}</td>
+                <td>{{post.created}}</td>
+               <td>
+                  <a class="btn btn-sm btn-info" href="/#/dashboard/ratings?id={{post.id}}">Ratings</a>                  
+                </td>
                 <td>
-                  <a class="btn btn-sm btn-primary" href="/#/dashboard/edit-page?id={{page.id}}">Edit</a>
-
+                  <a class="btn btn-sm btn-primary" href="/#/dashboard/edit-post?id={{post.id}}">Edit</a>
+                  <a class="btn btn-sm btn-info" href="/#/dashboard/ratings?id={{post.id}}">Ratings</a>                  
                 </td>
               </tr>
             </tbody>

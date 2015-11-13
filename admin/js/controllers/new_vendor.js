@@ -10,29 +10,7 @@ angular.module('sbAdminApp')
       name: null,
       username: null,
       password: null,
-      email: null,
-      vendor : {
-		  category : null,
-		  business : {
-			  name : null,
-			  email: null,
-			  city : null,
-			  state : null,
-			  country : null,
-                          phone : null
-			  },
-		  website : null,
-		  social : {
-			  facebook : null,
-			  twitter : null,
-			  instagram: null
-			  },
-		  locations : [],
-		  photos: [],
-		  card : {},
-		  billing : {}	  
-			  
-		  }      
+      email: null
     };
 
     $scope.vendorTypes = window.vendorTypes;

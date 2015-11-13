@@ -4,33 +4,11 @@ angular.module('sbAdminApp')
   .controller('EditVendorCtrl', function($scope, $http, $location, $rootScope) {
     $scope.title = "Update vendor";
     $scope.buttonText = "Update";
-    $scope.countries = window.countries
     $scope.formData = {
       realm : 'vendor',
       name: null,
       username: null,
-      email: null,
-      vendor : {
-		  category : null,
-		  business : {
-			  name : null,
-			  email: null,
-			  city : null,
-			  state : null,
-			  country : null
-			  },
-		  website : null,
-		  social : {
-			  facebook : null,
-			  twitter : null,
-			  instagram: null
-			  },
-		  locations : [],
-		  photos: [],
-		  card : {},
-		  billing : {}	  
-			  
-		  }      
+      email: null     
     };
 
         $scope.vendorTypes = window.vendorTypes;
