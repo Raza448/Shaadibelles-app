@@ -15,7 +15,7 @@
   },
   "AccessToken": {
     "dataSource": "mongodb",
-    "public": false
+    "public": true
   },
   "ACL": {
     "dataSource": "mongodb",
@@ -72,7 +72,7 @@
   "user": {
     "dataSource": "mongodb",
     "public": true,
- "options": {
+    "options": {
       "emailVerificationRequired": true
     }
   },
@@ -80,7 +80,7 @@
     "dataSource": "mongodb",
     "public": true
   },
- "Email": {
+  "Email": {
     "dataSource": "emailDs"
   },
   "rating": {

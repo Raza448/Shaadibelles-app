@@ -4,6 +4,7 @@ var app = module.exports = loopback();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
+var Facebook = require('facebook-node-sdk');
 
 
 boot(app, __dirname);
@@ -12,6 +13,7 @@ app.use("/admin/js", loopback.static(__dirname + "/../admin/js"));
 app.use("/admin/css", loopback.static(__dirname + "/../admin/css"));
 app.use("/admin/views", loopback.static(__dirname + "/../admin/views"));
 app.use("/components", loopback.static(__dirname + "/../components"));
+  app.use(Facebook.middleware({ appId: '748452378599729', secret: '935fef9dbef266953cc94756dda7f4dc' }));
 
  var ds = app.loopback.createDataSource({
         connector: require('loopback-component-storage'),
@@ -143,6 +145,36 @@ app.get('/', function (req, res) {
  req.session.user = null;
 }
   fs.createReadStream('public/index.html').pipe(res);
+});
+
+
+app.get('/auth/facebook', Facebook.loginRequired(), function (req, res) {
+  req.facebook.api('/me?fields=email,name,id', function(err, user) {
+  if(err){
+ console.log(err);
+}
+  console.log(user);
+  app.models.user.findOne({ where : { email : user.email}}, function(err, user){
+ if(err) {
+ console.log(err);
+}
+ if(user.id){
+app.models.AccessToken.create({userId: user.id}, function(err, token){
+ if(err){
+ console.log(err);
+}
+  req.session.user = {
+          'userId' : token.userId,
+          'accessToken' : token.id
+        }
+  res.redirect('/');
+});
+} else {
+  console.log('user not found');
+  res.redirect('/');
+}
+});
+  });
 });
 
 

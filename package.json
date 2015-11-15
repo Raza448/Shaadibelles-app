@@ -27,7 +27,8 @@
     "crypto": "0.0.3",
     "bower": "~1.6.5",
     "express-session": "~1.12.1",
-    "cookie-parser": "~1.4.0"
+    "cookie-parser": "~1.4.0",
+    "facebook-node-sdk": "~0.2.0"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"
