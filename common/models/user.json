@@ -5,7 +5,12 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+"password": {
+      "type": "string",
+      "required": false
+    }
+},
   "validations": [],
   "relations": {
     "post": {

@@ -369,6 +369,48 @@ angular
         })
 
 
+        .state('main.exist', {
+            url: '/exist',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/exist.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
+
+  .state('main.notexist', {
+            url: '/notexist',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/notexist.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
+.state('main.regsuccess', {
+            url: '/regsuccess',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/regsuccess.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
 
 
         .state('main.signuptwo', {

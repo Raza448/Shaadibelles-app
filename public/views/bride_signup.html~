@@ -76,12 +76,13 @@
               <div class="col-md-10 col-lg-10 col-sm-10 text-center">
                 <input type="submit" value="SIGN UP">
               </div>
-              <div class="col-md-10 col-lg-10 col-sm-10 text-center">
-                <label>OR</label> 
-              </div>
-              <div class="col-md-10 col-lg-10 col-sm-10 text-center">
-                <button class="btn-fb"><span>SIGN IN W/FACEBOOK</span></button>
-              </div>
+ <div class="col-md-10 col-lg-10 col-sm-10 text-center">
+                            	<label>OR</label> 
+                            </div>
+                            <div class="col-md-10 col-lg-10 col-sm-10 text-center">
+                            	<a href="/auth/facebook/signup"><button class="btn-fb" ><span>SIGN IN W/FACEBOOK</span></button></a>
+                            </div>
+             
             </div>
           </div>
           <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>

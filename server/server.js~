@@ -5,7 +5,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
 var Facebook = require('facebook-node-sdk');
-
+var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 
 boot(app, __dirname);
 app.use("/public", loopback.static(__dirname + "/../public"));
@@ -154,7 +154,156 @@ app.get('/auth/facebook', Facebook.loginRequired(), function (req, res) {
  console.log(err);
 }
   console.log(user);
+  app.models.user.findOne({ where : { email : user.email}}, function(err, user){
+ if(err) {
+ console.log(err);
+}
+ if(user.id){
+app.models.AccessToken.create({userId: user.id}, function(err, token){
+ if(err){
+ console.log(err);
+}
+  req.session.user = {
+          'userId' : token.userId,
+          'accessToken' : token.id
+        }
+  res.redirect('/');
+});
+} else {
+  console.log('user not found');
+  res.redirect('/notexists');
+}
+});
+  });
+});
 
+
+
+app.get('/auth/facebook/signup', Facebook.loginRequired(), function (req, res) {
+  req.facebook.api('/me?fields=email,name,id', function(err, user) {
+  if(err){
+ console.log(err);
+}
+  console.log(user);
+  app.models.user.findOne({ where : { email : user.email}}, function(err, userFound){
+ if(err) {
+ console.log(err);
+}
+ if(userFound && userFound.id){
+  res.redirect('/exists')
+} else {
+var array = user.email.split('@');
+ 
+  var newUser = {};
+
+   newUser.email = user.email;
+   newUser.username = array[0];
+    newUser.name = user.name;
+    newUser.emailVerified = true;
+    newUser.usePassword = false;
+    newUser.realm = 'guest';
+    stripe.customers.create({
+      email: user.email
+    }).then(function(customer) {
+      newUser.id = customer.id;
+      app.models.user.create(newUser, function(err, user) {
+     console.log(user);       
+        if (err) {
+console.log(err);
+        } else {
+
+
+app.models.Role.findOne({ 'where' : { 'name' : 'guest' }}, function(err, role ){
+ role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+          res.redirect('/regsuccess');
+        console.log('Created principal:', principal); 
+});
+});
+
+
+}
+});
+});
+
+
+
+
+
+
+
+
+}
+});
+  });
+});
+
+
+
+
+
+
+app.get('/auth/facebook/vendorsignup', Facebook.loginRequired(), function (req, res) {
+  req.facebook.api('/me?fields=email,name,id', function(err, user) {
+  if(err){
+ console.log(err);
+}
+  console.log(user);
+  app.models.user.findOne({ where : { email : user.email}}, function(err, userFound){
+ if(err) {
+ console.log(err);
+}
+ if(userFound && userFound.id){
+  res.redirect('/exists');
+} else {
+var array = user.email.split('@');
+ 
+  var newUser = {};
+
+   newUser.email = user.email;
+   newUser.username = array[0];
+    newUser.name = user.name;
+    newUser.emailVerified = true;
+    newUser.usePassword = false;
+    newUser.realm = 'vendor';
+    stripe.customers.create({
+      email: user.email
+    }).then(function(customer) {
+      newUser.id = customer.id;
+      app.models.user.create(newUser, function(err, user) {
+     console.log(user);       
+        if (err) {
+console.log(err);
+        } else {
+
+
+app.models.Role.findOne({ 'where' : { 'name' : 'vendor' }}, function(err, role ){
+ role.principals.create({
+        principalType: app.models.RoleMapping.USER,
+        principalId: user.id
+      }, function(err, principal) {
+        if (err) throw err;
+          res.redirect('/regsuccess');
+        console.log('Created principal:', principal); 
+});
+});
+
+}
+});
+});
+
+
+
+
+
+
+
+
+}
+});
   });
 });
 
@@ -196,6 +345,18 @@ if(r.name === 'admin'){
 
 app.get('/verified', function (req, res) {
   res.redirect('/#/main/verified');
+});
+
+app.get('/exists', function (req, res) {
+  res.redirect('/#/main/exist');
+});
+
+app.get('/notexists', function (req, res) {
+  res.redirect('/#/main/notexist');
+});
+
+app.get('/regsuccess', function (req, res) {
+  res.redirect('/#/main/regsuccess');
 });
 
 app.get('/vendorverified', function (req, res) {
