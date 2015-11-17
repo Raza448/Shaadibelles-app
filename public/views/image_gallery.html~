@@ -173,7 +173,7 @@
               </ul>
               <div class="clearfix margin-top-40"></div>
               <h5>Tags</h5>
-              <p>Wedding Cake, Flowers, romantic, midsummer night's dream</p>
+              <p>Wedding Cake, Flowers, {{post.title}}, romantic, midsummer night's dream</p>
            
             </div>
           </div>
