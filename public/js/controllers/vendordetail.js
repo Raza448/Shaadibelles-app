@@ -16,6 +16,31 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
   $scope.id = $stateParams.id;
   $scope.vendor = null;
 
+    $scope.url = $location.absUrl();
+ $scope.shareFacebook = function(){
+FB.ui({
+method: 'feed',
+name: $scope.vendor.business.name,
+link: $scope.url,
+picture: $scope.vendor.gallery[0],
+source: '',
+caption: $scope.vendor.business.name,
+description: $scope.vendor.category[0],
+message: ''
+}, function(response){
+  console.log(response);
+});
+}
+
+
+$scope.pin = function(){
+window.open(
+'//pinterest.com/pin/create/button?media=' + $scope.vendor.gallery[0] + '&description=' + $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
+'width=750,height=288');    
+return false;
+}
+
+
   $scope.contact = function(request){
 
   request.email = $scope.vendor.email;

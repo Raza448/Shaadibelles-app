@@ -12,6 +12,16 @@ angular.module('sbFrontEnd') .controller('PostImagesCtrl', function($scope, $sta
     $scope.state = $state.current
     $scope.params = $stateParams;
     $scope.gallery = null;
+    $scope.url = $location.absUrl();
+
+
+$scope.pin = function(){
+window.open(
+'//pinterest.com/pin/create/button?media=' + $scope.post.cover || $scope.vendor.gallery[0] + '&description=' + $scope.post.description || $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
+'width=750,height=288');    
+return false;
+}
+
 
 
  $scope.shareFacebook = function(){

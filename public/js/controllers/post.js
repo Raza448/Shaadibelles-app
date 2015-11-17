@@ -14,7 +14,12 @@ angular.module('sbFrontEnd') .controller('PostCtrl', function($scope, $state, $s
     $scope.post = null;
      $rootScope.showSelect = false;
      
-
+$scope.pin = function(){
+window.open(
+'//pinterest.com/pin/create/button?media=' + $scope.post.cover + '&description=' + $scope.post.description + '&url='+ $scope.url, 'facebook-share-dialog',
+'width=750,height=288');    
+return false;
+}
 
     $scope.url = $location.absUrl();
 

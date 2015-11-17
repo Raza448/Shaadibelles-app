@@ -16,6 +16,31 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
   $scope.id = $stateParams.id;
   $scope.vendor = null;
 
+    $scope.url = $location.absUrl();
+ $scope.shareFacebook = function(){
+FB.ui({
+method: 'feed',
+name: $scope.post.title || $scope.vendor.business.name,
+link: $scope.url,
+picture: $scope.post.cover || $scope.vendor.gallery[0],
+source: '',
+caption: $scope.post.tagline || $scope.vendor.business.name,
+description: $scope.post.description || $scope.vendor.category[0],
+message: ''
+}, function(response){
+  console.log(response);
+});
+}
+
+
+$scope.pin = function(){
+window.open(
+'//pinterest.com/pin/create/button?media=' + $scope.post.cover || $scope.vendor.gallery[0] + '&description=' + $scope.post.description || $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
+'width=750,height=288');    
+return false;
+}
+
+
   $scope.contact = function(request){
 
   request.email = $scope.vendor.email;
@@ -83,6 +108,7 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id +
         }
         request(url, $scope.userReview).then(function(res) {
           $scope.userReview = res.data;
+          $rootScope.stopLoading();
         });
       });
 } else {

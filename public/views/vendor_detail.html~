@@ -34,6 +34,7 @@
 			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
 			<label class="star star-1" for="star-1"></label>
 		  </form>
+
 		</div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -96,7 +97,20 @@
 			<input class="star star-1" id="star-11" ng-checked="userReview.rating === 1" type="radio" ng-click="subrating(1)" name="star"/> 
 			<label class="star star-1" for="star-11"></label>
 		  </form>
+
+
 		</div>
+<ul class="star">
+                <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
+              <li><a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{post.tagline || vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
+                <li><a 
+ng-click="pin()"
+><i class="fa fa-pinterest fa-2x"> </i></a></li>
+                <li><a href="#"><i class="bg"> </i></a></li>
+                <li><a href="#"><i class="msg"> </i></a></li>
+                <li><a href="#"><i class="md"> </i></a></li>
+              </ul>
           </div>
         
         </div>
@@ -118,7 +132,7 @@
   </div>
   <div class="amazing">
     <div class="col-md-4 col-lg-4 col-sm-4 amaze" ng-repeat="image in vendor.gallery">
-      <img style="width: 100%; height: 400px;" src="{{image}}" class="img-width" alt="">
+      <img style="width: 100%; height:300px;" src="{{image}}" class="img-width" alt="">
     </div>
     <div class="clearfix"></div>
   </div>
