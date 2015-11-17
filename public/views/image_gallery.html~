@@ -164,8 +164,8 @@
 		  </form>
 		</div>
               <ul class="star">
-                <li><a href="#"><i class="fb"> </i></a></li>
-                <li><a href="#"><i class="twt"> </i></a></li>
+                <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
+                <li><a href=""><i class="twt"> </i></a></li>
                 <li><a href="#"><i class="rs"> </i></a></li>
                 <li><a href="#"><i class="bg"> </i></a></li>
                 <li><a href="#"><i class="msg"> </i></a></li>
@@ -179,8 +179,8 @@
           </div>
           <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
         <div  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content">
-          <div><img src="public/images/taj.jpg" class="img-width"/>
-          </div>
+
+
         </div>
       </div>
     </div>

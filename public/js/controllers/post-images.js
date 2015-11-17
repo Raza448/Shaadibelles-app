@@ -12,6 +12,23 @@ angular.module('sbFrontEnd') .controller('PostImagesCtrl', function($scope, $sta
     $scope.state = $state.current
     $scope.params = $stateParams;
     $scope.gallery = null;
+    $scope.url = $location.absUrl();
+
+ $scope.shareFacebook = function(){
+FB.ui({
+method: 'feed',
+name: $scope.post.title,
+link: $scope.url,
+picture: $scope.post.cover,
+source: '',
+caption: $scope.post.tagline,
+description: $scope.post.description,
+message: ''
+}, function(response){
+  console.log(response);
+});
+}
+
  $scope.changeEvent = function(item){
      $scope.currentEvent = item;
 }

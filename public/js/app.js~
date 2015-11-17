@@ -18,14 +18,16 @@ angular
         'ngCookies',
         'ngFileUpload',
         'angular.filter',
+        'nemLogging',
+        'uiGmapgoogle-maps',
         'wu.masonry',
         'angularPayments',
-         'djds4rce.angular-socialshare'
+        'ngSocial'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
         $ocLazyLoadProvider.config({
             debug: false,
-            events: true,
+            events: true
         });
 
 
@@ -384,10 +386,10 @@ angular
         })
 
 
-  .state('main.exist', {
-            url: '/exist',
+  .state('main.notexist', {
+            url: '/notexist',
             controller: 'MainCtrl',
-            templateUrl: 'public/views/exist.html',
+            templateUrl: 'public/views/notexist.html',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({

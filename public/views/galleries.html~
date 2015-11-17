@@ -1,12 +1,4 @@
-<style>
-  .carousel-caption {
-  margin-bottom: 400px;
-  }
-  .gallery-image:hover img{
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  }
-</style>
+
 <!-- header-section-ends -->
 <div class="header-slider">
   <div style="height: 305px">
@@ -44,7 +36,7 @@
         </div>
         <div class="clearfix"> </div>
         <div style="text-align:center;">
-          <a href="#" class="morebtn hvr-sweep-to-top" >LOAD MORE</a>
+          <a href="#" class="morebtn hvr-sweep-to-top" ng-click="galleryLimit += 10">LOAD MORE</a>
         </div>
       </div>
     </div>

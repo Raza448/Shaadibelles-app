@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="public/css/style.css" />
    
 <link rel='stylesheet' href='components/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+<link rel='stylesheet' href='components/angular-social/angular-social.css' />
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel='stylesheet' href="components/angular-socialshare/angular-socialshare.min.css">
     <script src="https://js.stripe.com/v2/"></script>
     <script>
 Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci'); 
@@ -22,6 +22,9 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
     <script src="public/js/plugin/jquery.mixitup.min.js" ></script>
     <script src="public/js/plugin/jquery.swipebox.min.js" ></script>
     <script src="public/js/plugin/owl.carousel.js" ></script>
+
+
+
 
     <script src="public/js/plugin/responsiveslides.min.js" ></script>
     <script src="public/js/plugin/responsiveslides.min.js"></script>
@@ -48,10 +51,17 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
       <script src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
       <script src="components/angular-sanitize/angular-sanitize.js"></script>
       <script src="components/angular-cookies/angular-cookies.js"></script>
+      <script src="components/angular-route/angular-route.js"></script>
       <script src="components/angular-filter/dist/angular-filter.js"></script>
-<script src="components/angular-socialshare/angular-socialshare.min.js"></script>
+          <script src="components/lodash/lodash.js"></script>
+
+<script src="components/angular-social/angular-social.js"></script>
+ <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
 
 <script type='text/javascript' src='components/angular-loading-bar/build/loading-bar.min.js'></script>
+          <script src="components/lodash/lodash.js"></script>
+          <script src="components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+          <script src="components/angular-google-maps/dist/angular-google-maps.min.js"></script>
 <script type="text/javascript" src="components/angular-ui-sortable/sortable.js"></script>
           <script src="components/angular-payments/lib/angular-payments.js"></script>
 	  <script src="components/ng-file-upload/ng-file-upload.js" ></script>
@@ -81,5 +91,25 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
    
    <div ui-view>
    </div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '748452378599729',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
   </body>
 </html>

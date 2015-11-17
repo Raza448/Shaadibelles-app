@@ -18,14 +18,15 @@ angular
         'ngCookies',
         'ngFileUpload',
         'angular.filter',
+        'nemLogging',
+        'uiGmapgoogle-maps',
         'wu.masonry',
-        'angularPayments',
-         'djds4rce.angular-socialshare'
+        'angularPayments'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
         $ocLazyLoadProvider.config({
             debug: false,
-            events: true,
+            events: true
         });
 
 
