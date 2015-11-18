@@ -1,4 +1,7 @@
 <!-- header-section-ends --> 
+ <script type="text/ng-template" id="alertbox.tpl.html">
+        <input id="addrSearch" name="searchAddress"  type="text" class="textfield" ng-model="address">
+      </script>
 <div class="content">
   <!---->
   <div class="container">
@@ -41,6 +44,9 @@
                 <textarea placeholder="About your service" cols="89" rows="5" ng-model="vendor.business.description" class="form-input"></textarea>
               </div>
             </div>
+
+
+            
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6">
                 <input type="text" placeholder="Email Address" ng-disabled="step1" class="form-input" ng-model="vendor.business.email">
@@ -86,6 +92,21 @@
                 <select class="form-inputt" ng-options="c for c in countries track by c" ng-model="vendor.billing.country">
                   <option value="">Country</option>
                 </select>
+              </div>
+
+            </div>
+              <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <label>SELECT A LOCATION</label>
+              </div>
+            </div>
+             <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+ <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true">
+        <ui-gmap-marker coords="marker.coords" ng-model="marker" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+
               </div>
             </div>
             <div class="row">

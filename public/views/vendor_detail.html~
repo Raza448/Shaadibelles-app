@@ -103,7 +103,7 @@
 <ul class="star">
                 <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{post.tagline || vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
+  href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
                 <li><a 
 ng-click="pin()"
 ><i class="fa fa-pinterest fa-2x"> </i></a></li>
@@ -130,12 +130,12 @@ ng-click="pin()"
       </div>
     </div>
   </div>
-  <div class="amazing">
-    <div class="col-md-4 col-lg-4 col-sm-4 amaze" ng-repeat="image in vendor.gallery">
-      <img style="width: 100%; height:300px;" src="{{image}}" class="img-width" alt="">
-    </div>
-    <div class="clearfix"></div>
-  </div>
-<div class="content-bottom"><iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d56964.46845451886!2d80.89127954472438!3d26.83106815692593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x399bfc4b9651ff11%3A0xb37481d152899549!2scharbagh+lucknow!3m2!1d26.8310723!2d80.92561239999999!5e0!3m2!1sen!2sin!4v1436600406451" width="100%" height="777" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+
+<div class="content-bottom">
+ <ui-gmap-google-map ng-if="vendor.geo" center="map.center" zoom="map.zoom" draggable="true">
+        <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+</div>
  
 </div>

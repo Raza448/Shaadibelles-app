@@ -18,17 +18,22 @@ angular
         'ngCookies',
         'ngFileUpload',
         'angular.filter',
-        'nemLogging',
         'uiGmapgoogle-maps',
         'wu.masonry',
         'angularPayments'
     ])
-    .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({
             debug: false,
             events: true
         });
 
+
+uiGmapGoogleMapApiProvider.configure({
+      key: 'AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM',
+      v: '3.17',
+      libraries: [ 'places', 'geocoder' ] // Required for SearchBox.
+    });
 
         $sceProvider.enabled(false);
 
@@ -442,7 +447,51 @@ angular
             }
         })
     }])
-    .run(function($rootScope, $state, $log, $cookieStore, $http) {
+    .run(function($rootScope, $state, $log, $cookieStore, $http, $timeout) {
+
+
+
+
+ $rootScope.map = {
+    "center": {
+      "latitude": 52.47491894326404,
+      "longitude": -1.8684210293371217
+    },
+    "zoom": 15
+  }; //TODO:  set location based on users current gps location
+  $rootScope.marker = {
+    id: 0,
+    coords: {
+      latitude: 52.47491894326404,
+      longitude: -1.8684210293371217
+    },
+    options: {
+      draggable: true
+    },
+    events: {
+      dragend: function(marker, eventName, args) {
+
+        $rootScope.marker.options = {
+          draggable: true,
+          labelContent: "lat: " + $rootScope.marker.coords.latitude +
+            ' ' + 'lon: ' + $rootScope.marker.coords.longitude,
+          labelAnchor: "100 0",
+          labelClass: "marker-labels"
+        };
+      }
+    }
+  };
+
+$rootScope.vendormarker = {
+    id: 1,
+    options: {
+      draggable: false
+    }
+  };
+
+  
+
+
  $rootScope.startLoading = function(){
   $rootScope.loading = true;
 }
@@ -743,7 +792,6 @@ $rootScope.stopLoading = function(){
 
 
             $rootScope.getData();
-
 
            
 

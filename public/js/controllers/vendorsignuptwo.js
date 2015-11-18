@@ -17,8 +17,15 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
        business : {},
        social : {},
        billing : {},
-       gallery : []
+       gallery : [],
+       geo : null
     };
+
+ $rootScope.$watch('marker.coords', function(coords){
+  if(coords){
+ $scope.vendor.geo = coords;
+}
+});
 
  $scope.gallery = {
   title : null,
@@ -65,6 +72,9 @@ $http.get('/credentials').then(function(res) {
             $scope.locationTwo = res.data.location[1] || null;
             $scope.vendor.website = res.data.website || null;
            $scope.vendor.billing = res.data.billing ||  {};
+           if(res.data.geo){
+  $scope.vendor.geo = res.data.geo;
+}
          $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken).then(function(res){
            $scope.gallery = res.data;        
     });
@@ -100,7 +110,10 @@ $http.get('/credentials').then(function(res) {
             $scope.vendor.category =  res.data.category || [null, null];
             $scope.vendor.location = res.data.location ||  [null, null];
             $scope.vendor.website = res.data.website || null;
-           $scope.vendor.billing = res.data.billing ||  {}
+           $scope.vendor.billing = res.data.billing ||  {};
+           if(res.data.geo){
+  $scope.vendor.geo = res.data.geo;
+}
         var request = $http.post;
             $scope.gallery.title = res.data.business.title;
             $scope.gallery.cover = res.data.gallery[0];
@@ -147,6 +160,10 @@ $rootScope.startLoading();
  window.scrollTo(0, 1100);
     $scope.step3 = false;
    };
+
+
+  
+
 
    $scope.handleStripe = function(status, response) {
      $rootScope.startLoading();
