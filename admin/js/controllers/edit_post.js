@@ -30,18 +30,9 @@ angular.module('sbAdminApp')
 
 
     $scope.upload = function(file, insertAction) {
-  var text = "";
-    var ext = file.name.split('.').pop();
 
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
-      File.upload(file).success(function(res) {
+    if(file){
+  File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;
@@ -49,22 +40,14 @@ angular.module('sbAdminApp')
         $scope.gallery.push(newfile);
       })
       return true;
+}
     }
 
 
 $scope.uploadCover = function(file) {
-  var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
-      File.upload(file).success(function(res) {
+  
+      if(file){
+File.upload(file).success(function(res) {
 
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
@@ -72,22 +55,13 @@ $scope.uploadCover = function(file) {
           fileName;
         $scope.post.cover = newfile;
       })
+}
     }
 
 
    $scope.uploadEventImage = function(file, item) {
-  var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
-      File.upload(file).success(function(res) {
+     if(file){
+ File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;
@@ -95,6 +69,7 @@ $scope.uploadCover = function(file) {
         $scope.post.events[$scope.post.events.indexOf(item)].gallery.push(newfile);
       })
       return true;
+}
     }
 
 
