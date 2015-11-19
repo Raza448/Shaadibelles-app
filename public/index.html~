@@ -61,7 +61,8 @@ Stripe.setPublishableKey('pk_test_pDVoBCWA6gg7TdnzJ0UUX7ci');
 	  <script src="components/angular-masonry/angular-masonry.js"></script>
   <script src="components/lodash/dist/lodash.js"></script>
           <script src="components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-          <script src="components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+
 
 <script type='text/javascript' src='components/angular-loading-bar/build/loading-bar.min.js'></script>
    

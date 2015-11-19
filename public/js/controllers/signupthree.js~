@@ -13,6 +13,8 @@ angular.module('sbFrontEnd') .controller('SignupThreeCtrl', function($scope, $ht
 });
 
      $rootScope.showSelect = false;
+
+    $scope.reviewsubmit = false;
   
    $scope.reviews = [
   { name : 'Photography' , contents: []},{ name : 'Venue', contents: [] } ,{ name: 'Event planner', contents: []}, {name :'Event Decor', contents: []}, {name: 'Makeup', contents:[]}, { name:'Mehndi', contents:[]},{ name : 'Hair', contents: []}, { name:'Cinematography', contents:[]}, {name :'Bridal Fashion', contents: []},{ name: 'Cakes and treats', contents: []},{ name: 'Catering', contents:[]},{name: 'DJ', contents:[]}, { name:'Entertainment', contents: []}, { name:'Favars', contents: []},{ name:'Flaral Design', contents:[]}, { name :'Jewelry', contents: []},{ name:'Lighting', contents:[]},{name:'Manswear', contents: []},{ name:'Rentals', contents:[]}, { name:'Shoes', contents: []},{ name:'Stationery', contents:[]},{ name:'Transportation', contents:[]}, { name:'Wedding Officiant'
@@ -43,7 +45,8 @@ angular.module('sbFrontEnd') .controller('SignupThreeCtrl', function($scope, $ht
 });
 
 });
-
+ $rootScope.stopLoading();
+ $scope.reviewsubmit = true;
 }
 
 });
