@@ -8,11 +8,14 @@ var Facebook = require('facebook-node-sdk');
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 
 boot(app, __dirname);
+app.use(loopback.favicon(path.resolve(__dirname, '../favicon.ico')));
 app.use("/public", loopback.static(__dirname + "/../public"));
 app.use("/admin/js", loopback.static(__dirname + "/../admin/js"));
 app.use("/admin/css", loopback.static(__dirname + "/../admin/css"));
 app.use("/admin/views", loopback.static(__dirname + "/../admin/views"));
 app.use("/components", loopback.static(__dirname + "/../components"));
+
+
   app.use(Facebook.middleware({ appId: '748452378599729', secret: '935fef9dbef266953cc94756dda7f4dc' }));
 
  var ds = app.loopback.createDataSource({
