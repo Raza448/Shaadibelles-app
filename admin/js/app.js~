@@ -736,7 +736,7 @@ angular
     
      $http.get('/credentials').then(function(res){
   if(res.data.accessToken){
-  alert(res.data.accessToken);
+
  $rootScope.user = { 'id': res.data.userId, 'accessToken': res.data.accessToken };
 }
  else {

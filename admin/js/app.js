@@ -739,9 +739,7 @@ angular
 
  $rootScope.user = { 'id': res.data.userId, 'accessToken': res.data.accessToken };
 }
- else {
- location.href = '/';
-}
+
 });
   });
 

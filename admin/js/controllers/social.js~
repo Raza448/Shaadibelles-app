@@ -6,8 +6,7 @@ angular.module('sbAdminApp')
 
    $http.get(window.remote + '/api/admins/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
-		  $scope.item = res.data.owner.social;
-		  $scope.settings = res.data.owner.settings;
+		  $scope.item = res.data.social;
 		  }
    );
 

@@ -52,19 +52,19 @@ Your browser does not support the video tag.
           </li>
           <li>
              <a ng-if="homeWidgets[1].content.type === 'Post'" href="#/main/post/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 240px; width: 320;">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>
             </a>
             <a ng-if="homeWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 240px; width: 320;">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>
             </a>
            <a ng-if="homeWidgets[1].content.type === 'Category'" href="#/main/category/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 240px; width: 320;">
+              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>

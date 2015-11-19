@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('EditPostCtrl', function($sce, $scope, $http, $location, File,
+  .controller('EditPostCtrl', function($scope, $http, $location, File,
     $rootScope,
     $modal) {
     $scope.post = {
@@ -22,16 +22,6 @@ angular.module('sbAdminApp')
         .then(function(res) {
           $scope.categories = res.data;
         })
-
-
-
-
-     
-
-
-
-
-
 
 
     var query = $location.search();
