@@ -20,7 +20,8 @@ angular
         'angular.filter',
         'uiGmapgoogle-maps',
         'wu.masonry',
-        'angularPayments'
+        'angularPayments',
+        'duScroll'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({
@@ -162,6 +163,21 @@ uiGmapGoogleMapApiProvider.configure({
                 }
             }
         })
+
+ .state('main.vendorpremium', {
+            url: '/premium',
+            controller: 'VendorSignupTwoCtrl',
+            templateUrl: 'public/views/premium.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/vendorsignuptwo.js', 'public/js/window.js', 'public/js/controllers/main.js']
+                    })
+                }
+            }
+        })
+
 
         .state('main.post', {
             url: '/post/:id',

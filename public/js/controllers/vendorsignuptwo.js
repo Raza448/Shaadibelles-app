@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the webApp
  */
-angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope, $http, $rootScope, $cookieStore, $location, File) {
+angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope, $http, $rootScope, $cookieStore, $location, File,        $anchorScroll) {
     angular.element("#toTop").click();
      $rootScope.showSelect = false;
     $scope.vendor = {
@@ -74,6 +74,7 @@ $http.get('/credentials').then(function(res) {
            $scope.vendor.billing = res.data.billing ||  {};
            if(res.data.geo){
   $scope.vendor.geo = res.data.geo;
+  $rootScope.marker.coords = res.data.geo;
 }
          $http.get(window.remote + '/api/users/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken).then(function(res){
            $scope.gallery = res.data;        
@@ -113,6 +114,7 @@ $http.get('/credentials').then(function(res) {
            $scope.vendor.billing = res.data.billing ||  {};
            if(res.data.geo){
   $scope.vendor.geo = res.data.geo;
+
 }
         var request = $http.post;
             $scope.gallery.title = res.data.business.title;
@@ -151,15 +153,28 @@ $rootScope.startLoading();
      $scope.save();
      $scope.step1 = true;
  window.scrollTo(0, 600);
+
+
     $scope.step2 = false;
+
    };
 
    $scope.saveStep2 = function(){
      $scope.save();
      $scope.step2 = true;
  window.scrollTo(0, 1100);
-    $scope.step3 = false;
+
+   $("#vendorsaved").modal('show');
    };
+
+$scope.gopremium = function(){
+   $("#vendorsaved").modal('hide');
+   location.href = '#/main/premium';
+}
+
+
+
+
 
 
   
