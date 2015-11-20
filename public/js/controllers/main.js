@@ -74,7 +74,7 @@ $scope.loginandbusiness = function(userData) {
 			'accessToken' : res.data.id, 
 		  };
            
-   $modalStack.dismissAll();
+   		$("#vendor-login").modal('hide');
              $rootScope.stopLoading();
              location.href = '/#/main/vendorsignuptwo';
      },  function(err){
@@ -106,7 +106,7 @@ $scope.loginandprofile = function(userData) {
 			'user' : res.data.userId,
 			'accessToken' : res.data.id, 
 		  };
-         $modalStack.dismissAll();
+   		$("#login-two").modal('hide');
             $rootScope.stopLoading();
              location.href = '/#/main/signuptwo';
      },  function(err){

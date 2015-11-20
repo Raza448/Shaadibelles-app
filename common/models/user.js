@@ -89,32 +89,30 @@ app.models.Role.findOne({ 'where' : { 'name' : 'guest' }}, function(err, role ){
 });
 }
 
+UserModel.generateVerificationToken(user, function(err, token){
  
-
-
+UserModel.updateAll({ 'id' : user.id}, { 'verificationToken': token}, function(err , count){
 console.log('> user.afterRemote triggered');
-
-    var options = {
-      host: 'http://shaadibelles.herokuapp.com',
-      port: 80,
-      type: 'email',
-      to: user.email,
-      from: 'noreply@loopback.com',
-      subject: 'Thanks for registering.',
-      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      user: user
-    };
-    if(user.realm === 'vendor'){
-      options.redirect =  '/vendorverified';
-} else {
-     options.redirect =  '/verified';
+  var url = 'http://shaadibelles.herokuapp.com:80/api/users/confirm?uid='+ user.id +'&redirect=/verified&token=' + token;
+if(user.realm === 'vendor'){
+  url = 'http://shaadibelles.herokuapp.com:80/api/users/confirm?uid='+ user.id +'&redirect=/vendorverified&token=' + token;
 }
+    var options = {
+      to: user.email,
+      from: 'shaadibellesinfo@shaadibelles.com',
+      subject: 'Shaadibelles Registration Acknowledgement',
+      html : "<p>Thankyou for register with shaadibelles. You are one step away to use your account. Kindly click on given below link to activate your account</p></br></br><a href='"+ url +"'>Click here to activate</a></br></br><p>Regards</p></br><img src='http://shaadibelles.herokuapp.com/public/images/logo.png' /></br><p>Shaadibelles Inc</p>"
+    };
+  
 
-    user.verify(options, function(err, response, next) {
+     UserModel.app.models.Email.send(options, function(err, response, next) {
       if (err) return next(err);
       console.log('> verification email sent:', response);
           res.send(user);
     });
+});
+
+});
 
         }
       });
