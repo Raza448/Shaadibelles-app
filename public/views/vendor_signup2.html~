@@ -44,6 +44,9 @@
                 <textarea placeholder="About your service" cols="89" rows="5" ng-model="vendor.business.description" class="form-input"></textarea>
               </div>
             </div>
+
+
+            
             <div class="row">
               <div class="col-sm-6 col-md-6 col-lg-6">
                 <input type="text" placeholder="Email Address" ng-disabled="step1" class="form-input" ng-model="vendor.business.email">

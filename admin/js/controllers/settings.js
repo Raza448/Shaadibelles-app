@@ -19,7 +19,7 @@ angular.module('sbAdminApp')
      $scope.getVendors = function(){
 	  var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
 	  $http.get(url).then(function(res){
-		  $scope.vendors = _.where(res.data, { 'role': 'vendor'});
+		  $scope.vendors = _.where(res.data, { 'realm': 'vendor'});
 		  });
     };
 

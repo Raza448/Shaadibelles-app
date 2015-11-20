@@ -104,7 +104,7 @@ $scope.getAdverts = function() {
         })
     }
 
- $scope.getSliders();
+ $scope.getAdverts();
 
  $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken).then(
       function(res){
