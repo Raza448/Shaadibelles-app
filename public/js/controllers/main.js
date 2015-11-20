@@ -76,8 +76,20 @@ $scope.loginandbusiness = function(userData) {
            
    $modalStack.dismissAll();
              $rootScope.stopLoading();
-             location.href = '#/main/vendorsignuptwo';
-     });
+             location.href = '/#/main/vendorsignuptwo';
+     },  function(err){
+  if(err){
+  console.log(err);
+  console.log(err.data);
+  console.log(err.data.error);
+  if(err.data.error.code === "LOGIN_FAILED"){
+ $rootScope.errormsg = "Username or password is incorrect, please try again";
+}
+ if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
+ $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";
+}
+}
+});
 	};
 
 $scope.loginandprofile = function(userData) {
@@ -96,25 +108,31 @@ $scope.loginandprofile = function(userData) {
 		  };
          $modalStack.dismissAll();
             $rootScope.stopLoading();
-             location.href = '#/main/signuptwo';
-     });
+             location.href = '/#/main/signuptwo';
+     },  function(err){
+  if(err){
+  console.log(err);
+  console.log(err.data);
+  console.log(err.data.error);
+  if(err.data.error.code === "LOGIN_FAILED"){
+ $rootScope.errormsg = "Username or password is incorrect, please try again";
+}
+ if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
+ $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";
+}
+}
+});
 	};
 
  $scope.loginmodaltwo = function(){
- var modalInstance = $modal.open({
-                templateUrl: 'public/views/login.html',
-                size: 'md',
-                controller: 'MainCtrl'
-            });
+   		$("#login-two").modal('show');
+
 }
 
 
 $scope.vendorlogintwo= function(){
- var modalInstance = $modal.open({
-                templateUrl: 'public/views/vendorlogin.html',
-                size: 'md',
-                controller: 'MainCtrl'
-            });
+   		$("#vendor-login").modal('show');
+
 }
 
 
