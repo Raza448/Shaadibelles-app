@@ -21,7 +21,7 @@ angular.module('sbFrontEnd')
       };
       $http.post(url, data).then(function(res) {
 
-        location.href = '#/dashboard/home';
+        location.href = '/';
 
       });
     };

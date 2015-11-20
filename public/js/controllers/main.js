@@ -133,8 +133,7 @@ $scope.vendorlogintwo= function(){
 			'accessToken' : res.data.id, 
 		  };
              $rootScope.stopLoading();
-               $state.reload();
-		$("#form-content").modal('hide');
+               location.href = '/';
      }, function(err){
   if(err){
   console.log(err);
