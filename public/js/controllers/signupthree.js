@@ -33,7 +33,7 @@ angular.module('sbFrontEnd') .controller('SignupThreeCtrl', function($scope, $ht
        review.userId = $rootScope.user.id;
          $http.get( window.remote + '/api/users/' + $rootScope.user.id + '/post?access_token='+ $rootScope.user.accessToken).then(function(res){
          review.postId = res.data.id;
-        $http.post(window.remote + '/api/reviews', review
+        $http.put(window.remote + '/api/reviews', review
         ).then(function(res){ 
 
          

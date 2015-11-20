@@ -3,7 +3,8 @@
 
       <div class="clearfix"></div>
       <h5>READ THE REVIEWS ABOUT {{vendor.business.name.toUpperCase()}}</h5>
-      <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids" ng-repeat="review in reviews">
+      <div class="clearfix"></div>
+      <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids" ng-repeat="review in reviews | unique : 'review.post.id'">
         <a href=""><img id="bottom_grid_div" class="img-responsive" src="{{review.post.cover}}" title="name" alt=""></a>
         <h4>{{review.post.title}}
         </h4>
