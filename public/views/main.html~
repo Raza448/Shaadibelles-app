@@ -6,9 +6,9 @@
 </style>
 
 <div class="header" id="home" ng-controller="MainCtrl">
-    <div id="loading">
+    <div id="loading" ng-show="loading">
 <div id="loading-txt">
-        <h1><img src="public/images/logo.png" class="img-responsive"> Loading ...</h1>
+    <h1><img src="public/images/logo.png" class="img-responsive"> Loading ...</h1>
 </div>
 </div>
   <div class="header-top" ng-hide="">
@@ -35,6 +35,10 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                       <h1>Wedding Belles are in the air!</h1>
+                      <h1 ng-show="errormsg"></h1>
+                    </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                      <h4>{{errormsg}}</h4>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="col-lg-6 col-md-6 col-sm-6 border-right">
