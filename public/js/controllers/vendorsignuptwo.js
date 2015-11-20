@@ -12,7 +12,7 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
      $rootScope.showSelect = false;
     $scope.vendor = {
        category : [null, null],
-       location : [null, null],
+       location : [],
        website : null,
        business : {},
        social : {},
@@ -33,19 +33,19 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
   cover : null
  };
 
-  $scope.locationOne = null;
-  $scope.locationTwo = null;
- $scope.$watch('locationOne', function(location){
-  if(location){
-  $scope.vendor.location[0] = location;
+$scope.locationremove = function(location){
+var i  = $scope.vendor.location.indexOf(location);
+ $scope.vendor.location.splice(i, 1);
 }
-});
 
- $scope.$watch('locationTwo', function(location){
-  if(location){
-  $scope.vendor.location[1] = location;
+
+$scope.locationpush = function(location){
+ $scope.vendor.location.push(location);
+ $scope.locationOne = null;
 }
-});
+
+  $scope.locationOne = null;
+  
 
   $scope.categoryOne = null;
   $scope.categoryTwo = null;
@@ -68,8 +68,7 @@ $http.get('/credentials').then(function(res) {
             $scope.vendor.gallery = res.data.gallery || [];      
             $scope.categoryOne =  res.data.category[0] || null;
             $scope.categoryTwo =  res.data.category[1] || null;
-            $scope.locationOne = res.data.location[0] || null;
-            $scope.locationTwo = res.data.location[1] || null;
+            $scope.vendor.location = res.data.location || null;
             $scope.vendor.website = res.data.website || null;
            $scope.vendor.billing = res.data.billing ||  {};
            if(res.data.geo){
@@ -114,7 +113,7 @@ $http.get('/credentials').then(function(res) {
             $scope.vendor.social = res.data.social || {};
             $scope.vendor.gallery = res.data.gallery || [];      
             $scope.vendor.category =  res.data.category || [null, null];
-            $scope.vendor.location = res.data.location ||  [null, null];
+            $scope.vendor.location = res.data.location ||  [];
             $scope.vendor.website = res.data.website || null;
            $scope.vendor.billing = res.data.billing ||  {};
            if(res.data.geo){
@@ -152,7 +151,7 @@ $scope.step2 = true;
             $scope.vendor.social = res.data.social || {};
             $scope.vendor.gallery = res.data.gallery || [];      
             $scope.vendor.category =  res.data.category || [null, null];
-            $scope.vendor.location = res.data.location ||  [null, null];
+            $scope.vendor.location = res.data.location ||  [];
             $scope.vendor.website = res.data.website || null;
            $scope.vendor.billing = res.data.billing ||  {};
            if(res.data.geo){
