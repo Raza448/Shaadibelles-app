@@ -100,11 +100,54 @@ $http.get('/credentials').then(function(res) {
 
   $rootScope.countries = window.countries;
   $rootScope.vendorCategories = window.vendorTypes;
-    $scope.save = function(){
+    $scope.saveStep1 = function(){
    $rootScope.startLoading();
     var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
     $http.put(url, $scope.vendor).then(function(res){
             $rootScope.stopLoading();
+ $scope.step1 = true;
+ window.scrollTo(0, 600);
+
+
+    $scope.step2 = false;
+            $scope.vendor.business = res.data.business || {};
+            $scope.vendor.social = res.data.social || {};
+            $scope.vendor.gallery = res.data.gallery || [];      
+            $scope.vendor.category =  res.data.category || [null, null];
+            $scope.vendor.location = res.data.location ||  [null, null];
+            $scope.vendor.website = res.data.website || null;
+           $scope.vendor.billing = res.data.billing ||  {};
+           if(res.data.geo){
+  $scope.vendor.geo = res.data.geo;
+
+}
+        var request = $http.post;
+            $scope.gallery.title = res.data.business.title;
+            $scope.gallery.cover = res.data.gallery[0];
+              if($scope.gallery.id){
+                 request  = $http.put;
+              }
+               request(window.remote + '/api/users/' + $rootScope.user.id + '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery).then(function(res){
+            $scope.gallery = res.data;
+              });
+         
+
+    });
+    
+   };
+
+
+
+
+   $scope.saveStep2 = function(){
+   $rootScope.startLoading();
+    var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
+    $http.put(url, $scope.vendor).then(function(res){
+            $rootScope.stopLoading();
+$scope.step2 = true;
+ window.scrollTo(0, 1100);
+
+   $("#vendorsaved").modal('show');
             $scope.vendor.business = res.data.business || {};
             $scope.vendor.social = res.data.social || {};
             $scope.vendor.gallery = res.data.gallery || [];      
@@ -149,23 +192,9 @@ $rootScope.startLoading();
 }
     }
 
-   $scope.saveStep1 = function(){
-     $scope.save();
-     $scope.step1 = true;
- window.scrollTo(0, 600);
+ 
 
-
-    $scope.step2 = false;
-
-   };
-
-   $scope.saveStep2 = function(){
-     $scope.save();
-     $scope.step2 = true;
- window.scrollTo(0, 1100);
-
-   $("#vendorsaved").modal('show');
-   };
+ 
 
 $scope.gopremium = function(){
    $("#vendorsaved").modal('hide');
