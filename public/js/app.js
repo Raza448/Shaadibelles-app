@@ -762,7 +762,7 @@ $rootScope.stopLoading = function(){
 
 
                     vendors.forEach(function(vendor) {
-                        $http.get(window.remote + '/api/users/' + vendor.id + '/reviews').then(function(res) {
+                        $http.get(window.remote + '/api/users/' + vendor.id + '/userReviews').then(function(res) {
                             vendor.reviews = res.data;
                             vendor.totalratings = 0;
                             vendor.reviews.forEach(function(review) {

@@ -486,18 +486,6 @@ $rootScope.vendormarker = {
     id: 1,
     options: {
       draggable: false
-    },
-    events: {
-      dragend: function(marker, eventName, args) {
-
-        $rootScope.marker.options = {
-          draggable: true,
-          labelContent: "lat: " + $rootScope.marker.coords.latitude +
-            ' ' + 'lon: ' + $rootScope.marker.coords.longitude,
-          labelAnchor: "100 0",
-          labelClass: "marker-labels"
-        };
-      }
     }
   };
 

@@ -68,7 +68,7 @@ module.exports = function(UserModel) {
   if(user.realm === 'vendor'){
 app.models.Role.findOne({ 'where' : { 'name' : 'admin' }}, function(err, role ){
  role.principals.create({
-        principalType: RoleMapping.USER,
+        principalType: app.models.RoleMapping.USER,
         principalId: user.id
       }, function(err, principal) {
         if (err) throw err;
@@ -99,9 +99,10 @@ console.log('> user.afterRemote triggered');
       port: 80,
       type: 'email',
       to: user.email,
-      from: 'noreply@loopback.com',
-      subject: 'Thanks for registering.',
-      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      from: 'Shaadibellesinfo@shaadibelles.com',
+      subject: 'Shaadibelles Registration Acknowledgement.',
+      template: path.resolve(__dirname, '../../server/views/verify.ejs'), 
+      text : 'Thankyou for register with shaadibelles. You are one step away to use your account. Kindly click on given below link to activate your account.  '+ '  ' +'  http://http://shaadibelles.herokuapp.com:80/api/users/confirm?uid=cus_7O2bKCYR042TXO&redirect=/vendorverified&token=' + user.verificationToken + ' ' + ' thank you' ,
       user: user
     };
     if(user.realm === 'vendor'){
