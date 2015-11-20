@@ -16,7 +16,7 @@
         <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
           <h1>FEATURED VENDORS</h1>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-6 bottom-grid" ng-repeat="vendor in vendorstwo">
+        <div class="col-md-6 col-lg-6 col-sm-6 bottom-grid" ng-repeat="vendor in vendorstwo" ng-if="vendor.gallery">
           <div id="img_h">
             <a href="#/main/vendordetail/{{vendor.id}}/profile"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
             <div class="text">
@@ -48,7 +48,7 @@
           <h1><a href="#">ALL VENDORS</a></h1>
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit">
+      <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
         <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}/profile">
         <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
         <a href="#/main/vendordetail/{{vendor.id}}/profile" ><h1>{{vendor.business.name}}</h1></a>
@@ -70,7 +70,7 @@
         <hr />
       </div>
       <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
-        <a class="morebtn hvr-sweep-to-top" href="" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
+        <a class="morebtn hvr-sweep-to-top" href="" ng-show="vendorlimit > vendors.length" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
       </div>
       <div class="clearfix"> </div>
 
