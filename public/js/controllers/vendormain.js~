@@ -11,10 +11,12 @@ angular.module('sbFrontEnd') .controller('VendorsMainCtrl', function($scope, $ht
 
  $scope.limit = 10;
 
-
+  
 
 
 $rootScope.showSelect = true;
+
+
 
 
  

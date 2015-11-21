@@ -17,6 +17,7 @@ angular.module('sbFrontEnd') .controller('VendorsMainCtrl', function($scope, $ht
 $rootScope.showSelect = true;
 
 
+
  
 
 });

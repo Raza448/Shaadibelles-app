@@ -544,12 +544,28 @@ $rootScope.stopLoading = function(){
 
             });
         };
+        $rootScope.vendorslides = [];
 
         $rootScope.getVendors = function() {
             var url = '/api/users';
 
             $http.get(url).then(function(res) {
-                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});``
+                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});
+                $rootScope.vendors.forEach(function(vendor) {
+                       if(vendor.gallery){
+                        $rootScope.vendorslides.push(vendor);
+                           }
+                        $http.get(window.remote + '/api/users/' + vendor.id + '/userReviews').then(function(res) {
+                            vendor.reviews = res.data;
+                            vendor.totalratings = 0;
+                            vendor.reviews.forEach(function(review) {
+                                vendor.totalratings += review.rating || 0;
+                            });
+                            var avg = vendor.totalratings / vendor.reviews.length;
+                            vendor.averageRating = Math.round(avg);
+
+                        });
+                    });
             })
         };
 
@@ -771,27 +787,7 @@ $rootScope.stopLoading = function(){
         $rootScope.$on('$stateChangeSuccess', function() {
 
 
-            $rootScope.$watch('vendors', function(vendors) {
-
-                if (vendors) {
-
-
-
-                    vendors.forEach(function(vendor) {
-                        $http.get(window.remote + '/api/users/' + vendor.id + '/userReviews').then(function(res) {
-                            vendor.reviews = res.data;
-                            vendor.totalratings = 0;
-                            vendor.reviews.forEach(function(review) {
-                                vendor.totalratings += review.rating || 0;
-                            });
-                            var avg = vendor.totalratings / vendor.reviews.length;
-                            vendor.averageRating = Math.round(avg);
-
-                        });
-                    });
-                }
-
-            });
+   
 
 
 
