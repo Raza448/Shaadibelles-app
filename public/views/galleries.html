@@ -11,7 +11,7 @@
 <div class="header-slider">
   <div style="height: 305px">
     <carousel interval="3000" no-wrap="noWrapSlides">
-      <slide ng-repeat="gallery in galleries track by $index" >
+      <slide ng-repeat="gallery in galleries track by $index" ng-if="gallery.cover" >
         <img style="width: 100%; height: 800px;" src="{{gallery.cover}}" style="margin:auto;">
         <div class="carousel-caption">
           <div class="col-md-8 col-lg-8 col-xs-10 col-xs-offset-1 banner-inner">

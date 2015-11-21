@@ -130,7 +130,7 @@
             <h1>{{blogSmallWidgets[3].description}}
             </h1>
 <a  ng-if="blogSmallWidgets[3].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
- <a   ng-if="blogSmallWidgets[3].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7>Y</a>
+ <a   ng-if="blogSmallWidgets[3].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
  <a   ng-if="blogSmallWidgets[3].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[3].content.id}}"> <h7>SEE THEIR WEDDING STORY</h7></a>
           </div>
         </div>

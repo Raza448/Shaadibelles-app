@@ -70,7 +70,7 @@
         <hr />
       </div>
       <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
-        <a class="morebtn hvr-sweep-to-top" href="" ng-show="vendorlimit > vendors.length" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
+        <a class="morebtn hvr-sweep-to-top" href="" ng-show="vendorlimit < vendors.length" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
       </div>
       <div class="clearfix"> </div>
 

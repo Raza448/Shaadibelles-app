@@ -1,4 +1,12 @@
-
+<style>
+  .carousel-caption {
+  margin-bottom: 400px;
+  }
+  .gallery-image:hover img{
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  }
+</style>
 <!-- header-section-ends -->
 <div class="header-slider">
   <div style="height: 305px">
