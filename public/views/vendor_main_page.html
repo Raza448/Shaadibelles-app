@@ -1,9 +1,24 @@
+<style>
+  .carousel-caption {
+  margin-bottom: 400px;
+  }
+</style>
 <div class="header-slider">
   <div style="height: 305px">
     <carousel interval="5000" no-wrap="noWrapSlides">
       <slide ng-repeat="vendor in vendors track by $index" ng-if="vendor.gallery" active="vendor.active">
         <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
+<div class="carousel-caption">
+          <div class="col-md-8 col-lg-8 col-xs-10 col-xs-offset-1 banner-inner">
+            <h3>{{vendor.business.name}}</h3>
+            
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+              <a class="morebtn hvr-sweep-to-top" href="#/main/vendordetail/{{vendor.id}}/profile">CONNECT WITH THIS VENDOR</a>
+          </div>
+        </div>
       </slide>
+
     </carousel>
   </div>
 </div>
@@ -11,7 +26,7 @@
 <div class="content">
   <!---->
   <div class="container">
-    <div class="grids-tops" style="margin-top: 200px;">
+    <div class="grids-tops" style="margin-top: 300px;">
       <div class="banner-bottom-grids">
         <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
           <h1>FEATURED VENDORS</h1>
