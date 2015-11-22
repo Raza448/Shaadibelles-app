@@ -11,7 +11,7 @@
               </div>
               <div class="form-group pull-right">
                 <a class="btn btn-primary btn-sm" href="#/dashboard/new-review?id={{id}}">New Review</a>
-                <button ng-click = "deleteCategories()" class="btn btn-primary btn-sm"> Delete Selected</button>
+                <button ng-click = "deleteReviews()" class="btn btn-primary btn-sm"> Delete Selected</button>
                 <a href="" ng-click="check(1)"><button class="btn btn-primary btn-sm"> <i class="fa fa-filter fa-fw"></i>Filters</button></a>
                 <div class="btn-group">
                   <button type="button" class="btn btn-primary btn-sm">SortBy</button>
@@ -74,7 +74,7 @@
                     <label for="checkbox-head"></label>
                   </th>
 
-                  <th>marriage</th>
+                  <th>post</th>
                   <th>content</th>
                   <th>Visible</th>
                   <th></th>
@@ -95,8 +95,8 @@
                   <td>{{item.content}}
                   </td>
                   <td>
-                    <a class="btn btn-sm btn-success" ng-show="item.visible" ng-click="item.visible = false">Yes</a>
-                    <a class="btn btn-sm btn-warning" ng-hide="item.visible" ng-click="item.visible = true">No</a>
+                    <a class="btn btn-sm btn-success" ng-show="item.visible" ng-click="disable(item)">Disable</a>
+                    <a class="btn btn-sm btn-warning" ng-hide="item.visible" ng-click="activate(item)">Enable</a>
                   </td>
                   <td>
                     <a class="btn btn-sm btn-primary" href="#/dashboard/edit-review?id={{item.id}}">Edit</a>

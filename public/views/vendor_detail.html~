@@ -131,7 +131,7 @@ ng-click="pin()"
     </div>
   </div>
 
-<div class="content-bottom">
+<div class="">
  <ui-gmap-google-map ng-if="vendor.geo" center="map.center" zoom="map.zoom" draggable="true">
         <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
         </ui-gmap-marker>

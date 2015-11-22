@@ -6,7 +6,7 @@ angular.module('sbAdminApp')
     $scope.id = query.id;
     $scope.getReviews = function() {
 
-      var url = window.remote + '/api/vendors/'+ $scope.id + '/reviews?access_token=' + $rootScope.user.accessToken;
+      var url = window.remote + '/api/users/'+ $scope.id + '/userReviews?access_token=' + $rootScope.user.accessToken;
 
       $http.get(url)
         .then(function(res) {
@@ -31,6 +31,26 @@ angular.module('sbAdminApp')
           $scope.getReviews();
         });
       });
+    }
+
+
+
+ $scope.activate = function(review) {
+    review.active = true;
+     var url = window.remote + '/api/reviews/' + review.id + '?access_token=' + $rootScope.user.accessToken;
+        var request = $http.put;
+        request(url, reivew).then(function(res) {
+          $scope.getReviews();
+        });
+    }
+
+$scope.disable = function(review) {
+    review.active = false;
+     var url = window.remote + '/api/reviews/' + review.id + '?access_token=' + $rootScope.user.accessToken;
+        var request = $http.put;
+        request(url, review).then(function(res) {
+          $scope.getReviews();
+        });
     }
 
  
