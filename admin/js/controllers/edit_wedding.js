@@ -27,6 +27,12 @@ angular.module('sbAdminApp')
     }
 
     $scope.getvendors();
+$scope.current = {};
+
+ $scope.vendorpush = function(item, current){
+item.vendors.push({ type : current.type, vendor: current.vendor});
+ $scope.current = {};
+}
 
 
 

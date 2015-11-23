@@ -27,7 +27,13 @@ angular.module('sbAdminApp')
     }
 
     $scope.getvendors();
+$scope.current = {};
 
+
+$scope.removeEvent = function(item){
+var i =  _.findWhere( $scope.post.events , { name : item.name });
+$scope.post.events.splice($scope.post.events.indexOf(i),1 );
+}
 
 
   $scope.vendorTypes = ['Photography', 'Venue', 'Event planner', 'Event Decor', 'Makeup', 'Mehndi', 'Hair', 'Cinematography', 'Bridal Fashion', 'Cakes and treats', 'Catering', 'DJ', 'Entertainment', 'Favars', 'Flaral Design', 'Jewelry','Lighting', 'Manswear', 'Rentals', 'Shoes','Stationery','Transportation', 'Wedding Officiant'];
@@ -227,7 +233,7 @@ File.upload(file).success(function(res) {
           '/galleries?access_token=' + $rootScope.user.accessToken, {
             photos: $scope.gallery
           });
-        location.href = '#/dashboard/posts';
+        location.href = '#/dashboard/weddings';
       });
     };
   });

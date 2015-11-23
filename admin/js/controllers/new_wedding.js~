@@ -14,6 +14,24 @@ angular.module('sbAdminApp')
     };
 
 
+$scope.current = {};
+
+ $scope.vendorpush = function(item, current){
+item.vendors.push({ type : current.type, vendor: current.vendor});
+ $scope.current = {};
+}
+
+
+ $scope.removeVendor = function(item, vendor){
+var i =  _.findWhere(item.vendors, { vendor.id : vendor.id });
+item.vendors.splice(item.vendors.indexOf(i),1 );
+}
+
+
+$scope.removeEvent = function(item){
+var i =  _.findWhere( $scope.post.events , { name : item.name });
+$scope.post.events.splice($scope.post.events.indexOf(i),1 );
+}
 
  $scope.getvendors = function() {
       $http.get(
@@ -167,6 +185,7 @@ angular.module('sbAdminApp')
 
 
       var data = {
+        "wedding" : true,
         "title": post.title,
         "description": post.description,
         "tagline": post.tagline,

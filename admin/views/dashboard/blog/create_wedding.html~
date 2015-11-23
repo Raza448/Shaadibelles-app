@@ -52,12 +52,12 @@
                           data-placeholder="Select Vendor"
                           class="form-control"
                           chosen
-                          ng-model="vendor.vendor.id"
-                          ng-options="item as item.business.name for item in vendors">
+                          ng-model="vendor.vendor"
+                          ng-options="item.id as item.business.name for item in vendors">
                         </select> 
                       </div>
                       <div class="col-md-4">
-                        <a class="btn btn-primary" ng-click="item.vendors.splice(item.vendors.indexOf(i), 1)"> - </a>
+                        <a class="btn btn-primary" ng-click="item.vendors.splice(item.vendors.indexOf(vendor), 1)"> - </a>
                       </div>
                     </div>
                     <div style="padding: 60px;">
@@ -67,7 +67,7 @@
                           class="form-control"
                           chosen
                           ng-model="current.type"
-                          ng-options="item for item in vendorTypes">
+                          ng-options="item as item for item in vendorTypes">
                         </select> 
                       </div>
                       <div class="col-md-4">
@@ -76,16 +76,16 @@
                           class="form-control"
                           chosen
                           ng-model="current.vendor"
-                          ng-options="item as item.business.name for item in vendors">
+                          ng-options="item.id as item.business.name for item in vendors">
                         </select> 
                       </div>
                       <div class="col-md-4">
-                        <a class="btn btn-default" ng-click="item.vendors.push({ type : current.type, vendor: current.vendor})"> + </a>
+                        <a class="btn btn-default" ng-click="vendorpush(item, current)"> + </a>
                       </div>
                     </div>
                     <div class="form-group col-lg-12">
                       <br>
-                      <a class="btn btn-warning" ng-save="publish(post)">Remove Event</a>
+                      <a class="btn btn-warning" ng-save="post.events.splice(post.events.indexOf(item), 1)">Remove Event</a>
                     </div>
                   </div>
                 </div>
