@@ -1,13 +1,3 @@
-<style>
-.modal-dialog {
-  padding-top: 300px;
-  background-color: transparent;
-  margin-right: 0px;
-  width: 100%;
-
-}
-</style>
-<!-- header-section-ends --> 
 <div class="header-slider">
   <a class="callbacks_share" href="#">Previous</a>
   <div class="slider">
@@ -38,14 +28,14 @@
 		</div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                 <p><a href="#/main/vendordetail/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i> Read {{reviews.length}} Reviews  </a></p>
+                 <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i> Read {{reviews.length}} Reviews  </a></p>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> Submit a Review   </a>     </p>
               </div>
             </div>
             <div class="col-md-5 col-lg-5 col-sm-5 col-md-offset-1">
-              <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendordetail/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
+              <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
               <div class="col-md-12 col-lg-12 col-sm-12 hidden-xs">
                 <div class="col-lg-1 col-md-1 col-sm-1"><i class="location"> </i></div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
@@ -74,33 +64,16 @@
     </div>
   </div>
 </div>
-<!----------->
 <div class="content">
   <!---->
   <div class="container">
     <div class="blogs-top">
       <div class="blog-top">
         <div class="col-md-7 col-lg-7 col-sm-7 blogs-top">
-          <h1><span class="catering"></span>vendor directory / {{vendor.business.name}}</h1>
+          <h1><span class="catering"></span>Vendor Profile / {{vendor.business.name}}</h1>
           <br />
           <div class="cnts">
-            <div class="stars">
-		  <form action="">
-			<input class="star star-5" id="star-51" ng-checked="userReview.rating === 5" type="radio" ng-click="subrating(5)" name="star"/>
-			<label class="star star-5" for="star-51"></label>
-			<input class="star star-4" id="star-41" ng-checked="userReview.rating === 4" type="radio" ng-click="subrating(4)" name="star"/>
-			<label class="star star-4" for="star-41"></label>
-			<input class="star star-3" id="star-31" ng-checked="userReview.rating === 3" type="radio" ng-click="subrating(3)" name="star"/>
-			<label class="star star-3" for="star-31"></label>
-			<input class="star star-2" id="star-21" ng-checked="userReview.rating === 2" type="radio" ng-click="subrating(2)" name="star"/>
-			<label class="star star-2" for="star-21"></label>
-			<input class="star star-1" id="star-11" ng-checked="userReview.rating === 1" type="radio" ng-click="subrating(1)" name="star"/> 
-			<label class="star star-1" for="star-11"></label>
-		  </form>
-
-
-		</div>
-<ul class="star">
+           <ul class="star">
                 <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"
   href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
@@ -112,30 +85,95 @@ ng-click="pin()"
                 <li><a href="#"><i class="md"> </i></a></li>
               </ul>
           </div>
-        
+          <h4> {{vendor.business.description}} </h4>
         </div>
- 
         <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
           <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
-              <li><a href="#/main/vendordetail/{{vendor.id}}/profile" data-toggle="tab">OUR WORK</a></li>
-              <li><a href="#/main/vendordetail/{{vendor.id}}/weddings"  data-toggle="tab">FEATURE WEDDINGS</a></li>
-              <li><a href="#/main/vendordetail/{{vendor.id}}/reviews"  data-toggle="tab">REVIEWS</a></li>
+              <li class="active"><a href="#/main/vendordetail/{{vendor.id}}"  data-toggle="tab">OUR WORK</a></li>
+              <li><a  href="#/main/vendor/{{vendor.id}}/weddings"  data-toggle="tab">FEATURE WEDDINGS</a></li>
+              <li><a  href="#/main/vendor/{{vendor.id}}/reviews"  data-toggle="tab">REVIEWS</a></li>
             </ul>
+            <div id="myTabContent" class="tab-content">
+              <div>
+                <p>&nbsp;</p>
+                <div ng-repeat="image in vendor.gallery" class="col-md-6 col-lg-6 col-sm-6 bottom-grids"><img src="{{image}}" class="img-width"  /></div>
+              </div>
+              
+              
+            </div>
           </div>
         </div>
- <div  ui-view="" >
-          </div>
         <div class="clearfix"> </div>
       </div>
     </div>
   </div>
-
-<div class="">
+  <div class="amazing">
+    <div class="col-md-4 col-lg-4 col-sm-4 amaze" ng-repeat="image in vendor.gallery">
+      <img src="{{image}}" class="img-width" alt="">
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="container">
+    <div class="blobgrid">
+      <h5>READ THE REVIEWS ABOUT {{vendor.business.name.toUpperCase()}}</h5>
+   <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids" ng-repeat="review in reviews | unique : 'post.id' | where : {'active' : true}">
+        <a href=""><img id="bottom_grid_div" class="img-responsive" src="{{review.post.cover}}" title="name" alt=""></a>
+        <h4>{{review.post.title}}
+        </h4>
+        <ul class="star-footer">
+          <li><a href="#"><i> </i></a></li>
+          <li><a href="#"><i> </i></a></li>
+          <li><a href="#"><i> </i></a></li>
+          <li><a href="#"><i> </i></a></li>
+          <li><a href="#"><i> </i></a></li>
+        </ul>
+        <p>
+          {{review.content.substring(0,20)}}
+        </p>
+        <a href="#/main/vendorreviews/{{vendor.id}}"><h6>READ FULL REVIEW</h6></a>
+      </div>
+   
+      <div class=" clearfix"></div>
+   <p>&nbsp;</p>
+      <a  href="#/main/vendor/{{vendor.id}}/allreviews" class="morebtn hvr-sweep-to-top">LOAD ALL REVIEW</a>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="">
  <ui-gmap-google-map ng-if="vendor.geo" center="vendor.geo" zoom="map.zoom" draggable="true">
         <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
         </ui-gmap-marker>
       </ui-gmap-google-map>
 </div>
- 
+  <div class="container">
+    <div class="blobgrid col-lg-12 col-md-12 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 help-form">
+        <form ng-submit="contact(request)">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h5>CONTACT {{vendor.business.name.toUpperCase()}}</h5>
+          </div>
+          <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8 col-sm-offset-2">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Name" ng-model="request.name" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Email" ng-model="request.user" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Wedding Location" ng-model="request.location" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" rows="6"></textarea>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <input type="submit" value="SEND" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

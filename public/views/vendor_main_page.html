@@ -55,9 +55,9 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6 bottom-grid" ng-repeat="vendor in vendorstwo" ng-if="vendor.gallery">
           <div id="img_h">
-            <a href="#/main/vendordetail/{{vendor.id}}/profile"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
+            <a href="#/main/vendordetail/{{vendor.id}}"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
             <div class="text">
-              <a href="#/main/vendordetail/{{vendor.id}}/profile"><p>{{vendor.business.name}}</p></a>
+              <a href="#/main/vendordetail/{{vendor.id}}"><p>{{vendor.business.name}}</p></a>
  <div class="stars">
 		  <form action="">
 			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
@@ -86,9 +86,9 @@
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
-        <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}/profile">
+        <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}">
         <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
-        <a href="#/main/vendordetail/{{vendor.id}}/profile" ><h1>{{vendor.business.name}}</h1></a>
+        <a href="#/main/vendordetail/{{vendor.id}}" ><h1>{{vendor.business.name}}</h1></a>
         <div class="stars">
 		  <form action="">
 			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>

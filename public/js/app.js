@@ -278,10 +278,10 @@ uiGmapGoogleMapApiProvider.configure({
                 }
             }
         })
-
-        .state('main.vendordetail.profile', {
-            url: '/profile',
-            templateUrl: 'public/views/vendor/profile.html',
+  .state('main.vendor', {
+            url: '/vendor/:id',
+            controller: 'VendorDetailCtrl',
+            templateUrl: 'public/views/vendor.html',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -292,7 +292,9 @@ uiGmapGoogleMapApiProvider.configure({
             }
         })
 
-        .state('main.vendordetail.weddings', {
+       
+
+        .state('main.vendor.weddings', {
             url: '/weddings',
             templateUrl: 'public/views/vendor/weddings.html',
             resolve: {
@@ -305,7 +307,7 @@ uiGmapGoogleMapApiProvider.configure({
             }
         })
 
-        .state('main.vendordetail.reviews', {
+        .state('main.vendor.reviews', {
             url: '/reviews',
             templateUrl: 'public/views/vendor/reviews.html',
             resolve: {
@@ -318,7 +320,7 @@ uiGmapGoogleMapApiProvider.configure({
             }
         })
 
-        .state('main.vendordetail.allreviews', {
+        .state('main.vendor.allreviews', {
             url: '/allreviews',
             templateUrl: 'public/views/vendor/all_reviews.html',
             resolve: {
@@ -333,7 +335,7 @@ uiGmapGoogleMapApiProvider.configure({
 
 
 
-        .state('main.vendordetail.contact', {
+        .state('main.vendor.contact', {
             url: '/contact',
             templateUrl: 'public/views/vendor/contact.html',
             resolve: {
