@@ -21,7 +21,8 @@ angular
         'uiGmapgoogle-maps',
         'wu.masonry',
         'angularPayments',
-        'duScroll'
+        'duScroll',
+    'textAngular',
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({
@@ -294,7 +295,7 @@ uiGmapGoogleMapApiProvider.configure({
 
        
 
-        .state('main.vendordetail.weddings', {
+        .state('main.vendor.weddings', {
             url: '/weddings',
             templateUrl: 'public/views/vendor/weddings.html',
             resolve: {

@@ -21,7 +21,8 @@ angular
         'uiGmapgoogle-maps',
         'wu.masonry',
         'angularPayments',
-        'duScroll'
+        'duScroll',
+    'textAngular'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({

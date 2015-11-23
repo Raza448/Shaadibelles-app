@@ -20,7 +20,7 @@ $scope.events = ["mehndi", "Sangeet", "Wedding", "Reception"];
       date: null,
       status: 'Published',
       cover: null,
-      events : [],
+      events : [{name : "", vendors: []}],
       contents : {
 
       }
@@ -127,32 +127,22 @@ var text = "";
 }
     }
 
- $scope.upload = function(file) {
-  if(file){
- $rootScope.startLoading();
-var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
-
-      File.upload(file).success(function(res) {
+  $scope.upload = function(file, insertAction) {
+  
+    if(file){
+     File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
-        $scope.gallery.photos.push(newfile);
-      $scope.currentEvent.gallery.push(newfile);
-      $rootScope.stopLoading();
+        insertAction('insertImage', newfile, true);
+        $scope.gallery.push(newfile);
       })
+      return true;
 }
+
     }
+
 
 
 
