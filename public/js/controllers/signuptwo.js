@@ -130,6 +130,7 @@ var text = "";
   $scope.upload = function(file, insertAction) {
   
     if(file){
+$rootScope.startLoading();
      File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
@@ -138,6 +139,7 @@ var text = "";
         insertAction('insertImage', newfile, true);
         $scope.gallery.photos.push(newfile);
       })
+$rootScope.stopLoading();
       return true;
 }
 
