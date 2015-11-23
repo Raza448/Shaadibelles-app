@@ -96,7 +96,39 @@
                   <button  type="button" class="btn btn-default btn-block btn-lg" style="background-color: gray; color: #ffffff;"
                     ngf-change="upload(cover[0])"
                     ng-model="cover" ngf-accept="'image/*,application/pdf'" ngf-select>Upload Photos</button>
+                </div >
+           <div class="col-sm-12 col-md-12 col-lg-12"  ng-repeat="item in currentEvent.vendors">
+ <div class="col-lg-4 col-md-4 col-sm-4">
+                  <select ng-options="c for c in vendorCategories" ng-model="item.type">
+                    <option value="">Select Type of Vendor</option>
+                  </select>
                 </div>
+ <div class="col-lg-4 col-md-4 col-sm-4">
+                  <select ng-options="vendor as vendor.business.name for vendor in vendors" ng-model="item.vendor">
+                    <option value="">Select A Vendor</option>
+                  </select>
+                </div>
+ <div class="col-lg-4 col-md-4 col-sm-4">
+ <button class="btn btn-default btn-block btn-lg" ng-click="currentEvent.vendors.splice(currentEvent.vendors.indexOf(item), 1)" style="background-color: gray; color: #ffffff;" >REMOVE VENDOR</button>
+                </div>
+</div>
+
+
+               <div class="col-sm-12 col-md-12 col-lg-12" >
+ <div class="col-lg-4 col-md-4 col-sm-4">
+                  <select ng-options="c for c in vendorCategories" ng-model="currentVendor.type">
+                    <option value="">Select Type of Vendor</option>
+                  </select>
+                </div>
+ <div class="col-lg-4 col-md-4 col-sm-4">
+                  <select ng-options="vendor as vendor.business.name for vendor in vendors" ng-model="currentVendor.vendor">
+                    <option value="">Select A Vendor</option>
+                  </select>
+                </div>
+ <div class="col-lg-4 col-md-4 col-sm-4">
+ <button class="btn btn-default btn-block btn-lg" ng-click="addVendor(currentVendor)" style="background-color: gray; color: #ffffff;" >ADD  VENDOR</button>
+                </div>
+</div>
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                   <input type="submit" ng-click="newEvent()" value="ADD ANOTHER EVENT" />
                 </div>

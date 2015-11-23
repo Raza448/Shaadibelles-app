@@ -34,9 +34,7 @@
                   <label for="Message">Post Content</label>
                   <div ng-hide="post.events" text-angular ng-model="post.content" ta-file-drop="upload"></div>
                    <div class="form-group" ng-repeat="item in post.events">
-                  <div class="col-lg-12">
-                  <label for="Message">{{item.name}}</label>
-                 </div>
+                 
                     <textarea class="form-control" ng-model="item.content"></textarea>
                 <div class="col-lg-10"  >
                      <div class="col-lg-3" ng-repeat="img in item.gallery">

@@ -1,0 +1,79 @@
+<br>
+<!--page content-->
+<div class="row">
+  <div class="col-lg-12">
+    <form class="form-inline col-lg-12">
+      <div class="form-group">
+        <input class="form-control" type="search" ng-model="searchText" placeholder="Search Posts"/>
+      </div>
+      <div class="form-group pull-right">
+        <a ui-sref="dashboard.new-wedding" class="btn btn-primary btn-sm">Create Wedding</a>
+        <button id="delete" ng-click = "deletePosts()" class="btn btn-primary btn-sm"> Delete Selected</button>
+      
+        <!-- /.nav-second-level -->
+      </div>
+     
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel blank-panel">
+      <div class="panel-body">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>
+              <small>Create a post by clicking create post button, Delete a selected post by clicking delete selected button.</small>
+            </h5>
+            <div class="pull-right">
+              <a class="btn btn-default" ng-click="pagingBack(result-20, 10)"><i class="fa fa-arrow-left"></i></a>
+              <a class="btn btn-default" ng-click="pagingFront(result, 10)"><i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <!--shortcuts table-->
+          <table class="ibox-content table table-hover">
+            <!-- shortcuts table header-->
+            <thead>
+              <tr>
+                <th>
+                  <input type="checkbox" id="checkbox-head" class="regular-checkbox" ng-model="master" />
+                  <label for="checkbox-head"></label>
+                </th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created Date</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <!--shortcuts table header ends here-->
+            <!-- shortcuts table data-->
+            <tbody>
+              <tr ng-repeat="post in posts | filter: searchText">
+                <td>
+                  <input type="checkbox" id="{{post.id}}" class="regular-checkbox-td" ng-checked="master" />
+                  <label for="{{post.id}}"></label>
+                </td>
+                <td><strong>{{post.title}}</strong></td>
+                <td>{{post.description.substring(0, 100)}}</td>
+                <td>{{post.created}}</td>
+               <td>
+                  <a class="btn btn-sm btn-info" href="#/dashboard/ratings?id={{post.id}}">Ratings</a>                  
+                </td>
+                <td>
+                  <a class="btn btn-sm btn-primary" href="#/dashboard/edit-wedding?id={{post.id}}">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+            <!-- shortcuts table data ends here-->
+          </table>
+        </div>
+        <!--ibox -->
+      </div>
+      <!-- panel body-->
+    </div>
+    <!--panel-->
+  </div>
+</div>
+<!-- page content -->
+<!-- page ends here -->

@@ -47,12 +47,12 @@
                   </div>
                  <div class="col-lg-2">
  <div class="input-group"  ngf-drop ng-model="eventImage"
-                      ngf-change="uploadEventImage(eventImage[0])"
+                      ngf-change="uploadEventImage(eventImage[0], item)"
                       ngf-drag-over-class="dragover"
                       ngf-accept="'image/*,application/pdf'">
                       <span class="input-group-btn">
                       <button class="btn btn-default" type="button"
-                        ngf-change="uploadEventImage(eventImage[0])"
+                        ngf-change="uploadEventImage(eventImage[0], item)"
                         ng-model="eventImage" ngf-accept="'image/*,application/pdf'" ngf-select>Select File</button>
                       </span>
                     </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('PostsCtrl', function($scope, $http, $location, $rootScope,
+  .controller('WeddingsCtrl', function($scope, $http, $location, $rootScope,
     $modal) {
     $scope.collapseVar = 0;
     $scope.posts = null;
@@ -17,7 +17,7 @@ angular.module('sbAdminApp')
     $scope.getPosts = function(){
       var url = window.remote + '/api/posts?access_token=' + $rootScope.user.accessToken;
 	  $http.get(url).then(function(res){
-		  $scope.posts = _.where(res.data, { 'wedding' : false });
+		  $scope.posts = _.where(res.data, {'wedding' : true});
 		  });
     };
 

@@ -11,7 +11,6 @@
 .inner-addon .fa {
   position: absolute;
   padding: 10px;
-  pointer-events: none;
 }
 
 /* align icon */

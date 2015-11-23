@@ -84,7 +84,7 @@
                             	<label>OR</label> 
                             </div>
                             <div class="col-md-10 col-lg-10 col-sm-10 text-center">
-                          	<a href="/auth/facebook/signup"><button type="button" class="btn-fb" ><span>SIGN IN W/FACEBOOK</span></button></a>
+                          	<a href="/auth/facebook/vendorsignup"><button type="button" class="btn-fb" ><span>SIGN IN W/FACEBOOK</span></button></a>
                             </div>
              
             </div>

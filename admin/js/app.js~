@@ -252,6 +252,28 @@ angular
         }
     })
 
+.state('dashboard.weddings',{
+        templateUrl:'admin/views/dashboard/blog/weddings.html',
+        controller: 'WeddingsCtrl',
+        url:'/weddings',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/weddings.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+    })
+
+
+
+
+
+
       .state('dashboard.categories',{
         templateUrl:'admin/views/dashboard/blog/categories.html',
         url:'/categories',
@@ -549,6 +571,41 @@ angular
         }
    })
 
+
+ .state('dashboard.new-wedding',{
+       templateUrl:'admin/views/dashboard/blog/create_wedding.html',
+       url:'/new-wedding',
+       controller: 'NewWeddingCtrl',
+       resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/new_wedding.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+   })
+          .state('dashboard.edit-wedding',{
+       templateUrl:'admin/views/dashboard/blog/create_wedding.html',
+       url:'/edit-post',
+       controller: 'EditWeddingCtrl',
+       resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/edit_wedding.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+   })
+
+
           .state('dashboard.new-review',{
        templateUrl:'admin/views/dashboard/user/create_review.html',
        url:'/new-review',
@@ -739,9 +796,7 @@ angular
 
  $rootScope.user = { 'id': res.data.userId, 'accessToken': res.data.accessToken };
 }
- else {
- location.href = '/';
-}
+
 });
   });
 

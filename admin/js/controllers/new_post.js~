@@ -4,6 +4,7 @@ angular.module('sbAdminApp')
   .controller('NewPostCtrl', function($scope, $http, $location, $rootScope,
     File) {
     $scope.post = {
+      wedding : false,
       title: null,
       description: null,
       tagline: null,
@@ -38,7 +39,8 @@ angular.module('sbAdminApp')
 
     $scope.uploadCover = function(file) {
   
-      File.upload(file).success(function(res) {
+    if(file){
+  File.upload(file).success(function(res) {
 
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
@@ -46,6 +48,7 @@ angular.module('sbAdminApp')
           fileName;
         $scope.post.cover = newfile;
       })
+}
     }
 
 

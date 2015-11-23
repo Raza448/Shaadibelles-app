@@ -50,10 +50,10 @@
             <ul id="myTab" class="nav nav-tabs" ng-show="post.events">
               <li class="{{currentEvent === item? 'active' : ' '}}" ng-repeat="item in post.events" ><a href="" ng-click="changeEvent(item)" >{{item.name}}</a></li>
             </ul>
-            <div id="myTabContent" ng-show="reviews" class="tab-content">
+            <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="profile">
                 <ul class="grid-part">
-                  <li ng-repeat="review in reviews | unique : 'review.vendor.id'"><a href="#"><i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon"> </i>{{review.vendor.category[0]}}: <span>{{review.vendor.business.name}}.{{review.vendor.location[0]}}</span></a></li>
+                  <li ng-repeat="vendor in currentEvent.vendors"><a href="#"><i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon"> </i>{{vendor.type }}: <span>{{ vendor.vendor.business.name }}.{{ vendor.vendor.location[0] }}</span></a></li>
                 </ul>
               </div>
             </div>
@@ -63,13 +63,8 @@
         <div ng-show="post.content != null" ng-bind-html="post.content">
         {{post.content}}
         </div>
-        <div ng-show="post.events">
-          <h4>{{currentEvent.content}}</h4>
-          <div masonry>
-            <div ng-show="currentEvent" ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
-              <img class="img-width" src="{{image}}" alt="">
-            </div>
-          </div>
+       <div ng-bind-html="currentEvent.content">
+
         </div>
       </div>
 

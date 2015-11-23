@@ -17,7 +17,7 @@ angular.module('sbAdminApp')
     $scope.getPosts = function(){
       var url = window.remote + '/api/posts?access_token=' + $rootScope.user.accessToken;
 	  $http.get(url).then(function(res){
-		  $scope.posts = _.where(res.data, { 'wedding' : false });
+		  $scope.posts = res.data;
 		  });
     };
 

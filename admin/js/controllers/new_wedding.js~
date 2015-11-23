@@ -1,20 +1,36 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('NewPostCtrl', function($scope, $http, $location, $rootScope,
+  .controller('NewWeddingCtrl', function($scope, $http, $location, $rootScope,
     File) {
     $scope.post = {
-      wedding : false,
       title: null,
       description: null,
       tagline: null,
-      content: null,
       date: new Date(),
       status: 'Published',
-      cover: null      
+      cover: null,
+      events : [{ name : 'mehndi', vendors: []}, { name : 'sangeet', vendors: []}, { name : 'wedding', vendors: []}, { name : 'reception', vendors: []}]      
     };
 
-       
+
+
+ $scope.getvendors = function() {
+      $http.get(
+        window.remote + '/api/users?access_token=' + $rootScope.user.accessToken
+      ).then(
+        function(res) {
+                   $scope.vendors = _.where(res.data, {'realm' : 'vendor'});
+        }
+      );
+    }
+
+    $scope.getvendors();
+
+
+
+  $scope.vendorTypes = ['Photography', 'Venue', 'Event planner', 'Event Decor', 'Makeup', 'Mehndi', 'Hair', 'Cinematography', 'Bridal Fashion', 'Cakes and treats', 'Catering', 'DJ', 'Entertainment', 'Favars', 'Flaral Design', 'Jewelry','Lighting', 'Manswear', 'Rentals', 'Shoes','Stationery','Transportation', 'Wedding Officiant'];
+
 
 
     $scope.gallery = [];
@@ -151,14 +167,14 @@ angular.module('sbAdminApp')
 
 
       var data = {
-         "wedding" : false,
         "title": post.title,
         "description": post.description,
         "tagline": post.tagline,
         "content": post.content,
         "cover": post.cover || null,
         "created": post.date,
-        "status": post.status || 'Published'
+        "status": post.status || 'Published',
+        "events" : post.events
       };
 
 
@@ -171,7 +187,7 @@ angular.module('sbAdminApp')
           '/galleries?access_token=' + $rootScope.user.accessToken, {
             photos: $scope.gallery
           });
-        location.href = '#/dashboard/posts';
+        location.href = '#/dashboard/weddings';
       });
     };
 
