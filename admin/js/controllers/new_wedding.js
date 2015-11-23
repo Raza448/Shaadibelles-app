@@ -72,6 +72,7 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         $scope.post.cover = newfile;
+        $scope.gallery.cover = newfile;
       })
 }
     }
@@ -156,6 +157,11 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
       return '';
     };
 
+ $scope.gallery = {
+  title : null,
+  photos : [],
+  cover : null
+};
 
 
     $scope.getCategories = function() {
@@ -188,15 +194,14 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
       };
 
 
+        $scope.gallery.title = post.title;
 
 
       var url = window.remote + '/api/categories/' + post.category +
         '/posts?access_token=' + $rootScope.user.accessToken;
       $http.post(url, data).then(function(res) {
         $http.post(window.remote + '/api/posts/' + res.data.id +
-          '/galleries?access_token=' + $rootScope.user.accessToken, {
-            photos: $scope.gallery
-          });
+          '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery);
         location.href = '#/dashboard/weddings';
       });
     };

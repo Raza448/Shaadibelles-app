@@ -13,6 +13,11 @@ angular.module('sbFrontEnd').controller('CategoriesCtrl', function($http, $state
     $scope.state = $state.current
     $scope.params = $stateParams;
 
+ $http.get(window.remote + '/api/categories/' + $scope.category)
+      .then(function(res) {
+        $scope.category = res.data;
+      });
+
     $http.get(window.remote + '/api/categories/' + $scope.category +'/posts')
       .then(function(res) {
         $scope.posts = res.data;

@@ -20,7 +20,7 @@ $scope.events = ["mehndi", "Sangeet", "Wedding", "Reception"];
       date: null,
       status: 'Published',
       cover: null,
-      events : [{}],
+      events : [{name : "", vendors: []}],
       contents : {
 
       }

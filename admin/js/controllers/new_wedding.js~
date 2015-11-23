@@ -22,16 +22,7 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
 }
 
 
- $scope.removeVendor = function(item, vendor){
-var i =  _.findWhere(item.vendors, { vendor.id : vendor.id });
-item.vendors.splice(item.vendors.indexOf(i),1 );
-}
-
-
-$scope.removeEvent = function(item){
-var i =  _.findWhere( $scope.post.events , { name : item.name });
-$scope.post.events.splice($scope.post.events.indexOf(i),1 );
-}
+ 
 
  $scope.getvendors = function() {
       $http.get(
@@ -81,6 +72,7 @@ $scope.post.events.splice($scope.post.events.indexOf(i),1 );
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         $scope.post.cover = newfile;
+        $scope.gallery.cover = newfile;
       })
 }
     }
@@ -165,6 +157,11 @@ $scope.post.events.splice($scope.post.events.indexOf(i),1 );
       return '';
     };
 
+ $scope.gallery = {
+  title : null,
+  photos : [],
+  cover : null
+};
 
 
     $scope.getCategories = function() {
@@ -197,6 +194,7 @@ $scope.post.events.splice($scope.post.events.indexOf(i),1 );
       };
 
 
+        $scope.gallery.title = post.title;
 
 
       var url = window.remote + '/api/categories/' + post.category +

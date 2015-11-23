@@ -15,6 +15,13 @@ angular.module('sbAdminApp')
     };
 
 
+ $scope.gallery = {
+  title : null,
+  photos : [],
+  cover : null
+};
+
+
 
  $scope.getvendors = function() {
       $http.get(
@@ -80,6 +87,7 @@ File.upload(file).success(function(res) {
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         $scope.post.cover = newfile;
+        $scope.gallery.cover = newfile;
       })
 }
     }
@@ -118,7 +126,7 @@ File.upload(file).success(function(res) {
         $http.get(window.remote + '/api/posts/' + $scope.id +
             '/galleries?access_token=' + $rootScope.user.accessToken)
           .then(function(res) {
-            $scope.gallery = res.data.photos;
+            $scope.gallery = res.data;
           });
        
       });
@@ -225,14 +233,12 @@ File.upload(file).success(function(res) {
         data.events = post.events;
         }
 
-
+      $scope.gallery.title = post.title;
       var url = window.remote + '/api/posts/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {
         $http.put(window.remote + '/api/posts/' + $scope.id +
-          '/galleries?access_token=' + $rootScope.user.accessToken, {
-            photos: $scope.gallery
-          });
+          '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery);
         location.href = '#/dashboard/weddings';
       });
     };

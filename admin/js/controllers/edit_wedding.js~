@@ -15,6 +15,13 @@ angular.module('sbAdminApp')
     };
 
 
+ $scope.gallery = {
+  title : null,
+  photos : [],
+  cover : null
+};
+
+
 
  $scope.getvendors = function() {
       $http.get(
@@ -29,11 +36,11 @@ angular.module('sbAdminApp')
     $scope.getvendors();
 $scope.current = {};
 
-
-$scope.removeEvent = function(item){
-var i =  _.findWhere( $scope.post.events , { name : item.name });
-$scope.post.events.splice($scope.post.events.indexOf(i),1 );
+ $scope.vendorpush = function(item, current){
+item.vendors.push({ type : current.type, vendor: current.vendor});
+ $scope.current = {};
 }
+
 
 
   $scope.vendorTypes = ['Photography', 'Venue', 'Event planner', 'Event Decor', 'Makeup', 'Mehndi', 'Hair', 'Cinematography', 'Bridal Fashion', 'Cakes and treats', 'Catering', 'DJ', 'Entertainment', 'Favars', 'Flaral Design', 'Jewelry','Lighting', 'Manswear', 'Rentals', 'Shoes','Stationery','Transportation', 'Wedding Officiant'];
@@ -80,6 +87,7 @@ File.upload(file).success(function(res) {
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         $scope.post.cover = newfile;
+        $scope.gallery.cover = newfile;
       })
 }
     }
@@ -118,7 +126,7 @@ File.upload(file).success(function(res) {
         $http.get(window.remote + '/api/posts/' + $scope.id +
             '/galleries?access_token=' + $rootScope.user.accessToken)
           .then(function(res) {
-            $scope.gallery = res.data.photos;
+            $scope.gallery = res.data;
           });
        
       });
@@ -225,7 +233,7 @@ File.upload(file).success(function(res) {
         data.events = post.events;
         }
 
-
+      $scope.gallery.title = post.title;
       var url = window.remote + '/api/posts/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {

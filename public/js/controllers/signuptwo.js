@@ -136,7 +136,7 @@ var text = "";
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         insertAction('insertImage', newfile, true);
-        $scope.gallery.push(newfile);
+        $scope.gallery.photos.push(newfile);
       })
       return true;
 }
