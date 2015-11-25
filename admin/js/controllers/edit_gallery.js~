@@ -1,20 +1,12 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('EditPostCtrl', function($scope, $http, $location, File,
+  .controller('EditGalleryCtrl', function($scope, $http, $location, File,
     $rootScope,
     $modal) {
-    $scope.post = {
-      title: null,
-      description: null,
-      content: null,
-      tagline: null,
-      date: new Date(),
-      status: 'Published',
-      cover: null    
-    };
+   
 
-
+ $scope.buttonText = "create"
 
       $http.get(window.remote + '/api/categories?access_token=' +
         $rootScope.user.accessToken
@@ -29,15 +21,14 @@ angular.module('sbAdminApp')
 
 
 
-    $scope.upload = function(file, insertAction) {
+    $scope.upload = function(file) {
 
     if(file){
   File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
-        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;
-        insertAction('insertImage', newfile, true);
-        $scope.gallery.push(newfile);
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;W
+        $scope.gallery.photos.push(newfile);
       })
       return true;
 }
@@ -59,41 +50,15 @@ File.upload(file).success(function(res) {
     }
 
 
-   $scope.uploadEventImage = function(file, item) {
-     if(file){
- File.upload(file).success(function(res) {
-        var containerName = res.result.files.img[0].container;
-        var fileName = res.result.files.img[0].name;
-        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;
-        $scope.gallery.push(newfile);
-        $scope.post.events[$scope.post.events.indexOf(item)].gallery.push(newfile);
-      })
-      return true;
-}
-    }
+  
 
 
 
-    $http.get(window.remote + '/api/posts/' + $scope.id +
+    $http.get(window.remote + '/api/galleries/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken)
       .then(function(res) {
-        $scope.post.title = res.data.title;
-        $scope.post.description = res.data.description;
-        $scope.post.content = res.data.content;
-        $scope.post.tagline = res.data.tagline;
-        $scope.post.category = res.data.categoryId;
-        $scope.post.date = res.data.created;
-        $scope.post.status = res.data.status || 'Published';
-        $scope.post.cover = res.data.cover;
-         if(res.data.events){
-        $scope.post.events = res.data.events;
-         }
-
-        $http.get(window.remote + '/api/posts/' + $scope.id +
-            '/galleries?access_token=' + $rootScope.user.accessToken)
-          .then(function(res) {
-            $scope.gallery = res.data.photos;
-          });
+        $scope.gallery = res.data;
+  
        
       });
 
@@ -180,33 +145,49 @@ File.upload(file).success(function(res) {
 
 
 
+ $scope.upload = function(file) {
+  
+    if(file){
+     File.upload(file).success(function(res) {
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.gallery.photos.push(newfile);
+      })
+      return true;
+}
 
-    $scope.publish = function(post) {
-
-      var data = {
-        "title": post.title,
-        "description": post.descriotion,
-        "tagline": post.tagline,
-        "content": post.content,
-        "cover": post.cover || null,
-        "created": post.date,
-        "status": post.status || 'Published',
-        "categoryId": post.category
-      };
-
-       if(post.events){
-        data.events = post.events;
-        }
+    }
 
 
-      var url = window.remote + '/api/posts/' + $scope.id +
+    $scope.uploadCover = function(file) {
+  
+    if(file){
+  File.upload(file).success(function(res) {
+
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.gallery.cover = newfile;
+      })
+}
+    }
+
+
+
+
+
+    $scope.publish = function(gallery) {
+
+
+
+      var url = window.remote + '/api/galleries/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
-      $http.put(url, data).then(function(res) {
-        $http.put(window.remote + '/api/posts/' + $scope.id +
-          '/galleries?access_token=' + $rootScope.user.accessToken, {
-            photos: $scope.gallery
-          });
-        location.href = '#/dashboard/posts';
+      $http.put(url, gallery).then(function(res) {
+        
+        location.href = '#/dashboard/galleries';
       });
     };
   });

@@ -37,7 +37,7 @@ angular.module('sbAdminApp')
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' + fileName;
         insertAction('insertImage', newfile, true);
-        $scope.gallery.push(newfile);
+        $scope.gallery.photos.push(newfile);
       })
       return true;
 }

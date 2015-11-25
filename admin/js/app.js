@@ -269,6 +269,24 @@ angular
         }
     })
 
+.state('dashboard.galleries',{
+        templateUrl:'admin/views/dashboard/blog/galleries.html',
+        controller: 'GalleriesCtrl',
+        url:'/galleries',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/galleries.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+    })
+
+
 
 
 
@@ -604,6 +622,40 @@ angular
           }
         }
    })
+
+.state('dashboard.new-gallery',{
+       templateUrl:'admin/views/dashboard/blog/create_gallery.html',
+       url:'/new-gallery',
+       controller: 'NewGalleryCtrl',
+       resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/new_gallery.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+   })
+          .state('dashboard.edit-gallery',{
+       templateUrl:'admin/views/dashboard/blog/create_gallery.html',
+       url:'/edit-gallery',
+       controller: 'EditGalleryCtrl',
+       resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/edit_gallery.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+   })
+
 
 
           .state('dashboard.new-review',{

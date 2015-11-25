@@ -1,6 +1,6 @@
 <style>
   .carousel-caption {
-  margin-bottom: 400px;
+  margin-bottom: 500px;
   }
   .gallery-image:hover img{
   opacity: 0.4;
@@ -19,6 +19,7 @@
             <div class="banner_div">
               <p class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">&nbsp;</p>
             </div>
+            <h4>{{gallery.tagline}}</h4>
             <div class="clearfix"></div>
             <p>&nbsp;</p>
             <a class="morebtn hvr-sweep-to-top" href="" ui-sref="main.gallery({id : gallery.id})">VIEW THIS GALLERY</a>
@@ -79,7 +80,7 @@
         <div class="col-md-12 col-lg-12">
           <div id="type-masory" class="home-projects row">
             <!-- Project -->
-            <div class="project masonry-item"  ng-repeat="gallery in galleries | before : galleryLimit">
+            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit">
               <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
                   <img src="{{gallery.photos[0]}}" alt="">
@@ -87,7 +88,7 @@
                     <div class="overlay-inner">
                       <h1><i class="heart"> </i><i class="heart"> </i><i class="heart"> </i><i class="heart"> </i><i class="heartf"> </i></h1>
                       <h3>{{gallery.title}}</h3>
-                      <p>Los Angeles</p>
+                      <p>{{gallery.tagline}}</p>
                       <input type="submit" class="margin-0" value="VIEW THIS WEDDING">
                     </div>
                     <!-- End overlay-inner -->
