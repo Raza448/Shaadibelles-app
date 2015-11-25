@@ -1,27 +1,27 @@
 <script type="text/javascript">
   jQuery(document).ready(function($) {
-
+  
   	$(".scroll").click(function(event){
   		event.preventDefault();
   		$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
   	});
-
+  
   	$('#imageFullScreen').smartZoom({'containerClass':'zoomableContainer'});
-
+  
   		$('#topPositionMap,#leftPositionMap,#rightPositionMap,#bottomPositionMap').bind("click", moveButtonClickHandler);
   				$('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
-
+  
   		function zoomButtonClickHandler(e){
   	    	var scaleToAdd = 0.8;
   			if(e.target.id == 'zoomOutButton')
   				scaleToAdd = -scaleToAdd;
   			$('#imageFullScreen').smartZoom('zoom', scaleToAdd);
   	    }
-
+  
   	    function moveButtonClickHandler(e){
   	    	var pixelsToMoveOnX = 0;
   			var pixelsToMoveOnY = 0;
-
+  
   			switch(e.target.id){
   				case "leftPositionMap":
   					pixelsToMoveOnX = 50;
@@ -38,17 +38,17 @@
   			}
   			$('#imageFullScreen').smartZoom('pan', pixelsToMoveOnX, pixelsToMoveOnY);
   	    }
-
+  
   		$("#resetPositionMap").click(function(){
   			$("#imageFullScreen").css({
   				'cursor':'default',
   				'transform':'translate3d(0px, 0px, 0px) scale3d(1, 1, 1)',
   				'transform-origin':'0 0 0',
   				'transition':'all 0s ease-out 0s',
-
+  
   				});
   		});
-
+  
   });
 </script>
 <!-- Scroll Slider -->
@@ -86,104 +86,97 @@
 </style>
 <!-- header-section-ends -->
 <div class="content">
-  <!---->
-  <div class="container">
-    <div class="top-grid-top">
-      <div class="form-grid">
-        <div class="col-md-12 col-sm-12 col-lg-12">
-          <h1>Image Gallery</h1>
+<!---->
+<div class="container">
+  <div class="top-grid-top">
+    <div class="form-grid">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <h1>Image Gallery</h1>
+      </div>
+      <div class="col-md-12 col-sm-12 col-lg-12 search-results">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+          <div class="col-md-2 col-sm-2 col-lg-2 col-xs-4"><a href="" ng-click="rowonePrevious()" class="hvr-sweep-to-top"><</a> <a href="" class="hvr-sweep-to-top" ng-click="rowoneNext()">></a></div>
+          <div class="col-md-7 col-sm-7 col-lg-7"></div>
+          <div class="col-md-3 col-sm-3 col-lg-3 col-xs-8"><a ui-sref="main.post-images({id : gallery.id})" class="hvr-sweep-to-top">MORE OF THIS GALLERY</a></div>
         </div>
-        <div class="col-md-12 col-sm-12 col-lg-12 search-results">
-          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-            <div class="col-md-2 col-sm-2 col-lg-2 col-xs-4"><a href="" ng-click="rowonePrevious()" class="hvr-sweep-to-top"><</a> <a href="" class="hvr-sweep-to-top" ng-click="rowoneNext()">></a></div>
-            <div class="col-md-7 col-sm-7 col-lg-7"></div>
-              <div class="col-md-3 col-sm-3 col-lg-3 col-xs-8"><a ui-sref="main.post-images({id : gallery.id})" class="hvr-sweep-to-top">MORE OF THIS GALLERY</a></div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-lg-12">&nbsp;</div>
-          <div class="col-md-8 col-sm-8 col-lg-8 hidden-xs">
-            <div id="pageContent">
-              <div id="imgContainer">
-                <img id="imageFullScreen" class="img-full" src="{{gallery.photos[rowOne]}}"/>
-              </div>
-              <div id="positionButtonDiv">
-                <p>
-                  <span>
-                  <img id="zoomInButton" class="zoomButton" src="public/images/zoomIn.png" title="zoom in" alt="zoom in" /><br />
-                  <br />
-                  <img id="zoomOutButton" class="zoomButton" src="public/images/ZoomOut.png" title="zoom out" alt="zoom out" />
-                  </span>
-                </p>
-                <p>
-                </p>
-              </div>
-              <div class="positionButtonright">
-                <map name="positionMap" class="positionMapClass">
-                  <area id="topPositionMap" shape="rect" coords="46,4,68,33" title="move up" alt="move up"/>
-                  <area id="leftPositionMap" shape="rect" coords="6,36,29,64" title="move left" alt="move left"/>
-                  <area id="resetPositionMap" shape="rect" coords="43,37,71,66" title="move bottom" alt="move bottom"/>
-                  <area id="rightPositionMap" shape="rect" coords="80,42,112,64" title="move right" alt="move right"/>
-                  <area id="bottomPositionMap" shape="rect" coords="45,77,72,101" title="move bottom" alt="move bottom"/>
-                </map>
-                <img src="public/images/position.png" usemap="#positionMap" />
-              </div>
+        <div class="col-md-12 col-sm-12 col-lg-12">&nbsp;</div>
+        <div class="col-md-8 col-sm-8 col-lg-8 hidden-xs">
+          <div id="pageContent">
+            <div id="imgContainer">
+              <img id="imageFullScreen" class="img-full" src="{{gallery.photos[rowOne]}}"/>
+            </div>
+            <div id="positionButtonDiv">
+              <p>
+                <span>
+                <img id="zoomInButton" class="zoomButton" src="public/images/zoomIn.png" title="zoom in" alt="zoom in" /><br />
+                <br />
+                <img id="zoomOutButton" class="zoomButton" src="public/images/ZoomOut.png" title="zoom out" alt="zoom out" />
+                </span>
+              </p>
+              <p>
+              </p>
+            </div>
+            <div class="positionButtonright">
+              <map name="positionMap" class="positionMapClass">
+                <area id="topPositionMap" shape="rect" coords="46,4,68,33" title="move up" alt="move up"/>
+                <area id="leftPositionMap" shape="rect" coords="6,36,29,64" title="move left" alt="move left"/>
+                <area id="resetPositionMap" shape="rect" coords="43,37,71,66" title="move bottom" alt="move bottom"/>
+                <area id="rightPositionMap" shape="rect" coords="80,42,112,64" title="move right" alt="move right"/>
+                <area id="bottomPositionMap" shape="rect" coords="45,77,72,101" title="move bottom" alt="move bottom"/>
+              </map>
+              <img src="public/images/position.png" usemap="#positionMap" />
             </div>
           </div>
-          <div class="col-md-4 col-sm-4 col-lg-4 padding-left">
-
-            <div id="demo5" class="scroll-img">
-             <carousel interval="myInterval">
-  <slide ng-repeat="slide in gallery.photos track by $index">
-    <div class="" style="width:600px; height: 400px; margin:auto;">
-    <div class="pull-left">
-    <a ng-click="setImage($index)"><img ng-src="{{slide}}" style="margin-right: 5px; margin-bottom: 5px;" width="140px" height="140px;"></a>
-
-    <a ng-click="setImage($index + 1)"><img ng-show="gallery.photos[$index+1]" ng-src="{{gallery.photos[$index+1]}}" style="margin-left: 5px; margin-bottom: 5px;" width="140px"  height="140px;"></a>
-</br> 
- <a ng-click="setImage($index + 2)"><img ng-show="gallery.photos[$index+2]"ng-src="{{gallery.photos[$index+2]}}" style="margin-right: 5px;" width="140px"  height="140px;"></a>
-
-    <a ng-click="setImage($index + 3)"><img ng-show="gallery.photos[$index+3]" ng-src="{{gallery.photos[$index+3]}}" style="margin-left: 5px;" width="140px"  height="140px;"></a>
-    </div>
-  
-    </div>
-  </slide>
-</carousel>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 padding-left">
+          <div id="demo5" class="scroll-img">
+            <carousel interval="3000" no-wrap="noWrapSlides" >
+              <slide ng-repeat="slide in gallery.photos track by $index" ng-if="gallery.photos[gallery.photos.indexOf(slide) * 4]" >
+                <div  style="width:600px; height: 400px; margin:auto;">
+                  <div class="pull-left">
+                    <a ng-click="setImage(gallery.photos.indexOf(slide) * 4)"><img ng-src="{{gallery.photos[gallery.photos.indexOf(slide) * 4]}}" style="margin-right: 5px; margin-bottom: 5px;" width="140px" height="140px;"></a>
+                    <a ng-click="setImage((gallery.photos.indexOf(slide) * 4) + 1)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+1]" ng-src="{{gallery.photos[(gallery.photos.indexOf(slide) * 4) + 1]}}" style="margin-left: 5px; margin-bottom: 5px;" width="140px"  height="140px;"></a>
+                    </br> 
+                    <a ng-click="setImage((gallery.photos.indexOf(slide) * 4) + 2)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+2]"ng-src="{{gallery.photos[(gallery.photos.indexOf(slide) * 4) + 2]}}" style="margin-right: 5px;" width="140px"  height="140px;"></a>
+                    <a ng-click="setImage((gallery.photos.indexOf(slide)* 4) + 3)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+3]" ng-src="{{gallery.photos[(gallery.photos.indexOf(slide)* 4) + 3]}}" style="margin-left: 5px;" width="140px"  height="140px;"></a>
+                  </div>
+                </div>
+              </slide>
+            </carousel>
+          </div>
+          <div class="col-md-12 col-sm-12 col-lg-12 cnts">
+            <div class="stars">
+              <form action="">
+                <input class="star star-5" id="star-5" ng-checked="galleryRating.stars === 5" type="radio" ng-click="rating(5)" name="star"/>
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" ng-checked="galleryRating.stars === 4" type="radio" ng-click="rating(4)" name="star"/>
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" ng-checked="galleryRating.stars === 3" type="radio" ng-click="rating(3)" name="star"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" ng-checked="galleryRating.stars === 2" type="radio" ng-click="rating(2)" name="star"/>
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" ng-checked="galleryRating.stars === 1" type="radio" ng-click="rating(1)" name="star"/> 
+                <label class="star star-1" for="star-1"></label>
+              </form>
             </div>
-            <div class="col-md-12 col-sm-12 col-lg-12 cnts">
-             <div class="stars">
-		  <form action="">
-			<input class="star star-5" id="star-5" ng-checked="galleryRating.stars === 5" type="radio" ng-click="rating(5)" name="star"/>
-			<label class="star star-5" for="star-5"></label>
-			<input class="star star-4" id="star-4" ng-checked="galleryRating.stars === 4" type="radio" ng-click="rating(4)" name="star"/>
-			<label class="star star-4" for="star-4"></label>
-			<input class="star star-3" id="star-3" ng-checked="galleryRating.stars === 3" type="radio" ng-click="rating(3)" name="star"/>
-			<label class="star star-3" for="star-3"></label>
-			<input class="star star-2" id="star-2" ng-checked="galleryRating.stars === 2" type="radio" ng-click="rating(2)" name="star"/>
-			<label class="star star-2" for="star-2"></label>
-			<input class="star star-1" id="star-1" ng-checked="galleryRating.stars === 1" type="radio" ng-click="rating(1)" name="star"/> 
-			<label class="star star-1" for="star-1"></label>
-		  </form>
-		</div>
-              <ul class="star">
-                <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
+            <ul class="star">
+              <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{post.title || vendor.business.name }},{{post.tagline || vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
-                <li><a 
-ng-click="pin()"
-><i class="fa fa-pinterest fa-2x"> </i></a></li>
-                <li><a href="#"><i class="bg"> </i></a></li>
-                <li><a href="#"><i class="msg"> </i></a></li>
-                <li><a href="#"><i class="md"> </i></a></li>
-              </ul>
-              <div class="clearfix margin-top-40"></div>
-              <h5>Tags</h5>
-              <p>Wedding Cake, Flowers, {{post.title}}, romantic, midsummer night's dream</p>
-           
-            </div>
+                href="https://twitter.com/intent/tweet?text={{post.title || vendor.business.name }},{{post.tagline || vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
+              <li><a 
+                ng-click="pin()"
+                ><i class="fa fa-pinterest fa-2x"> </i></a></li>
+              <li><a href="#"><i class="bg"> </i></a></li>
+              <li><a href="#"><i class="msg"> </i></a></li>
+              <li><a href="#"><i class="md"> </i></a></li>
+            </ul>
+            <div class="clearfix margin-top-40"></div>
+            <h5>Tags</h5>
+            <p>Wedding Cake, Flowers, {{post.title}}, romantic, midsummer night's dream</p>
           </div>
-          <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
         <div  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content">
-
-
         </div>
       </div>
     </div>
@@ -202,7 +195,7 @@ ng-click="pin()"
   	$('#demo5').trigger('forward');
     });
   });
-
+  
   $(document).ready(function() {
   var defaults = {
   		containerID: 'toTop', // fading element id
@@ -210,9 +203,8 @@ ng-click="pin()"
   scrollSpeed: 1200,
   easingType: 'linear'
   };
-
+  
   $().UItoTop({ easingType: 'easeOutQuart' });
-
+  
   });
 </script>
-

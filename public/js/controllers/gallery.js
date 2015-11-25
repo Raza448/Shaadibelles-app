@@ -110,6 +110,7 @@ message: ''
       $http.get(window.remote + '/api/galleries/' + $scope.id)
       .then(function(res) {
           $scope.gallery = res.data;
+          $scope.slidelimit = res.data.photos.length - 4;
          if(res.data.postId){
 
   $http.get(window.remote + '/api/posts/'+ res.data.postId).then(function(res){
