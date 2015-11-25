@@ -33,8 +33,9 @@
 		</div>
             <ul class="star">
                 <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
-              <li><a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{post.title}},{{post.tagline}}&url={{url}}" ><i class="twt"> </i></a></li>
+   
+      <li><a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text={{post.title || vendor.business.name }},{{post.tagline || vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
               <li><a href="" ng-click="pin()"><i class="fa fa-pinterest fa-2x"> </i></a></li>
               <li><a href="#"><i class="bg"> </i></a></li>
               <li><a href="#"><i class="msg"> </i></a></li>
@@ -44,7 +45,7 @@
           </div>
           <h2>{{post.created}}</h2>
           <h4>{{post.description}}. </h4>
-<div masonry ng-hide="currentEvent">
+<div masonry ng-hide="currentEvent.gallery">
 			<div  ng-repeat="image in gallery.photos track by $index" class="masonry-brick">
 				<img class="img-width" src="{{image}}" alt="">
 			</div>
@@ -57,15 +58,15 @@
 			</div>
 		</div>
         </div>
-        <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
-           <div class="bs-example bs-example-tabs">
-           <ul id="myTab" class="nav nav-tabs" ng-show="post.events">
-              <li class="{{currentEvent === item? 'active' : ' '}}" ng-repeat="item in post.events track by $index" ><a href="" ng-click="changeEvent(item)" >{{item.name}}</a></li>
+       <div class="col-md-5 col-lg-5 col-sm-6 blogs-top">
+          <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs" ng-show="post.events">
+              <li class="{{currentEvent === item? 'active' : ' '}}" ng-repeat="item in post.events" ><a href="" ng-click="changeEvent(item)" >{{item.name}}</a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="profile">
                 <ul class="grid-part">
-          <li ng-repeat="review in reviews track by $index"><a href="#"><i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon"> </i>{{review.vendor.category[0]}}: <span>{{review.vendor.business.name}}.{{review.vendor.location[0]}}</span></a></li>
+                  <li ng-repeat="vendor in currentEvent.vendors"><a href="#/main/vendordetail/{{vendor.vendor}}"><i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon"> </i>{{vendor.type}}: <span ng-repeat="i in vendors | where : { id : vendor.vendor }">{{ i.business.name }}.{{ i.location[0] }}</span></a></li>
                 </ul>
               </div>
             </div>

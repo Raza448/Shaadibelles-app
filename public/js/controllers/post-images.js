@@ -101,7 +101,9 @@ $http.get(window.remote +'/api/galleries/' + $scope.id + '/ratings?access_token=
                if(res.data.postId){
   $http.get(window.remote + '/api/posts/' + res.data.postId).then(function(res){
        $scope.post = res.data;
- 
+    if($scope.post.events){
+ $scope.currentEvent = $scope.post.events[0];
+}
    if(res.data.userId){
 
 
