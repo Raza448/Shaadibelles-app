@@ -16,7 +16,11 @@ angular.module('sbFrontEnd').controller('GalleriesCtrl', function($http, $state,
       });
 
      $rootScope.showSelect = false;
-
-
+     $scope.keywords = [];
+    $scope.galleries.forEach(function(gallery){
+   gallery.keywords.forEach(function(keyword){
+ $scope.keywords.push(keyword);
+});
+});
 
 });

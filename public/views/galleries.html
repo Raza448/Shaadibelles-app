@@ -36,51 +36,50 @@
       <div class="filter-margin row">
         <div class="col-md-2 col-lg-2 col-sm-2">
           <select class="filter">
-            <option>Select an Option</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
+            <option>Sort By Rating</option>
+            <option>Highly rated</option>
+            <option>Low Rated</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
           <select class="filter">
-            <option>Select an Option</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
+            <option>Sort By Date</option>
+            <option>Oldest</option>
+            <option>Newest</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter">
-            <option>Select an Option</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
+          <select class="filter" ng-options="keyword for keyword in keywords">
+            <option>Sort By Keywords</option>
+>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2 filter-txt">
           <p>SORT BY COLOR</p>
         </div>
         <div class="col-md-3 col-lg-3 col-sm-3 filter-txt">
-          <div class="foo" style="background-color:#13b4ff;"></div>
-          <div class="foo" style="background-color:#ab3fdd;"></div>
-          <div class="foo" style="background-color:#f66d2b;"></div>
-          <div class="foo" style="background-color:#d09230;"></div>
-          <div class="foo" style="background-color:#d8e25e;"></div>
-          <div class="foo" style="background-color:#235f33;"></div>
-          <div class="foo" style="background-color:#7dcac0;"></div>
-          <div class="foo" style="background-color:#2093ba;"></div>
-          <div class="foo" style="background-color:#6379bc;"></div>
-          <div class="foo" style="background-color:#2b4596;"></div>
-          <div class="foo" style="background-color:#ac8dbf;"></div>
-          <div class="foo" style="background-color:#993f97;"></div>
-          <div class="foo" style="background-color:#d2263c;"></div>
-          <div class="foo" style="background-color:#f075ae;"></div>
+          <a href="" ng-click="color = 'Dodger blue'" ><div class="foo" style="background-color:#13b4ff;"></div></a>
+          <a href="" ng-click="color = 'purple'" > <div class="foo" style="background-color:#ab3fdd;"></div></a>
+           <a href="" ng-click="color = 'Flamingo'" ><div class="foo" style="background-color:#f66d2b;"></div></a>
+          <a href="" ng-click="color = 'Brandy Punch'" > <div class="foo" style="background-color:#d09230;"></div></a>
+          <a href="" ng-click="color = 'Wattle'" > <div class="foo" style="background-color:#d8e25e;"></div></a>
+           <a href="" ng-click="color = 'green'" ><div class="foo" style="background-color:#235f33;"></div></a>
+          <a href="" ng-click="color = 'Monte Carlo'" > <div class="foo" style="background-color:#7dcac0;"></div></a>
+          <a href="" ng-click="color = 'Blue'" > <div class="foo" style="background-color:#2093ba;"></div></a>
+           <a href="" ng-click="color = 'ship cove'" ><div class="foo" style="background-color:#6379bc;"></div></a>
+          <a href="" ng-click="color = 'sapphire'" > <div class="foo" style="background-color:#2b4596;"></div></a>
+          <a href="" ng-click="color = 'Lavender Purple'" > <div class="foo" style="background-color:#ac8dbf;"></div></a>
+           <a href="" ng-click="color = 'Plum'" ><div class="foo" style="background-color:#993f97;"></div></a>
+           <a href="" ng-click="color = 'Maroon'" ><div class="foo" style="background-color:#d2263c;"></div></a>
+           <a href="" ng-click="color = 'Pink'" ><div class="foo" style="background-color:#f075ae;"></div></a>
         </div>
-        <div class="col-md-1 col-lg-1 col-sm-1"><img src="public/images/short.png" width="45" height="17"></div>
+
       </div>
       <div class="row">
         <div class="col-md-12 col-lg-12">
           <div id="type-masory" class="home-projects row">
             <!-- Project -->
-            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit">
+            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color">
               <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
                   <img src="{{gallery.photos[0]}}" alt="">
