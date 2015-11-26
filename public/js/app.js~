@@ -22,7 +22,7 @@ angular
         'wu.masonry',
         'angularPayments',
         'duScroll',
-    'textAngular',
+    'textAngular'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({
@@ -523,6 +523,7 @@ $rootScope.stopLoading = function(){
                 if (res.data) {
                     $rootScope.user = { id : res.data.userId,
                     accessToken :  res.data.accessToken }
+                    $rootScope.getUserData();
                 }
             
             });
@@ -768,21 +769,12 @@ $rootScope.stopLoading = function(){
             });
         }
 
-        $rootScope.$watch('user', function(user) {
-            if (user) {
-                $rootScope.getUserData();
-            }
-        });
+       
 
 
 
 
-        $rootScope.$watch('user', function(user) {
-            if (user && user !== null) {
-                $rootScope.getUserData();
-            }
-        });
-
+      
 
         $rootScope.$on('$stateChangeError', function() {
             $state.go('login');

@@ -22,7 +22,7 @@
           <a href="{{socialLinks.facebook}}"><i class="icon4"></i></a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the perfect team to make your dreams come true</div>
+      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the {{userData}} team to make your dreams come true</div>
       <div class="col-lg-4 col-md-4 col-sm-7">
         <div class="icon">
           <ul>

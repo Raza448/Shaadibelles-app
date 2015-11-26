@@ -523,6 +523,7 @@ $rootScope.stopLoading = function(){
                 if (res.data) {
                     $rootScope.user = { id : res.data.userId,
                     accessToken :  res.data.accessToken }
+                    $rootScope.getUserData();
                 }
             
             });
@@ -763,26 +764,17 @@ $rootScope.stopLoading = function(){
 
 
         $rootScope.getUserData = function() {
-            $http.get(window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.id).then(function(res) {
+            $http.get( '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.id).then(function(res) {
                 $rootScope.userData = res.data;
             });
         }
 
-        $rootScope.$watch('user', function(user) {
-            if (user) {
-                $rootScope.getUserData();
-            }
-        });
+       
 
 
 
 
-        $rootScope.$watch('user', function(user) {
-            if (user && user !== null) {
-                $rootScope.getUserData();
-            }
-        });
-
+      
 
         $rootScope.$on('$stateChangeError', function() {
             $state.go('login');
