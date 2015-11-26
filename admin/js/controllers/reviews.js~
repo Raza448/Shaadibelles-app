@@ -5,6 +5,7 @@ angular.module('sbAdminApp')
         var query = $location.search();
     $scope.id = query.id;
     $scope.getReviews = function() {
+if(query.id){
 
       var url = window.remote + '/api/users/'+ $scope.id + '/userReviews?access_token=' + $rootScope.user.accessToken;
 
@@ -18,6 +19,21 @@ angular.module('sbAdminApp')
 });
 });
         })
+} else {
+ 
+      var url = window.remote + '/api/users/'+ $scope.id + '/userReviews?access_token=' + $rootScope.user.accessToken;
+
+      $http.get(url)
+        .then(function(res) {
+          $scope.reviews = res.data;
+
+            $scope.reviews.forEach(function(review){
+    $http.get(window.remote + '/api/posts/' + review.postId + '?access_token=' + $rootScope.user.accessToken).then(function(res){
+        review.post = res.data;
+});
+});
+        })
+}
     }
 
     $scope.getReviews();
@@ -39,7 +55,7 @@ angular.module('sbAdminApp')
     review.active = true;
      var url = window.remote + '/api/reviews/' + review.id + '?access_token=' + $rootScope.user.accessToken;
         var request = $http.put;
-        request(url, reivew).then(function(res) {
+        request(url, review).then(function(res) {
           $scope.getReviews();
         });
     }

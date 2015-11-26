@@ -17,7 +17,8 @@ $http.get(window.remote + '/api/posts/' + $scope.id +
       });
 
 } else {
-$http.get(window.remote + '/api/ratings?access_token=' + $rootScope.user.accessToken)
+$http.get(window.remote + '/api/posts/' + $scope.id +
+        '/ratings?access_token=' + $rootScope.user.accessToken)
       .then(function(res) {
         $scope.ratings = res.data;
       });

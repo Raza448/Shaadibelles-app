@@ -521,9 +521,27 @@ angular
         }
    })
 
- .state('dashboard.vendor-profile',{
+ .state('dashboard.vendor-reviews',{
        templateUrl:'admin/views/dashboard/user/reviews.html',
        url:'/vendor-reviews',
+       controller: 'ReviewsCtrl',
+       resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/reviews.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+   })
+
+
+.state('dashboard.reviews',{
+       templateUrl:'admin/views/dashboard/user/reviews.html',
+       url:'/reviews',
        controller: 'ReviewsCtrl',
        resolve: {
           loadMyFiles:function($ocLazyLoad) {

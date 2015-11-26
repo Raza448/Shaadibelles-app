@@ -132,7 +132,7 @@
           <div id="demo5" class="scroll-img">
             <carousel interval="3000" no-wrap="noWrapSlides" >
               <slide ng-repeat="slide in gallery.photos track by $index" ng-if="gallery.photos[gallery.photos.indexOf(slide) * 4]" >
-                <div class="carousel-caption" style="width:600px; height: 400px; margin:auto;">
+                <div  style="width:600px; height: 400px; margin:auto;">
                   <div class="pull-left">
                     <a ng-click="setImage(gallery.photos.indexOf(slide) * 4)"><img ng-src="{{gallery.photos[gallery.photos.indexOf(slide) * 4]}}" style="margin-right: 5px; margin-bottom: 5px;" width="140px" height="140px;"></a>
                     <a ng-click="setImage((gallery.photos.indexOf(slide) * 4) + 1)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+1]" ng-src="{{gallery.photos[(gallery.photos.indexOf(slide) * 4) + 1]}}" style="margin-left: 5px; margin-bottom: 5px;" width="140px"  height="140px;"></a>

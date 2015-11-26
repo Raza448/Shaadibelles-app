@@ -10,7 +10,7 @@
                <p>{{users.length}} users</p>
            </div></a>
            <a href="#/dashboard/vendors" > <div class="col-lg-3" >
-              <i class="fa fa-suitcase fa-5x"></i>
+              <i class="fa fa-user fa-5x"></i>
                <p>{{vendors.length}} vendors</p>
            </div></a>
     
