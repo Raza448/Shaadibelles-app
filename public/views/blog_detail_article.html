@@ -70,8 +70,8 @@
 
       <div class="blobgrid">
         <h5>OTHER REAL SOUTH EAST ASIAN INSPIRED WEDDINGS YOU MAY LIKE</h5>
-        <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids" ng-repeat="item in relatedPosts ">
-          <a href="#/main/post/{{item.id}}"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
+        <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids vendor_thumb" ng-repeat="item in relatedPosts ">
+          <a href="#/main/post/{{item.id}}" class="thumbnail_cir"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
           <h4>{{item.title}}
           </h4>
           <p>{{item.description.substring(0, 30)}}

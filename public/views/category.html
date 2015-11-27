@@ -40,8 +40,8 @@
     <div class="top-grid-top">
       <div class="top-grids">
         <div class="col-md-4 col-sm-12 col-lg-4" ng-repeat="post in posts track by $index" ng-if="post.cover">
-          <div class=" top-grid" >
-            <a  ui-sref="main.post({id:post.id})"><img class="img-responsive" src="{{post.cover}}" title="name" alt=""></a>
+          <div class=" top-grid vendor_thumb" >
+            <a ui-sref="main.post({id:post.id})" class="thumbnail"><img class="img-responsive" src="{{post.cover}}" title="name" alt=""></a>
                <a  ui-sref="main.post({id:post.id})"><h3>{{post.title}}</h3></a>
             <p>{{post.description.substring(0, 60)}}</p>
           </div>

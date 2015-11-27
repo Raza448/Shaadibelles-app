@@ -67,7 +67,7 @@ h1 {
 mark {
   color: #000;
   background: #ff0;
-}
+} 
 small {
   font-size: 80%;
 }
@@ -333,8 +333,8 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;/*
-  max-width: 100%;*/
+  display: block;
+  max-width: 100%;
   height: auto;
 }
 .img-rounded {
@@ -1068,8 +1068,9 @@ a.morebtn {
 	margin-top:10%;
   }
   a.morebtn {
-    margin: 2em auto 0;
+    margin: 1em auto 0;
     width: auto !important;
+	text-align: center;
 }
 }
 @media (min-width: 1200px) {
@@ -3436,9 +3437,10 @@ input[type="button"].btn-block {
   .dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
-  width:380%;
+  width:423%;
   left: 0;
-  margin: 0;
+  margin: 0 0 0 -18px;
+  border-radius: 10px 10px 0 0;;
   }
   .dropdown:hover .dropdown-menu {
   display: block;
@@ -6119,20 +6121,51 @@ button.close {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .visible-md {
-    display: block !important;
-  }
-  table.visible-md {
-    display: table;
-  }
-  tr.visible-md {
-    display: table-row !important;
-  }
-  th.visible-md,
-  td.visible-md {
-    display: table-cell !important;
-  }
-}
+
+  .visible-md { display: block !important;}
+  table.visible-md {  display: table; }
+  tr.visible-md { display: table-row !important; }
+  th.visible-md, td.visible-md { display: table-cell !important;}
+  .breadcrumb_margin p { color: #ccc; letter-spacing: 3px;}
+    .txt-align-c { text-align: center;}
+   i.heartin {  background: transparent url("../images/signup-heart.png") no-repeat scroll 0 0; color: #fff; display: inline-block; font-weight: bold; height: 34px; padding-top: 5px; text-align: center; width: 40px; float: none !important;}
+	.sign-up-inner { background-color: #fff;  margin-top:-22%; padding: 10px 30px;  position: relative; width: 100%;  z-index: 999;}
+	.sign-up-inner h3 { color: #f7987b; font-size: 1.5em; line-height: 2em; padding: 2em 0 1em; text-align: center; text-transform: uppercase; letter-spacing: 3px;}
+	.sign-up-inner h6 {
+    color: #f7987b;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-size: 18px;
+	}
+	.sign-up-inner input[type="text"], .sign-up-inner input[type="password"], .sign-up-inner input[type="email"] { padding: 10px; width: 100%; margin-bottom: 10px;}
+	.sign-up-inner label {
+    color: #939598;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 12px 0 3px;
+    word-spacing: 3px;
+    text-align: center;
+    line-height: 3em;
+	}
+	.sign-up-inner input[type="submit"] {
+    background-color: #f7987b;
+    color: white;
+    padding: 10px 12px;
+    width: 60%;
+    border: 0px;
+	}
+	.sign-up-inner button { background-color: #1b75bc;  padding: 10px 8px 10px 4px;}
+	.btn-fb span {
+    background: rgba(0, 0, 0, 0) url("../images/blank-heart.png") no-repeat scroll 0 0;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    padding: 0px 0 0 40px;
+    color: white;
+	}
+	.callbacks_share{   top: 39% !important;}
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{    margin-top: -85px;}
+ }
 @media (min-width: 1200px) {
   .visible-lg {
     display: block !important;
@@ -6323,7 +6356,7 @@ a.morebtn {
 .sign-up-inner{
 	background-color: #fff;
     margin-top: 10px;
-    padding: 10px 5px;
+    padding: 10px 30px;
     position: relative;
     width: 100%;
     z-index: 999;
@@ -6381,7 +6414,7 @@ i.heartin{
 {
 	text-align:center
 }
-.sign-up-inner input[type="text"]{
+.sign-up-inner input[type="text"], .sign-up-inner input[type="password"], .sign-up-inner input[type="email"]{
 	padding: 10px;
 	width: 100%;
 	margin-bottom:10px;
@@ -7482,11 +7515,11 @@ bold	font-style: normal;
 	position: absolute;
 	top: 40%;
 	text-align:center;
-	left:0%;
+	left:10%;
 }
 .banner-matter h3{
 	color: #FFF;
-	font-size: 2.5em;
+	font-size: 1.5em;
 	  font-family: font_gotham;
 	  font-weight:bold;
 	  text-align:left;
@@ -7605,7 +7638,7 @@ i.heartin{
 {
 	text-align:center
 }
-.sign-up-inner input[type="text"]{
+.sign-up-inner input[type="text"],.sign-up-inner input[type="password"], .sign-up-inner input[type="email"]{
 	padding: 10px;
 	width: 100%;
 	margin-bottom:10px;
@@ -8167,6 +8200,8 @@ i.heartin{
 }
 #nav .menu > li.folder > a {
 	padding: 11px 5px 15px 5px;
+	font-family: serif;
+	text-transform: lowercase;
 	
 }
 		/* menu items hover */
@@ -8487,7 +8522,7 @@ bold	font-style: normal;
     display: none !important;
   }
   .banner_div{
-	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;
+	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding-left: 3%;
 }
 .banner-vendor{
 	position: absolute;
@@ -8574,11 +8609,11 @@ bold	font-style: normal;
 	position: absolute;
 	top: 40%;
 	text-align:center;
-	left:15%;
+	left:5%;
 }
 .banner-matter h3{
 	color: #FFF;
-	font-size: 3.5em;
+	font-size: 2.5em;
 	  font-family: font_gotham;
 	  font-weight:bold;
 	  text-align:left;
@@ -8863,6 +8898,8 @@ bold	font-style: normal;
 }
 #nav .menu > li.folder > a {
 	padding: 11px 15px 15px 15px;
+	font-family: serif;
+	text-transform: lowercase;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -9182,7 +9219,7 @@ bold	font-style: normal;
     display: none !important;
   }
   .banner_div{
-	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;
+	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding: 0 3%;
 }
 .banner-vendor{
 	position: absolute;
@@ -9269,7 +9306,7 @@ bold	font-style: normal;
 	position: absolute;
 	top: 40%;
 	text-align:center;
-	left:7%;
+	left:5%;
 }
 .banner-matter h3{
 	color: #FFF;
@@ -9918,6 +9955,8 @@ i.heartin{
 }
 #nav .menu > li.folder > a {
 	padding: 11px 15px 15px 15px;
+	font-family: serif;
+	text-transform: lowercase;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -10259,3 +10298,7 @@ bold	font-style: normal;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+@media (max-width: 320px){
+.sign-up-inner button { width: 100%;}
+}

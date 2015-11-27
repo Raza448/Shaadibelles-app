@@ -33,30 +33,30 @@
     <div class="top-grid-top">
       <div class="top-grids">
         <div class="col-md-4 col-sm-12 col-lg-4">
-          <div class=" top-grid">
-            <a ng-if="blogSmallWidgets[0].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
- <a ng-if="blogSmallWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
- <a ng-if="blogSmallWidgets[0].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[0].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+          <div class=" top-grid vendor_thumb">
+            <a ng-if="blogSmallWidgets[0].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[0].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[0].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[0].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[0].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[0].cover}}" title="name" alt=""></a>
             <h3>{{blogSmallWidgets[0].title}}</h3>
             <p>{{blogSmallWidgets[0].description}}</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-12 col-lg-4">
-          <div class=" top-grid">
-<a ng-if="blogSmallWidgets[1].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
- <a ng-if="blogSmallWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
- <a ng-if="blogSmallWidgets[1].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[1].content.id}}"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+          <div class=" top-grid vendor_thumb">
+<a ng-if="blogSmallWidgets[1].content.type === 'Post'" href="#/main/post/{{blogSmallWidgets[1].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogSmallWidgets[1].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
+ <a ng-if="blogSmallWidgets[1].content.type === 'Category'" href="#/main/category/{{blogSmallWidgets[1].content.id}}" class="thumbnail"><img class="img-responsive" src="{{blogSmallWidgets[1].cover}}" title="name" alt=""></a>
             <h3>{{blogSmallWidgets[1].title}}</h3>
             <p>{{blogSmallWidgets[1].description}}</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-12 col-lg-4" >
           <div class=" top-grid">
-            <div class="bs-example bs-example-tabs">
+            <div class="bs-example bs-example-tabs recnt-post">
             <ul id="myTab" class="nav nav-tabs">
               <li ng-repeat="i in blogCategories" class="{{blogCategory === i? 'active': ''}}"><a href=""  ng-click="changeBlogCategory(i)">{{i.name.toUpperCase()}}</a></li>
             </ul>
-            <div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
+            <div id="myTabContent" class="tab-content" style="border:0px solid #ccc;">
               <div class="" id="editor">
                 <ul class="social-icon " >
                   <li ng-repeat="post in blogCategory.posts"><a href="#/main/post/{{post.id}}"><span><i><br />
@@ -75,7 +75,7 @@
  <a ng-if="blogMediumWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{blogMediumWidgets[0].content.id}}"><img src="{{blogMediumWidgets[0].cover}}" title="name" alt=""></a>
  <a ng-if="blogMediumWidgets[0].content.type === 'Category'" href="#/main/category/{{blogMediumWidgets[0].content.id}}"><img src="{{blogMediumWidgets[0].cover}}" title="name" alt=""></a>
             <h3>{{blogMediumWidgets[0].title}}</h3>
-            <p>{{blogMediumWidgets[0].description}}</p>
+            <p class="blog-col-2">{{blogMediumWidgets[0].description}}</p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-lg-6">
@@ -84,7 +84,7 @@
  <a ng-if="blogMediumWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{blogMediumWidgets[1].content.id}}"><img  src="{{blogMediumWidgets[1].cover}}" title="name" alt=""></a>
  <a ng-if="blogMediumWidgets[1].content.type === 'Category'" href="#/main/category/{{blogMediumWidgets[1].content.id}}"><img  src="{{blogMediumWidgets[1].cover}}" title="name" alt=""></a>
             <h3>{{blogMediumWidgets[1].title}}</h3>
-            <p>{{blogMediumWidgets[1].description}}</p>
+            <p class="blog-col-2">{{blogMediumWidgets[1].description}}</p>
           </div>
         </div>
         <div class="clearfix"> </div>
@@ -110,8 +110,8 @@
         </div>
         <div class="clearfix"> </div>
         <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
-          <div class=" top-grid">
-            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[2].cover}}" title="name" alt="">
+          <div class=" top-grid vendor_thumb bog-col-cir-1"><a class="thumbnail_cir-2">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[2].cover}}" title="name" alt=""></a>
             <h2>{{blogSmallWidgets[2].title}}
             </h2>
             <h1>{{blogSmallWidgets[2].description}}
@@ -123,8 +123,8 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
-          <div class=" top-grid">
-            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[3].cover}}" title="name" alt="">
+          <div class=" top-grid vendor_thumb bog-col-cir-2"><a class="thumbnail_cir-2">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[3].cover}}" title="name" alt=""></a>
             <h2>{{blogSmallWidgets[3].title}}
             </h2>
             <h1>{{blogSmallWidgets[3].description}}
@@ -135,8 +135,8 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 bottom-grids">
-          <div class=" top-grid">
-            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[4].cover}}" title="name" alt="">
+          <div class=" top-grid vendor_thumb bog-col-cir-3"><a class="thumbnail_cir-2">
+            <img id="bottom_grid_div" class="img-responsive" src="{{blogSmallWidgets[4].cover}}" title="name" alt=""></a>
             <h2>{{blogSmallWidgets[4].title}}
             </h2>
             <h1>{{blogSmallWidgets[4].description}}

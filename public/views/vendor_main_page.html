@@ -78,14 +78,19 @@
         </div>
       
         <div class="clearfix"> </div>
-        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content">
+        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img">
+		<img src="/public/images/vendor_main.jpg" alt="" />
+		</div>
+		
+        <!-- <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content"> -->
+        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid">
         
-        <div class="clearfix"> </div>
+        
         <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
           <h1><a href="#">ALL VENDORS</a></h1>
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
+      <div class="col-md-4 col-lg-4 col-sm-4 thumb vendor_thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
         <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}">
         <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
         <a href="#/main/vendordetail/{{vendor.id}}" ><h1>{{vendor.business.name}}</h1></a>
@@ -110,6 +115,9 @@
         <a class="morebtn hvr-sweep-to-top" href="" ng-show="vendorlimit < vendors.length" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
       </div>
       <div class="clearfix"> </div>
+	  <div class="col-lg-12 col-md-12 col-sm-12 thumb-vendor-page">
+        <h4><img src="public/images/icon_ven.jpg"  style="width:36px" alt="icon_ven" /> Why choose Shaadi belles vendors</h4>
+      </div>
 
       <div class="col-lg-8 col-md-8 col-sm-8 col-sm-offset-2 col-md-offset-2 thumb">
         <h3> WHY OUR VENDORS<br />
@@ -118,23 +126,23 @@
         </h3>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 thumb">
-        <h4>We bring in talent from all over the world. Why? Because our brides are global! Shaadi Belles is proud to showcase the freshest inspiration for our families. We screen every vendor and serve up thousands of professional wedding planners and vendors that will make your day one of the most memorable ever. Whatever you are looking for in your South East Asian inspired wedding, Shaadi Belles has the perfect team for your big day. </h4>
+        <h4 class="vendor-bring">We bring in talent from all over the world. Why? Because our brides are global! Shaadi Belles is proud to showcase the freshest inspiration for our families. We screen every vendor and serve up thousands of professional wedding planners and vendors that will make your day one of the most memorable ever. Whatever you are looking for in your South East Asian inspired wedding, Shaadi Belles has the perfect team for your big day. </h4>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 help-form">
         <form>
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <h2>NEED PERSONAL ATTENTION, LET US HELP BUILD A TEAM FOR YOU</h2>
+            <h2  class="vendor-need">NEED PERSONAL ATTENTION, LET US HELP BUILD A TEAM FOR YOU</h2>
           </div>
           <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Name" class="inpPad" />
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Email" />
+                <input type="text" placeholder="Email"  class="inpPad" />
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Wedding Location" />
+                <input type="text" placeholder="Wedding Location" class="inpPad" /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
