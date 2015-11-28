@@ -54,7 +54,7 @@
                   <label for="{{page.id}}"></label>
                 </td>
                 <td><strong>{{page.title}}</strong></td>
-                <td>{{page.description}}</td>
+                <td>{{page.description.substring(0, 100)}}</td>
                 
                 <td>
                   <a class="btn btn-sm btn-primary" href="/#/dashboard/edit-page?id={{page.id}}">Edit</a>

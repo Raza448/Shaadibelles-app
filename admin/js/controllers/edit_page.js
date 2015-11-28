@@ -18,16 +18,6 @@ var query = $location.search();
 
     $scope.uploadCover = function(file) {
  if(file){
- var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
     file.fileName = text + '.' + ext;
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
@@ -41,18 +31,8 @@ var query = $location.search();
 
  $scope.upload = function(file, insertAction) {
 
- if(new){
- var text = "";
-    var ext = file.name.split('.').pop();
-
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ ) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-
-    file.fileName = text + '.' + ext;
+ if(file){
+ 
 
       File.upload(file).success(function(res) {
         var containerName = res.result.files.img[0].container;
@@ -74,17 +54,7 @@ var query = $location.search();
           $scope.page = res.data;
       });
 
-
-    $scope.collapseVar = 0;
-
-    $scope.check = function(x) {
-
-      if (x == $scope.collapseVar)
-        $scope.collapseVar = 0;
-      else
-        $scope.collapseVar = x;
-    };
-
+  
     $scope.title = 'New';
     $scope.buttonTextOne = 'Publish';
     $scope.buttonTextTwo = 'Save';
