@@ -194,6 +194,14 @@ background:#fff;
 	text-align: center;
     text-transform: uppercase;
 }
+.bottom-tabs {
+    float: left;
+    margin-top: 30px;
+}
+.favourite_review{
+	top: -6px;
+	position: relative;
+}
 .icon{
 	float:right;
 }
@@ -478,16 +486,18 @@ i.mail{
 }
 .bottom-tabs li a{
 	border:none;
-	border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-	padding: 10px 4.26px;
+	padding: 10px 13px;
+}
+.bottom-social li a{
+	padding: 10px 0 0;
+    margin: 0 !important;
 }
 .bottom-tabs li.active a{
 	border: none !important;
     border-left: 1px solid #ccc !important;
     border-top: 1px solid #ccc !important;
     border-right: 1px solid #ccc !important;
-	padding: 10px 4.75px !important;
+	padding: 10px 13px !important;
 }
 span.contact {
     display: inline-block;
