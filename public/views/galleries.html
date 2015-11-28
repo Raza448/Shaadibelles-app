@@ -35,10 +35,10 @@
     <div class="grids-tops">
       <div class="filter-margin row">
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter" ng-model="sortValue" ng-change="sort(sortValue)">
+          <select class="filter"ng-model="sortValue" >
             <option value="">Sort By Rating</option>
-            <option value="ascend">Highly rated</option>
-            <option value="descend">Low Rated</option>
+            <option value="'averageRating'">Highly rated</option>
+            <option value="'-averageRating'">Low Rated</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
@@ -79,7 +79,7 @@
         <div class="col-md-12 col-lg-12">
           <div id="type-masory" class="home-projects row">
             <!-- Project -->
-            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color">
+            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue">
               <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
                   <img src="{{gallery.photos[0]}}" alt="">

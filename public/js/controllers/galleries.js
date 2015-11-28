@@ -26,14 +26,7 @@ angular.module('sbFrontEnd').controller('GalleriesCtrl', function($http, $state,
 });
       });
 
-$scope.sort = function(value){
- if( value === 'ascend'){
- $scope.galleries = _.sortBy($scope.galleries, function(gallery){ return gallery.averageRating; });
-} else {
-var ascend = _.sortBy($scope.galleries, function(gallery){ return gallery.averageRating; });
- $scope.galleries = ascend.reverse();
-}
-}
+
 
      $rootScope.showSelect = false;
  
