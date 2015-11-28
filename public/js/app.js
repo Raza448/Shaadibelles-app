@@ -614,6 +614,7 @@ $rootScope.stopLoading = function(){
                 $rootScope.defaultSlider = $rootScope.site.settings.slider;
                 $rootScope.featuredVendor = $rootScope.site.featured_vendor;
                 $rootScope.socialLinks = $rootScope.site.social;
+                $rootScope.keywords = $rootScope.site.settings.keywords.split(",");
                 $rootScope.recommended = [];
 
                 $rootScope.vendorstwo = [];

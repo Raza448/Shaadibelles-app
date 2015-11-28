@@ -38,7 +38,8 @@ $scope.postPublished = false;
   $scope.gallery = {
   title : null,
   photos : [],
-  cover : null
+  cover : null,
+  created : new Date()
 };
 
 

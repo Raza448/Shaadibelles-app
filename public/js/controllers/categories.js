@@ -25,4 +25,6 @@ angular.module('sbFrontEnd').controller('CategoriesCtrl', function($http, $state
 
      $rootScope.showSelect = false;
 
+
+
 });

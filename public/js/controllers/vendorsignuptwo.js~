@@ -36,7 +36,6 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
 $scope.locationremove = function(location){
 var i  = $scope.vendor.location.indexOf(location);
  $scope.vendor.location.splice(i, 1);
- $scope.locationOne = null;
 }
 
 

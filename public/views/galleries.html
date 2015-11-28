@@ -35,10 +35,10 @@
     <div class="grids-tops">
       <div class="filter-margin row">
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter">
-            <option>Sort By Rating</option>
-            <option>Highly rated</option>
-            <option>Low Rated</option>
+          <select class="filter" ng-model="sortValue" ng-change="sort(sortValue)">
+            <option value="">Sort By Rating</option>
+            <option value="ascend">Highly rated</option>
+            <option value="descend">Low Rated</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
@@ -49,9 +49,9 @@
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter" ng-options="keyword for keyword in keywords">
-            <option>Sort By Keywords</option>
->
+          <select class="filter" ng-model="keyword" ng-options="keyword for keyword in keywords">
+            <option value="">Sort By Keywords</option>
+
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2 filter-txt">
@@ -85,7 +85,18 @@
                   <img src="{{gallery.photos[0]}}" alt="">
                   <div class="overlay">
                     <div class="overlay-inner">
-                      <h1><i class="heart"> </i><i class="heart"> </i><i class="heart"> </i><i class="heart"> </i><i class="heartf"> </i></h1>
+  <form action="">
+			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="gallery.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
+			<label class="star star-5" for="star-5"></label>
+			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="gallery.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
+			<label class="star star-4" for="star-4"></label>
+			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="gallery.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
+			<label class="star star-3" for="star-3"></label>
+			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="gallery.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
+			<label class="star star-2" for="star-2"></label>
+			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="gallery.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
+			<label class="star star-1" for="star-1"></label>
+		  </form>
                       <h3>{{gallery.title}}</h3>
                       <p>{{gallery.tagline}}</p>
                       <input type="submit" class="margin-0" value="VIEW THIS WEDDING">

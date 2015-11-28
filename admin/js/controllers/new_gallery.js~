@@ -128,7 +128,7 @@ angular.module('sbAdminApp')
       return '';
     };
 
- $scope.buttonText = "update";
+ $scope.buttonText = "create";
 
 
  $scope.upload = function(file) {

@@ -139,7 +139,7 @@ $rootScope.startLoading();
         insertAction('insertImage', newfile, true);
         $scope.gallery.photos.push(newfile);
       })
-$rootScope.startLoading();
+$rootScope.stopLoading();
       return true;
 }
 

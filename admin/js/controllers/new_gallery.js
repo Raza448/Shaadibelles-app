@@ -180,7 +180,7 @@ angular.module('sbAdminApp')
 
 
     $scope.publish = function(gallery) {
-
+     gallery.created = new Date();
 
       var url = window.remote + '/api/galleries?access_token=' + $rootScope.user.accessToken;
       $http.post(url, gallery).then(function(res) {

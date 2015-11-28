@@ -30,7 +30,8 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
  $scope.gallery = {
   title : null,
   photos : [],
-  cover : null
+  cover : null,
+  created : new Date()
  };
 
 $scope.locationremove = function(location){
