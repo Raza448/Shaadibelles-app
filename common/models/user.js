@@ -30,7 +30,7 @@ module.exports = function(UserModel) {
     var url = 'http://' + 'shaadibelles.herokuapp.com' + '/#/main/reset';
     var html = 'Click <a href="' + url + '?id=' + info.accessToken.userId + '&access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
-
+    
     UserModel.app.models.Email.send({
       to: info.email,
       from: 'support@herokuapp.com',

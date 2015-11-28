@@ -19,7 +19,7 @@
   },
   "ACL": {
     "dataSource": "mongodb",
-    "public": false
+    "public": true
   },
   "User": {
     "dataSource": "mongodb",
@@ -96,6 +96,10 @@
     "public": true
   },
   "page": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "query": {
     "dataSource": "mongodb",
     "public": true
   }

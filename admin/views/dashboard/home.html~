@@ -10,7 +10,7 @@
                <p>{{users.length}} users</p>
            </div></a>
            <a href="#/dashboard/vendors" > <div class="col-lg-3" >
-              <i class="fa fa-user fa-5x"></i>
+              <i class="fa fa-suitcase fa-5x"></i>
                <p>{{vendors.length}} vendors</p>
            </div></a>
     
@@ -56,6 +56,40 @@
               <!-- shortcuts table data-->
               <tbody>
                 <tr ng-repeat="item in reviews | where : { 'active' : false } |  filter: searchText">
+                 
+                  </td>
+                  <td>{{item.content.substring(0, 100)}}
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-success" ng-show="item.active" ng-click="disable(item)">Disable</a>
+                    <a class="btn btn-sm btn-warning" ng-hide="item.active" ng-click="activate(item)">Enable</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-primary" href="#/dashboard/edit-review?id={{item.id}}">Edit</a>
+                  </td>
+                </tr>
+              </tbody>
+              <!-- shortcuts table data ends here-->
+            </table>
+</div>
+
+  <div class="col-lg-6">
+ <table class="ibox-content table table-hover">
+              <!-- shortcuts table header-->
+              <thead>
+                <tr>
+                 
+
+
+                  <th>Reviews</th>
+                  <th>Visible</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <!--shortcuts table header ends here-->
+              <!-- shortcuts table data-->
+              <tbody>
+                <tr ng-repeat="item in queries |  filter: searchText">
                  
                   </td>
                   <td>{{item.content.substring(0, 100)}}

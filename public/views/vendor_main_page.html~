@@ -10,12 +10,12 @@
         <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
 <div class="carousel-caption">
       <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
-            <div class="col-md-6 col-lg-6 col-sm-7">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <h3>{{vendor.business.name}}</h3>
               </div>
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
- <div class="stars">
+ <div class="stars vendor_rating">
 		  <form action="">
 			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
 			<label class="star star-5" for="star-5"></label>
@@ -54,38 +54,45 @@
           <h1>FEATURED VENDORS</h1>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6 bottom-grid" ng-repeat="vendor in vendorstwo" ng-if="vendor.gallery">
-          <div id="img_h">
-            <a href="#/main/vendordetail/{{vendor.id}}"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
+          <div id="img_h" class="vendor-top-img">
+            <a href="#/main/vendordetail/{{vendor.id}}" class="anchor-img"><img  src="{{vendor.gallery[0]}}" alt=""  class="img-responsive hover"/></a>
             <div class="text">
               <a href="#/main/vendordetail/{{vendor.id}}"><p>{{vendor.business.name}}</p></a>
- <div class="stars">
-		  <form action="">
-			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
-			<label class="star star-5"  for="star-5"></label>
-			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
-			<label class="star star-4"  for="star-4"></label>
-			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
-			<label class="star star-3" for="star-3"></label>
-			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
-			<label class="star star-2" for="star-2"></label>
-			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
-			<label class="star star-1" for="star-1"></label>
-		  </form>
-		</div>
-              <a href="#">{{vendor.reviews.length}} Reviews</a>
+			  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<div class="stars vendor_rating">
+				  <form action="">
+					<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
+					<label class="star star-5"  for="star-5"></label>
+					<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
+					<label class="star star-4"  for="star-4"></label>
+					<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
+					<label class="star star-3" for="star-3"></label>
+					<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
+					<label class="star star-2" for="star-2"></label>
+					<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
+					<label class="star star-1" for="star-1"></label>
+				  </form>
+				</div>
+			  </div>
+              <a href="" class="favourite_review">{{vendor.reviews.length}} Reviews</a>
             </div>
           </div>
         </div>
       
         <div class="clearfix"> </div>
-        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content">
+        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img">
+		<img src="/public/images/vendor_main.jpg" alt="" />
+		</div>
+		
+        <!-- <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content"> -->
+        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid">
         
-        <div class="clearfix"> </div>
+        
         <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
           <h1><a href="#">ALL VENDORS</a></h1>
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
+      <div class="col-md-4 col-lg-4 col-sm-4 thumb vendor_thumb" ng-repeat="vendor in vendors | before: vendorLimit" ng-if="vendor.gallery">
         <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}">
         <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
         <a href="#/main/vendordetail/{{vendor.id}}" ><h1>{{vendor.business.name}}</h1></a>
@@ -110,6 +117,9 @@
         <a class="morebtn hvr-sweep-to-top" href="" ng-show="vendorlimit < vendors.length" ng-click="vendorLimit = vendorlimit + 15">Load More</a>
       </div>
       <div class="clearfix"> </div>
+	  <div class="col-lg-12 col-md-12 col-sm-12 thumb-vendor-page">
+        <h4><img src="public/images/icon_ven.jpg"  style="width:36px" alt="icon_ven" /> Why choose Shaadi belles vendors</h4>
+      </div>
 
       <div class="col-lg-8 col-md-8 col-sm-8 col-sm-offset-2 col-md-offset-2 thumb">
         <h3> WHY OUR VENDORS<br />
@@ -118,30 +128,31 @@
         </h3>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 thumb">
-        <h4>We bring in talent from all over the world. Why? Because our brides are global! Shaadi Belles is proud to showcase the freshest inspiration for our families. We screen every vendor and serve up thousands of professional wedding planners and vendors that will make your day one of the most memorable ever. Whatever you are looking for in your South East Asian inspired wedding, Shaadi Belles has the perfect team for your big day. </h4>
+        <h4 class="vendor-bring">We bring in talent from all over the world. Why? Because our brides are global! Shaadi Belles is proud to showcase the freshest inspiration for our families. We screen every vendor and serve up thousands of professional wedding planners and vendors that will make your day one of the most memorable ever. Whatever you are looking for in your South East Asian inspired wedding, Shaadi Belles has the perfect team for your big day. </h4>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 help-form">
-        <form>
+        <form ng-submit="newcontact(contact)">
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <h2>NEED PERSONAL ATTENTION, LET US HELP BUILD A TEAM FOR YOU</h2>
+              <h2  ng-hide="contactsent" class="vendor-need">NEED PERSONAL ATTENTION, LET US GET BACK TO YOU</h2>
+              <h2  ng-show="contactsent" class="vendor-need">THANK YOU FOR CONTACTING, WE WILL GET BACK TO YOU SOON</h2>
           </div>
-          <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8">
+          <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8" ng-hide="contactsent" >
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Name" class="inpPad" ng-model="contact.name"  required/>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Email" />
+                <input type="text" placeholder="Email"  class="inpPad" ng-model="contact.email" required />
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Wedding Location" />
+                <input type="text" placeholder="Wedding Location" ng-model="contact.weddingplace" class="inpPad" required /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <textarea placeholder="Tell Us About Your Vision For Wedding" rows="6"></textarea>
+              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="contact.content" rows="6"></textarea>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center ng-hide="contactsent" ">
             <input type="submit" value="SEND" />
           </div>
         </form>

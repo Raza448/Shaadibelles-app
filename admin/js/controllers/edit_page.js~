@@ -31,7 +31,7 @@ var query = $location.search();
 
  $scope.upload = function(file, insertAction) {
 
- if(new){
+ if(file){
  
 
       File.upload(file).success(function(res) {

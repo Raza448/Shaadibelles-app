@@ -24,6 +24,16 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $state, $mod
             
 	};
 
+$scope.newcontact = function(contact) {
+           $rootScope.startLoading();
+		$http.post('/contact' , contact).then(function(res){
+ $scope.contactsent = true;
+ $rootScope.stopLoading();
+});
+            
+	};
+
+
 
 	
 

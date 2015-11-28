@@ -363,6 +363,21 @@ uiGmapGoogleMapApiProvider.configure({
             }
         })
 
+
+     .state('main.contact', {
+            url: '/contact',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/contact.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
  .state('main.reset', {
             url: '/reset',
             controller: 'SignupCtrl',

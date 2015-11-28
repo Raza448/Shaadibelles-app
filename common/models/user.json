@@ -6,11 +6,11 @@
     "validateUpsert": true
   },
   "properties": {
-"password": {
+    "password": {
       "type": "string",
       "required": false
     }
-},
+  },
   "validations": [],
   "relations": {
     "post": {

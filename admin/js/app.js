@@ -857,6 +857,22 @@ angular
           }
         }
    })
+ .state('dashboard.quries',{
+        templateUrl:'admin/views/admin/queries.html',
+        url:'/quries',
+       controller: 'QueriesCtrl',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/queries.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+    })
       
   }])
 .run(function($rootScope, $state, $log, $cookieStore, $http, $window, $location) {

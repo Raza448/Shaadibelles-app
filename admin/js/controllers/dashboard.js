@@ -40,7 +40,6 @@ $http.get('/api/ratings').then(function(res){
 });
 
 
-
  $scope.activate = function(review) {
     review.active = true;
      var url = window.remote + '/api/reviews/' + review.id + '?access_token=' + $rootScope.user.accessToken;

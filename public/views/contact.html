@@ -1,0 +1,64 @@
+<!-- header-section-ends -->
+<div class="header-slider">
+  <a class="callbacks_share" href="#">Previous</a>
+  <div class="slider">
+    <div class="callbacks_container">
+      <carousel interval="3000" no-wrap="noWrapSlides">
+        <slide ng-repeat="slide in homeSlider track by $index" >
+          <img src="{{slide.image}}" style="margin:auto;">
+          <div class="col-md-10 col-lg-10 col-sm-12 col-lg-offset-1 col-md-offset-1 banner-matter">
+            <h3>{{slide.title}} </h3>
+            <div class="banner_div homepage_banner">
+              <p>{{slide.description}}</span></p>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Category'" href="#/main/category/{{slide.id}}">See More</a>
+            </div>
+            <div class="clearfix"></div>
+            <p>{{slide.tagline}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
+
+<!----------->
+<div class="content">
+  <!---->
+  <div class="container">
+    <div class="grids-tops">
+      <div class="banner-bottom-grids">
+
+            
+        <div class="col-lg-12 col-md-12 col-sm-12 help-form">
+          <form ng-submit="newcontact(contact)" >
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <h2  ng-hide="contactsent" class="vendor-need">NEED PERSONAL ATTENTION, LET US GET BACK TO YOU</h2>
+              <h2  ng-show="contactsent" class="vendor-need">THANK YOU FOR CONTACTING, WE WILL GET BACK TO YOU SOON</h2>
+            </div>
+            <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8" ng-hide="contactsent">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <input type="text" ng-model="contact.name" placeholder="Name" class="inpPad" required />
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <input type="text" ng-model="contact.email" placeholder="Email"  class="inpPad" required />
+                </div>
+               
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <textarea placeholder="Tell Us About Your Query" ng-model="contact.content" rows="6"></textarea>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center" ng-hide="contactsent">
+              <input type="submit" value="SEND" />
+            </div>
+          </form>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

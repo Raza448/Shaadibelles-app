@@ -24,6 +24,15 @@ angular.module('sbFrontEnd').controller('MainCtrl', function($http, $state, $mod
             
 	};
 
+$scope.newcontact = function(contact) {
+           $rootScope.startLoading();
+		$http.post('/contact' , contact).then(function(res){
+ $scope.contactsent = true;
+});
+            
+	};
+
+
 
 	
 
@@ -74,7 +83,7 @@ $scope.loginandbusiness = function(userData) {
 			'accessToken' : res.data.id, 
 		  };
            
-   		$("#vendor-login").modal('show');
+   		$("#vendor-login").modal('hide');
              $rootScope.stopLoading();
              location.href = '/#/main/vendorsignuptwo';
      },  function(err){

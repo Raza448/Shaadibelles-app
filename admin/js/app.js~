@@ -539,9 +539,9 @@ angular
    })
 
 
-.state('dashboard.vendor-reviews',{
+.state('dashboard.reviews',{
        templateUrl:'admin/views/dashboard/user/reviews.html',
-       url:'/vendor-reviews',
+       url:'/reviews',
        controller: 'ReviewsCtrl',
        resolve: {
           loadMyFiles:function($ocLazyLoad) {
@@ -857,6 +857,22 @@ angular
           }
         }
    })
+ .state('dashboard.quries',{
+        templateUrl:'admin/views/admin/queries.html',
+        url:'/quries',
+       controller: 'QuriesCtrl',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'admin/js/controllers/queries.js',
+              'admin/js/window.js'
+              ]
+            })
+          }
+        }
+    })
       
   }])
 .run(function($rootScope, $state, $log, $cookieStore, $http, $window, $location) {

@@ -8,7 +8,7 @@ var Facebook = require('facebook-node-sdk');
 var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
 
 boot(app, __dirname);
-app.use(loopback.favicon(path.resolve(__dirname, '../public/images/favicon.ico')));
+app.use(loopback.favicon(path.resolve(__dirname, '../favicon.ico')));
 app.use("/public", loopback.static(__dirname + "/../public"));
 app.use("/admin/js", loopback.static(__dirname + "/../admin/js"));
 app.use("/admin/css", loopback.static(__dirname + "/../admin/css"));
@@ -364,6 +364,26 @@ app.get('/regsuccess', function (req, res) {
 
 app.get('/vendorverified', function (req, res) {
   res.redirect('/#/main/vendorverified');
+});
+
+
+app.post('/contact', function (req, res) {
+
+
+  var html = "<h3>New Contact request from" + req.body.name + "</h3></br><h4>Email : " + req.body.email +"</h4></br></br><p>content : " + req.body.content + "</p>";
+   if(req.body.weddingplace){
+html += "</br><p> wedding place : " + req.body.weddingplace + "</p>";
+}
+    app.models.Email.send({
+      to: 'harishkumarchellappa@gmail.com',
+      from: 'support@herokuapp.com',
+      subject: 'Shaadibelles New Query',
+      html: html
+    }, function(err) {
+      if (err) return console.log('> error sending contact email');
+      console.log('> sending contact email');
+    });
+
 });
 
 app.get('/credentials', function (req, res, next) {
