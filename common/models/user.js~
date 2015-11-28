@@ -91,7 +91,7 @@ app.models.Role.findOne({ 'where' : { 'name' : 'guest' }}, function(err, role ){
 
 UserModel.generateVerificationToken(user, function(err, token){
  
-UserModel.updateApp({ 'id' : user.id}, { 'verificationToken': token}, function(err , count){
+UserModel.updateAll({ 'id' : user.id}, { 'verificationToken': token}, function(err , count){
 console.log('> user.afterRemote triggered');
   var url = 'http://shaadibelles.herokuapp.com:80/api/users/confirm?uid='+ user.id +'&redirect=/verified&token=' + token;
 if(user.realm === 'vendor'){

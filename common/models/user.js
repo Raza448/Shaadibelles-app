@@ -1,4 +1,4 @@
-var stripe = require("stripe")('sk_test_rV9tgpFSgr6ntNf2aGcx42Ta');
+var stripe = require("stripe")('sk_test_XvlZMkw30XyvwSHknwsj7rI2');
 var session = require('express-session');
 var path = require('path');
 var app = require('../../server/server');
