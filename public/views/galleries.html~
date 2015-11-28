@@ -35,17 +35,17 @@
     <div class="grids-tops">
       <div class="filter-margin row">
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter"ng-model="sortValue" >
+          <select class="filter" ng-model="sortValue" >
             <option value="">Sort By Rating</option>
-            <option value="-averageRating">Highly rated</option>
-            <option value="averageRating">Low Rated</option>
+            <option value="'averageRating'">Highly rated</option>
+            <option value="'-averageRating'">Low Rated</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
-          <select class="filter">
-            <option>Sort By Date</option>
-            <option>Oldest</option>
-            <option>Newest</option>
+          <select class="filter" ng-model="sortDate">
+            <option value="">Sort By Date</option> 
+            <option value="'created'">Oldest</option>
+            <option value="'-created'">Newest</option>
           </select>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2">
