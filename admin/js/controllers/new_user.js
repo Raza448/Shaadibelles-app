@@ -10,9 +10,10 @@ angular.module('sbAdminApp')
       email: null,
       password: null
     };
-
+    $scope.confirmpassword = null;   
     $scope.register = function(userData) {
-      var data = {
+     if(userData.password === $scope.confirmpassword){
+ var data = {
          'realm' : 'guest',
         'name': userData.name,
         'username': userData.username,
@@ -20,13 +21,20 @@ angular.module('sbAdminApp')
         'password': userData.password
       };
 
-        var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
+        var url = window.remote + '/api/users/register?access_token=' + $rootScope.user.accessToken;
         var request = $http.post;
       request(url, data).then(
       function(){
 		  location.href= '#/dashboard/users';
 
         }
-      )
+      , function(res){ 
+
+		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
+
+		});
+ } else {
+ $scope.err = "passwords not matching";
+}
     };
   });

@@ -10,41 +10,30 @@ angular.module('sbAdminApp')
       name: null,
       username: null,
       password: null,
-      email: null,
-      vendor : {
-		  category : null,
-		  business : {
-			  name : null,
-			  email: null,
-			  city : null,
-			  state : null,
-			  country : null,
-                          phone : null
-			  },
-		  website : null,
-		  social : {
-			  facebook : null,
-			  twitter : null,
-			  instagram: null
-			  },
-		  locations : [],
-		  photos: [],
-		  card : {},
-		  billing : {}	  
-			  
-		  }      
+      email: null
     };
+
 
     $scope.vendorTypes = window.vendorTypes;
 
-    $scope.register = function(vendorData) {
-        var url = window.remote + '/api/users?access_token=' + $rootScope.user.accessToken;
+    $scope.register = function(vendorData, confirmpassword) {
+         delete $scope.err;
+           console.log(vendorData.password, confirmpassword);
+       if(vendorData.password === $scope.confirmpassword){
+  var url = window.remote + '/api/users/register?access_token=' + $rootScope.user.accessToken;
         var request = $http.post;
       request(url, vendorData).then(
       function(){
 		  location.href= '#/dashboard/vendors';
 
         }
-      )
+      ,function(res){ 
+
+		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
+
+		})
+} else {
+ $scope.err = "passwords not matching";
+}
     };
   });
