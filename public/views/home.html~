@@ -8,7 +8,7 @@
           <img src="{{slide.image}}" style="margin:auto;">
           <div class="col-md-10 col-lg-10 col-sm-12 col-lg-offset-1 col-md-offset-1 banner-matter">
             <h3>{{slide.title}} </h3>
-            <div class="banner_div">
+            <div class="banner_div homepage_banner">
               <p>{{slide.description}}</span></p>
               <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">See More</a>
               <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">See More</a>
@@ -27,7 +27,7 @@
     <div class="portfolio-wrapper ">
       <div class="ama-bottom">
         <div class="image-div">
-          <img alt="" class="img-responsive" src="{{homeWidgets[0].cover}}" style="width: 430px; height: 500px;">
+          <img alt="" class="img-responsive" src="{{homeWidgets[0].cover}}" style="width: 100%; height: auto;">
           <div class="hidden_img">
 			 <a ng-if="homeWidgets[0].content.type === 'Post'" href="#/main/post/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
 			 <a ng-if="homeWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
@@ -39,39 +39,48 @@
   </div>
   <div class="col-md-3 col-lg-3 col-sm-3 amaze">
     <div class="portfolio-wrapper ">
-
       <div class="ama-bottom">
+	  <div class="thumbnail_video">
+			<img src="/public/images/video1.png" style="cursor:pointer" />
+	   </div>
+	   <div class="video_cover" style="display:none">
+			<div ng-show="homeWidgets[1].video.type === 'youtube'" ng-bind-html="homeWidgets[1].video.url" class="resIframe">
+	  </div>
+	  </div>
         <ul id="da-thumbs" class="da-thumbs1">
-<li>
-  <div ng-show="homeWidgets[1].video.type === 'youtube'" ng-bind-html="homeWidgets[1].video.url"></div>
-             <video width="320" height="250" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls>
-
- 
-Your browser does not support the video tag.
-</video>
-          </li>
           <li>
              <a ng-if="homeWidgets[1].content.type === 'Post'" href="#/main/post/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
+              <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
+              <img alt="" class="img-responsive widget-middle"  src="{{homeWidgets[1].cover}}" style="width: 100%;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>
             </a>
             <a ng-if="homeWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
+              <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
+              <img alt="" class="img-responsive "  src="{{homeWidgets[1].cover}}" style="height: auto; width: 100%;;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>
             </a>
            <a ng-if="homeWidgets[1].content.type === 'Category'" href="#/main/category/{{homeWidgets[1].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 236px; width: 320;">
+              <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
+              <img alt="" class="img-responsive "  src="{{homeWidgets[1].cover}}" style="height: auto; width: 100%;">
               <div>
                 <p>{{homeWidgets[1].title}}</p>
               </div>
             </a>
           </li>
 
+<li>
+  
+             <!-- <video width="320" height="250" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls> -->
+             <video width="100%" height="auto" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls>
 
+ 
+Your browser does not support the video tag.
+</video>
+          </li>
 
         </ul>
       </div>
@@ -83,7 +92,7 @@ Your browser does not support the video tag.
         <ul id="da-thumbs" class="da-thumbs">
           <li>
             <a ng-if="homeWidgets[2].content.type === 'Post'" href="#/main/post/{{homeWidgets[2].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
                 <p>{{homeWidgets[2].title}}
                 </p>
@@ -91,7 +100,7 @@ Your browser does not support the video tag.
             </a>
 
 <a ng-if="homeWidgets[2].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[2].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
                 <p>{{homeWidgets[2].title}}
                 </p>
@@ -99,7 +108,7 @@ Your browser does not support the video tag.
             </a>
 
 <a ng-if="homeWidgets[2].content.type === 'Category'" href="#/main/category/{{homeWidgets[2].content.id}}">
-              <img alt="" class="img-responsive"  src="{{homeWidgets[2].cover}}" style="height: 500px; width: 550px;">
+              <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
                 <p>{{homeWidgets[2].title}}
                 </p>
@@ -118,35 +127,35 @@ Your browser does not support the video tag.
 <div class="col-md-12 col-lg-12 col-sm-12">
   <div class="col-md-3 col-lg-3 col-sm-3"></div>
 	<div class="col-md-6 col-lg-6 col-sm-6">
-		<div class="row">
-			<div class="featured_vendor">OUR featured vendor</div>
-		</div>
+		
 		</div>
   <div class="col-md-3 col-lg-3 col-sm-3"></div>
 </div>
   <div class="beautifull-grids">
     <div class="col-md-7 col-lg-7 col-sm-7 beautiful-grid" style="border-right:1px solid #bcbcbc;">
-      <div class="col-md-4 col-xs-3 col-sm-4 col-lg-4 icon1">
+      <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 icon1">
         <img src="{{featuredVendor.slides[0]}}" class="img-responsive">
       </div>
-      <div class="col-md-6 col-xs-9 col-sm-8 col-md-offset-1 col-lg-offset-1 col-lg-6 passion">
-        <h4></h4>
+      <div class="col-md-7 col-xs-7 col-sm-7 passion">
+	   <div class="row">
+			<div class="featured_vendor">OUR featured vendor</div>
+		</div>
         <span>{{featuredVendor.title}}</span>
         <p>&nbsp;</p>
         <p>{{featuredVendor.description}}</p>
-        <h1><a href="#/main/vendordetail/{{featuredVendor.vendor.id}}/profile">SEE More OF {{featuredVendor.vendor.business.name}} INSPIRING CREATIONS</a> OR <a href="#/main/vendormain">VIEW ALL VENDORS</a></h1>
+        <h1><a href="#/main/vendordetail/{{featuredVendor.profile.id}}">SEE More OF {{featuredVendor.profile.business.name}} INSPIRING CREATIONS</a> OR <a href="#/main/vendormain">VIEW ALL VENDORS</a></h1>
       </div>
       <div class="clearfix"></div>
     </div>
     <div class="col-md-5 col-lg-5 col-sm-5 beautiful-grid">
       <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
         <ul class="social-icons">
-          <li><a href="{{featuredVendor.vendor.social.instagram}}"><span> </span> </a></li>
-          <li class="twitter"><a href="{{featuredVendor.vendor.social.twitter}}"><span> </span></a></li>
-          <li class="gmail"><a href="{{featuredVendor.vendor.social.facebook}}"><span> </span> </a></li>
+          <li><a href="{{featuredVendor.profile.social.instagram}}"><span> </span> </a></li>
+          <li class="twitter"><a href="{{featuredVendor.profile.social.twitter}}"><span> </span></a></li>
+          <li class="gmail"><a href="{{featuredVendor.profile.social.facebook}}"><span> </span> </a></li>
         </ul>
       </div>
-      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9 passion"><img src="{{featuredVendor.slides[1]}}" class="img-responsive">
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9 cake"><img src="{{featuredVendor.slides[1]}}" class="img-responsive">
         </p>
       </div>
       <div class="clearfix"></div>
@@ -204,3 +213,12 @@ Your browser does not support the video tag.
 </div>
 
 <script src="public/js/plugin/custom.js"></script>
+<script>
+ $(".thumbnail_video img").click(function(){
+  //$('.resIframe iframe').addClass('video');
+  $(this).hide();
+  $('.video_cover').show();
+  $('.resIframe iframe')[0].src += "?rel=0&autoplay=1";
+  $(this).unbind("click");//or some other way to make sure that this only happens once
+ });
+</script>

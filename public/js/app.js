@@ -730,7 +730,7 @@ $rootScope.stopLoading = function(){
                 });
 
                 $http.get(window.remote + '/api/users/' + $rootScope.featuredVendor.vendor).then(function(res) {
-                    $rootScope.featuredVendor.vendor = res.data;
+                    $rootScope.featuredVendor.profile = res.data;
                 });
 
                 $rootScope.site.settings.featuredVendors.forEach(function(id) {
