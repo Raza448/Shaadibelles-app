@@ -49,7 +49,7 @@
                         <input type="checkbox" id="{{vendor.id}}" class="regular-checkbox-td" ng-checked="master" />
                         <label for="{{vendor.id}}"></label>
                       </td>
-                <td><strong>{{vendor.business.name}}</strong></td>
+                <td><strong>{{vendor.business.name || vendor.username}}</strong></td>
                 <td>{{vendor.email}}</td>
                 <td><a class="btn btn-default btn-info" href="#/dashboard/vendor-reviews?id={{vendor.id}}">Reviews</a></td>
                 <td>
