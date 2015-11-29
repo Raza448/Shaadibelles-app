@@ -82,7 +82,7 @@
             <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue | orderBy : sortDate">
               <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
-                  <img src="{{gallery.photos[0]}}" alt="">
+                  <img src="{{ gallery.cover || gallery.photos[0]}}" alt="">
                   <div class="overlay">
                     <div class="overlay-inner">
   <form action="">

@@ -14,7 +14,7 @@
     <div class="blogs-top">
       <div class="blog-top">
         <div class="col-md-7 col-lg-7 col-sm-7 blogs-top">
-          <h1>wedding stories/{{post.category}}/{{post.title}}</h1>
+          <h1>wedding stories/{{post.category}}/{{gallery.title || post.title }}</h1>
           <h3>{{post.title}} <i class="mess"><img src="public/images/msg_icon.png" width="39" height="39" /></i></h3>
           <div class="cnts">
        <div class="stars">
@@ -43,15 +43,15 @@
               <div class="clearfix"></div>
             </ul>
           </div>
-          <h2>{{post.created}}</h2>
-          <h4>{{post.description}}. </h4>
+          <h2>{{gallery.created || post.created}}</h2>
+          <h4>{{gallery.description || post.description}}. </h4>
 <div masonry ng-hide="currentEvent.gallery">
 			<div  ng-repeat="image in gallery.photos track by $index" class="masonry-brick">
 				<img class="img-width" src="{{image}}" alt="">
 			</div>
                       
 		</div>
-<div masonry ng-show="currentEvent">
+<div masonry ng-show="currentEvent.gallery">
 			
                        <div ng-repeat="image in currentEvent.gallery track by $index" class="masonry-brick">
 				<img class="img-width" src="{{image}}" alt="">
