@@ -13,16 +13,27 @@
     <carousel interval="3000" no-wrap="noWrapSlides">
       <slide ng-repeat="gallery in galleries track by $index" ng-if="gallery.cover" >
         <img style="width: 100%; height: 800px;" src="{{gallery.cover}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <div class="col-md-8 col-lg-8 col-xs-10 col-xs-offset-1 banner-inner">
+        <div class="carousel-caption gallery-banner">
+          <div class="col-md-8 col-lg-8 col-xs-10 banner-inner">
             <h3>{{gallery.title}}</h3>
-            <div class="banner_div">
-              <p class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">&nbsp;</p>
-            </div>
-            <h3>{{gallery.tagline}}</h3>
+            <p>{{gallery.tagline}}</p>
+			<div class="stars vendor_rating">
+				<form action="">
+					<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="gallery.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
+					<label class="star star-5" for="star-5"></label>
+					<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="gallery.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
+					<label class="star star-4" for="star-4"></label>
+					<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="gallery.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
+					<label class="star star-3" for="star-3"></label>
+					<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="gallery.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
+					<label class="star star-2" for="star-2"></label>
+					<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="gallery.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
+					<label class="star star-1" for="star-1"></label>
+				  </form>
+			  </div>
             <div class="clearfix"></div>
-            <p>&nbsp;</p>
-            <a class="morebtn hvr-sweep-to-top" href="" ui-sref="main.gallery({id : gallery.id})">VIEW THIS GALLERY</a>
+            <div>&nbsp;</div>
+            <a class="morebtn hvr-sweep-to-top" href="" ui-sref="main.gallery({id : gallery.id})">VIEW THIS WEDDING</a>
           </div>
         </div>
       </slide>
@@ -75,28 +86,30 @@
         </div>
 
       </div>
-      <div class="row">
-        <div class="col-md-12 col-lg-12">
-          <div id="type-masory" class="home-projects row">
-            <!-- Project -->
-            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue | orderBy : sortDate">
-              <div class="project-item">
+	  <div masonry>
+    <div class="masonry-brick col-md-3 col-sm-6 col-xs-12 col-lg-4" ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue | orderBy : sortDate">
+        <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
-                  <img src="{{gallery.photos[0]}}" alt="">
+-                  <img src="{{ gallery.cover || gallery.photos[0]}}" alt="">
+
+				  <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 main-gallery banner-vendor">
+				  <div class="stars vendor_rating">
+					<form action="">
+						<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="gallery.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="gallery.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="gallery.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="gallery.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="gallery.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
+						<label class="star star-1" for="star-1"></label>
+					  </form>
+				  </div>
+				 </div>
                   <div class="overlay">
-                    <div class="overlay-inner">
-  <form action="">
-			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="gallery.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
-			<label class="star star-5" for="star-5"></label>
-			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="gallery.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
-			<label class="star star-4" for="star-4"></label>
-			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="gallery.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
-			<label class="star star-3" for="star-3"></label>
-			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="gallery.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
-			<label class="star star-2" for="star-2"></label>
-			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="gallery.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
-			<label class="star star-1" for="star-1"></label>
-		  </form>
+                    <div class="overlay-inner vendor_rating">
                       <h3>{{gallery.title}}</h3>
                       <p>{{gallery.tagline}}</p>
                       <input type="submit" class="margin-0" value="VIEW THIS WEDDING">
@@ -106,19 +119,11 @@
                   <!-- End overlay -->
                 </a>
               </div>
-              <!-- End project-item -->
-            </div>
-            <!-- End col-1-of-3 -->
-            <!-- Project -->
-
-          </div>
-          <!-- End home-projects -->
-          <div class="View-more">
+    </div>
+</div>
+<div class="View-more">
           <a href="" class="morebtn hvr-sweep-to-top" ng-click="galleryLimit += 10">LOAD MORE</a>
           </div>
-        </div>
-        <!-- End col-md-12 -->
-      </div>
     </div>
   </div>
 </div>
