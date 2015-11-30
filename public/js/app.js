@@ -649,14 +649,17 @@ $rootScope.stopLoading = function(){
                     });
 
                 });
+                $rootScope.advertLive = $rootScope.site.settings.adverts[Math.floor(Math.random()*$rootScope.site.settings.adverts.length)];
 
-               $rootScope.site.settings.adverts.forEach(function(item) {
-                    $http.get(window.remote + '/api/adverts/' + item).then(function(res) {
-                        $rootScope.adverts.push(res.data);
+
+
+                    $http.get(window.remote + '/api/adverts/' + $rootScope.advertLive).then(function(res) {
+                        $rootScope.advert = res.data;
                     });
 
-                });
-                $rootScope.advertLive = _.shuffle($rootScope.adverts)[0];
+
+
+
 
                 $rootScope.blogCategories = [];
                 $rootScope.blogCategory;

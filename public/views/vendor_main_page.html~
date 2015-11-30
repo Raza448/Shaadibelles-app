@@ -30,7 +30,7 @@
 		  </form>
 
 		</div>
- <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendordetail/{{vendor.id}}/contact" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
+ <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
               </div>
              
             </div>
@@ -80,11 +80,11 @@
         </div>
       
         <div class="clearfix"> </div>
-        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img">
-		<img src="/public/images/vendor_main.jpg" alt="" />
+        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img" ng-show="advertLive.content" ng-bind-html="advertLive.content">
+
 		</div>
 		
-        <!-- <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid" ng-show="advertLive.content" ng-bind-html="advertLive.content"> -->
+
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 bottom-grid">
         
         

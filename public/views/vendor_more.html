@@ -12,9 +12,9 @@
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-sm-4 thumb" ng-repeat="vendor in vendors | filter: vendorSearch | before: vendorLimit">
-        <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}/profile">
+        <a class="thumbnail" href="#/main/vendordetail/{{vendor.id}}">
         <img class="img-responsive" src="{{vendor.gallery[0]}}" alt=""> </a> 
-        <a href="#/main/vendordetail/{{vendor.id}}/profile" ><h1>{{vendor.business.name}}</h1></a>
+        <a href="#/main/vendordetail/{{vendor.id}}" ><h1>{{vendor.business.name}}</h1></a>
         <div class="stars">
 		  <form action="">
 			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>

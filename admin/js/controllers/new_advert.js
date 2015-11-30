@@ -26,20 +26,6 @@ angular.module('sbAdminApp')
 
 
     $scope.upload = function(file, insertAction) {
-
-console.log('3', file.name)
-  var text = "";
-    var ext = file.name.split('.').pop();
-console.log('4', ext)
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-async.forEach([1,2,3,4,5], function (item, callback){ 
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-console.log('5', text);
-    file.name = text + '.' + ext;
-    callback(); // tell async that the iterator has completed
-console.log('5', file.name);
-}, function(err) {
 File.upload(file).success(function(res) {
 
 
@@ -48,12 +34,11 @@ File.upload(file).success(function(res) {
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
         insertAction('insertImage', newfile, true);
-      })
+      });
       return true;
-
-});  
     
-    }
+
+   }
 
 
  
