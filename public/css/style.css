@@ -561,6 +561,9 @@ span.contact {
 
 	color:#939598;
 }
+.text-left{
+	text-align:left !important;
+}
 .top-grid h2{
 	font-family:font_myrate;
 	color:#939598;
@@ -803,13 +806,12 @@ background-color:#fff; text-align:center;
 
 }
 .blobgrid span{
-	font-family:font_myrate;
-	color:#f1aa90;
-	font-size:1.5em;
-	padding-right:0.8em;
-	padding-top:0px;
-	background:#fff;
-	line-height:1em;
+	font-family: font_myrate;
+    position: relative;
+    right: 10px;
+    top: 3px;
+    margin-left: -18px;
+    font-size: 18px;
 }
 .blobgrid h4{
 	font-family:font_myrate;

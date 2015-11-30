@@ -18,7 +18,7 @@
           <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
             <div class="col-md-6 col-lg-6 col-sm-7">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <h3>{{vendor.business.name}}</h3>
+                <h3 class="text-left">{{vendor.business.name}}</h3>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 vendor_detail">
  <div class="stars">
@@ -41,11 +41,11 @@
                  <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i><span> Read {{reviews.length}} Reviews </span> </a></p>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 submit_review">
-                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> Submit a Review   </a>     </p>
+                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> <span>Submit a Review </span>  </a>     </p>
               </div>
             </div>
             <div class="col-md-5 col-lg-5 col-sm-5 col-md-offset-1">
-              <div class="col-md-12 col-lg-12 col-sm-12 vendor-detail-cont-btn"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="cont"></i><span class="contact"> CONTACT {{vendor.business.name.toUpperCase()}}</span></a></div>
+              <div class="col-md-12 col-lg-12 col-sm-12 vendor-detail-cont-btn"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="mail"></i><span class="contact"> CONTACT {{vendor.business.name.toUpperCase()}}</span></a></div>
               <div class="col-md-12 col-lg-12 col-sm-12 hidden-xs">
                 <div class="col-lg-1 col-md-1 col-sm-1"><i class="location"> </i></div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
