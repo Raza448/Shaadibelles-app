@@ -805,6 +805,9 @@ background-color:#fff; text-align:center;
 	line-height:1em;
 
 }
+.top-tabs{
+	float:right;
+}
 .blobgrid span{
 	font-family: font_myrate;
     position: relative;

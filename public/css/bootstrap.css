@@ -9719,12 +9719,12 @@ i.heartin{
 	position:relative;
 }
 .blog-top{
-		position:relative;
+	position:relative;
 	width:100%;
-	 margin-top: -225px;
+	margin-top: -225px;
 	z-index:999;
 	background-color:#FFF;
-	padding:10px 30px 10px 30px;
+	padding:20px 30px 10px 30px;
 }
 .blog-top img{
 	padding:2px;
