@@ -3911,7 +3911,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li > a {
   margin-right: 0px;
   line-height: 1.42857143;
-  border: 1px solid transparent;/*
+  border: 1px solid transparent;
+  color:#fff;/*
   border-radius: 4px 4px 0 0;*/
 }
 .nav-tabs > li > a:hover {
@@ -5996,6 +5997,10 @@ button.close {
     left: 20%;
     padding-bottom: 30px;
   }
+  .gallery-banner{
+	  right:0;
+	  left:0;
+  }
   .carousel-indicators {
     bottom: 20px;
   }
@@ -6260,13 +6265,12 @@ a.morebtn {
 }
 .banner-inner h3{
 	color: #FFF;
-	font-size: 1.5em;
-	  font-family: font_mrservis;
-	  font-weight:bold;
-	  text-align:left;
-	  float:left;
-	  margin-top:4%;
-	  text-shadow:2px 2px 15px #000;
+	font-size: 1.5em;	
+	font-family: font_mrservis;
+	font-weight:bold;
+	text-align:left;
+	margin-top:4%;
+	text-shadow:2px 2px 15px #000;
 }
 .banner-inner p{
 	  color: #FFF;
@@ -9277,7 +9281,7 @@ bold	font-style: normal;
 .banner-inner{
 	position: absolute;
 	top: 30%;
-	text-align:center;
+	text-align:left;
 	left:15%;
 }
 .banner-inner h3{
@@ -9286,15 +9290,14 @@ bold	font-style: normal;
 	  font-family: font_mrservis;
 	  font-weight:bold;
 	  text-align:left;
-	  float:left;
 	  margin-top:4%;
 	  text-shadow:2px 2px 15px #000;
 }
 .banner-inner p{
 	  color: #FFF;
  line-height: 1.5em;
-  font-size: 1.2em;
-/*  text-align: right;*/
+  font-size: 12px;
+	text-align: left;
   margin: 1em 0 1.5em 0;
 	  text-shadow:2px 2px 15px #000;
 	  text-transform:uppercase;
@@ -9971,7 +9974,7 @@ i.heartin{
 	color:#FFF;
 	text-decoration:none;	
 	background-image:url(../images/menubg.png);
-	border-radius:10px 10px 0px 0px;
+	border-radius:10px;
 }
 
 		/* current menu item */

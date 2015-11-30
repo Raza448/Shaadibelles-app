@@ -84,6 +84,10 @@ body{
     display: block;
 }
 
+.main-gallery {
+    z-index:999999;
+}
+
 #photos img {
   /* Just in case there are inline attributes */
   width: 100% !important;
