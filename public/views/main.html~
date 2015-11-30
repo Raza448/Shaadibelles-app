@@ -22,8 +22,8 @@
           <a href="{{socialLinks.facebook}}"><i class="icon4"></i></a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the {{userData}} team to make your dreams come true</div>
-      <div class="col-lg-4 col-md-4 col-sm-7">
+      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the perfect team to make your dreams come true</div>
+      <div class="col-lg-4 col-md-4 col-sm-7 topRgtCol">
         <div class="icon">
           <ul>
             <li>
@@ -269,10 +269,7 @@
 
                         </div>
                       </nav>
-                      <ul id="nav_compressed" class="menu menu_compressed">
-                        <li class="folder menu_back" id="nav_compressed_item_back"><a><span class="submenu_icon_before"></span><span class="label_holder"><span class="label">Back</span></span><span class="submenu_icon_after"></span></a></li>
-                        <li class="folder menu_menu" id="nav_compressed_item_menu"><a><span class="submenu_icon_before"></span><span class="label_holder"><span class="label">Menu</span></span><span class="submenu_icon_after"></span></a></li>
-                      </ul>
+                     
                     </div>
                     <!-- #header -->
                   </div>
