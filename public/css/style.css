@@ -77,9 +77,9 @@ body{
    column-count:         5;
    column-gap:           0px;
 }
-.masonry-brick {
+/* .masonry-brick {
     width: 200px;
-}
+} */
 .masonry-brick.loaded {
     display: block;
 }

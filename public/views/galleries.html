@@ -75,14 +75,11 @@
         </div>
 
       </div>
-      <div class="row">
-        <div class="col-md-12 col-lg-12">
-          <div id="type-masory" class="home-projects row">
-            <!-- Project -->
-            <div class="project masonry-item col-md-3 col-sm-6 col-xs-12 col-lg-4""  ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue | orderBy : sortDate">
-              <div class="project-item">
+	  <div masonry>
+    <div class="masonry-brick col-md-3 col-sm-6 col-xs-12 col-lg-4" ng-repeat="gallery in galleries | before : galleryLimit | filter: keyword | filter : color | orderBy : sortValue | orderBy : sortDate">
+        <div class="project-item">
                 <a ui-sref="main.gallery({id:gallery.id})">
-                  <img src="{{ gallery.cover || gallery.photos[0]}}" alt="">
+                  <img ng-src="{{gallery.photos[0]}}" alt="">
                   <div class="overlay">
                     <div class="overlay-inner">
   <form action="">
@@ -106,19 +103,11 @@
                   <!-- End overlay -->
                 </a>
               </div>
-              <!-- End project-item -->
-            </div>
-            <!-- End col-1-of-3 -->
-            <!-- Project -->
-
-          </div>
-          <!-- End home-projects -->
-          <div class="View-more">
+    </div>
+</div>
+<div class="View-more">
           <a href="" class="morebtn hvr-sweep-to-top" ng-click="galleryLimit += 10">LOAD MORE</a>
           </div>
-        </div>
-        <!-- End col-md-12 -->
-      </div>
     </div>
   </div>
 </div>
