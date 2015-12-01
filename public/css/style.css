@@ -4992,7 +4992,7 @@ label.star:before {
 }
 }
 @media (max-width: 768px) {
-.topRgtCol{ width: 50%;}
+.topRgtCol{ width: 100%;}
 }
 @media (min-width: 770px) and (max-width: 1024px) {
 .passion{margin: -62px 0 0 30px;}

@@ -818,6 +818,7 @@ $rootScope.stopLoading = function(){
 
 
             $rootScope.getData();
+			$rootScope.navbarCollapsed = true;
 
            
 
