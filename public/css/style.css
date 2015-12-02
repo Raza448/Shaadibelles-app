@@ -5063,3 +5063,4 @@ label.star:before {
 .vendor-map{ min-height: 500px; background: none; line-height:0}
 .vendor-cont-form{padding: 37px 0;}
 .vendor-cont-form  h2.vendor-need{text-align: center; color:#ccc; font-size: 16px; letter-spacing: 2px;}
+.banner-vendor{text-align: center; right: 50%; bottom: 50%; transform: translate(50%,-134%);}

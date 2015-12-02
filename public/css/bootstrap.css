@@ -2307,9 +2307,8 @@ select[multiple].input-lg {
   margin-bottom: 10px;
   color: #737373;
 }
-.mobile_menu{
-		display:none;
-	}
+.mobile_menu{display:none;	}
+
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;
@@ -3856,7 +3855,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: -1px;
 }
 .mobile_menu .navbar-header{
-	background: rgba(0, 0, 0, 0.53) none repeat scroll 0 0;
+	/* background: rgba(0, 0, 0, 0.53) none repeat scroll 0 0; */
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
@@ -4357,8 +4356,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  /* border-color: #e7e7e7; */
+  /* background-color: #f8f8f8;
+  border-color: #e7e7e7; */
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -6215,7 +6214,7 @@ a.morebtn {
 }
 .banner-vendor{
 	position: absolute;
-	top: 5%;
+	/* top: 5%; */
 	text-align:center;
 	/*left:15%;*/
 }
@@ -7446,7 +7445,7 @@ bold	font-style: normal;
 }
 .banner-vendor{
 	position: absolute;
-	top: 44%;
+	/* top: 44%; */
 	text-align:center;
 	/*left:15%;*/
 }
@@ -8216,7 +8215,7 @@ i.heartin{
 	padding: 11px 5px 15px 5px;
 	font-family: serif;
 	text-transform: lowercase;
-	
+	font-size:16px;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -8540,7 +8539,7 @@ bold	font-style: normal;
 }
 .banner-vendor{
 	position: absolute;
-	top: 35%;
+	/* top: 35%; */
 	text-align:center;
 	/*left:15%;*/
 }
@@ -9237,7 +9236,7 @@ bold	font-style: normal;
 }
 .banner-vendor{
 	position: absolute;
-	top: 32%;
+	/* top: 32%; */
 	text-align:center;
 	/*left:15%;*/
 }
@@ -9803,7 +9802,7 @@ i.heartin{
 .search{
 		float:right;
 	position:relative;
-	width:15%;margin:1em 0;	
+	width:15%;margin:1.7em 0;	
 }
 .search input[type="text"] {
 	outline: none;
@@ -10310,13 +10309,13 @@ bold	font-style: normal;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-@media (min-width:320px) and (max-width:768px){
-	.desktop_menu{
-		display:none;
-	}
-	.mobile_menu{
-		display:block;
-	}
+@media (min-width:320px) and (max-width:767px){
+	.desktop_menu{display:none;	}
+	.mobile_menu{display:block;  margin-top: -35px;	}
+	.navbar{    margin-bottom: 0;}
+	.search{display:none;}
+	.navbar-default .navbar-collapse{ margin: 0 -13px 0 -13px;}
+	.navbar-toggle{   margin-top: -13px;}
 }
 @media (max-width: 320px){
 .sign-up-inner button { width: 100%;}

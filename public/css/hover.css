@@ -424,10 +424,12 @@ p.hero {
 
 .overlay .overlay-inner {
   position: absolute;
-  top: 38%;
+  /* top: 38%; */
   width: 100%;
   text-align: center;
-  bottom: 0;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,60%);
 }
 
 .overlay .overlay-inner h3 {
