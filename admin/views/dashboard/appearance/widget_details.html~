@@ -18,6 +18,10 @@
                 <label>Name</label>
                 <input type="text" class="form-control" ng-model="widget.title" Placeholder="Menu Name" required>
               </div>
+              <div class="form-group">
+                <label>Sub Title</label>
+                <input type="text" class="form-control" ng-model="widget.subtitle" Placeholder="Menu Name" required>
+              </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group" ng-init="slider.visible = true">
@@ -113,7 +117,7 @@
               <div class="col-lg-6" >
                 <img src="{{widget.cover}}" ng-show="widget.cover" class="img-responsive" style="max-height: 200px;">
               </div>
-              <div class="col-lg-6" ng-show="widget.video.type === 'youtube'" ng-bind-html="widget.youtube">
+              <div class="col-lg-6" ng-show="widget.video.type === 'youtube'" ng-bind-html="widget.video.url">
 
 
 </div>

@@ -6,6 +6,7 @@ angular.module('sbAdminApp')
 
    $scope.widget = {
       title: null,
+      subtitle: null,
       description: null,
       cover: [],
       visible: true,
