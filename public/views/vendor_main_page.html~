@@ -1,6 +1,6 @@
 <style>
   .carousel-caption {
-  margin-bottom: 400px;
+  margin-bottom: 100px;
   }
 </style>
 <div class="header-slider">
@@ -80,7 +80,7 @@
         </div>
       
         <div class="clearfix"> </div>
-        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img" ng-show="advertLive.content" ng-bind-html="advertLive.content">
+        <div class="col-md-8 col-lg-8 col-sm-8  top-grid-img" ng-show="advert.content" ng-bind-html="advert.content">
 
 		</div>
 		
