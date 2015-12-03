@@ -27,7 +27,7 @@
           </div>
         </form>
       </div>
-<div class="col-lg-12 col-md-12 col-sm-12 help-form" >
+<div class="col-lg-12 col-md-12 col-sm-12 help-form"  ng-show="requestSent">
          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <a href="#/main/vendordetail/{{vendor.id}}/profile"> <input type="submit" value="GO TO PROFILE" /></a>
           </div>

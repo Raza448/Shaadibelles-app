@@ -6,16 +6,20 @@
   width: 100%;
 
 }
+ .carousel-caption {
+  margin-bottom: 30px;
+  width: 90%;
+
+  }
 </style>
 <!-- header-section-ends --> 
 <div class="header-slider">
-  <a class="callbacks_share" href="#">Previous</a>
-  <div class="slider">
-    <div class="callbacks_container">
-      <ul class="rslides" id="slider">
-        <li>
-          <img class="vendor-detail-bg-img" src="{{vendor.gallery[0]}}" alt="">
-          <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
+  <div style="height: 305px">
+    <carousel interval="5000" no-wrap="noWrapSlides">
+      <slide>
+        <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
+ <div class="carousel-caption">
+ <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
             <div class="col-md-6 col-lg-6 col-sm-7">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <h3 class="text-left">{{vendor.business.name}}</h3>
@@ -68,13 +72,14 @@
               </div>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+         </div>
+      </slide>
+    </carousel>
   </div>
 </div>
+
 <!----------->
-<div class="content">
+<div class="content" style="margin-top: 400px;" >
   <!---->
   <div class="container">
     <div class="blogs-top">
@@ -166,17 +171,17 @@ ng-click="pin()"
           <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8 col-sm-offset-2">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Name" ng-model="request.name"   class="inpPad"/>
+                <input type="text" placeholder="Name" ng-model="request.name"  required  class="inpPad"/>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Email" ng-model="request.user"  class="inpPad" />
+                <input type="text" placeholder="Email" ng-model="request.user" required  class="inpPad" />
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Wedding Location" ng-model="request.location"  class="inpPad" /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input type="text" placeholder="Wedding Location" ng-model="request.location" required  class="inpPad" /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" rows="6"></textarea>
+              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" required rows="6"></textarea>
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 text-center">

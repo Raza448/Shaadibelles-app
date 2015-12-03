@@ -1,17 +1,31 @@
+<style>
+.modal-dialog {
+  padding-top: 300px;
+  background-color: transparent;
+  margin-right: 0px;
+  width: 100%;
+
+}
+ .carousel-caption {
+  margin-bottom: 30px;
+  width: 90%;
+
+  }
+</style>
+<!-- header-section-ends --> 
 <div class="header-slider">
-  <a class="callbacks_share" href="#">Previous</a>
-  <div class="slider">
-    <div class="callbacks_container">
-      <ul class="rslides" id="slider">
-        <li>
-          <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" alt="">
-          <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
+  <div style="height: 305px">
+    <carousel interval="5000" no-wrap="noWrapSlides">
+      <slide>
+        <img style="width: 100%; height: 800px;" src="{{vendor.cover}}" style="margin:auto;">
+ <div class="carousel-caption">
+ <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
             <div class="col-md-6 col-lg-6 col-sm-7">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <h3>{{vendor.business.name}}</h3>
+                <h3 class="text-left">{{vendor.business.name}}</h3>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
- <div class="stars">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 vendor_detail">
+		<div class="stars">
 		  <form action="">
 			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
 			<label class="star star-5" for="star-5"></label>
@@ -24,22 +38,21 @@
 			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
 			<label class="star star-1" for="star-1"></label>
 		  </form>
-
 		</div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                 <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i> Read {{reviews.length}} Reviews  </a></p>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 vendor_review">
+                 <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i><span> Read {{reviews.length}} Reviews </span> </a></p>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> Submit a Review   </a>     </p>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 submit_review">
+                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> <span>Submit a Review </span>  </a>     </p>
               </div>
             </div>
             <div class="col-md-5 col-lg-5 col-sm-5 col-md-offset-1">
-              <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
+              <div class="col-md-12 col-lg-12 col-sm-12 vendor-detail-cont-btn"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="mail"></i><span class="contact"> CONTACT {{vendor.business.name.toUpperCase()}}</span></a></div>
               <div class="col-md-12 col-lg-12 col-sm-12 hidden-xs">
                 <div class="col-lg-1 col-md-1 col-sm-1"><i class="location"> </i></div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
-                  <p>{{vendor.business.street}}<br />
+                  <p>{{vendor.business.street}}
                     {{vendor.business.city}}, {{vendor.businees.state}}<br />
                     {{vendor.business.country}}, {{vendor.business.zipcode}} <br />
                     <a href="" ng-click="scroll(1500)"><span>Get Directions</span></a>
@@ -59,12 +72,14 @@
               </div>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+         </div>
+      </slide>
+    </carousel>
   </div>
 </div>
-<div class="content">
+
+<!----------->
+<div class="content" style="margin-top: 400px;" >
   <!---->
   <div class="container">
     <div class="blogs-top">
@@ -88,7 +103,7 @@ ng-click="pin()"
           <h4> {{vendor.business.description}} </h4>
         </div>
         <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
-          <div class="bs-example bs-example-tabs">
+          <div class="bs-example bs-example-tabs top-tabs">
             <ul id="myTab" class="nav nav-tabs">
               <li class="active"><a href="#/main/vendordetail/{{vendor.id}}"  data-toggle="tab">OUR WORK</a></li>
               <li><a  href="#/main/vendor/{{vendor.id}}/weddings"  data-toggle="tab">FEATURE WEDDINGS</a></li>
@@ -147,26 +162,26 @@ ng-click="pin()"
       </ui-gmap-google-map>
 </div>
   <div class="container">
-    <div class="blobgrid col-lg-12 col-md-12 col-sm-12">
-      <div class="col-lg-12 col-md-12 col-sm-12 help-form">
+    <div class="blobgrid col-lg-12 col-md-12 col-sm-12 banner-bottom-grids">
+      <div class="col-lg-12 col-md-12 col-sm-12 help-form vendor-cont-form">
         <form ng-submit="contact(request)">
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <h5>CONTACT {{vendor.business.name.toUpperCase()}}</h5>
+            <h2 class="vendor-need">CONTACT {{vendor.business.name.toUpperCase()}}</h2>
           </div>
           <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8 col-sm-offset-2">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Name" ng-model="request.name" />
+                <input type="text" placeholder="Name" ng-model="request.name"  required  class="inpPad"/>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Email" ng-model="request.user" />
+                <input type="text" placeholder="Email" ng-model="request.user" required  class="inpPad" />
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Wedding Location" ng-model="request.location" />
+                <input type="text" placeholder="Wedding Location" ng-model="request.location" required  class="inpPad" /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" rows="6"></textarea>
+              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" required rows="6"></textarea>
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 text-center">
