@@ -654,7 +654,7 @@ $rootScope.stopLoading = function(){
 
 
                     $http.get(window.remote + '/api/adverts/' + $rootScope.advertLive).then(function(res) {
-                        $rootScope.adverts.push(res.data);
+                        $rootScope.advert = res.data;
                     });
 
 
@@ -818,6 +818,7 @@ $rootScope.stopLoading = function(){
 
 
             $rootScope.getData();
+			$rootScope.navbarCollapsed = true;
 
            
 

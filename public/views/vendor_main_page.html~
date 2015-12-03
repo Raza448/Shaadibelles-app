@@ -1,6 +1,6 @@
 <style>
   .carousel-caption {
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   }
 </style>
 <div class="header-slider">
@@ -74,7 +74,7 @@
 				  </form>
 				</div>
 			  </div>
-              <a href="" class="favourite_review">{{vendor.reviews.length}} Reviews</a>
+              <a href="" class="favourite_review">{{vendor.reviews}} Reviews</a>
             </div>
           </div>
         </div>

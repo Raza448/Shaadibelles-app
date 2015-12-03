@@ -738,7 +738,7 @@ $rootScope.stopLoading = function(){
 
                 $rootScope.site.settings.featuredVendors.forEach(function(id) {
                     $http.get(window.remote + '/api/users/' + id).then(function(resOne) {
-                        $http.get(window.remote + '/api/users/' + id + '/reviews').then(function(resTwo) {
+                        $http.get(window.remote + '/api/users/' + id + '/userReviews').then(function(resTwo) {
                             resOne.data.reviews = resTwo.data;
                             resOne.data.totalratings = 0;
                             resOne.data.reviews.forEach(function(review) {
