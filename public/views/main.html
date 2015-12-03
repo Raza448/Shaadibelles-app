@@ -219,7 +219,7 @@
   <div class="container">
     <div class="header-bottom">
 	
-      <div class="search">
+      <div class="search search-desk">
         <form role="form" ng-submit="search(searchKeyword)">
           <input type="text" placeholder="Search" name="search" ng-model="searchKeyword" />
           <input type="submit" value="Search" style="display:none;"/>
@@ -360,16 +360,19 @@
         <li class="active"><a ng-show="item.type === 'Galleries'" href="#/main/galleries">{{item.name}}</a></li>
         <li class="active"><a ng-show="item.type === 'Home'" href="#/main/home">{{item.name}}</a></li>
         <li class="active"><a ng-show="item.type === 'Review'" ng-click="reviewAuth()">{{item.name}}</a></li>
-      </ul>
-	  <ul class="nav navbar-nav" ng-show="item.type === 'Home'">
-	  <div class="search">
-        <form role="form" ng-submit="search(searchKeyword)">
-          <input type="text" placeholder="Search" name="search" ng-model="searchKeyword" />
-          <input type="submit" value="Search" style="display:none;"/>
-        </form>
-      </div>
-	  </ul>
-    </div><!-- /.navbar-collapse -->
+      </ul>  
+    </div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" collapse="navbarCollapsed">
+		<div class="search search-mob">
+			<form role="form" ng-submit="search(searchKeyword)">
+			  <input type="text" placeholder="Search" name="search" ng-model="searchKeyword" />
+			  <span class="icon-location icon-location-search"><i class="glyphicon glyphicon-search"><input type="submit" value /></i></span>
+			</form>
+		  </div>
+		  </ul>
+		</div>
+	</div>
+	<!-- /.navbar-collapse -->
 	
 </nav>
 	

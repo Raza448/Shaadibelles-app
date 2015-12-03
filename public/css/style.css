@@ -1,20 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
  @font-face {
-    font-family: font_robo;
-    src: url(../fonts/gotham_book.ttf);
+    font-family: 'font_robo';
+    src: url(../fonts/gotham_book.ttf) format(ttf);
 }
  @font-face {
-    font-family: font_gotham;
-    src: url(../fonts/gotham_book.ttf);
+    font-family: 'font_gotham';
+    src: url(../fonts/gotham_book.ttf) format(ttf);
 }
  @font-face {
-    font-family: font_myrate;
-    src: url(../fonts/MyriadPro.otf);
+    font-family: 'font_myrate';
+    src: url(../fonts/MyriadPro.otf) format('otf');
 }
  @font-face {
-    font-family: font_mrservis;
-    src: url(../fonts/MrsEaves.ttf);
+    font-family: 'font_mrservis';
+    src: url(../fonts/MrsEaves.ttf) format('ttf');
 }
 /* #Reset & Basics
 ================================================== */
@@ -572,15 +572,17 @@ span.contact {
 	font-family:font_myrate;
 	color:#939598;
 	font-size:2.0em;
-	padding:0.8em;
+	/* padding:0.8em; */
+	    padding: 12px 0 0 0;
 	background:#fff;
 	text-transform:uppercase;
 }
 .top-grid h3{
 	font-family:font_myrate;
 	color:#939598;
-	font-size:1.3em;
+	font-size:1.5em;
 	padding:0.8em;
+	padding-bottom: 0;
 	background:#fff;
 	text-align:left;
 }
