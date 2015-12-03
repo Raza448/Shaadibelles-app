@@ -3441,9 +3441,9 @@ input[type="button"].btn-block {
   top: 100%;
   width:423%;
   left: 0;
-  /* margin: 0 0 0 -18px; */
+  margin: 0 0 0 -18px; 
   border-radius: 10px 10px 0 0;
-  font-size: 14px;
+  font-size: 12px;
   }
   .dropdown:hover .dropdown-menu {
   display: block;
@@ -3870,7 +3870,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
- background-color: #A09B9B;
+ background-color: #f7987b;
 }
 .nav > li > a {
   position: relative;
@@ -3930,7 +3930,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #555;
   cursor: default;
   background-color: #fff;
-  border: 1px solid #ddd;/*
+  border: 1px solid #f7987b;/*
   border-bottom-color: transparent;*/
 }
 .nav-tabs.nav-justified {
@@ -9983,7 +9983,7 @@ i.heartin{
 	color:#FFF;
 	text-decoration:none;	
 	background-image:url(../images/menubg.png);
-	border-radius:10px;
+	border-radius:10px 10px 0 0;
 }
 
 		/* current menu item */
@@ -10313,7 +10313,11 @@ bold	font-style: normal;
 	.desktop_menu{display:none;	}
 	.mobile_menu{display:block;  margin-top: -35px;	}
 	.navbar{    margin-bottom: 0;}
-	.search{display:none;}
+	.icon-location-search{    margin-left:-39px !important;}
+	.search-desk{display:none;} 
+	.search-mob{ width: 96%; margin: 1em 1em;}
+	.search-mob input[type='text'] {text-align: left !important;  border-radius: 0 !important; width: 98% !important; padding: 9px !important; border: 1px solid #ccc !important; background: #908D8D !important;  color: #fff !important;}
+	.search-mob input[type='submit'] { width: 100%; height: 100%; background: 0 0; border: none; outline: 0; position: absolute; left: 0;  top: 0;}
 	.navbar-default .navbar-collapse{ margin: 0 -13px 0 -13px;}
 	.navbar-toggle{   margin-top: -13px;}
 }
