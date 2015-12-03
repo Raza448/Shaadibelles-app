@@ -29,6 +29,9 @@ var query = $location.search();
 }
 }
     $scope.signup = function (user) {
+                $scope.passworderr = false;
+                 $scope.emailerr = false;
+                 $scope.usernameerr = false; 
          $rootScope.startLoading();
         var url = window.remote + '/api/users/register';
         $scope.submitDisabled = true;
@@ -51,13 +54,18 @@ var query = $location.search();
                $rootScope.stopLoading();
             }
         }, function(res){ 
+                if(res.data.error.details.messages.email){
+ $scope.emailerr = true;
+}
+ if (res.data.error.details.messages.username){
+$scope.usernameerr = true;
+}
 
-		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
                               $scope.submitDisabled = false;     
 		});
                $rootScope.stopLoading();
        } else {
-          $scope.err = ['Paswords not matching'];
+          $scope.passworderr = true; 
           $scope.submitDisabled = false;
                $rootScope.stopLoading();
       }

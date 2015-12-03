@@ -51,14 +51,20 @@ var query = $location.search();
                $rootScope.stopLoading();
             }
         }, function(res){ 
+                if(res.data.error.details.messages.email){
+ $scope.emailerr = true;
+}
+ if (res.data.error.details.messages.username){
+$scope.usernameerr = true;
+}
 
-		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
                               $scope.submitDisabled = false;     
 		});
                $rootScope.stopLoading();
        } else {
-          $scope.err = ['Paswords not matching'];
+          $scope.passworderr = true; 
           $scope.submitDisabled = false;
+               $rootScope.stopLoading();
       }
 
       
