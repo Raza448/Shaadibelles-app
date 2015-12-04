@@ -121,7 +121,7 @@
     </div>
 </div>
 <div class="View-more">
-          <a href="" class="morebtn hvr-sweep-to-top" ng-click="galleryLimit += 10">LOAD MORE</a>
+          <a href="" class="morebtn hvr-sweep-to-top" ng-hide="galleryLimit >= galleries.length" ng-click="galleryLimit = galleryLimit + 10">LOAD MORE</a>
           </div>
     </div>
   </div>

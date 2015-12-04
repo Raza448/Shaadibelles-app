@@ -27,14 +27,6 @@ angular.module('sbFrontEnd').controller('GalleriesCtrl', function($http, $state,
       });
 
 
-$scope.sort = function(value){
- if( value === 'ascend'){
-        $scope.reverse = false;
-} else {
-        $scope.reverse = true;
-
-}
-}
 
      $rootScope.showSelect = false;
  
