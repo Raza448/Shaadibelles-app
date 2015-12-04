@@ -115,6 +115,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "__create__userReviews"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "contact"
     }
   ],
   "methods": {}

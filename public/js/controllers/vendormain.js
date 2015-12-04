@@ -16,6 +16,7 @@ angular.module('sbFrontEnd') .controller('VendorsMainCtrl', function($scope, $ht
 		$http.post('/contact' , contact).then(function(res){
  $scope.contactsent = true;
  $rootScope.stopLoading();
+ contact = null;
 });
             
 	};

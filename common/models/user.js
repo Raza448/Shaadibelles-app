@@ -158,7 +158,7 @@ UserModel.contact = function(body, id, res, callback) {
   return callback(err);
 }
 
- transporter.sendMail({
+ app.models.Email.send({
     from: 'support@shaadibelles.com',
     to: vendor.email,
     subject: 'New Contact request from shaadibelles',

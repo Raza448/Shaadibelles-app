@@ -42,11 +42,13 @@ return false;
 
 
   $scope.contact = function(request){
-
+  $rootScope.startLoading();
   request.email = $scope.vendor.email;
   request.content =  request.user +  ' from ' + request.location + ' ' + request.content;
   $http.post(window.remote + '/api/users/' + $scope.vendor.id + '/contact', request).then(function(res){
   $scope.requestSent = true;
+  request = null;
+   $rootScope.stopLoading();
 });
 }
 

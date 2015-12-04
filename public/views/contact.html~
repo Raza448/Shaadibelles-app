@@ -32,29 +32,31 @@
 
             
         <div class="col-lg-12 col-md-12 col-sm-12 help-form">
-          <form ng-submit="newcontact(contact)" >
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <h2  ng-hide="contactsent" class="vendor-need">NEED PERSONAL ATTENTION, LET US GET BACK TO YOU</h2>
-              <h2  ng-show="contactsent" class="vendor-need">THANK YOU FOR CONTACTING, WE WILL GET BACK TO YOU SOON</h2>
-            </div>
-            <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8" ng-hide="contactsent">
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <input type="text" ng-model="contact.name" placeholder="Name" class="inpPad" required />
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <input type="text" ng-model="contact.email" placeholder="Email"  class="inpPad" required />
-                </div>
-               
+         <form ng-submit="contact(request)">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2 ng-hide="requestSent" class="vendor-need">CONTACT {{vendor.business.name.toUpperCase()}}</h2>
+              <h2  ng-show="requestSent" class="vendor-need">THANK YOU FOR CONTACTING, WE WILL GET BACK TO YOU SOON</h2>
+          </div>
+          <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8 col-sm-offset-2" ng-show="requestSent">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Name" ng-model="request.name"  required  class="inpPad"/>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <textarea placeholder="Tell Us About Your Query" ng-model="contact.content" rows="6"></textarea>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Email" ng-model="request.user" required  class="inpPad" />
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="text" placeholder="Wedding Location" ng-model="request.location" required  class="inpPad" /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-              <input type="submit" value="SEND" />
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <textarea placeholder="Tell Us About Your Vision For Wedding" ng-model="request.content" required rows="6"></textarea>
             </div>
-          </form>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center" ng-show="requestSent">
+            <input type="submit" value="SEND" />
+          </div>
+        </form>
         </div>
         <div class="clearfix"> </div>
       </div>

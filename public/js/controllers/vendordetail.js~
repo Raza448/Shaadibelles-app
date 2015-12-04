@@ -20,12 +20,12 @@ angular.module('sbFrontEnd').controller('VendorDetailCtrl', function($scope,
  $scope.shareFacebook = function(){
 FB.ui({
 method: 'feed',
-name: $scope.post.title || $scope.vendor.business.name,
+name: $scope.vendor.business.name,
 link: $scope.url,
-picture: $scope.post.cover || $scope.vendor.gallery[0],
+picture: $scope.vendor.gallery[0],
 source: '',
-caption: $scope.post.tagline || $scope.vendor.business.name,
-description: $scope.post.description || $scope.vendor.category[0],
+caption: $scope.vendor.business.name,
+description: $scope.vendor.category[0],
 message: ''
 }, function(response){
   console.log(response);
@@ -35,18 +35,19 @@ message: ''
 
 $scope.pin = function(){
 window.open(
-'//pinterest.com/pin/create/button?media=' + $scope.post.cover || $scope.vendor.gallery[0] + '&description=' + $scope.post.description || $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
+'//pinterest.com/pin/create/button?media=' + $scope.vendor.gallery[0] + '&description=' + $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
 'width=750,height=288');    
 return false;
 }
 
 
   $scope.contact = function(request){
-
+  $rootScope.startLoading();
   request.email = $scope.vendor.email;
   request.content =  request.user +  ' from ' + request.location + ' ' + request.content;
   $http.post(window.remote + '/api/users/' + $scope.vendor.id + '/contact', request).then(function(res){
   $scope.requestSent = true;
+  request = null;
 });
 }
 
