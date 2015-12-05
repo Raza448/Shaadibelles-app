@@ -1,55 +1,56 @@
 <style>
-.modal-dialog {
+  .modal-dialog {
   padding-top: 300px;
   background-color: transparent;
   margin-right: 0px;
   width: 100%;
-
-}
+  }
+  .carousel-caption {
+  margin-bottom: 30px;
+  width: 90%;
+  }
 </style>
 <!-- header-section-ends --> 
 <div class="header-slider">
-  <a class="callbacks_share" href="#">Previous</a>
-  <div class="slider">
-    <div class="callbacks_container">
-      <ul class="rslides" id="slider">
-        <li>
-          <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" alt="">
+  <div style="height: 305px">
+    <carousel interval="5000" no-wrap="noWrapSlides">
+      <slide>
+        <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
+        <div class="carousel-caption">
           <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 banner-vendor">
             <div class="col-md-6 col-lg-6 col-sm-7">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <h3>{{vendor.business.name}}</h3>
+                <h3 class="text-left">{{vendor.business.name}}</h3>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
- <div class="stars">
-		  <form action="">
-			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
-			<label class="star star-5" for="star-5"></label>
-			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
-			<label class="star star-4" for="star-4"></label>
-			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
-			<label class="star star-3" for="star-3"></label>
-			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
-			<label class="star star-2" for="star-2"></label>
-			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
-			<label class="star star-1" for="star-1"></label>
-		  </form>
-
-		</div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 vendor_detail">
+                <div class="stars">
+                  <form action="">
+                    <input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
+                    <label class="star star-1" for="star-1"></label>
+                  </form>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                 <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i> Read {{reviews.length}} Reviews  </a></p>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 vendor_review">
+                <p><a href="#/main/vendor/{{vendor.id}}/allreviews"  ng-click="scroll(500)"><i class="review" > </i><span> Read {{reviews.length}} Reviews </span> </a></p>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> Submit a Review   </a>     </p>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 submit_review">
+                <p><a href="" ng-click="review()"><i class="review_s" ng-click="scroll(500)"> </i> <span>Submit a Review </span>  </a>     </p>
               </div>
             </div>
             <div class="col-md-5 col-lg-5 col-sm-5 col-md-offset-1">
-              <div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="cont"></i> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
+              <div class="col-md-12 col-lg-12 col-sm-12 vendor-detail-cont-btn"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ng-click="scroll(500)" ><i class="mail"></i><span class="contact"> CONTACT {{vendor.business.name.toUpperCase()}}</span></a></div>
               <div class="col-md-12 col-lg-12 col-sm-12 hidden-xs">
                 <div class="col-lg-1 col-md-1 col-sm-1"><i class="location"> </i></div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
-                  <p>{{vendor.business.street}}<br />
+                  <p>{{vendor.business.street}}
                     {{vendor.business.city}}, {{vendor.businees.state}}<br />
                     {{vendor.business.country}}, {{vendor.business.zipcode}} <br />
                     <a href="" ng-click="scroll(1500)"><span>Get Directions</span></a>
@@ -69,13 +70,13 @@
               </div>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </slide>
+    </carousel>
   </div>
 </div>
 <!----------->
-<div class="content">
+<div class="content" style="margin-top: 400px;"  >
   <!---->
   <div class="container">
     <div class="blogs-top">
@@ -85,57 +86,56 @@
           <br />
           <div class="cnts">
             <div class="stars">
-		  <form action="">
-			<input class="star star-5" id="star-51" ng-checked="userReview.rating === 5" type="radio" ng-click="subrating(5)" name="star"/>
-			<label class="star star-5" for="star-51"></label>
-			<input class="star star-4" id="star-41" ng-checked="userReview.rating === 4" type="radio" ng-click="subrating(4)" name="star"/>
-			<label class="star star-4" for="star-41"></label>
-			<input class="star star-3" id="star-31" ng-checked="userReview.rating === 3" type="radio" ng-click="subrating(3)" name="star"/>
-			<label class="star star-3" for="star-31"></label>
-			<input class="star star-2" id="star-21" ng-checked="userReview.rating === 2" type="radio" ng-click="subrating(2)" name="star"/>
-			<label class="star star-2" for="star-21"></label>
-			<input class="star star-1" id="star-11" ng-checked="userReview.rating === 1" type="radio" ng-click="subrating(1)" name="star"/> 
-			<label class="star star-1" for="star-11"></label>
-		  </form>
-
-
-		</div>
-<ul class="star">
-                <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
+              <form action="">
+                <input class="star star-5" id="star-51" ng-checked="userReview.rating === 5" type="radio" ng-click="subrating(5)" name="star"/>
+                <label class="star star-5" for="star-51"></label>
+                <input class="star star-4" id="star-41" ng-checked="userReview.rating === 4" type="radio" ng-click="subrating(4)" name="star"/>
+                <label class="star star-4" for="star-41"></label>
+                <input class="star star-3" id="star-31" ng-checked="userReview.rating === 3" type="radio" ng-click="subrating(3)" name="star"/>
+                <label class="star star-3" for="star-31"></label>
+                <input class="star star-2" id="star-21" ng-checked="userReview.rating === 2" type="radio" ng-click="subrating(2)" name="star"/>
+                <label class="star star-2" for="star-21"></label>
+                <input class="star star-1" id="star-11" ng-checked="userReview.rating === 1" type="radio" ng-click="subrating(1)" name="star"/> 
+                <label class="star star-1" for="star-11"></label>
+              </form>
+            </div>
+            <ul class="star">
+              <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
-                <li><a 
-ng-click="pin()"
-><i class="fa fa-pinterest fa-2x"> </i></a></li>
-                <li><a href="#"><i class="bg"> </i></a></li>
-                <li><a href="#"><i class="msg"> </i></a></li>
-                <li><a href="#"><i class="md"> </i></a></li>
-              </ul>
-          </div>
-        
-        </div>
- 
-        <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
-          <div class="bs-example bs-example-tabs">
-            <ul id="myTab" class="nav nav-tabs">
-              <li><a href="#/main/vendordetail/{{vendor.id}}" data-toggle="tab">OUR WORK</a></li>
-              <li><a href="#/main/vendor/{{vendor.id}}/weddings"  data-toggle="tab">FEATURE WEDDINGS</a></li>
-              <li><a href="#/main/vendor/{{vendor.id}}/reviews"  data-toggle="tab">REVIEWS</a></li>
+                href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
+              <li><a 
+                ng-click="pin()"
+                ><i class="fa fa-pinterest fa-2x"> </i></a></li>
+              <li><a href="#"><i class="bg"> </i></a></li>
+              <li><a href="#"><i class="msg"> </i></a></li>
+              <li><a href="#"><i class="md"> </i></a></li>
             </ul>
           </div>
         </div>
- <div  ui-view="" >
+        <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
+          <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+
+              <li><a href="#/main/vendordetail/{{vendor.id}}" data-toggle="tab">OUR WORK</a></li>
+<li ui-sref-active="active" class="item">
+    <a href ui-sref="main.vendor.weddings({id:vendor.id })">FEATURE WEDDINGS</a>
+  </li>
+<li ui-sref-active="active" class="item">
+    <a href ui-sref="main.vendor.weddings({id:vendor.id })">FEATURE WEDDINGS</a>
+  </li>
+            </ul>
           </div>
+        </div>
+        <div  ui-view="" >
+        </div>
         <div class="clearfix"> </div>
       </div>
     </div>
   </div>
-
-<div class="">
- <ui-gmap-google-map ng-if="vendor.geo" center="vendor.geo" zoom="map.zoom" draggable="true">
-        <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
-        </ui-gmap-marker>
-      </ui-gmap-google-map>
-</div>
- 
+  <div class="">
+    <ui-gmap-google-map ng-if="vendor.geo" center="vendor.geo" zoom="map.zoom" draggable="true">
+      <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
+      </ui-gmap-marker>
+    </ui-gmap-google-map>
+  </div>
 </div>

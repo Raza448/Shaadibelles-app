@@ -48,6 +48,7 @@ return false;
   $http.post(window.remote + '/api/users/' + $scope.vendor.id + '/contact', request).then(function(res){
   $scope.requestSent = true;
   request = null;
+   $rootScope.stopLoading();
 });
 }
 

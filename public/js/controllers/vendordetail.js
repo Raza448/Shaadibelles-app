@@ -32,6 +32,8 @@ message: ''
 });
 }
 
+$scope.state = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+
 
 $scope.pin = function(){
 window.open(
