@@ -747,7 +747,29 @@ $rootScope.stopLoading = function(){
 
 
                 $http.get(window.remote + '/api/widgets/' + $rootScope.site.settings.widgets[0]).then(function(res) {
-                    $rootScope.homeWidgets[0] = res.data;
+                                                        $rootScope.homeWidgets[0] = res.data;
+
+                           if(res.data.content.type === 'Post'){
+                            $http.get('/api/posts/' + res.data.content.id ).then(function(res){
+
+                                 $http.get(window.remote + '/api/posts/' + res.data.id + '/ratings').then(function(rating) {
+                                 $rootScope.homeWidgets[0].ratings = rating.data;
+
+                                }); 
+                            });
+                            
+                           }
+
+                           if(res.data.content.type === 'Gallery'){
+  $http.get(window.remote + '/api/galleries/' + res.data.id + '/ratings').then(function(rating) {
+                                    res.data.ratings = rating.data;
+                                    $rootScope.homeWidgets[0] = res.data;
+
+                                });
+                            
+                           }
+
+                  
                 });
 
                 $http.get(window.remote + '/api/widgets/' + $rootScope.site.settings.widgets[1]).then(function(res) {

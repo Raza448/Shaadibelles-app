@@ -29,9 +29,13 @@
         <div class="image-div">
           <img alt="" class="img-responsive" src="{{homeWidgets[0].cover}}" style="width: 100%; height: auto;">
           <div class="hidden_img">
+            <a href="#"><img src="public/images/pin.png" width="33" height="32" /></a>
 			 <a ng-if="homeWidgets[0].content.type === 'Post'" href="#/main/post/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
 			 <a ng-if="homeWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
-			 <a ng-if="homeWidgets[0].content.type === 'Category'" href="#/main/category/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			 <a ng-if="homeWidgets[0].content.type === 'Category'" href="#/main/category/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> &nbsp;
+        <i class="fa fa-heart"></i>
+                {{homeWidgets[0].ratings.length}}
+
 			</div>
         </div>
       </div>
