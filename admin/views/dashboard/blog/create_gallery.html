@@ -12,7 +12,7 @@
           <h4>Complete this form to {{buttonText}} Gallery</h4>
         </div>
         <div class="ibox-content">
-          <form role="form" ng-submit="submit(item)">
+          <form role="form" ng-submit="publish(gallery)">
             <div class="col-lg-6">
               <div class="form-group">
                 <label>title</label>
@@ -20,11 +20,11 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="form-group" ng-init="slider.visible = true">
+              <div class="form-group" ng-init="gallery.visible = true">
                 <label for="shortcut">Visiblity</label>
                 <br>
-                <a class="btn btn-success" ng-show="slider.visible" ng-click="slider.visible = false">Visible</a>
-                <a class="btn btn-danger" ng-hide="slider.visible" ng-click="slider.visible = true">Not Visible</a>
+                <a class="btn btn-success" ng-show="gallery.visible" ng-click="gallery.visible = false">Visible</a>
+                <a class="btn btn-danger" ng-hide="gallery.visible" ng-click="gallery.visible = true">Not Visible</a>
               </div>
             </div>
             <div class="col-lg-12">
@@ -91,7 +91,7 @@
             </div>
             <div class="form-group col-lg-12">
               <br>
-              <a class="btn btn-primary" ng-click="publish(gallery)">{{buttonText}}</a>
+              <button type="submit" class="btn btn-primary">{{buttonText}}</button>
               <a href="#/dashboard/galleries">
               <button type="button" class="btn btn-danger">Cancel</button>
               </a>
