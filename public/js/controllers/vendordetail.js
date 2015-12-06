@@ -32,8 +32,20 @@ message: ''
 });
 }
 
-$scope.state = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+  $scope.windowOptions = {
+        show: false
+    };
 
+    $scope.onClick = function (data) {
+        $scope.windowOptions.show = !$scope.windowOptions.show;
+        console.log('$scope.windowOptions.show: ', $scope.windowOptions.show);
+        console.log('This is a ' + data);
+        //alert('This is a ' + data);
+    };
+
+    $scope.closeClick = function () {
+        $scope.windowOptions.show = false;
+    };
 
 $scope.pin = function(){
 window.open(
@@ -129,6 +141,18 @@ $http.get(window.remote + '/api/users/' + $rootScope.user.id +
   $http.get(window.remote + '/api/users/' + $scope.id)
     .then(function(res) {
       $scope.vendor = res.data;
+       if(res.data.geo){
+
+       $rootScope.vendormarker = {
+    coords: res.data.geo,
+    id: 1,
+    options: {
+      draggable: false
+    }
+  };
+
+
+       }
       $scope.gallerytwo = _.shuffle(res.data.gallery);
       $http.get(window.remote + '/api/users/' + res.data.id +
         '/userReviews?access_token=' + $rootScope.user.accessToken).then(

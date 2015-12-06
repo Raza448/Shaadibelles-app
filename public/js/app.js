@@ -516,12 +516,7 @@ uiGmapGoogleMapApiProvider.configure({
     }
   };
 
-$rootScope.vendormarker = {
-    id: 1,
-    options: {
-      draggable: false
-    }
-  };
+
 
   
 

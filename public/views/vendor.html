@@ -134,8 +134,13 @@
   </div>
   <div class="">
     <ui-gmap-google-map ng-if="vendor.geo" center="vendor.geo" zoom="map.zoom" draggable="true">
-      <ui-gmap-marker coords="vendor.geo" options="vendormarker.options" idkey="vendormarker.id">
+      <ui-gmap-marker coords="vendor.geo" click="onClick()" options="vendormarker.options" idkey="vendormarker.id">
       </ui-gmap-marker>
+
+       <ui-gmap-window coords="vendor.geo" show="windowOptions.show" options="windowOptions" closeClick="closeClick()">
+                <div>Hello</div>
+            </ui-gmap-window>
+
     </ui-gmap-google-map>
   </div>
 </div>
