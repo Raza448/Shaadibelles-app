@@ -85,18 +85,24 @@
         <hr>
       </div>
         <div class=" clearfix"></div>
-      <div class="blobgrid"  style = "margin-top: 100px;">
+      <div class="blobgrid"  style = "margin-top: 100px;" ng-init="limit = 5">
         <h5>OTHER REAL SOUTH EAST ASIAN INSPIRED WEDDINGS YOU MAY LIKE</h5>
-      <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids" ng-repeat="item in galleries track by $index | before : 5">
+            <div class="col-md-8 col-lg-8 col-sm-8 blogs-top">
+              <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids" ng-repeat="item in galleries | before : limit">
           <a href="#/main/gallery/{{item.id}}"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
           <h4>{{item.title}}
           </h4>
           <a href="#/main/gallery/{{item.id}}"><h6>SEE THEIR WEDDING STORY</h6></a>
         </div>
+       <div class="View-more">
+          <a href="" class="morebtn hvr-sweep-to-top" ng-hide="limit >= galleries.length" ng-click="limit = limit + 5">LOAD MORE</a>
+          </div>
+</div>
+      
   <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids">
           <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
-              <li ng-repeat="i in recommended track by $index" class="{{currentRecommended === i? 'active': ''}}"><a href=""  ng-click="changeRecommended(i)">{{i.name.toUpperCase()}}</a></li>
+              <li ng-repeat="i in recommended track by $index" class="{{currentRecommended.name === i.name? 'active': ''}}"><a href=""  ng-click="changeRecommended(i)">{{i.name.toUpperCase()}}</a></li>
             </ul>
             <div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
               <div class="" id="editor">

@@ -70,38 +70,39 @@
 
       <div class="blobgrid">
         <h5>OTHER REAL SOUTH EAST ASIAN INSPIRED WEDDINGS YOU MAY LIKE</h5>
-		<div class="col-md-12 col-lg-12 col-sm-12">
-			<div class="col-md-9 col-lg-9 col-sm-9">
-				<div class="col-md-4 col-lg-4 col-sm-4 bottom-grids vendor_thumb" ng-repeat="item in relatedPosts ">
-				  <a href="#/main/post/{{item.id}}" class="thumbnail_cir"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
-				  <h4>{{item.title}}
-				  </h4>
-				  <p>{{item.description.substring(0, 30)}}
-				  </p>
-				  <a href="#/main/post/{{item.id}}">
-					<h6>SEE THEIR WEDDING STORY</h6>
-				  </a>
-				</div>
-			</div>
-			<div class="col-md-3 col-lg-3 col-sm-3">
-				<div class="col-md-11 col-lg-11 col-sm-11 bottom-grids bottom-tabs">
-				  <div class="bs-example bs-example-tabs">
-					<ul id="myTab" class="nav nav-tabs">
-					  <li ng-repeat="i in recommended" class="{{currentRecommended === i? 'active': ''}}"><a href=""  ng-click="changeRecommended(i)">{{i.name.toUpperCase()}}</a></li>
-					</ul>
-					<div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
-					  <div class="" id="editor">
-						<ul class="social-icon bottom-social" >
-						  <li ng-repeat="post in currentRecommended.posts"><a href="#/main/post/{{post.id}}"><span><i><br />
-							{{post.ratings.length}}</i>{{post.title}}</span></a>
-						  </li>
-						</ul>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			</div>
-		</div>
+
+                  <div class="col-md-8 col-lg-8 col-sm-8 blogs-top" ng-init="limit = 5">
+                    <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids vendor_thumb" ng-repeat="item in relatedPosts | before : limit">
+          <a href="#/main/post/{{item.id}}" class="thumbnail_cir"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
+          <h4>{{item.title}}
+          </h4>
+          <p>{{item.description.substring(0, 30)}}
+          </p>
+          <a href="#/main/post/{{item.id}}">
+          <h6>SEE THEIR WEDDING STORY</h6>
+          </a>
+        </div>
+        <div class="View-more">
+          <a href="" class="morebtn hvr-sweep-to-top" ng-hide="limit >= relatedPosts.length" ng-click="limit = limit + 5">LOAD MORE</a>
+          </div>
+</div>
+			 <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids">
+          <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li ng-repeat="i in recommended track by $index" class="{{currentRecommended.name === i.name? 'active': ''}}"><a href=""  ng-click="changeRecommended(i)">{{i.name.toUpperCase()}}</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
+              <div class="" id="editor">
+                <ul class="social-icon " >               
+                  <li ng-repeat="post in currentRecommended.posts track by $index"><a href="#/main/post/{{post.id}}"><span><i><br />
+                    {{post.ratings.length}}</i>{{post.title}}</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+			
         <div class=" clearfix"></div>
       </div>
     </div>

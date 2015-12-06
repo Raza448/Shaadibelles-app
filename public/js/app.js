@@ -696,10 +696,14 @@ $rootScope.stopLoading = function(){
                                 name: category.name,
                                 posts: resTwo.data
                             });
+                             if(resTwo.data.length > 1){
                             $rootScope.currentRecommended = {
                                 name: category.name,
                                 posts: resTwo.data
                             };
+                                
+                             }
+                           
 
                         });
 
