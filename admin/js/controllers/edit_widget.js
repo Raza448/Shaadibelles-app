@@ -30,6 +30,18 @@ angular.module('sbAdminApp')
 
     $scope.getPosts();
 
+  $scope.uploadVideoCover = function(file) {
+     if(file){
+  
+ File.upload(file).success(function(res) {
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+        $scope.widget.videocover = newfile;
+      })
+}
+    }
 
 
  $scope.getGalleries = function() {

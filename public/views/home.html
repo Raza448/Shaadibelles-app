@@ -45,10 +45,15 @@
     <div class="portfolio-wrapper ">
       <div class="ama-bottom">
 	  <div class="thumbnail_video">
-			<img src="/public/images/video1.png" style="cursor:pointer" />
+			<img src="{{homeWidgets[1].videocover}}" style="cursor:pointer" />
 	   </div>
 	   <div class="video_cover" style="display:none">
 			<div ng-show="homeWidgets[1].video.type === 'youtube'" ng-bind-html="homeWidgets[1].video.url" class="resIframe">
+        <video width="100%" height="auto" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls>
+
+ 
+Your browser does not support the video tag.
+</video>
 	  </div>
 	  </div>
         <ul id="da-thumbs" class="da-thumbs1">
@@ -76,15 +81,7 @@
             </a>
           </li>
 
-<li>
-  
-             <!-- <video width="320" height="250" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls> -->
-             <video width="100%" height="auto" ng-show="homeWidgets[1].video.type === 'url'" src="{{homeWidgets[1].video.url}}" controls>
 
- 
-Your browser does not support the video tag.
-</video>
-          </li>
 
         </ul>
       </div>
