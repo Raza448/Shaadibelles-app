@@ -14,6 +14,14 @@ angular.module('sbAdminApp')
 		  });
     };
 
+
+
+  $scope.options = { 
+ stop: function(event) {
+   $scope.save();
+    }
+};
+
     $scope.getMenus();
 
      $scope.getVendors = function(){

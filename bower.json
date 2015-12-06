@@ -36,6 +36,7 @@
     "ngDraggable": "~0.1.8",
     "oclazyload": "~0.5.2",
     "textAngular": "~1.4.3",
+    "ui-select": "angular-ui-select#~0.13.2",
     "underscore": "~1.8.3"
   },
   "devDependencies": {
