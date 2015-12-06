@@ -54,16 +54,21 @@
           <div class=" top-grid">
             <div class="bs-example bs-example-tabs recnt-post">
             <ul id="myTab" class="nav nav-tabs">
-              <li ng-repeat="i in blogCategories" class="{{blogCategory === i? 'active': ''}}"><a href=""  ng-click="changeBlogCategory(i)">{{i.name.toUpperCase()}}</a></li>
+                <li class="{{blogCategory === editorschoice? 'active' : ' '}}"><a href="" ng-click="blogCategory = editorschoice" data-toggle="tab">EDITOR'S CHOICE</a></li>
+                <li class="{{blogCategory === mostpopular? 'active' : ' '}}"><a href="" ng-click="blogCategory = mostpopular"  data-toggle="tab">MOST POPULAR</a></li>
             </ul>
             <div id="myTabContent" class="tab-content" style="border:0px solid #ccc;">
-              <div class="" id="editor">
+              <div class="tab-pane fade in active">
                 <ul class="social-icon " >
-                  <li ng-repeat="post in blogCategory.posts"><a href="#/main/post/{{post.id}}"><span><i><br />
+                  <li ng-repeat="post in blogCategory" ><a href="#/main/post/{{post.id}}"><span><i><br />
                     {{post.ratings.length}}</i>{{post.title}}</span></a>
                   </li>
                 </ul>
               </div>
+
+
+             
+          
             </div>
           </div>
           </div>

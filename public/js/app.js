@@ -616,6 +616,28 @@ $rootScope.stopLoading = function(){
                 $http.get(window.remote + '/api/menus/' + $rootScope.site.settings.menu).then(function(res) {
                     $rootScope.menu = res.data;
                 });
+                $rootScope.editorschoice = [];
+                $rootScope.site.settings.blog.editorschoice.forEach(function(item){
+                   $http.get(window.remote + '/api/posts/' + item ).then(function(res){
+
+                     $http.get(window.remote + '/api/posts/' + res.data.id + '/ratings').then(function(rating) {
+                                    res.data.ratings = rating.data;
+                                    $rootScope.editorschoice.push(res.data);
+                                    $rootScope.blogCategory = $rootScope.editorschoice;
+                                });
+                   }); 
+                });
+                $rootScope.mostpopular = [];
+
+                $rootScope.site.settings.blog.mostpopular.forEach(function(item){
+                   $http.get(window.remote + '/api/posts/' + item ).then(function(res){
+                    $http.get(window.remote + '/api/posts/' + res.data.id + '/ratings').then(function(rating) {
+                                    res.data.ratings = rating.data;
+                                $rootScope.mostpopular.push(res.data);
+
+                                });
+                   }); 
+                });
 
 
                 $rootScope.blogSmallWidgets = [];
@@ -656,34 +678,8 @@ $rootScope.stopLoading = function(){
 
 
 
-                $rootScope.blogCategories = [];
-                $rootScope.blogCategory;
-                $rootScope.site.settings.blog.categories.forEach(function(item) {
-                    $http.get(window.remote + '/api/categories/' + item).then(function(resOne) {
-
-                        var category = resOne.data;
-                        $http.get(window.remote + '/api/categories/' + category.id + '/posts').then(function(resTwo) {
-                            resTwo.data.forEach(function(post) {
-                                $http.get(window.remote + '/api/posts/' + post.id + '/ratings').then(function(res) {
-                                    post.ratings = res.data;
-                                });
-                            });
-                            $rootScope.blogCategories.push({
-                                name: category.name,
-                                posts: resTwo.data
-                            });
-
-                            $rootScope.changeBlogCategory({
-                                name: category.name,
-                                posts: resTwo.data
-                            });
-
-                        });
-
-                    });
-
-                });
-
+               
+                
 
 
                 $rootScope.site.settings.recommended.forEach(function(item) {
