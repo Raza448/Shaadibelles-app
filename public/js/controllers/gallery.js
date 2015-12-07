@@ -12,6 +12,14 @@ angular.module('sbFrontEnd') .controller('GalleryCtrl', function($scope, $state,
     $scope.params = $stateParams;
     $scope.id = $stateParams.id;
 
+    $scope.nextSlide = function(){
+    $scope.slide = $scope.gallery.photos[$scope.gallery.photos.indexOf($scope.slide) + 4 ]	
+    }
+
+    $scope.prevSlide = function(){
+    $scope.slide = $scope.gallery.photos[$scope.gallery.photos.indexOf($scope.slide) - 4 ]	
+    }
+
 $scope.pin = function(){
 window.open(
 '//pinterest.com/pin/create/button?media=' + $scope.gallery.cover + '&description=' + $scope.gallery.description || $scope.vendor.business.name + '&url='+ $scope.url, 'facebook-share-dialog',
@@ -110,6 +118,7 @@ message: ''
       $http.get(window.remote + '/api/galleries/' + $scope.id)
       .then(function(res) {
           $scope.gallery = res.data;
+           $scope.slide = res.data.photos[0];
           $scope.slidelimit = res.data.photos.length - 4;
          if(res.data.postId){
 

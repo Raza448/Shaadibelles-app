@@ -128,21 +128,26 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-lg-4 padding-left">
+        <div class="col-md-4 col-sm-4 col-lg-4 padding-left" >
+           <div class="text-center">
+                    <a class="gal_nav callbacks1_nav prev" ng-show="gallery.photos[gallery.photos.indexOf(slide) - 4 ]" ng-click="prevSlide()" >Previous</a>  <a class="gal_nav callbacks1_nav next" ng-show="gallery.photos[gallery.photos.indexOf(slide) + 4]" ng-click="nextSlide()" >Next</a>
+                    </div>
           <div id="demo5" class="scroll-img">
-            <carousel interval="3000" no-wrap="noWrapSlides" >
-              <slide ng-repeat="slide in gallery.photos track by $index" ng-if="gallery.photos[gallery.photos.indexOf(slide) * 4]" >
-                <div  style="width:600px; height: 400px; margin:auto;">
+             <ul>
+                            <li>
+                              <div  style="width:600px; height: 400px; margin:auto;">
                   <div class="pull-left">
-                    <a ng-click="setImage(gallery.photos.indexOf(slide) * 4)"><img ng-src="{{gallery.photos[gallery.photos.indexOf(slide) * 4]}}" style="margin-right: 5px; margin-bottom: 5px;" width="140px" height="140px;"></a>
-                    <a ng-click="setImage((gallery.photos.indexOf(slide) * 4) + 1)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+1]" ng-src="{{gallery.photos[(gallery.photos.indexOf(slide) * 4) + 1]}}" style="margin-left: 5px; margin-bottom: 5px;" width="140px"  height="140px;"></a>
+                    <a ng-click="setImage(gallery.photos.indexOf(slide))"><img ng-src="{{gallery.photos[gallery.photos.indexOf(slide)]}}" style="margin-right: 5px; margin-bottom: 5px;" width="140px" height="140px;"></a>
+                    <a ng-click="setImage(gallery.photos.indexOf(slide) + 1)"><img ng-if="gallery.photos[gallery.photos.indexOf(slide) +1]" ng-src="{{gallery.photos[gallery.photos.indexOf(slide) + 1]}}" style="margin-left: 5px; margin-bottom: 5px;" width="140px"  height="140px;"></a>
                     </br> 
-                    <a ng-click="setImage((gallery.photos.indexOf(slide) * 4) + 2)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+2]"ng-src="{{gallery.photos[(gallery.photos.indexOf(slide) * 4) + 2]}}" style="margin-right: 5px;" width="140px"  height="140px;"></a>
-                    <a ng-click="setImage((gallery.photos.indexOf(slide)* 4) + 3)"><img ng-if="gallery.photos[(gallery.photos.indexOf(slide) * 4)+3]" ng-src="{{gallery.photos[(gallery.photos.indexOf(slide)* 4) + 3]}}" style="margin-left: 5px;" width="140px"  height="140px;"></a>
+                    <a ng-click="setImage(gallery.photos.indexOf(slide) + 2)"><img ng-if="gallery.photos[gallery.photos.indexOf(slide) +2]"ng-src="{{gallery.photos[gallery.photos.indexOf(slide) + 2]}}" style="margin-right: 5px;" width="140px"  height="140px;"></a>
+                    <a ng-click="setImage(gallery.photos.indexOf(slide) + 3)"><img ng-if="gallery.photos[gallery.photos.indexOf(slide) +3]" ng-src="{{gallery.photos[gallery.photos.indexOf(slide)+ 3]}}" style="margin-left: 5px;" width="140px"  height="140px;"></a>
                   </div>
                 </div>
-              </slide>
-            </carousel>
+                            </li>
+                           
+                          </ul>
+            
           </div>
           <div class="col-md-12 col-sm-12 col-lg-12 cnts">
             <div class="stars">
