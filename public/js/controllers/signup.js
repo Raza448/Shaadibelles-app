@@ -40,7 +40,8 @@ var query = $location.search();
 		  'email' : user.email,
 		  'username' : user.username,
 		  'password' : user.password,
-                  'realm' : 'guest'
+                  'realm' : 'guest',
+                   'active' : true
 		};
   $http.post(url, data).then(function (res) {
 

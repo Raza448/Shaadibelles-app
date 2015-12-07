@@ -21,7 +21,8 @@ angular.module('sbFrontEnd').controller('VendorSignupCtrl', function ($scope, $h
 		  'email' : user.email,
 		  'username' : user.username,
 		  'password' : user.password,
-                   'realm' : 'vendor'
+                   'realm' : 'vendor',
+                    'active' : true
 		};
   $http.post(url, data).then(function (res) {
             if (res.status == 200) {

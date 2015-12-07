@@ -95,6 +95,13 @@ $scope.loginandbusiness = function(userData) {
   if(err.data.error.code === "LOGIN_FAILED"){
  $rootScope.errormsg = "Username or password is incorrect, please try again";
 }
+
+if(res.data.error.status === 500 && res.data.error.message === "disabled"){
+	location.href = "#/main/disabled";
+	   		$("#vendor-login").modal('hide');
+
+
+}
  if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
  $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";
 }
@@ -126,6 +133,12 @@ $scope.loginandprofile = function(userData) {
   console.log(err.data.error);
   if(err.data.error.code === "LOGIN_FAILED"){
  $rootScope.errormsg = "Username or password is incorrect, please try again";
+}
+if(res.data.error.status === 500 && res.data.error.message === "disabled"){
+	location.href = "#/main/disabled";
+	   		$("#login-two").modal('hide');
+
+
 }
  if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
  $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";
@@ -169,6 +182,13 @@ $scope.vendorlogintwo= function(){
   console.log(err.data.error);
   if(err.data.error.code === "LOGIN_FAILED"){
  $rootScope.errormsg = "Username or password is incorrect, please try again";
+}
+
+if(err.data.error.status === 500 && err.data.error.message === "disabled"){
+	location.href = "#/main/disabled";
+	   		$("#form-content").modal('hide');
+
+
 }
  if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
  $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";

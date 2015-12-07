@@ -37,7 +37,7 @@
                       </th>
                 <th>{{buttonText}}</th>
                 <th>Email</th>
-                <th>phone</th>
+                <th>Status</th>
                 <th></th>
               </tr>
             </thead>
@@ -52,8 +52,8 @@
                 <td><strong>{{user.name || user.username}}</strong></td>
                 <td>{{user.email}}</td>
                 <td>
-					{{user.phone || 'Not Available'}}
-
+              <a class="btn btn-sm btn-success" ng-show="user.active" ng-click="disable(user)">Disable</a>
+                    <a class="btn btn-sm btn-warning" ng-hide="user.active" ng-click="activate(user)">Enable</a>
                 </td>
                 <td>
                   <a class="btn btn-sm btn-primary" href="#/dashboard/edit-user?id={{user.id}}">Edit</a>

@@ -1,11 +1,30 @@
 'use strict';
 
 angular.module('sbAdminApp')
-  .controller('UsersCtrl', function($scope, $http, $location, $rootScope,
+  .controller('UsersCtrl', function($scope, $state, $http, $location, $rootScope,
     $modal, $modalStack) {
     $scope.title = "Users";
     $scope.buttonText = "User";
     $scope.latest = "Comments";
+
+
+$scope.activate = function(user) {
+    user.active = true;
+     var url = window.remote + '/api/users/' + user.id + '?access_token=' + $rootScope.user.accessToken;
+        var request = $http.put;
+        request(url, user).then(function(res) {
+          $state.reload();
+        });
+    }
+
+$scope.disable = function(user) {
+    user.active = false;
+     var url = window.remote + '/api/users/' + user.id + '?access_token=' + $rootScope.user.accessToken;
+        var request = $http.put;
+        request(url, user).then(function(res) {
+          $state.reload();
+        });
+    }
 
 
     $scope.check = function(x) {

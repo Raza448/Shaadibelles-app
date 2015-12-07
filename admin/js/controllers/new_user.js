@@ -5,6 +5,7 @@ angular.module('sbAdminApp')
     $scope.title = "New User";
     $scope.buttonText = "Create";
     $scope.userData = {
+      active: true,
       name: null,
       username: null,
       email: null,

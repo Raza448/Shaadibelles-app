@@ -378,6 +378,21 @@ uiGmapGoogleMapApiProvider.configure({
             }
         })
 
+      .state('main.disabled', {
+            url: '/disabled',
+            controller: 'MainCtrl',
+            templateUrl: 'public/views/disabled.html',
+            resolve: {
+                loadMyFiles: function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbFrontEnd',
+                        files: ['public/js/controllers/main.js', 'public/js/window.js'] //'js/controllers/home.js'
+                    })
+                }
+            }
+        })
+
+
  .state('main.reset', {
             url: '/reset',
             controller: 'SignupCtrl',

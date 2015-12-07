@@ -1,0 +1,42 @@
+<!-- header-section-ends -->
+
+
+<!----------->
+<div class="content">
+  <!---->
+  <div class="container" >
+    <div class="grids-tops" style="margin-top: 200px;">
+      <div class="banner-bottom-grids">
+
+            
+        <div class="col-lg-12 col-md-12 col-sm-12 help-form">
+          <form ng-submit="newcontact(contact)" >
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <h2  ng-hide="contactsent" class="vendor-need">YOUR ACCOUNT IS CURRENTLY DISABLED PLEASE CONTACT US </h2>
+              <h2  ng-show="contactsent" class="vendor-need">THANK YOU FOR CONTACTING, WE WILL GET BACK TO YOU SOON</h2>
+            </div>
+            <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8 col-sm-8" ng-hide="contactsent">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <input type="text" ng-model="contact.name" placeholder="Name" class="inpPad" required />
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <input type="text" ng-model="contact.email" placeholder="Email"  class="inpPad" required />
+                </div>
+               
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <textarea placeholder="Tell Us About Your Query" ng-model="contact.content" rows="6"></textarea>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center" ng-hide="contactsent">
+              <input type="submit" value="SEND" />
+            </div>
+          </form>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

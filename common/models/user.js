@@ -16,12 +16,34 @@ module.exports = function(UserModel) {
        next();
       });
 
+
+   UserModel.beforeRemote(
+      'login',
+      function(ctx, ins, next) { 
+         UserModel.findOne( { where : { 'username' : ctx.req.body.username }}, function(err, user){
+          if(err){
+           console.log(err);
+           next(); 
+          }
+          if(user && user.active === false){
+            var error = new Error('disabled');
+              error.statusCode = 500;
+              next(error);
+          }
+          next();
+
+         });
+      });
+
  UserModel.afterRemote(
       'logout',
       function(ctx, ins, next) {
             ctx.req.session.user = null;
        next();
       });
+
+
+
 
  
 

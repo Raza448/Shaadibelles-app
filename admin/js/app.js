@@ -203,7 +203,7 @@ angular
         }
     })
     .state('dashboard.edit-vendor',{
-        templateUrl:'admin/views/dashboard/user/create_vendor.html',
+        templateUrl:'admin/views/dashboard/user/edit_vendor.html',
         url:'/edit-vendor',
         controller: "EditVendorCtrl",
         resolve: {
