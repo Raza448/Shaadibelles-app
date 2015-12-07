@@ -33,7 +33,9 @@ message: ''
 }
 
   $scope.windowOptions = {
-        show: false
+        show: true,
+   boxClass: "info-window",
+
     };
 
     $scope.onClick = function (data) {
