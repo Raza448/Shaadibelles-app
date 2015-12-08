@@ -583,7 +583,14 @@ $rootScope.stopLoading = function(){
         $rootScope.homeSlider = null;
         $rootScope.homeWidgets = [];
         $rootScope.featuredVendor = null;
-
+        $rootScope.checkItem = function(item){
+            var i = $rootScope.blogWidgets.indexOf(item.id);
+            if(i >= 0){
+                return true;
+            } else {
+                return false;
+            }
+        }
         $rootScope.vendorSearch = null;
         $rootScope.changeVendorSearch = function(type) {
             $rootScope.vendorSearch = type;
@@ -654,7 +661,18 @@ $rootScope.stopLoading = function(){
                 $rootScope.socialLinks = $rootScope.site.social;
                 $rootScope.keywords = $rootScope.site.settings.keywords.split(",");
                 $rootScope.recommended = [];
-
+                $rootScope.blogWidgets = _.union(res.data.settings.blog.smallWidgets , res.data.settings.blog.mediumWidgets);
+                $rootScope.blogWidgets = _.union($rootScope.blogWidgets, res.data.settings.blog.bigWidgets);
+                $http.get(window.remote + '/api/widgets').then(function(res){
+                    $rootScope.widgets= [];
+                    res.data.forEach(function(widget){
+                        if($rootScope.checkItem(widget) === false ){
+                            $rootScope.widgets.push(widget);
+                        }
+                    });
+                    $rootScope.widgetLimit = 0;
+                });
+                
                 $rootScope.vendorstwo = [];
                 $http.get(window.remote + '/api/menus/' + $rootScope.site.settings.menu).then(function(res) {
                     $rootScope.menu = res.data;

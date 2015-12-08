@@ -197,10 +197,23 @@
             <p>{{blogSmallWidgets[7].description}}</p>
           </div>
         </div>
+                <div class="clearfix"> </div>
+
+
+        <div class="col-md-4 col-sm-4 col-lg-4"  ng-repeat="widget in widgets | before : widgetLimit" >
+          <div class=" top-grid">
+   <a ng-if="widget.content.type === 'Post'" href="#/main/post/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+ <a ng-if="widget.content.type === 'Gallery'" href="#/main/gallery/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+ <a ng-if="widget.content.type === 'Category'" href="#/main/category/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+            <h3>{{widget.title}}</h3>
+            <p>{{widget.description}}</p>
+          </div>
+        </div>
+
         <div class="clearfix"> </div>
       </div>
     </div>
-         <div style="padding-top:30px; padding-bottom:30px; text-align:center;"><a href="#" class="morebtn hvr-sweep-to-top">LOAD MORE </a></div>
+         <div style="padding-top:30px; padding-bottom:30px; text-align:center;"><a href="" ng-hide="widgets.length <= widgetLimit" ng-click="widgetLimit = widgetLimit + 5" class="morebtn hvr-sweep-to-top">LOAD MORE </a></div>
   </div>
 </div>
 
