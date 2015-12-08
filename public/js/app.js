@@ -180,6 +180,34 @@ uiGmapGoogleMapApiProvider.configure({
         })
 
 
+.state('main.brideaccount', {
+                url: '/profile',
+                controller: 'BrideProfileCtrl',
+                templateUrl: 'public/views/account.html',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbFrontEnd',
+                            files: ['public/js/controllers/account.js', 'public/js/window.js'] //'js/controllers/home.js'
+                        })
+                    }
+                }
+            })
+
+.state('main.vendoraccount', {
+                url: '/vendorprofile',
+                controller: 'VendorProfileCtrl',
+                templateUrl: 'public/views/vendoraccount.html',
+                resolve: {
+                    loadMyFiles: function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbFrontEnd',
+                            files: ['public/js/controllers/vendor.js', 'public/js/window.js'] //'js/controllers/home.js'
+                        })
+                    }
+                }
+            })
+
         .state('main.post', {
             url: '/post/:id',
             controller: 'PostCtrl',

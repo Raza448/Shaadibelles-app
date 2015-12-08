@@ -1,8 +1,0 @@
-<div class="content" >
-  <!---->
-  <div class="container" >
-    <div ng-bind-html="page.content" style="margin-top: 400px;">
-
-        </div>
-  </div>
-</div>
