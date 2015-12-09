@@ -29,10 +29,10 @@
         <div class="image-div">
           <img alt="" class="img-responsive" src="{{homeWidgets[0].cover}}" style="width: 100%; height: auto;">
           <div class="hidden_img">
-            <a href="#"><img src="public/images/pin.png" width="33" height="32" /></a>
-			 <a ng-if="homeWidgets[0].content.type === 'Post'" href="#/main/post/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
-			 <a ng-if="homeWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
-			 <a ng-if="homeWidgets[0].content.type === 'Category'" href="#/main/category/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> &nbsp;
+            <a class="img-col-1" href="#"><img src="public/images/pin.png" width="33" height="32" /></a>
+			 <a class="img-col-1" ng-if="homeWidgets[0].content.type === 'Post'" href="#/main/post/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			 <a class="img-col-1" ng-if="homeWidgets[0].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> 
+			 <a class="img-col-1" ng-if="homeWidgets[0].content.type === 'Category'" href="#/main/category/{{homeWidgets[0].content.id}}">&nbsp;{{homeWidgets[0].title}}</a> &nbsp;
         <i class="fa fa-heart"></i>
                 {{homeWidgets[0].ratings.length}}
 
@@ -200,10 +200,10 @@ Your browser does not support the video tag.
 
 
           <ul class="social">
-            <li><a href="{{socialLinks.youtube}}"><span> </span> </a></li>
+            <li class="print"><a href="{{socialLinks.youtube}}"><span> </span> </a></li>
             <li class="twitter"><a href="{{socialLinks.twitter}}"><span> </span></a></li>
-            <li class="gmail"><a href="{{socialLinks.pinterest}}"><span> </span> </a></li>
-            <li class="print"><a href="{{socialLinks.facebook}}"><span> </span> </a></li>
+            <li><a href="{{socialLinks.pinterest}}"><span> </span> </a></li>
+            <li class="gmail"><a href="{{socialLinks.facebook}}"><span> </span> </a></li>
           </ul>
           </aside>
         </div>

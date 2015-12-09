@@ -185,6 +185,28 @@ td,
 th {
   padding: 0;
 }
+
+/***********Slider Css*****************/
+
+.glyphicon-chevron-right, .glyphicon-chevron-left{
+    height: 78% !important;
+    background-size: 90px 115px !important;
+    width: 100% !important;
+	margin:0 !important;
+	position: relative !important;
+	right: 0 !important;
+	left: 0 !important;
+}
+.glyphicon-chevron-left{background: url("/public/images/left_new.png") no-repeat center !important;}
+.glyphicon-chevron-right{background: url("/public/images/right_new.png") no-repeat center !important;}
+
+@media (max-width: 500px) {
+	.glyphicon-chevron-right, .glyphicon-chevron-left{ background-size: 12px 45px !important; }
+	
+}	
+/***********END *****************/
+
+
 @media print {
   * {
     color: #000 !important;
@@ -3023,12 +3045,12 @@ input[type="button"].btn-block {
 .glyphicon-eject:before {
   content: "\e078";
 }
-.glyphicon-chevron-left:before {
+/* .glyphicon-chevron-left:before {
   content: "\e079";
 }
 .glyphicon-chevron-right:before {
   content: "\e080";
-}
+} */
 .glyphicon-plus-sign:before {
   content: "\e081";
 }
@@ -7533,18 +7555,20 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 1.5em;
-	  font-family: font_gotham;
-	  font-weight:bold;
-	  text-align:left;
-	  float:left;
-	  margin-top:8%;
+	font-family: font_gotham;
+	font-weight:bold;
+	text-align:left;
+	float:left;
+	margin-top:8%;
+	text-shadow: 2px 2px 8px #252525;
 }
 .banner-matter p{
-	  color: #FFF;
- line-height: 1.5em;
-  font-size: 1.2em;
-  text-align: center;
-  margin: 1em 0 1.5em 0;
+	color: #FFF;
+	line-height: 1.5em;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 1em 0 1.5em 0;
+	text-shadow: 2px 2px 8px #252525;
 }
 .logo{
 	float:left;
@@ -8632,6 +8656,7 @@ bold	font-style: normal;
 	  text-align:left;
 	  float:left;
 	  margin-top:8%;
+	   text-shadow: 2px 2px 8px #252525;
 }
 .banner-matter p{
 	  color: #FFF;
@@ -8639,6 +8664,7 @@ bold	font-style: normal;
   font-size: 1.2em;
   text-align: center;
   margin: 1em 0 1.5em 0;
+   text-shadow: 2px 2px 8px #252525;
 }
 .logo{
 	float:left;
@@ -9322,11 +9348,12 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 3.5em;
-	  font-family: font_gotham;
-	  font-weight:bold;
-	  text-align:left;
-	  float:left;
-	  margin-top:8%;
+	font-family: font_gotham;
+	font-weight:bold;
+	text-align:left;
+	float:left;
+	margin-top:8%;
+	text-shadow: 2px 2px 8px #252525;
 }
 .banner-matter p{
 	  color: #FFF;
@@ -9334,6 +9361,7 @@ bold	font-style: normal;
   font-size: 1.2em;
   text-align: center;
   margin: 1em 0 1.5em 0;
+   text-shadow: 2px 2px 8px #252525;
 }
 .logo{
 	float:left;
@@ -9780,7 +9808,7 @@ i.heartin{
 	background:#fff;
 	line-height:2.5em;
 }
-.blog-top p{
+.blog-top p, .blog-top ul{
 	font-family:font_myrate;
 	color:#939598;
 	font-size:0.9em;
@@ -10281,6 +10309,7 @@ bold	font-style: normal;
 	padding: 0 6px 0 0;
 	background-color: transparent;	/* avoid W3C validator warnings */
 }
+
 /***********
 *   MENU END   *
 ***********/
@@ -10309,7 +10338,7 @@ bold	font-style: normal;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-@media (min-width:320px) and (max-width:767px){
+@media (max-width:767px){
 	.desktop_menu{display:none;	}
 	.mobile_menu{display:block;  margin-top: -35px;	}
 	.navbar{    margin-bottom: 0;}
