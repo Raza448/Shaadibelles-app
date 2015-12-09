@@ -118,7 +118,29 @@
             <div id="myTabContent" class="tab-content">
               <div>
                 <p>&nbsp;</p>
-                <div  class="col-md-6 col-lg-6 col-sm-6 bottom-grids"><img ng-repeat="image in vendor.gallery" src="{{image}}" class="img-width"  /></div>
+ <div class="tab-pane fade in active" id="profile">
+                <p>&nbsp;</p>
+                <div class="col-md-12 col-lg-12 col-sm-12 bottom-grids"
+                style="height: 250px; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[0] + ')'}"
+></div>
+                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids"
+                style="height: 250px; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[1] + ')'}"
+></div>
+                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids"
+                style="height: 250px; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[2] + ')'}"
+                ></div>
+              </div>
+
+
+
+
+                
               </div>
             </div>
           </div>
@@ -127,12 +149,31 @@
       </div>
     </div>
   </div>
-  <div class="amazing">
-    <div class="col-md-4 col-lg-4 col-sm-4 amaze" ng-repeat="image in vendor.gallery">
-      <img src="{{image}}" class="img-width" alt="">
+
+   <div class="amazing">
+    <div class="col-md-4 col-lg-4 col-sm-4 amaze" style="height: 600px; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[3] + ')'}">
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-3 amaze" style="height: 600px; ">
+      <div class="col-md-12 col-lg-12 col-sm-12" style="height: 50%; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[4] + ')'}" >
+      </div>
+      <div class="col-md-12 col-lg-12 col-sm-12" style="height: 50%; background-repeat: no-repeat;
+    background-size: contain; background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[5] + ')'}" >
+      </div>
+    </div>
+    <div class="col-md-5 col-lg-5 col-sm-5 amaze" style="height: 600px; background-repeat: no-repeat;
+    background-size: contain;  background-size: cover;
+" ng-style="{'background-image':'url(' + vendor.gallery[6] + ')'}" >
     </div>
     <div class="clearfix"></div>
   </div>
+
+
+  
   <div class="container">
     <div class="blobgrid">
       <h5>READ THE REVIEWS ABOUT {{vendor.business.name.toUpperCase()}}</h5>
