@@ -785,7 +785,7 @@ pre code {
 }
 #pagewrap h1 {
     color: #fff;
-    font-family: font_myrate;
+    font-family: font_roboto_thin;
     font-size: 2em;
     font-weight: 500;
     line-height: 0.8em;
@@ -798,11 +798,10 @@ pre code {
     /*width: 750px;*/
   }
     .container_bottom {
-	margin-top:20%;
 	margin:0 auto;
-	background:rgba(0, 0, 0, 0.23) none repeat scroll 0 0;
+	background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
 	position:absolute;
-	margin-top:10%;
+	margin-top:20%;
   }
   .grids-top{
 	position:relative;
@@ -932,9 +931,12 @@ pre code {
 	padding:0.8em;
 	background:#fff;
 	text-transform:uppercase;
+	letter-spacing: 1px;
+    font-weight: bold;
 }
 .bottom-grid h1 a{
-
+	letter-spacing: 1px;
+    font-weight: bold;
 	color:#939598;
 }
 .bottom-grid p{
@@ -1064,7 +1066,7 @@ pre code {
 }
 #pagewrap h1 {
 	color: #FFF;
-	font-family:font_myrate;
+	font-family:font_roboto_thin;
 	font-weight:500;
 	font-size:2.7em;
 	  line-height: 0.8em;
@@ -1084,16 +1086,21 @@ a.morebtn {
     width: 970px;
   }
   .container_bottom {
-	margin-top:20%;
-	background:rgba(0, 0, 0, 0.23) none repeat scroll 0 0;
+	margin-top:15%;
+	background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
 	position:absolute;
-	margin-top:10%;
   }
+  
   a.morebtn {
     margin: 1em auto 0;
     width: auto !important;
 	text-align: center;
-}
+	text-transform: uppercase;
+    font-size: 10px;
+    font-family: font_robo;
+    font-weight: bold;
+	}
+	a.bride-signup-anchor{ margin-left: -12%; padding: 11px 30px;}
 }
 @media (min-width: 1200px) {
   .container {
@@ -1102,7 +1109,7 @@ a.morebtn {
 .container_bottom {
 	margin-top:20%;
 	margin:0 auto;
-	background:rgba(0, 0, 0, 0.23) none repeat scroll 0 0;
+	background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
 	position:absolute;
 	margin-top:10%;
   }
@@ -1119,7 +1126,7 @@ a.morebtn {
 }
 #pagewrap h1 {
 	color: #FFF;
-	font-family:font_myrate;
+	font-family:font_roboto_thin;
 	font-weight:500;
 	font-size:3em;
 	  line-height: 0.8em;
@@ -1646,6 +1653,8 @@ footer {
   }
 }
 @media (min-width: 1200px) {
+	
+
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
@@ -1802,6 +1811,7 @@ footer {
   .col-lg-offset-0 {
     margin-left: 0;
   }
+    .container_bottom{ margin-left: 16%; width: 66.6%;}
 }
 table {
   max-width: 100%;
@@ -6329,6 +6339,7 @@ a.morebtn {
 }
 .banner-matter p{
     color: #fff;
+    font-family: font_robo;
     font-size: 0.9em;
     line-height: 1em;
     margin: 1em 0 -0.5em;
@@ -6796,6 +6807,8 @@ i.heartin{
 	background:#fff;
 	text-transform:uppercase;
 	background-color:transparent;
+	letter-spacing: 1px;
+    font-weight: bold;
 }
 .help-form h2 {
     color: #f7987b;
@@ -6805,7 +6818,8 @@ i.heartin{
 	line-height:2em;
 }
 .bottom-grid h1 a{
-
+	letter-spacing: 1px;
+    font-weight: bold;
 	color:#939598;
 	background-color:transparent;
 }
@@ -7555,7 +7569,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 1.5em;
-	font-family: font_gotham;
+	font-family: font_myrate;
 	font-weight:bold;
 	text-align:left;
 	float:left;
@@ -7564,6 +7578,7 @@ bold	font-style: normal;
 }
 .banner-matter p{
 	color: #FFF;
+    font-family: font_robo;
 	line-height: 1.5em;
 	font-size: 1.2em;
 	text-align: center;
@@ -8651,7 +8666,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 2.5em;
-	  font-family: font_gotham;
+	  font-family: font_myrate;
 	  font-weight:bold;
 	  text-align:left;
 	  float:left;
@@ -8659,12 +8674,13 @@ bold	font-style: normal;
 	   text-shadow: 2px 2px 8px #252525;
 }
 .banner-matter p{
-	  color: #FFF;
- line-height: 1.5em;
-  font-size: 1.2em;
-  text-align: center;
-  margin: 1em 0 1.5em 0;
-   text-shadow: 2px 2px 8px #252525;
+	color: #FFF;
+	font-family: font_robo;
+	line-height: 1.5em;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 1em 0 1.5em 0;
+	text-shadow: 2px 2px 8px #252525;
 }
 .logo{
 	float:left;
@@ -9348,7 +9364,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 3.5em;
-	font-family: font_gotham;
+	font-family: font_myrate;
 	font-weight:bold;
 	text-align:left;
 	float:left;
@@ -9356,12 +9372,13 @@ bold	font-style: normal;
 	text-shadow: 2px 2px 8px #252525;
 }
 .banner-matter p{
-	  color: #FFF;
- line-height: 1.5em;
-  font-size: 1.2em;
-  text-align: center;
-  margin: 1em 0 1.5em 0;
-   text-shadow: 2px 2px 8px #252525;
+	color: #FFF;
+	font-family: font_robo;
+	line-height: 1.5em;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 1em 0 1.5em 0;
+	text-shadow: 2px 2px 8px #252525;
 }
 .logo{
 	float:left;

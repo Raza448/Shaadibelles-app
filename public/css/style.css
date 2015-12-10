@@ -16,6 +16,11 @@
     font-family: 'font_mrservis';
     src: url(../fonts/MrsEaves.ttf) format('ttf');
 }
+@font-face {
+    font-family: font_roboto_thin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+
 /* #Reset & Basics
 ================================================== */
 
@@ -994,7 +999,7 @@ visibility:visible;
 }
 .thumb h3{
     color: #f7987b;
-   /*  font-family: font_myrate; */
+    font-family: font_robo; 
     font-size: 2.8em;
     padding: 0.2em;
 	letter-spacing:0.1em;
@@ -1004,7 +1009,7 @@ visibility:visible;
 }
 .thumb h4{
     color: #000;
-    /* font-family: font_myrate; */
+    font-family: font_robo; 
     font-size: 1.2em;
     padding: 0em;
 	text-align:left;
@@ -1809,7 +1814,7 @@ i.cont {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   background:#f1ab90;
-	padding:0.6em 1.2em;
+	padding:1em 1.8em;
 	font-size:1em;
 	color:#FFF;
 	width:auto;
@@ -1958,7 +1963,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	padding: 0;
 }
 .beautifull {
-	padding: 6em 0;	
+	padding: 10em 0 0 0;	
 	background-color:#f3f3f5;
 }
 .beautifull-header {
@@ -2031,20 +2036,21 @@ i.star {
 	line-height:0.8em;
 }
 .passion span {
-	font-size: 1.4em;
+	font-size: 2.2em;
     color: #F3AB92;
     font-weight: 500;
     text-transform: uppercase;
-    font-family: font_myrate;
+    font-family: font_robo;
+	letter-spacing: 2px;
 /*	  padding:0.5em 0 0.5em 1.4em;*/
 }
 .passion p {
 	font-size: 1.1em;
-	color: #999;
+	color: #000;
 	font-weight:500;
 	  line-height: 1.9em;/*
 	  padding:0.5em 0 0.5em 2em;*/
-	  font-family:font_myrate;
+	  font-family:font_robo;
 }
 .passion h1 {
 	font-size: 0.7em;
@@ -2114,7 +2120,7 @@ i.star {
 .content-bottom p{
 	color:#fff;
 	font-size: 1.0em;
-	  font-family: font_robo;
+	  font-family: font_roboto_thin;
 	  width:100%;
 	  margin:0 auto;
 	  padding: 1em 0 0.5em;
@@ -5072,3 +5078,8 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .page-header-shift{    margin-left: 30px; width: 91%;}
 .page-header-shift h1{ border-bottom: 1px dotted #666666; padding: 0 0 15px 0; font-size: 18px; }
 .page-header-shift h5{ padding: 10px 0 0 0; color: #252525; font-size: 23px; font-weight: bold; font-family: sans-serif;}
+.banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold}
+.content-bottom p.footer-col-1{font-family:font_roboto_thin;  font-size: 1.6em; padding: 8px 25px 0 25px; letter-spacing: 0.5px;}
+
+.footer-col-2, .footer-col-3{  padding: 0 15px 0 15px;}
+.footer-col-3{    margin-bottom: 25px;}

@@ -10,12 +10,12 @@
             <h3>{{slide.title}} </h3>
             <div class="banner_div homepage_banner">
               <p>{{slide.description}}</span></p>
-              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">See More</a>
-              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">See More</a>
-              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Category'" href="#/main/category/{{slide.id}}">See More</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Post'" href="#/main/post/{{slide.id}}">view all vendors</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Gallery'" href="#/main/gallery/{{slide.id}}">view all vendors</a>
+              <a class="morebtn hvr-sweep-to-top" ng-if="slide.type === 'Category'" href="#/main/category/{{slide.id}}">view all vendors</a>
             </div>
             <div class="clearfix"></div>
-            <p>{{slide.tagline}}</p>
+            <p class="banner-base-text">{{slide.tagline}}</p>
           </div>
         </slide>
       </carousel>
@@ -173,29 +173,28 @@ Your browser does not support the video tag.
       </div>
       <div class="clearfix"></div>
       <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+        <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
-          <p>Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration online.
+          <p class="footer-col-1">Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration online.
           </p>
           <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <a href="#/main/signup" class="morebtn hvr-sweep-to-top">BRIDE SIGN UP </a>
-        </div>
+          
+          <a href="#/main/signup" class="morebtn hvr-sweep-to-top bride-signup-anchor">BRIDE SIGN UP </a>
+        <!-- </div> -->
       </div>
-      <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+      <div class="col-sm-4 col-lg-4 col-md-4 footer-col-2">
+        <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
           <p>Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration, with hundreds of thousands of photos of weddings, fashion events, and designer images to choose from, you can quickly and easily find what you're 	looking for, and then create your own inspiration board to share with friends and family. Our visual
-            inspiration tool also connects users to primary vendors, such as photographers, wedding planners, and more.<br>
-            The Belle Blog complements our image galleries
+            inspiration tool also connects users to primary vendors, such as photographers, wedding planners, and more.      
           </p>
-        </div>
+        <!-- </div> -->
       </div>
-      <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1">
+      <div class="col-sm-4 col-lg-4 col-md-4 footer-col-3">
+        <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
-          <p>with real stories and real advice, including the latest weddings from around the world. Search, Save & Share your South Asian Inspiration with Shaadi Belles!</p>
-          <p>&nbsp;</p>
+          <p>The Belle Blog complements our image galleries with real stories and real advice, including the latest weddings news, the hottest wedding planning ideas, and some of the most elegant and stunning real-life wedding from around the world. Search, Save & Share your South Asian Inspiration with Shaadi Belles!</p>
+          
           <p>&nbsp;</p>
 
 
@@ -206,7 +205,7 @@ Your browser does not support the video tag.
             <li class="gmail"><a href="{{socialLinks.facebook}}"><span> </span> </a></li>
           </ul>
           </aside>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
