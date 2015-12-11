@@ -5072,6 +5072,8 @@ label.star:before {
 .vendor-cont-form{padding: 37px 0;}
 .vendor-cont-form  h2.vendor-need{text-align: center; color:#ccc; font-size: 16px; letter-spacing: 2px;}
 .banner-vendor{text-align: center; right: 50%; bottom: 50%; transform: translate(50%,-134%);}
+.top-banner .banner-vendor{position:relative;}
+.common-signup {position: absolute;top: 32%;text-align: center;right: 0;bottom: 0;transform: initial;}
 
 div.hidden_img a.img-col-1{color:#FFF;}
 div.hidden_img a.img-col-1:hover{    text-decoration: none;}
