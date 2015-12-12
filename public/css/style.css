@@ -173,6 +173,8 @@ background:#fff;
 .wedding-stories a.morebtn {
 	right: 7%;
 }
+.blog-main {top:32% !important;}
+.blog-main h3{margin-top: 3% !important;}
 .search input[type="text"] {
 	outline: none;
 	padding:8px 15px;
