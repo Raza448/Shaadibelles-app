@@ -160,6 +160,19 @@ background:#fff;
 	text-transform:uppercase; 
 	font-size:12px;
 }
+.wedding-stories{
+	width: 100% !important;
+}
+.wedding-stories h3{
+	margin-top: 0 !important;
+}
+.wedding-stories .banner_div{
+	width: auto !important;
+	padding: 0 2% !important;
+}
+.wedding-stories a.morebtn {
+	right: 7%;
+}
 .search input[type="text"] {
 	outline: none;
 	padding:8px 15px;
