@@ -12,7 +12,7 @@
   .info-window {
   background-color: #FA8258;
   width: 500px;
-  height: 203px;
+  height: 200px;
   color: #ffffff;
   }
   .hover-active:hover{
@@ -98,15 +98,13 @@
               <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"
                 href="https://twitter.com/intent/tweet?text={{vendor.business.name }},{{vendor.category[0]}}&url={{url}}" ><i class="twt"> </i></a></li>
-              <li><a 
-                ng-click="pin()"
-                ><i class="fa fa-pinterest fa-2x"> </i></a></li>
+              <li><a ng-click="pin()"><i class="fa fa-pinterest fa-2x"> </i></a></li>
               <li><a href="#"><i class="bg"> </i></a></li>
               <li><a href="#"><i class="msg"> </i></a></li>
               <li><a href="#"><i class="md"> </i></a></li>
             </ul>
           </div>
-          <h4> {{vendor.business.description}} </h4>
+          <h4>{{vendor.business.description}} </h4>
         </div>
         <div class="col-md-5 col-lg-5 col-sm-5 blogs-top" >
           <div class="bs-example bs-example-tabs top-tabs">
@@ -117,31 +115,20 @@
             </ul>
             <div id="myTabContent" class="tab-content">
               <div>
+                <p style="padding: 0;">&nbsp;</p>
+				<div class="tab-pane fade in active" id="profile">
                 <p>&nbsp;</p>
- <div class="tab-pane fade in active" id="profile">
-                <p>&nbsp;</p>
-                <div class="col-md-12 col-lg-12 col-sm-12 bottom-grids"
-                style="height: 250px; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[0] + ')'}"
-></div>
-                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids"
-                style="height: 250px; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[1] + ')'}"
-></div>
-                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids"
-                style="height: 250px; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[2] + ')'}"
-                ></div>
+                <div class="col-md-12 col-lg-12 col-sm-12 bottom-grids">
+					<img src="{{vendor.gallery[0]}}" class="img-responsive" />
+				</div>
+                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids">
+					<img src="{{vendor.gallery[1]}}" class="img-responsive" />
+				</div>
+                <div class="col-md-6 col-lg-6 col-sm-6 bottom-grids">
+					<img src="{{vendor.gallery[2]}}" class="img-responsive" />
+				</div>
               </div>
-
-
-
-
-                
-              </div>
+             </div>
             </div>
           </div>
         </div>
@@ -151,23 +138,19 @@
   </div>
 
    <div class="amazing">
-    <div class="col-md-4 col-lg-4 col-sm-4 amaze" style="height: 600px; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[3] + ')'}">
+    <div class="col-md-4 col-lg-4 col-sm-4 amaze" >
+		<img src="{{vendor.gallery[3]}}" class="img-responsive" />
     </div>
-    <div class="col-md-3 col-lg-3 col-sm-3 amaze" style="height: 600px; ">
-      <div class="col-md-12 col-lg-12 col-sm-12" style="height: 50%; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[4] + ')'}" >
+    <div class="col-md-3 col-lg-3 col-sm-3 amaze">
+      <div class="col-md-12 col-lg-12 col-sm-12" >
+		<img src="{{vendor.gallery[4]}}" class="img-responsive" />
       </div>
-      <div class="col-md-12 col-lg-12 col-sm-12" style="height: 50%; background-repeat: no-repeat;
-    background-size: contain; background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[5] + ')'}" >
+      <div class="col-md-12 col-lg-12 col-sm-12">
+		<img src="{{vendor.gallery[5]}}" class="img-responsive" />
       </div>
     </div>
-    <div class="col-md-5 col-lg-5 col-sm-5 amaze" style="height: 600px; background-repeat: no-repeat;
-    background-size: contain;  background-size: cover;
-" ng-style="{'background-image':'url(' + vendor.gallery[6] + ')'}" >
+    <div class="col-md-5 col-lg-5 col-sm-5 amaze" >
+		<img src="{{vendor.gallery[6]}}" class="img-responsive" />
     </div>
     <div class="clearfix"></div>
   </div>
@@ -207,11 +190,11 @@
       </ui-gmap-marker>
       <ui-gmap-window coords="vendormarker.coords" show="windowOptions.show" options="windowOptions" closeClick="closeClick()" style="background-color: #F79F81;">
         <div ng-controller="VendorDetailCtrl">
-          <div  class="col-md-6 col-lg-6 col-sm-6 bottom-grids">
-            <img src="{{vendor.gallery[0]}}"  height="100px" />
-            <img src="{{vendor.gallery[1]}}"  height="100px" /> 
+          <div  class="col-md-4 col-lg-4 col-sm-4 bottom-grids">
+            <img src="{{vendor.gallery[0]}}" height="100px" style="width:100%;" />
+            <img src="{{vendor.gallery[1]}}" height="100px" style="width:100%;"/> 
           </div>
-          <div class="col-md-4 col-lg-4 col-sm-4 thumb vendor_thumb" >
+          <div class="col-md-6 col-lg-6 col-sm-6 thumb vendor_thumb" style="padding: 18px 0 0;">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <a href="#/main/vendordetail/{{vendor.id}}" >
                 <h1 style="font-size: 20px; color: #ffffff;" >{{vendor.business.name}}</h1>
@@ -231,17 +214,17 @@
                 </form>
               </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-mobile fa-3x"></i></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 vendor_location">
+              <!--<div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-mobile fa-3x"></i></div>-->
               <div class="col-lg-10 col-md-10 col-sm-10">
-                <h1 style="font-size: 20px; color: #ffffff;">{{vendor.business.phone}}</h1>
+                <h1 style="font-size: 20px; color: #ffffff;"><i class="cont"> </i> {{vendor.business.phone}}</h1>
               </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-map-marker fa-3x"></i></div>
+              <!--<div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-map-marker fa-3x"></i></div>-->
               <div class="col-lg-10 col-md-10 col-sm-10">
-                <h1 style="font-size: 20px; color: #ffffff;">{{vendor.business.street}}
-                  {{vendor.business.city}}, {{vendor.businees.state}}<br />
+                <h1 style="font-size: 20px; color: #ffffff;margin-left: 14px;"><i class="location"></i> {{vendor.business.street}}
+                  {{vendor.business.city}}, {{vendor.businees.state}}
                   {{vendor.business.country}}, {{vendor.business.zipcode}} <br />
                 </h1>
               </div>

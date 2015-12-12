@@ -92,6 +92,10 @@ body{
 .main-gallery {
     z-index:999999;
 }
+#profile{padding: 0.8em;}
+#profile img{width: 100%;}
+.top-tabs .nav li a {padding: 10px 28px;}
+.vendor_location .cont{float:none;}
 
 #photos img {
   /* Just in case there are inline attributes */
