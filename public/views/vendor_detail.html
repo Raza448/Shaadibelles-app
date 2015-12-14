@@ -25,9 +25,9 @@
     <carousel interval="5000" no-wrap="noWrapSlides">
       <slide>
         <img style="width: 100%; height: 800px;" src="{{vendor.gallery[0]}}" style="margin:auto;">
-        <div class="carousel-caption col-sm-12 top-banner">
+        <div class="carousel-caption col-sm-12 top-banner vendor-caption-wrapper">
           <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 banner-vendor">
-            <div class="col-md-6 col-lg-6 col-sm-7">
+            <div class="col-md-6 col-lg-6 col-sm-7 vendor-caption">
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <h3 class="text-left">{{vendor.business.name}}</h3>
               </div>
@@ -181,7 +181,7 @@
       <div class=" clearfix"></div>
       <p>&nbsp;</p>
       <a  href="#/main/vendor/{{vendor.id}}/allreviews" class="morebtn hvr-sweep-to-top">LOAD ALL REVIEW</a>
-      <p>&nbsp;</p>
+      <p>&nbsp;</p> 
     </div>
   </div>
   <div class="">
@@ -190,7 +190,7 @@
       </ui-gmap-marker>
       <ui-gmap-window coords="vendormarker.coords" show="windowOptions.show" options="windowOptions" closeClick="closeClick()" style="background-color: #F79F81;">
         <div ng-controller="VendorDetailCtrl">
-          <div  class="col-md-4 col-lg-4 col-sm-4 bottom-grids">
+          <div  class="col-md-4 col-lg-4 col-sm-4 bottom-grids map-window">
             <img src="{{vendor.gallery[0]}}" height="100px" style="width:100%;" />
             <img src="{{vendor.gallery[1]}}" height="100px" style="width:100%;"/> 
           </div>

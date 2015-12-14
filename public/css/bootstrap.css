@@ -199,7 +199,9 @@ th {
 }
 .glyphicon-chevron-left{background: url("/public/images/left_new.png") no-repeat center !important;}
 .glyphicon-chevron-right{background: url("/public/images/right_new.png") no-repeat center !important;}
-
+.top-tabs{
+	float:right;
+}
 @media (max-width: 500px) {
 	.glyphicon-chevron-right, .glyphicon-chevron-left{ background-size: 12px 45px !important; }
 	
@@ -521,6 +523,9 @@ p {
 @media (min-width: 768px) {
   .lead {
     font-size: 21px;
+  }
+  .top-tabs{
+	  float:none;
   }
 }
 small,
@@ -3946,6 +3951,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-bottom: -1px;
 }
+.top-tabs .nav li a {padding: 10px 28px;}
 .nav-tabs > li > a {
   margin-right: 0px;
   line-height: 1.42857143;
@@ -6242,7 +6248,7 @@ button.close {
 }
 a.morebtn {
     margin: 2em auto 0;
-    width: 75% !important;
+    width: 80% !important;
 }
 .banner-vendor{
 	position: absolute;
@@ -6828,6 +6834,7 @@ i.heartin{
 }
 .blogs-top{
 	position:relative;
+	padding: 10px 0;
 }
 .blog-top{
 		position:relative;
@@ -7994,7 +8001,7 @@ i.heartin{
 }
 .nav > li > a {
     display: block;
-    padding: 10px 5px !important;
+    padding: 10px 4px !important;
     position: relative;
 }
 .blogs-top{
@@ -8719,7 +8726,7 @@ bold	font-style: normal;
 }
 .nav > li > a {
     display: block;
-    padding: 10px 5px !important;
+    padding: 10px 18px !important;
     position: relative;
 }
 .blogs-top{
@@ -10358,6 +10365,10 @@ bold	font-style: normal;
 @media (max-width:767px){
 	.desktop_menu{display:none;	}
 	.mobile_menu{display:block;  margin-top: -35px;	}
+	.top-tabs .nav-tabs > li {
+    width: 100%;
+    text-align: center;
+}
 	.navbar{    margin-bottom: 0;}
 	.icon-location-search{    margin-left:-39px !important;}
 	.search-desk{display:none;} 
