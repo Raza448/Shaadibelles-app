@@ -790,7 +790,7 @@ pre code {
 }
 #pagewrap h1 {
     color: #fff;
-    font-family: font_roboto_thin;
+    font-family: goth_light;
     font-size: 2em;
     font-weight: 500;
     line-height: 0.8em;
@@ -1082,6 +1082,7 @@ a.morebtn {
     margin: 1em auto 0;
 	width:auto;
 	white-space:nowrap;
+	font-family: goth_bold;
 	/*
     width: 75% !important;*/
 }
@@ -6313,7 +6314,7 @@ a.morebtn {
 .banner-inner h3{
 	color: #FFF;
 	font-size: 1.5em;	
-	font-family: font_mrservis;
+	font-family: font_eaves_roman;
 	font-weight:bold;
 	text-align:left;
 	margin-top:4%;
@@ -7549,7 +7550,7 @@ bold	font-style: normal;
 .banner-inner h3{
 	color: #FFF;
 	font-size: 3.5em;
-	  font-family: font_mrservis;
+	  font-family: font_eaves_roman;
 	  font-weight:bold;
 	  text-align:left;
 	  float:left;
@@ -7576,7 +7577,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 1.5em;
-	font-family: font_myrate;
+	font-family: font_eaves_roman;
 	font-weight:bold;
 	text-align:left;
 	float:left;
@@ -8646,7 +8647,7 @@ bold	font-style: normal;
 .banner-inner h3{
 	color: #FFF;
 	font-size: 2.5em;
-	  font-family: font_gotham;
+	  font-family: font_eaves_roman;
 	  font-weight:bold;
 	  text-align:left;
 	  float:left;
@@ -8673,7 +8674,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 2.5em;
-	  font-family: font_myrate;
+	   font-family: font_eaves_roman;
 	  font-weight:bold;
 	  text-align:left;
 	  float:left;
@@ -9345,7 +9346,7 @@ bold	font-style: normal;
 .banner-inner h3{
 	color: #FFF;
 	font-size: 3.5em;
-	  font-family: font_mrservis;
+	  font-family: font_eaves_roman;
 	  font-weight:bold;
 	  text-align:left;
 	  margin-top:4%;
@@ -9371,7 +9372,7 @@ bold	font-style: normal;
 .banner-matter h3{
 	color: #FFF;
 	font-size: 3.5em;
-	font-family: font_myrate;
+	 font-family: font_eaves_roman;
 	font-weight:bold;
 	text-align:left;
 	float:left;
@@ -10381,3 +10382,8 @@ bold	font-style: normal;
 @media (max-width: 320px){
 .sign-up-inner button { width: 100%;}
 }
+.banner-inner p{font-family: goth_book; text-transform: capitalize;} 
+.banner-vendor h2, .banner-vendor h3{ font-family: font_eaves_roman;}	 
+.banner-vendor h1, .sign-up-inner .breadcrumb_margin p, .sign-up-inner .form label { font-family: goth_med;}	
+.sign-up-inner input[type="text"], .sign-up-inner input[type="password"], .sign-up-inner input[type="email"]{ font-family: goth_book;} 
+.sign-up-inner input[type="submit"], .btn-fb span{font-family: goth_bold;} 

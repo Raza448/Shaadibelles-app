@@ -1,25 +1,49 @@
 @charset "utf-8";
 /* CSS Document */
- @font-face {
-    font-family: 'font_robo';
-    src: url(../fonts/gotham_book.ttf) format(ttf);
+@font-face {
+font-family: 'font_robo';
+src: url(../fonts/gotham_book.ttf) format(ttf);
 }
- @font-face {
-    font-family: 'font_gotham';
-    src: url(../fonts/gotham_book.ttf) format(ttf);
+@font-face {
+font-family: 'font_gotham';
+src: url(../fonts/gotham/gotham_book.ttf) format(ttf);
 }
- @font-face {
-    font-family: 'font_myrate';
-    src: url(../fonts/MyriadPro.otf) format('otf');
+@font-face {
+font-family: goth_book;
+src: url(../fonts/gotham/gotham-book.ttf);
 }
- @font-face {
+@font-face {
+font-family: goth_light;
+src: url(../fonts/gotham/GOTHAM-LIGHT.ttf);
+}
+@font-face {
+font-family: goth_bold;
+src: url(../fonts/gotham/GOTHAM-BOLD.ttf);
+}
+@font-face {
+font-family: goth_med;
+src: url(../fonts/gotham/GOTHAM-MEDIUM.ttf);
+}
+
+@font-face {
+font-family: 'font_myrate';
+src: url(../fonts/MyriadPro.otf) format('otf');
+}
+
+@font-face {
     font-family: 'font_mrservis';
-    src: url(../fonts/MrsEaves.ttf) format('ttf');
+    src: url(../fonts/MrsEaves/MrsEaves.ttf) format('ttf');
 }
+@font-face {
+    font-family: font_eaves_roman;
+    src: url(../fonts/MrsEaves/Mrs-Eaves-OT-Roman.otf);
+}
+
 @font-face {
     font-family: font_roboto_thin;
     src: url(../fonts/Roboto-Thin.ttf);
 }
+
 
 /* #Reset & Basics
 ================================================== */
@@ -42,6 +66,8 @@ input[type="button"]{
 }
 .footer
 {
+	text-transform: uppercase; 
+	font-family: goth_bold;
 	background:#e2cac1;
 	text-align:center;
 	color:#FFF;
@@ -163,6 +189,7 @@ background:#fff;
 	color:#939598; 
 	text-transform:uppercase; 
 	font-size:12px;
+	font-family:goth_med
 }
 .wedding-stories{
 	width: 100% !important;
@@ -368,6 +395,7 @@ ul.round-top {
 	padding: 45px 0;
 }
 .help-form h2{
+	font-family: goth_book;
 	letter-spacing: 3px;
 	color:#f7987b;
 }
@@ -581,7 +609,7 @@ span.contact {
 	padding:10px;
 }
 .top-grid h1{
-	font-family:font_myrate;
+	font-family: goth_book;
 	color:#939598;
 	font-size:1.0em;
 	padding:0.8em;
@@ -590,14 +618,14 @@ span.contact {
 
 }
 .top-grid h1 a{
-
+	
 	color:#939598;
 }
 .text-left{
 	text-align:left !important;
 }
 .top-grid h2{
-	font-family:font_myrate;
+	font-family: font_eaves_roman;
 	color:#939598;
 	font-size:2.0em;
 	/* padding:0.8em; */
@@ -606,7 +634,7 @@ span.contact {
 	text-transform:uppercase;
 }
 .top-grid h3{
-	font-family:font_myrate;
+	font-family: font_eaves_roman;
 	color:#939598;
 	font-size:1.5em;
 	padding:0.8em;
@@ -615,7 +643,7 @@ span.contact {
 	text-align:left;
 }
 .top-grid h4{
-	font-family:font_myrate;
+	font-family: goth_med;
 	color:#939598;
 	font-size:1.0em;
 	padding:0.8em;
@@ -624,7 +652,7 @@ span.contact {
 	text-transform:uppercase;
 }
 .top-grid h5{
-	font-family:font_myrate;
+	font-family: font_eaves_roman;
 	color:#939598;
 	font-size:3.0em;
 	padding:0.8em;
@@ -633,7 +661,7 @@ span.contact {
 	text-align:center;
 }
 .top-grid h6{
-	font-family:font_myrate;
+	font-family: font_eaves_roman;
 	color:#939598;
 	font-size:1.5em;
 	padding:0.8em;
@@ -643,7 +671,7 @@ span.contact {
 
 }
 .top-grid h7{
-	font-family:font_myrate;
+	font-family: goth_bold;
 	color:#d39465;
 	font-size:0.8em;
 	padding:0.8em;
@@ -653,7 +681,7 @@ span.contact {
 
 }
 .top-grid p{
-	font-family:font_myrate;
+	font-family: goth_book;
 	color:#939598;
 	font-size:1em;
 	padding:0.8em;
@@ -896,7 +924,7 @@ background-color:#fff; text-align:center;
     width: 94%;
 }
 #img_h .text p{
-	font-family:font_robo;
+	font-family: font_eaves_roman;
 	color:#FFF;
 	font-size:1.3em;
 	padding:0.2em;
@@ -1004,7 +1032,7 @@ visibility:visible;
 }
 .thumb h1{
     color: #939598;
-    font-family: font_myrate;
+    font-family: font_eaves_roman;
     font-size: 1.4em;
     padding: 0.2em;
 }
@@ -1037,7 +1065,7 @@ visibility:visible;
 }
 .thumb p{
     color: #f4785a;
-    font-family: font_myrate;
+    font-family: goth_book;
     font-size: 1.0em;
     padding: 0em;
 }
@@ -1242,14 +1270,14 @@ i.glyphicon.glyphicon.video{
 }
 .filter {
     color: #939598;
-    font-family: font_myrate;
+    font-family: goth_med;
     padding: 7px 10px;
     width: 95%;
 	font-size:10px;
 	text-transform:uppercase;
 	margin-bottom:5px;
 	margin-top:5px;
-	 -webkit-appearance: none; 
+	/*  -webkit-appearance: none;  */
 }
 .filter-txt
 {
@@ -1264,8 +1292,8 @@ i.glyphicon.glyphicon.video{
 	margin-top:3%;margin-bottom:3%;
 }
 .mainselection {color:#939598; 
-font-family:font_myrate; padding:5px 10px; width:100%;
-*width:350px; *background:#58B14C; -webkit-appearance: none; }
+font-family: goth_med; padding:5px 10px; width:100%;
+*width:350px; *background:#58B14C; /* -webkit-appearance: none; */ }
 
 #mainselection { overflow:hidden; width:256px;
 background: url("../images/down.png") no-repeat scroll 236px 12px #FFF; 
@@ -2086,6 +2114,7 @@ i.star {
 	font-weight:500;
 	  line-height: 1.8em;
 	  padding:0.5em 0 0.5em 0em;
+	font-family:goth_bold;
 }
 .checkout-section{
 	background:#f4f4f4;
@@ -2141,7 +2170,8 @@ i.star {
 .content-bottom p{
 	color:#fff;
 	font-size: 1.0em;
-	  font-family: font_roboto_thin;
+	  font-family:goth_light; 
+	  text-shadow:2px 2px 8px #252525;
 	  width:100%;
 	  margin:0 auto;
 	  padding: 1em 0 0.5em;
@@ -4938,6 +4968,7 @@ i.heartf {
 	font-weight: normal;
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	font-family:font_robo;
 }
 .da-thumbs li a div span {
 	display: block;
@@ -5003,7 +5034,7 @@ label.star:before {
 .resIframe iframe { width: 100%;}
 .thumbnail_video img{width:100%;}
 .thumb-vendor-page{  margin: 20px;  color: #ccc; text-transform: uppercase;}
-.thumb-vendor-page h4{ font-size: 12px; font-weight: 700; letter-spacing: 0.1em;}
+.thumb-vendor-page h4{ font-size: 12px; font-family: goth_med; font-weight:500 letter-spacing: 0.1em;}
 
 
 .recnt-post{ padding: 26px 27px 0px;}
@@ -5029,7 +5060,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .page-header-shift h1{ border-bottom: 1px dotted #666666; padding: 0 0 15px 0; font-size: 18px; }
 .page-header-shift h5{ padding: 10px 0 0 0; color: #252525; font-size: 23px; font-weight: bold; font-family: sans-serif;}
 .banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold}
-.content-bottom p.footer-col-1{font-family:font_roboto_thin;  font-size: 1.6em; padding: 8px 25px 0 25px; letter-spacing: 0.5px;}
+.content-bottom p.footer-col-1{font-family:goth_light;text-shadow:2px 2px 8px #252525; font-size: 1.6em; padding: 8px 25px 0 25px; letter-spacing: 0.5px;}
 
 .footer-col-2, .footer-col-3{  padding: 0 15px 0 15px;}
 .footer-col-3{    margin-bottom: 25px;}
@@ -5125,3 +5156,6 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 
 }
 
+.overlay .overlay-inner h3{font-family:font_eaves_roman;}  
+.overlay .overlay-inner p{font-family:goth_book;}   
+.overlay .overlay-inner input[type="submit"]{font-family:goth_bold; font-weight: 100;  font-size: 10px;}  
