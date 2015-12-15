@@ -3,14 +3,50 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
- @font-face {
-    font-family: font_robo;
-    src: url(../fonts/gotham_book.ttf);
+@font-face {
+font-family: 'font_robo';
+src: url(../fonts/gotham_book.ttf);
 }
- @font-face {
-    font-family: font_gotham;
-    src: url(../fonts/gotham_book.ttf);
+@font-face {
+font-family: 'font_gotham';
+src: url(../fonts/gotham/gotham_book.ttf) format(ttf);
 }
+@font-face {
+font-family: goth_book;
+src: url(../fonts/gotham/gotham-book.ttf);
+}
+@font-face {
+font-family: goth_light;
+src: url(../fonts/gotham/GOTHAM-LIGHT.ttf);
+}
+@font-face {
+font-family: goth_bold;
+src: url(../fonts/gotham/GOTHAM-BOLD.ttf);
+} 
+@font-face {
+font-family: goth_med;
+src: url(../fonts/gotham/GOTHAM-MEDIUM.ttf);
+}
+
+@font-face {
+font-family: 'font_myrate';
+src: url(../fonts/MyriadPro.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'font_mrservis';
+    src: url(../fonts/MrsEaves/MrsEaves.ttf) format('ttf');
+}
+@font-face {
+    font-family: font_eaves_roman;
+    src: url(../fonts/MrsEaves/Mrs-Eaves-OT-Roman.otf);
+}
+
+@font-face {
+    font-family: font_roboto_thin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+
 body {
   margin: 0;
 }
@@ -130,6 +166,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+      font-family: goth_bold;
 }
 button[disabled],
 html input[disabled] {
@@ -3489,7 +3526,8 @@ input[type="button"].btn-block {
   }
 .dropdown-menu > li > a {
   display: block;
-  padding: 7px 20px;
+  padding: 7px 21px;
+  font-family: goth_book;
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
@@ -8262,7 +8300,7 @@ i.heartin{
 }
 #nav .menu > li.folder > a {
 	padding: 11px 5px 15px 5px;
-	font-family: serif;
+	font-family: font_eaves_roman;
 	text-transform: lowercase;
 	font-size:16px;
 }
@@ -8964,7 +9002,7 @@ bold	font-style: normal;
 }
 #nav .menu > li.folder > a {
 	padding: 11px 15px 15px 15px;
-	font-family: serif;
+	font-family: font_eaves_roman;
 	text-transform: lowercase;
 }
 		/* menu items hover */
@@ -9374,8 +9412,8 @@ bold	font-style: normal;
 }
 .banner-matter h3{
 	color: #FFF;
-	font-size: 3.5em;
-	 font-family: font_eaves_roman;
+	font-size: 4em;
+	font-family: font_eaves_roman;
 	text-align:left;
 	float:left;
 	margin-top:8%;
@@ -10021,8 +10059,9 @@ i.heartin{
 }
 #nav .menu > li.folder > a {
 	padding: 11px 15px 15px 15px;
-	font-family: serif;
+	font-family: font_eaves_roman;
 	text-transform: lowercase;
+	font-size: 21px;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -10389,3 +10428,4 @@ bold	font-style: normal;
 .banner-vendor h1, .sign-up-inner .breadcrumb_margin p, .sign-up-inner .form label { font-family: goth_med;}	
 .sign-up-inner input[type="text"], .sign-up-inner input[type="password"], .sign-up-inner input[type="email"]{ font-family: goth_book;} 
 .sign-up-inner input[type="submit"], .btn-fb span{font-family: goth_bold;} 
+.sign-up-inner h5{font-family: goth_book;}

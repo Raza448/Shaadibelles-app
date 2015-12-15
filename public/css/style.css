@@ -2,7 +2,7 @@
 /* CSS Document */
 @font-face {
 font-family: 'font_robo';
-src: url(../fonts/gotham_book.ttf) format(ttf);
+src: url(../fonts/gotham_book.ttf);
 }
 @font-face {
 font-family: 'font_gotham';
@@ -88,7 +88,7 @@ ul{
 body{
 	padding:0 0;
 	margin:0 0; 
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: goth_book;
 }
 .textalign_right
 {
@@ -114,9 +114,7 @@ body{
 .masonry-brick.loaded {
     display: block;
 }
-.gallery-wrapper {
-    height: 423px !important;
-}
+
 .main-gallery {
     z-index:999999;
 }
@@ -431,14 +429,9 @@ ul.round-top {
 }
 .search-results h1,.search-results h2,.search-results h3,.search-results h4,.search-results h5,.search-results h6,.search-results p,.search-results label,.search-results span{
 	line-height: 2em;
-	font-family: font_myrate;
+	font-family: goth_book;
 }
-.search-results article{
-	line-height: 2em;
-	font-family: font_myrate;
-	font-size: 12px;
-	color: #f7987b;
-}
+.search-results article{line-height: 2em; font-family: goth_bold; font-size: 10px; color: #f7987b; text-transform: uppercase;}
 
 .search-results h5{
 	font-size: 15px;
@@ -476,6 +469,7 @@ ul.round-top {
 }
 .login-form input[type="text"],.login-form input[type="password"]{
 	padding: 10px;
+	font-family: goth_bold;
 	width: 100%;
 	color: #ccc;
 	margin: 10px 0;
@@ -488,7 +482,7 @@ ul.round-top {
 	background-color:#f1ab90;
 	color: white;
 	margin: 30px 0;
-	font-weight: bold;
+	font-family: goth_bold;
 	border: 0;
 }
 .login-form a{
@@ -508,7 +502,7 @@ ul.round-top {
 	background-color:#0f75bd;
 	color: white;
 	margin: 30px 0;
-	font-weight: bold;
+	font-family: goth_bold;
 	border: 0;
 	font-size: 12px;
 	letter-spacing:1px;
@@ -2663,7 +2657,7 @@ background: #2f4052;
 color: #FFF;
 margin-left: 10px;
 text-transform: uppercase;
-font-weight: bold;
+font-family: goth_bold;
 }
 .footer-left p a:hover{
 	color:#acb3ba;
@@ -2674,7 +2668,7 @@ color: #FFF;
 text-decoration: none;
 margin: 0 0.5em;
 text-transform: lowercase;
-font-family: serif;
+font-family: font_eaves_roman;
 letter-spacing: 1px;
 }
 .bottom-menu ul li a:hover{
@@ -5042,7 +5036,7 @@ label.star:before {
 .recnt-post{ padding: 26px 27px 0px;}
 .bog-col-cir-1 h2, .bog-col-cir-2 h2, .bog-col-cir-3 h2{    text-transform: capitalize !important;}
 .icon-location{color: #ccc;  margin-left: -30px; font-size: 18px;}
-.search input[type="text"]{background: #fff; font-size: 15px; text-align: center;  padding: 6px;}
+.search input[type="text"]{background: #fff; font-size: 15px; text-align: center;  padding: 6px; font-family: goth_book;}
 
 .vendor-detail-bg-img{width: 100% !important; height: 800px !important;}
 .vendor-detail-cont-btn{margin-bottom:30px;text-align: left;}
@@ -5061,7 +5055,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .page-header-shift{    margin-left: 30px; width: 91%;}
 .page-header-shift h1{ border-bottom: 1px dotted #666666; padding: 0 0 15px 0; font-size: 18px; }
 .page-header-shift h5{ padding: 10px 0 0 0; color: #252525; font-size: 23px; font-weight: bold; font-family: sans-serif;}
-.banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold;letter-spacing:4px;font-size: 1em;margin-left: 30px;}
+.banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold; letter-spacing: 4px; margin-left: 30px;}
 .content-bottom p.footer-col-1{font-family:goth_light;text-shadow:2px 2px 8px #252525; font-size: 1.6em; padding: 8px 25px 0 25px; letter-spacing: 0.5px;}
 
 .footer-col-2, .footer-col-3{  padding: 0 15px 0 15px;}
@@ -5162,3 +5156,11 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .overlay .overlay-inner h3{font-family:font_eaves_roman;}  
 .overlay .overlay-inner p{font-family:goth_book;}   
 .overlay .overlay-inner input[type="submit"]{font-family:goth_bold; font-weight: 100;  font-size: 10px;}  
+#form-content .login-form h4{ font-family: font_eaves_roman; font-size: 1.5em; letter-spacing: 2px}  
+#form-content .login-form h3{ font-family: goth_book; font-size: 1.5em; letter-spacing: 2px}  				 
+#form-content .login-form h1{ font-family: font_eaves_roman; text-transform: none; font-size: 2.6em; margin: 4px 0 10px 0;} 
+#form-content .login-form .border-right a{ font-family: goth_med; font-size: 10px; letter-spacing: 1px;} 
+#form-content .login-form a span{ font-family: goth_bold; letter-spacing: 1px; font-size: 0.6em;}
+.top-grid-top .form-grid p{ color: #5c5a58; font-family: goth_book;}
+.top-grid-top .form-grid h1{ color: #5c5a58; font-family: font_eaves_roman;  text-transform: capitalize; font-size: 4em;}
+.header .header-top .hidden-xs{  font-family: goth_med; font-size: 13px;}
