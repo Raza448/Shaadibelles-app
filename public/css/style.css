@@ -114,7 +114,9 @@ body{
 .masonry-brick.loaded {
     display: block;
 }
-
+.gallery-wrapper {
+    height: 423px !important;
+}
 .main-gallery {
     z-index:999999;
 }
@@ -5059,7 +5061,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .page-header-shift{    margin-left: 30px; width: 91%;}
 .page-header-shift h1{ border-bottom: 1px dotted #666666; padding: 0 0 15px 0; font-size: 18px; }
 .page-header-shift h5{ padding: 10px 0 0 0; color: #252525; font-size: 23px; font-weight: bold; font-family: sans-serif;}
-.banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold}
+.banner-matter p.banner-base-text{text-transform: uppercase; font-weight:bold;letter-spacing:4px;font-size: 1em;margin-left: 30px;}
 .content-bottom p.footer-col-1{font-family:goth_light;text-shadow:2px 2px 8px #252525; font-size: 1.6em; padding: 8px 25px 0 25px; letter-spacing: 0.5px;}
 
 .footer-col-2, .footer-col-3{  padding: 0 15px 0 15px;}
