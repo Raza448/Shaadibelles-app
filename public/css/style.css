@@ -121,7 +121,10 @@ body{
 #profile{padding: 0.8em;}
 #profile img{width: 100%;}
 
-.vendor_location .cont{float:none;}
+.vendor_location .cont{float:none;position: relative;top: -2px;}
+.vendor_location .location {position: relative;top: 6px;right: 4px;}
+.window_location{font-size: 14px !important; color: #ffffff !important;font-family:goth_book !important;}
+.window_mobile{font-size: 14px !important; color: #ffffff !important;margin-left: 14px !important;font-family:goth_book !important;}
 
 #photos img {
   /* Just in case there are inline attributes */
@@ -469,7 +472,7 @@ ul.round-top {
 }
 .login-form input[type="text"],.login-form input[type="password"]{
 	padding: 10px;
-	font-family: goth_bold;
+	/* font-family: goth_bold; */
 	width: 100%;
 	color: #ccc;
 	margin: 10px 0;
@@ -771,7 +774,7 @@ ul.social-icon li span,ul.social-icon li a{
 	display: block;
 	text-align:left;
 		color:#989898;
-	font-family:font_myrate;
+	font-family:goth_book;
 	font-size:12px;
 }
 ul.social-icon li a:hover{
@@ -854,7 +857,7 @@ background-color:#fff; text-align:center;
 	text-align:left;
 }
 .blobgrid p{
-	font-family:font_myrate;
+	font-family:goth_book;
 	color:#939598;
 	font-size:1.0em;
 	padding:0.8em;
@@ -873,27 +876,27 @@ background-color:#fff; text-align:center;
     font-size: 18px;
 }
 .blobgrid h4{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
-	font-size:2em;
+	font-size:1.5em;
 	padding:0.8em;
 	background:#fff;
 	padding-bottom:0px;
 }
 .blobgrid h5{
-	font-family: font_myrate;
+	font-family: goth_med;
     color: #ccc;
     font-size: 13px;
     padding: 0.8em;
     background: #fff;
     margin: 0 auto;
     line-height: 2em;
-    font-weight: 600 !important;
+    /* font-weight: 600 !important; */
     font-weight: normal;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
 }
 .blobgrid h6{
-	font-family:font_myrate;
+	font-family:goth_book;
 	color:#d39465;
 	font-size:0.8em;
 	padding:0.8em;
@@ -5045,7 +5048,7 @@ label.star:before {
 .vendor-mid-head{text-align: center; margin-top: 20px;letter-spacing: 2px !important; color:#ccc !important;}
 .vendor-map{ min-height: 500px; background: none; line-height:0}
 .vendor-cont-form{padding: 37px 0;}
-.vendor-cont-form  h2.vendor-need{text-align: center; color:#ccc; font-size: 16px; letter-spacing: 2px;}
+.vendor-cont-form  h2.vendor-need{text-align: center; color:#ccc; font-size: 13px; letter-spacing: 2px;font-family: goth_med;}
 .banner-vendor{text-align: center; right: 50%; bottom: 50%; transform: translate(50%,-134%);}
 .top-banner .banner-vendor{position:relative;}
 .common-signup {position: absolute;top: 32%;text-align: center;right: 0;bottom: 0;transform: initial;}
@@ -5152,7 +5155,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .cont-footer-dark{ width: 66%; margin-left: 16%; margin-top: 11%;}
 
 }
-
+.htmlCont .btn{padding:6px 12px;}
 .overlay .overlay-inner h3{font-family:font_eaves_roman;}  
 .overlay .overlay-inner p{font-family:goth_book;}   
 .overlay .overlay-inner input[type="submit"]{font-family:goth_bold; font-weight: 100;  font-size: 10px;}  

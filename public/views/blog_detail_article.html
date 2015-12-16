@@ -45,7 +45,7 @@
           <h2>{{post.created}}</h2>
           <h2><strong>{{currentEvent.name}}</strong></h2>
         </div>
-        <div class="col-md-5 col-lg-5 col-sm-6 blogs-top">
+        <div class="col-md-5 col-lg-5 col-sm-6 blogs-top post">
           <div class="bs-example bs-example-tabs top-tabs">
             <ul id="myTab" class="nav nav-tabs" ng-show="post.events">
               <li class="{{currentEvent === item? 'active' : ' '}}" ng-repeat="item in post.events" ><a href="" ng-click="changeEvent(item)" >{{item.name}}</a></li>
@@ -63,7 +63,7 @@
         <div ng-show="post.content != null" ng-bind-html="post.content">
         {{post.content}}
         </div>
-       <div ng-bind-html="currentEvent.content">
+       <div ng-bind-html="currentEvent.content" class="post_content">
 
         </div>
       </div>

@@ -12,8 +12,9 @@
   .info-window {
   background-color: #FA8258;
   width: 500px;
-  height: 200px;
+  height: 220px;
   color: #ffffff;
+  box-shadow: 9px 9px 8px rgba(167, 164, 164, 0.83);
   }
   .hover-active:hover{
    color: #FA8258;  
@@ -211,13 +212,13 @@
       <ui-gmap-window coords="vendormarker.coords" show="windowOptions.show" options="windowOptions" closeClick="closeClick()" style="background-color: #F79F81;">
         <div ng-controller="VendorDetailCtrl">
           <div  class="col-md-4 col-lg-4 col-sm-4 bottom-grids map-window">
-            <img src="{{vendor.gallery[0]}}" height="100px" style="width:100%;" />
-            <img src="{{vendor.gallery[1]}}" height="100px" style="width:100%;"/> 
+            <img src="{{vendor.gallery[0]}}" height="110px" style="width:100%;" />
+            <img src="{{vendor.gallery[1]}}" height="110px" style="width:100%;"/> 
           </div>
-          <div class="col-md-6 col-lg-6 col-sm-6 thumb vendor_thumb" style="padding: 18px 0 0;">
+          <div class="col-md-8 col-lg-8 col-sm-8 thumb vendor_thumb">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <a href="#/main/vendordetail/{{vendor.id}}" >
-                <h1 style="font-size: 20px; color: #ffffff;" >{{vendor.business.name}}</h1>
+                <h1 style="font-size: 2.5em; color: #ffffff;" >{{vendor.business.name}}</h1>
               </a>
               <div class="stars">
                 <form action="">
@@ -236,14 +237,14 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 vendor_location">
               <!--<div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-mobile fa-3x"></i></div>-->
-              <div class="col-lg-10 col-md-10 col-sm-10">
-                <h1 style="font-size: 20px; color: #ffffff;"><i class="cont"> </i> {{vendor.business.phone}}</h1>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1 class="window_location"><i class="cont"> </i> {{vendor.business.phone}}</h1>
               </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 vendor_location">
               <!--<div class="col-lg-1 col-md-1 col-sm-1"><i class="fa fa-map-marker fa-3x"></i></div>-->
-              <div class="col-lg-10 col-md-10 col-sm-10">
-                <h1 style="font-size: 20px; color: #ffffff;margin-left: 14px;"><i class="location"></i> {{vendor.business.street}}
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1 class="window_mobile" style=""><i class="location"></i> {{vendor.business.street}}
                   {{vendor.business.city}}, {{vendor.businees.state}}
                   {{vendor.business.country}}, {{vendor.business.zipcode}} <br />
                 </h1>
