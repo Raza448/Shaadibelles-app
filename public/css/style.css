@@ -14,15 +14,15 @@ src: url(../fonts/gotham/gotham-book.ttf);
 }
 @font-face {
 font-family: goth_light;
-src: url(../fonts/gotham/GOTHAM-LIGHT.ttf);
+src: url(../fonts/gotham/GOTHAM-LIGHT.TTF);
 }
 @font-face {
 font-family: goth_bold;
-src: url(../fonts/gotham/GOTHAM-BOLD.ttf);
+src: url(../fonts/gotham/GOTHAM-BOLD.TTF);
 } 
 @font-face {
 font-family: goth_med;
-src: url(../fonts/gotham/GOTHAM-MEDIUM.ttf);
+src: url(../fonts/gotham/GOTHAM-MEDIUM.TTF);
 }
 
 @font-face {
