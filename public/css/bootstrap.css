@@ -239,6 +239,7 @@ th {
 .top-tabs{
 	float:right;
 }
+.logo-section{right: 0;bottom: 0;transform: translate(5%,20%)}
 .bottom-grids .nav-tabs > li> a{padding: 10px 23px;
     font-family: goth_med;}
 @media (max-width: 500px) {
@@ -2040,6 +2041,15 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.danger:hover > th {
   background-color: #ebcccc;
 }
+.signup1-form-grid input[type="submit"], .signup1-form-grid a {
+    background-color: #f7987b;
+    border: 0 none;
+    color: white;
+    font-weight: 500;
+    padding: 12px 10px !important;
+    width: 30%;
+    margin: 30px 0 0;
+}
 @media (max-width: 767px) {
   .table-responsive {
     width: 100%;
@@ -2050,6 +2060,7 @@ table th[class*="col-"] {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #ddd;
   }
+  .logo-section{right: 0;bottom: 0;transform: initial;}
   .table-responsive > .table {
     margin-bottom: 0;
   }
@@ -6899,7 +6910,7 @@ i.heartin{
 	padding:2px;
 }
 .blog-top h3{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
 	font-size:3em;
 	padding:0.1em;
@@ -8075,7 +8086,7 @@ i.heartin{
 	padding:2px;
 }
 .blog-top h3{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
 	font-size:3.3em;
 	padding:0.1em;
@@ -8807,7 +8818,7 @@ bold	font-style: normal;
 	padding:2px;
 }
 .blog-top h3{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
 	font-size:4.3em;
 	padding:0.1em;
@@ -9858,7 +9869,7 @@ i.heartin{
 	padding:2px;
 }
 .blog-top h3{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
 	font-size:4.3em;
 	padding:0.1em;

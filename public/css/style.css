@@ -131,6 +131,32 @@ body{
   width: 100% !important;
   height: auto !important;
 }
+#vendorsaved h1 {
+    font-family: goth_light;
+    color: #ccc;
+    border-bottom: 1px solid #CAC8C8;
+    padding: 0 0 10px;
+    margin-bottom: 20px;
+}
+#vendorsaved h3 {
+    font-family: goth_light;
+    line-height: 1.3;
+    color: #f7987b;
+}
+#vendorsaved h4 {
+    font-family: goth_book;
+    color: #ccc;
+    font-size: 22px;
+}
+.premium {
+    border: 1px solid #f4795a;
+    color: white;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
 
 .top-grid-img{ float: none; margin: 0 auto; padding-top: 25px;}
 
