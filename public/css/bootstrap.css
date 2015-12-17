@@ -6905,7 +6905,7 @@ i.heartin{
 	background:#fff;
 }
 .blog-top h1{
-	font-family:font_myrate;
+	font-family:goth_med;
 	color:#939598;
 	font-size:0.9em;
 	padding:0.2em;
@@ -8052,6 +8052,7 @@ i.heartin{
     padding: 10px 1px !important;
     position: relative;
 }
+.bottom-grids .nav-tabs > li{float:none;}
 .blogs-top{
 	position:relative;
 }
@@ -8079,7 +8080,7 @@ i.heartin{
 	background:#fff;
 }
 .blog-top h1{
-	font-family:font_myrate;
+	font-family:goth_med;
 	color:#939598;
 	font-size:0.9em;
 	padding:0.2em;
@@ -8628,7 +8629,7 @@ bold	font-style: normal;
   .hidden-md {
     display: none !important;
   }
-  .bottom-grids .nav-tabs > li> a{padding: 10px 13px !important;}
+  .bottom-grids .nav-tabs > li> a{padding: 10px 10px !important;}
   .banner_div{
 	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding-left: 3%;
 }
@@ -8774,6 +8775,11 @@ bold	font-style: normal;
 .nav {
     font-size: 12px;
 }
+.post .nav > li > a {
+    display: block;
+    padding: 10px 13px !important;
+    position: relative;
+}
 .nav > li > a {
     display: block;
     padding: 10px 15px !important;
@@ -8806,7 +8812,7 @@ bold	font-style: normal;
 	background:#fff;
 }
 .blog-top h1{
-	font-family:font_myrate;
+	font-family:goth_med;
 	color:#939598;
 	font-size:0.9em;
 	padding:0.2em;

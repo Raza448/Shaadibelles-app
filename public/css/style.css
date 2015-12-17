@@ -470,7 +470,7 @@ ul.round-top {
 	font-size: 2em;
 	margin: 20px 0;
 }
-.login-form input[type="text"],.login-form input[type="password"]{
+.login-form input[type="text"], .login-form  input[type="email"], .login-form input[type="password"]{
 	padding: 10px;
 	/* font-family: goth_bold; */
 	width: 100%;
@@ -2310,7 +2310,7 @@ div#portfoliolist {
   display: block;
   background:rgba(0, 0, 0, 0.83) none repeat scroll 0 0; width:100%;
   color:#FFF; text-align:left;
-  font-family:font_gotham;
+  font-family:goth_book;
   }
 
 .image-div .hidden_img {
@@ -5078,6 +5078,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 	.vendor-detail-cont-btn{text-align:center;}
 	.vendor-caption h3{float:none;text-align:center !important;}
 	.bottom-grids .nav-tabs > li{width:50%;}
+	.bottom-grids .nav-tabs > li> a {padding: 10px 9px;}
 }
 /********new css************/
 @media (min-width: 768px) {
