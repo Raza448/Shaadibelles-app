@@ -6619,11 +6619,12 @@ i.heartin{
 	word-spacing: 4px;
 }
 .wedding-submission  input[type="button"]{
-	background-color: #98999b;
+	border: 1px solid #f4795a;
     color: white;
-    padding: 20px 5px;
-    width: 100%;
-	border: 0;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
 }
 .wedding-submission  input[type="submit"]{
 	border: 1px solid #f4795a;
@@ -7851,11 +7852,12 @@ i.heartin{
 	word-spacing: 4px;
 }
 .wedding-submission  input[type="button"]{
-	background-color: #98999b;
+	border: 1px solid #f4795a;
     color: white;
-    padding: 20px 5px;
-    width: 100%;
-	border: 0;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
 }
 .wedding-submission  input[type="submit"]{
 	border: 1px solid #f4795a;
@@ -9659,11 +9661,12 @@ i.heartin{
 	word-spacing: 4px;
 }
 .wedding-submission  input[type="button"]{
-	background-color: #98999b;
+	border: 1px solid #f4795a;
     color: white;
-    padding: 20px 5px;
-    width: 100%;
-	border: 0;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
 }
 .wedding-submission  input[type="submit"]{
 	border: 1px solid #f4795a;
