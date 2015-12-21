@@ -25,7 +25,8 @@
                 </div>
                 <div class="form-group">
                   <label for="Message">Post Description</label>
-                  <textarea class="form-control" ng-model="post.description"></textarea>
+				  <div text-angular ng-model="post.description" ta-file-drop="upload"></div>
+                  <!--<textarea class="form-control" ng-model="post.description"></textarea>-->
                 </div>
                 <div class="form-group">
                   <label for="Message">Events</label>
