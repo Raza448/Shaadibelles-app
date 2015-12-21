@@ -165,8 +165,9 @@
   widows : 0;
   width : auto;
   word-spacing : normal;
-  z-index : auto;
+  z-index : auto;  
   }
+  .vndr-ac img{width:100%}
 </style>
 <div class="content">
   <!---->
@@ -378,7 +379,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <div ng-repeat="img in vendor.gallery track by $index" class="col-lg-3" style="margin-right: 4px;">
+                  <div ng-repeat="img in vendor.gallery track by $index" class="col-lg-3 vndr-ac">
                     <img class="" src="{{img}}" height="80px"> 
                   </div>
                 </div>
