@@ -1326,7 +1326,7 @@ background: url("../images/down.png") no-repeat scroll 236px 12px #FFF;
 .hdr
 {
 	margin-left:10px;
-	margin-bottom:10px;
+	/* margin-bottom:10px; */
 	padding-top:10px;
 	margin-top:14px;
 	border-top:1px solid #989898;
@@ -2344,8 +2344,7 @@ div#portfoliolist {
     bottom:0;
     left:0;
     display:none;
-	padding:5px;
-	padding-right:10px;
+	padding:10px;
 }
 ul.social-ic{
 	margin: 0 ;
@@ -5133,6 +5132,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 @media (max-width: 768px) {
 .topRgtCol{ width: 100%;}
 .sign-up-inner .bride-sign-col-3, .sign-up-inner .bride-sign-col-4{ width: 100%;}
+.border-right{border-right:0}
 }
 @media (min-width: 770px) and (max-width: 1024px) {
 .passion{margin: -62px 0 0 30px;}
@@ -5183,6 +5183,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .vndr_inp {width:80% !important;}
 
 }
+
 .htmlCont .btn{padding:6px 12px;}
 .overlay .overlay-inner h3{font-family:font_eaves_roman;}  
 .overlay .overlay-inner p{font-family:goth_book;}   
@@ -5195,3 +5196,8 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .top-grid-top .form-grid p{ color: #5c5a58; font-family: goth_book;}
 .top-grid-top .form-grid h1{ color: #5c5a58; font-family: font_eaves_roman;  text-transform: capitalize; font-size: 4em;}
 .header .header-top .hidden-xs{  font-family: goth_med; font-size: 13px;}
+
+@media (max-width: 1048px) {
+.header .header-top .hidden-xs{ font-size: 12px; margin-top: 3px;}
+}
+@media (max-width: 700px) { .vndr-catg-img{display:none;}}

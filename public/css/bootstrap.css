@@ -3531,7 +3531,7 @@ input[type="button"].btn-block {
   left: 0;
   margin: 0 0 0 -18px; 
   border-radius: 10px 10px 0 0;
-  font-size: 12px;
+  font-size: 13px;
   }
   .dropdown:hover .dropdown-menu {
   display: block;
@@ -8323,7 +8323,7 @@ i.heartin{
 	padding: 11px 5px 15px 5px;
 	font-family: font_eaves_roman;
 	text-transform: lowercase;
-	font-size:16px;
+	font-size:18px;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -8341,6 +8341,11 @@ i.heartin{
 	background-image:url(../images/menubg.png);
 	border-radius:10px 10px 0px 0px;
 }
+
+/*Menu SubMenu*/
+.dropdown .dropdown-menu{font-size: 12px;}
+.dropdown-menu > li > a{ padding: 7px 10px;}
+
 
 		/* current menu item */
 #nav .menu > li.current-menu-ancestor > a, #nav .menu > li.current-menu-item > a {
@@ -9031,6 +9036,7 @@ bold	font-style: normal;
 	padding: 11px 15px 15px 15px;
 	font-family: font_eaves_roman;
 	text-transform: lowercase;
+	font-size: 20px;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {
@@ -9048,6 +9054,10 @@ bold	font-style: normal;
 	background-image:url(../images/menubg.png);
 	border-radius:10px 10px 0px 0px;
 }
+
+/*sub Menu*/
+.dropdown .dropdown-menu{ font-size:12px}
+.dropdown-menu > li > a{ padding: 7px 18px;}
 
 		/* current menu item */
 #nav .menu > li.current-menu-ancestor > a, #nav .menu > li.current-menu-item > a {
@@ -10090,7 +10100,7 @@ i.heartin{
 	padding: 11px 15px 15px 15px;
 	font-family: font_eaves_roman;
 	text-transform: lowercase;
-	font-size: 21px;
+	font-size: 22px;
 }
 		/* menu items hover */
 #nav .menu > li:hover > a, #nav .menu > li.open > a {

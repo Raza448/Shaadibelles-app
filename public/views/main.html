@@ -13,7 +13,7 @@
 </div>
   <div class="header-top" ng-hide="">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="col-lg-4 col-md-4 col-sm-5">
+      <div class="col-lg-3 col-md-4 col-sm-5">
         <div class="social-icons">
           <a href="{{socialLinks.youtube}}"><i class="icon1"></i></a>
           <a href="{{socialLinks.twitter}}"><i class="icon2"></i></a>
@@ -21,7 +21,7 @@
           <a href="{{socialLinks.facebook}}"><i class="icon4"></i></a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the perfect team to make your dreams come true</div>
+      <div class="col-lg-5 col-md-4 col-sm-7 hidden-sm hidden-xs">Find the perfect team to make your dreams come true</div>
       <div class="col-lg-4 col-md-4 col-sm-7 topRgtCol">
         <div class="icon">
           <ul>
@@ -290,40 +290,8 @@
         <!-- #headers_margin --><!-- #body_wrapper_margin --><!-- #footer_wrapper_margin -->
       </div>
       <div class="clearfix"></div>
-      <div class="hdr" ng-show="showSelect">
-        <div class="col-lg-3 col-md-3 col-sm-3">
-          <select  class="mainselection" ng-model="categorySelected" ng-change="vendorDirectory(categorySelected)" ng-options="c for c in vendorCategories">
-           <option value="">Select a Category</option>
-          </select>
-        </div>
-        <div class="col-lg-9 col-md-9 col-sm-9">
-          <ul>
-            <li><a href="#/main/vendormaintwo?type=Photography" ng-click="changeVendorSearch('Photography')"><i class="photo"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Fashion" ng-click="changeVendorSearch('Bridal Fashion')"><i class="dress"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Shoes" ng-click="changeVendorSearch('Shoes')"><i class="walk"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Vendue" ng-click="changeVendorSearch('Venue')"><i class="venue"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Lighting" ng-click="changeVendorSearch('Lighting')"><i class="sat"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=cakes" ng-click="changeVendorSearch('Cakes and treats')"><i class="event"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Catering" ng-click="changeVendorSearch('Catering')"><i class="catering"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Bridal" ng-click="changeVendorSearch('Bridal Fashion')"><i class="gown"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Jewelry" ng-click="changeVendorSearch('Jewelry')"><i class="crown"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Jewelry" ng-click="changeVendorSearch('Jewelry')"><i class="ring"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Makeup" ng-click="changeVendorSearch('Makeup')"><i class="makeup"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Menswear" ng-click="changeVendorSearch('Menswear')"><i class="bow"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Officiant" ng-click="changeVendorSearch('Wedding Officiant')"><i class="mesg"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Planner" ng-click="changeVendorSearch('Event Planner')"><i class="planner"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=Cinematography" ng-click="changeVendorSearch('Cinematography')"><i class="vdo"> </i></a></li>
-            <li><a href="#/main/vendormaintwo?type=DJ" ng-click="changeVendorSearch('DJ')"><i class="music"> </i></a></li>
-
-
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-        <div class="banner_txt">CHOOSE A VENDOR CATEGORY</div>
-      </div>
-    </div>
-	
-	<nav class="navbar navbar-default mobile_menu" role="navigation">
+	  
+	  <nav class="navbar navbar-default mobile_menu" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header"">
       <button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed">
@@ -378,6 +346,42 @@
 	<!-- /.navbar-collapse -->
 	
 </nav>
+	  
+	  
+      <div class="hdr" ng-show="showSelect">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <select  class="mainselection" ng-model="categorySelected" ng-change="vendorDirectory(categorySelected)" ng-options="c for c in vendorCategories">
+           <option value="">Select a Category</option>
+          </select>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 vndr-catg-img">
+          <ul>
+            <li><a href="#/main/vendormaintwo?type=Photography" ng-click="changeVendorSearch('Photography')"><i class="photo"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Fashion" ng-click="changeVendorSearch('Bridal Fashion')"><i class="dress"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Shoes" ng-click="changeVendorSearch('Shoes')"><i class="walk"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Vendue" ng-click="changeVendorSearch('Venue')"><i class="venue"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Lighting" ng-click="changeVendorSearch('Lighting')"><i class="sat"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=cakes" ng-click="changeVendorSearch('Cakes and treats')"><i class="event"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Catering" ng-click="changeVendorSearch('Catering')"><i class="catering"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Bridal" ng-click="changeVendorSearch('Bridal Fashion')"><i class="gown"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Jewelry" ng-click="changeVendorSearch('Jewelry')"><i class="crown"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Jewelry" ng-click="changeVendorSearch('Jewelry')"><i class="ring"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Makeup" ng-click="changeVendorSearch('Makeup')"><i class="makeup"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Menswear" ng-click="changeVendorSearch('Menswear')"><i class="bow"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Officiant" ng-click="changeVendorSearch('Wedding Officiant')"><i class="mesg"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Planner" ng-click="changeVendorSearch('Event Planner')"><i class="planner"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=Cinematography" ng-click="changeVendorSearch('Cinematography')"><i class="vdo"> </i></a></li>
+            <li><a href="#/main/vendormaintwo?type=DJ" ng-click="changeVendorSearch('DJ')"><i class="music"> </i></a></li>
+
+
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="banner_txt">CHOOSE A VENDOR CATEGORY</div>
+      </div>
+    </div>
+	
+	
 	
 	
   </div>
