@@ -96,7 +96,7 @@ Your browser does not support the video tag.
             <a ng-if="homeWidgets[2].content.type === 'Post'" href="#/main/post/{{homeWidgets[2].content.id}}">
               <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
-                <p>{{homeWidgets[2].title}}
+                <p ng-bind-html="homeWidgets[2].description">
                 </p>
               </div>
             </a>
