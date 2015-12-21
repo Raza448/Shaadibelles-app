@@ -10468,3 +10468,6 @@ bold	font-style: normal;
 .sign-up-inner input[type="text"], .sign-up-inner input[type="password"], .sign-up-inner input[type="email"]{ font-family: goth_book;} 
 .sign-up-inner input[type="submit"], .btn-fb span{font-family: goth_bold;} 
 .sign-up-inner h5{font-family: goth_book;}
+
+.vendr-tabs > li.active > a, .vendr-tabs > li.active > a:hover, .vendr-tabs > li.active > a:focus{ color:#939598;}
+.blog-tabs > li.active > a, .blog-tabs > li.active > a:hover, .blog-tabs > li.active > a:focus{color:#f7987b;}
