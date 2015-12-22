@@ -11,7 +11,7 @@ angular.module('sbAdminApp')
 
     $scope.getAdverts();
 
-        $scope.deletePosts = function() {
+      $scope.deletePosts = function() {
       var els = angular.element('.regular-checkbox-td:checked');
       Array.prototype.forEach.call(els, function(el) {
         $scope.id = el.id;
