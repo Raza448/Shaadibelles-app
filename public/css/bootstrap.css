@@ -6315,7 +6315,68 @@ button.close {
     margin: 30px 0 0 0;
     letter-spacing: 2px;
 	}
-
+	.sign-up { position: relative;}
+	.wedding-submission {
+    background-color: #fff;
+    margin-top: 0px;
+    padding: 10px 30px;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    padding: 20px;
+	}
+	.wedding-submission .col-md-2, .wedding-submission .col-md-3, .wedding-submission .col-md-4, .wedding-submission .col-md-5, .wedding-submission .col-md-6, .wedding-submission .col-md-12{  padding: 10px 10px 0 0;}
+	.wedding-submission h3 {
+    letter-spacing: 5px;
+    color: #f4795a;
+    padding-left: 0px;
+    font-size: 28px;
+	}
+	.nav { font-size: 12px;}
+	#vendor-review form {  padding: 40px;}
+	.wedding-submission label {
+    color: #939598;
+    margin: 20px 0 0 0;
+    letter-spacing: 2px;
+	}
+	.wedding-submission input[type="text"], .wedding-submission textarea , .wedding-submission select{
+    padding: 10px;
+    width: 100%;
+    color: #939598;
+	}
+	#vendor-review textarea {
+    height: 41.2px;
+	}
+	.wedding-submission p {
+    color: black;
+    font-size: 13px;
+    word-spacing: 4px;
+	}
+	#vendor-review p {
+    margin: 12px 10px;
+    color: #9c9c92;
+    display: inline;
+	}
+	.wedding-submission input[type="button"] {
+    border: 1px solid #f4795a;
+    color: white;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
+	}
+	.wedding-submission input[type="submit"] {
+    border: 1px solid #f4795a;
+    color: white;
+    background-color: #f4795a;
+    padding: 10px 42.5px;
+    margin: 20px 0;
+    font-weight: bold;
+	}
+	.dashed-bottom {
+    border-bottom: 2px dashed #ccc;
+    padding: 40px 0 0 !important;
+}
  }
 @media (min-width: 1200px) {
   .visible-lg {
