@@ -35,6 +35,7 @@
       <div class="form-group">
         <label>Type</label>
         <select ng-model="widget.content.type" class="form-control">
+          <option>Wedding</option>
           <option>Post</option>
           <option>Category</option>
           <option>Gallery</option>
@@ -48,8 +49,18 @@
           class="form-control"
           chosen
           ng-model="widget.content.id"
-          ng-options="item.id as item.title for item in posts">
-          <option value=""></option>
+          ng-options="item.id as item.title for item in posts | filter:item.wedding='false'">
+          <option value="" ></option>
+        </select>
+      </div>
+	  <div class="form-group" ng-show="widget.content.type === 'Wedding'">
+        <select 
+          data-placeholder="Select wedding"
+          class="form-control"
+          chosen
+          ng-model="widget.content.id"
+          ng-options="item.id as item.title for item in posts | filter:item.wedding='true'">
+          <option value="" ></option>
         </select>
       </div>
       <div class="form-group" ng-show="widget.content.type === 'Category'">
