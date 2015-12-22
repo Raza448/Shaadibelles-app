@@ -64,6 +64,11 @@ input[type="button"]{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+textarea{
+	    padding: 10px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
 .footer
 {
 	text-transform: uppercase; 
@@ -5157,17 +5162,18 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .vendor_thumb .thumbnail_cir img, .vendor_thumb .thumbnail_cir-2 img {height: 100%;}
 .vendor_thumb .thumbnail{height: 227px;}
 .vendor_thumb .thumbnail img{height: 100%;}
-.blog-col-2{width: 63%;}
+.blog-col-2{width: 73%;}
 .bog-col-cir-1{ margin: 10px 0 0 10px;}
 .bog-col-cir-2{ margin: 10px 0 0 0px;}
 .bog-col-cir-3{ margin: 10px -10px 10px 0px; padding: 10px 38px 10px 0;}
 .bog-col-cir-1 , .bog-col-cir-2 , .bog-col-cir-3 { min-height: 397px;}
 .bog-col-cir-1 h2, .bog-col-cir-2 h2, .bog-col-cir-3 h2{  font-size: 1.4em;}
-.bog-col-cir-1 h1, .bog-col-cir-2 h1, .bog-col-cir-3 h1{ text-transform: capitalize; line-height: 1.6; width: 69%; margin: 0 auto;}
+.bog-col-cir-1 h1, .bog-col-cir-2 h1, .bog-col-cir-3 h1{ text-transform: none; line-height: 1.6; width: 69%; margin: 0 auto;}
 .bog-col-cir-1 h7, .bog-col-cir-2 h7, .bog-col-cir-3 h7{ font-size: 1em; word-spacing: .1em;}
 .banner-bottom-grids{padding: 0 35px;}
 .vendor-bring{ width: 96%; /* letter-spacing: 1px; */ word-spacing: .1em; line-height: 1.5;}
 .vendor-need{ font-size: 20px; padding: 0 0 0 15px; text-align: center;}
+.vndr-ac img{height:80px}
 }
 @media (min-width: 1025px) {
 .resIframe iframe{height:219px}

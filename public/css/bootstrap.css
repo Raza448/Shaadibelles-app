@@ -4021,7 +4021,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555;
+  color: #939598;
   cursor: default;
   background-color: #fff;
   border: 1px solid #f7987b;/*
@@ -6238,6 +6238,7 @@ button.close {
     .txt-align-c { text-align: center;}
    i.heartin {  background: transparent url("../images/signup-heart.png") no-repeat scroll 0 0; color: #fff; display: inline-block; font-weight: bold; height: 34px; padding-top: 5px; text-align: center; width: 40px; float: none !important;}
 	.sign-up-inner { background-color: #fff;  margin-top:-22%; padding: 10px 30px;  position: relative; width: 100%;  z-index: 999;}
+	.sign-up-inner h5 { color: #f7987b;  letter-spacing: 2px; padding: 0 0 0 70px; word-spacing: 2px;  font-size: 18px;}
 	.sign-up-inner h3 { color: #f7987b; font-size: 1.5em; line-height: 2em; padding: 2em 0 1em; text-align: center; text-transform: uppercase; letter-spacing: 3px;}
 	.sign-up-inner h6 {
     color: #f7987b;
@@ -6273,6 +6274,48 @@ button.close {
 	}
 	.callbacks_share{   top: 39% !important;}
 	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{    margin-top: -85px;}
+	.signup1-form-grid {
+    margin-top: 175px;
+    position: inherit;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    padding: 10px 30px;
+	}
+	.signup1-form-grid .row .col-md-3, .signup1-form-grid .row .col-md-4, .signup1-form-grid .row .col-md-6, .signup1-form-grid .row .col-md-12{padding: 0 10px 0 0;}
+	.signup1-form-grid .col-md-4.text-center{margin-top: 40px;}
+	.signup1-form-grid i, .sign-up-inner i{   
+	background: transparent url("../images/signup-heart.png") no-repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 34px;
+    padding-top: 5px;
+    text-align: center;
+    width: 40px;
+	}
+	 .sign-up-inner i{float:left;}
+	.signup1-form-grid span {
+    display: inline-block;
+    width: 100%;
+    color: #f7987b;
+    letter-spacing: 3px;
+	}
+	.signup1-form-grid input[type="text"] {
+    padding: 10px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+	}
+	.signup1-form-grid select {
+    padding: 11px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+	}
+	.signup1-form-grid label {
+    margin: 30px 0 0 0;
+    letter-spacing: 2px;
+	}
+
  }
 @media (min-width: 1200px) {
   .visible-lg {
