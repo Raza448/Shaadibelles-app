@@ -5208,3 +5208,34 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 }
 @media (max-width: 700px) { .vndr-catg-img{display:none;}}
 .carousel-indicators{display:none;}
+
+/*****home-wiget*******/
+
+.home-wdgt-last p, .home-wdgt-last h1, .home-wdgt-last h2, .home-wdgt-last h3, .home-wdgt-last h4, .home-wdgt-last h5, .home-wdgt-last h6 {
+    margin: 0 !important;
+    padding: 3px !important;
+    font-style: normal;
+    font-family: font_robo;
+    color: #FFF;
+    width: 100%;
+    text-shadow: 4px 4px 5px #252525 !important;
+    word-spacing: 1px;
+}
+.home-wdgt-last h1, .home-wdgt-last h2, .home-wdgt-last h3, .home-wdgt-last h4, .home-wdgt-last h5, .home-wdgt-last h6 {
+    letter-spacing: 3px;
+}
+.home-wdgt-last p {
+    font-size: 12px;
+    font-family: goth_bold !important;
+}
+
+@media (min-width: 768px) and (max-width: 1076px){
+	
+	.home-wdgt-last p {  font-size: 9px;	}
+	.home-wdgt-last h1, .home-wdgt-last h2, .home-wdgt-last h3, .home-wdgt-last h4, .home-wdgt-last h5, .home-wdgt-last h6 { font-size: 18px;}
+}
+@media (min-width: 320px) and (max-width: 460px){
+	
+	.home-wdgt-last p {  font-size: 8px;	}
+	.home-wdgt-last h1, .home-wdgt-last h2, .home-wdgt-last h3, .home-wdgt-last h4, .home-wdgt-last h5, .home-wdgt-last h6 { font-size: 17px;}
+}
