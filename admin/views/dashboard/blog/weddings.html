@@ -55,7 +55,7 @@
                   <label for="{{post.id}}"></label>
                 </td>
                 <td><strong>{{post.title}}</strong></td>
-                <td>{{post.description.substring(0, 100)}}</td>
+                <td ng-bind-html="post.description.substring(0, 100)"></td>
                 <td>{{post.created}}</td>
                <td>
                   <a class="btn btn-sm btn-info" href="#/dashboard/ratings?id={{post.id}}">Ratings</a>                  
