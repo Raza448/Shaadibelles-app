@@ -6377,8 +6377,15 @@ button.close {
     border-bottom: 2px dashed #ccc;
     padding: 40px 0 0 !important;
 }
+
+.home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {font-size: 3em;}
+.home-wdgt-mid p {  font-size: 10px !important;}
  }
 @media (min-width: 1200px) {
+
+.home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {font-size: 4em;}
+.home-wdgt-mid p {  font-size: 14px !important;}	
+	
   .visible-lg {
     display: block !important;
   }
@@ -7634,6 +7641,13 @@ bold	font-style: normal;
 /***********
 *   MENU END   *
 ***********/
+
+/******home-widget-middle*********/
+
+.home-wdgt-mid { transform: translate(24%,89%) !important;}
+.home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {font-size: 3em;}
+.home-wdgt-mid p {  font-size: 15px !important;}
+
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
@@ -8746,6 +8760,12 @@ bold	font-style: normal;
 /***********
 *   MENU END   *
 ***********/
+
+/*******home-wiget-midle***********/
+
+.home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {font-size: 2em;}
+.home-wdgt-mid p, .home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 { letter-spacing: 0.5px !important;}
+.home-wdgt-mid p {  font-size: 8px !important;}
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
