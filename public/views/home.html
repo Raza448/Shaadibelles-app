@@ -63,21 +63,21 @@ Your browser does not support the video tag.
               <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
               <img alt="" class="img-responsive widget-middle"  src="{{homeWidgets[1].cover}}" style="width: 100%;">
               <div>
-                <p ng-bind-html="homeWidgets[1].description"></p>
+                <p class="home-wdgt-mid" ng-bind-html="homeWidgets[1].description"></p>
               </div>
             </a>
             <a ng-if="homeWidgets[1].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[1].content.id}}">
               <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
               <img alt="" class="img-responsive "  src="{{homeWidgets[1].cover}}" style="height: auto; width: 100%;;">
               <div>
-                 <p ng-bind-html="homeWidgets[1].description"></p>
+                 <p class="home-wdgt-mid" ng-bind-html="homeWidgets[1].description"></p>
               </div>
             </a>
            <a ng-if="homeWidgets[1].content.type === 'Category'" href="#/main/category/{{homeWidgets[1].content.id}}">
               <!-- <img alt="" class="img-responsive"  src="{{homeWidgets[1].cover}}" style="height: 250px; width: 320;"> -->
               <img alt="" class="img-responsive "  src="{{homeWidgets[1].cover}}" style="height: auto; width: 100%;">
               <div>
-                 <p ng-bind-html="homeWidgets[1].description"></p>
+                 <p class="home-wdgt-mid" ng-bind-html="homeWidgets[1].description"></p>
               </div>
             </a>
           </li>
@@ -103,14 +103,14 @@ Your browser does not support the video tag.
 <a ng-if="homeWidgets[2].content.type === 'Gallery'" href="#/main/gallery/{{homeWidgets[2].content.id}}">
               <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
-                <p ng-bind-html="homeWidgets[2].description"></p>
+                <p class="home-wdgt-last" ng-bind-html="homeWidgets[2].description"></p>
               </div>
             </a>
 
 <a ng-if="homeWidgets[2].content.type === 'Category'" href="#/main/category/{{homeWidgets[2].content.id}}">
               <img alt="" class="img-responsive imgLast"  src="{{homeWidgets[2].cover}}" style="height: auto; width: 100%;">
               <div>
-                <p ng-bind-html="homeWidgets[2].description"></p>
+                <p class="home-wdgt-last" ng-bind-html="homeWidgets[2].description"></p>
               </div>
             </a>
 
@@ -140,7 +140,7 @@ Your browser does not support the video tag.
 			<div class="featured_vendor">OUR featured vendor</div>
 		</div>
         <span>{{featuredVendor.title}}</span>
-		<p>{{featuredVendor.tagline}}</p>
+		<p class="vndr-sb-title">{{featuredVendor.tagline}}</p>
         <p>&nbsp;</p>
         <p>{{featuredVendor.description}}</p>
         <h1><a href="#/main/vendordetail/{{featuredVendor.profile.id}}">SEE More OF {{featuredVendor.profile.business.name}} INSPIRING CREATIONS</a> OR <a href="#/main/vendormain">VIEW ALL VENDORS</a></h1>
@@ -174,8 +174,7 @@ Your browser does not support the video tag.
       <div class="col-sm-4 col-lg-4 col-md-4">
         <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
-          <p class="footer-col-1">Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration online.
-          </p>
+          <p class="footer-col-1" ng-bind-html="footerWidgets[0].description"></p>
           <p>&nbsp;</p>
           
           <a href="#/main/signup" class="morebtn hvr-sweep-to-top bride-signup-anchor">BRIDE SIGN UP </a>
@@ -184,15 +183,13 @@ Your browser does not support the video tag.
       <div class="col-sm-4 col-lg-4 col-md-4 footer-col-2">
         <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
-          <p>Shaadi Belles is the premiere platform to find, save and share South Asian  wedding inspiration, with hundreds of thousands of photos of weddings, fashion events, and designer images to choose from, you can quickly and easily find what you're 	looking for, and then create your own inspiration board to share with friends and family. Our visual
-            inspiration tool also connects users to primary vendors, such as photographers, wedding planners, and more.      
-          </p>
+          <p ng-bind-html="footerWidgets[1].description"></p>
         <!-- </div> -->
       </div>
       <div class="col-sm-4 col-lg-4 col-md-4 footer-col-3">
         <!-- <div class="col-sm-10 col-lg-10 col-md-10  col-md-offset-1 col-lg-offset-1"> -->
           <p>&nbsp;</p>
-          <p>The Belle Blog complements our image galleries with real stories and real advice, including the latest weddings news, the hottest wedding planning ideas, and some of the most elegant and stunning real-life wedding from around the world. Search, Save & Share your South Asian Inspiration with Shaadi Belles!</p>
+          <p ng-bind-html="footerWidgets[2].description"></p>
           
           <p>&nbsp;</p>
 

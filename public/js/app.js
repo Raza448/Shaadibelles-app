@@ -791,6 +791,14 @@ $rootScope.stopLoading = function(){
                 $http.get(window.remote + '/api/users/' + $rootScope.featuredVendor.vendor).then(function(res) {
                     $rootScope.featuredVendor.profile = res.data;
                 });
+				$rootScope.footerWidgets = [];
+				$http.get(window.remote + '/api/widgets/').then(function(res) {
+					res.data.forEach(function(footer) {
+						if(footer.content.type === 'Footer'){
+							$rootScope.footerWidgets.push(footer);
+						}
+					});
+                });
 
                 $rootScope.site.settings.featuredVendors.forEach(function(id) {
                     $http.get(window.remote + '/api/users/' + id).then(function(resOne) {
