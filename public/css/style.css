@@ -5202,7 +5202,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .top-grid-top .form-grid p{ color: #5c5a58; font-family: goth_book;}
 .top-grid-top .form-grid h1{ color: #5c5a58; font-family: font_eaves_roman;  text-transform: capitalize; font-size: 4em;}
 .header .header-top .hidden-xs{  font-family: goth_med; font-size: 13px;}
-
+.vndr-main-slider{  transform: translate(50%,-90%);}
 @media (max-width: 1048px) {
 .header .header-top .hidden-xs{ font-size: 12px; margin-top: 3px;}
 }

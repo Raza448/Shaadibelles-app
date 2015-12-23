@@ -9460,9 +9460,8 @@ bold	font-style: normal;
 ***********/
 }
 @media (min-width: 1200px) {
-  .hidden-lg {
-    display: none !important;
-  }
+  .hidden-lg { display: none !important;  }
+  .text-center {  text-align: center !important;}
   .banner_div{
 	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding: 0 3%;
 }
@@ -10050,6 +10049,7 @@ i.heartin{
 	color:#4c4c4c;	
 	border-radius: 15px;
 }
+
 /***********
 *   MENU   *
 ***********/
