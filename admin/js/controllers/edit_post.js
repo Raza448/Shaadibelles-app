@@ -185,7 +185,7 @@ File.upload(file).success(function(res) {
 
       var data = {
         "title": post.title,
-        "description": post.descriotion,
+        "description": post.description,
         "tagline": post.tagline,
         "content": post.content,
         "cover": post.cover || null,
