@@ -309,6 +309,8 @@ background:#fff;
 	display:inline-block;
 	color:#ffffff;
 	margin-right:5px;
+	text-transform: capitalize;
+    font-size: 12px;
 	
 }
 .icon ul li a:hover {
