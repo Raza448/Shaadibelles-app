@@ -34,9 +34,6 @@ angular.module('sbAdminApp')
         'username': userData.username,
         'email': userData.email
       };
-
-
-
         var url = window.remote + '/api/users/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken;
         var request = $http.put;
       request(url, data).then(
@@ -45,5 +42,12 @@ angular.module('sbAdminApp')
 
         }
       )
+    };
+	$scope.publish = function(userData) {
+
+      var url = window.remote + '/api/users/' + $scope.id  +'?access_token=' + $rootScope.user.accessToken;
+      $http.put(url, userData).then(function(res) {
+        location.href= '#/dashboard/users';
+      });
     };
   });

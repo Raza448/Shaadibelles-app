@@ -128,10 +128,6 @@ var query = $location.search();
 
     $scope.publish = function(page) {
 
-
-
-
-
       var url = window.remote + '/api/pages/' + $scope.id  +'?access_token=' + $rootScope.user.accessToken;
       $http.put(url, page).then(function(res) {
         location.href = '#/dashboard/pages';

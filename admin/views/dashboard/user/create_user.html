@@ -26,7 +26,7 @@
             <input class="form-control" ng-show="!formData.id" placeholder="confirm password" ng-model="confirmpassword" name="email" type="password" required>
           </div>  
           <!-- Change this to a button or input when using this as a form -->
-          <button type="submit"  class="btn btn-lg btn-success btn-block">{{buttonText}}</button>
+          <button type="submit"  class="btn btn-lg btn-success btn-block" ng-click="publish(formData)">{{buttonText}}</button>
         </fieldset>
       </form>
     </div>
