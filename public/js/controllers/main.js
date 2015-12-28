@@ -40,6 +40,9 @@ $scope.newcontact = function(contact) {
   $scope.loginModal = function(){
    		$("#form-content").modal('show');
   }
+  $scope.closeModal = function () {
+    $("#form-content").modal('hide');
+  };
 
  $scope.reset = function(){
    		$("#form-reset-content").modal('show');

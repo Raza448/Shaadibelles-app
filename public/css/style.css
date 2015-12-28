@@ -309,9 +309,17 @@ background:#fff;
 	display:inline-block;
 	color:#ffffff;
 	margin-right:5px;
-	text-transform: capitalize;
-    font-size: 12px;
 	
+}
+#fancybox-close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 8040;
+    background-image: url('../images/fancybox_sprite.png');
 }
 .icon ul li a:hover {
 	color: #EF4D98;
@@ -5207,7 +5215,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 #form-content .login-form a span{ font-family: goth_bold; letter-spacing: 1px; font-size: 0.6em;}
 .top-grid-top .form-grid p{ color: #5c5a58; font-family: goth_book;}
 .top-grid-top .form-grid h1{ color: #5c5a58; font-family: font_eaves_roman;  text-transform: capitalize; font-size: 4em;}
-.header .header-top .hidden-xs{  font-family: goth_med; font-size: 13px;}
+.header .header-top .hidden-xs{  font-family: goth_med; font-size: 12px;}
 .vndr-main-slider{  transform: translate(50%,-90%);}
 @media (max-width: 1048px) {
 .header .header-top .hidden-xs{ font-size: 12px; margin-top: 3px;}
@@ -5271,4 +5279,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 }
 .home-wdgt-mid p {
     float: left;
+}
+@media (min-width: 1050px) {
+	.header-top .topRgtCol{ margin-top: -2px;}
 }
