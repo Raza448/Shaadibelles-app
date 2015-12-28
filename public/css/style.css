@@ -5276,3 +5276,19 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 @media (min-width: 1050px) {
 	.header-top .topRgtCol{ margin-top: -2px;}
 }
+.right_vndr_pfle{ margin: 15px 0; }
+.right_vndr_pfle h3 b{ font-family: goth_bold; }
+.upload_pop-text h4{ margin: 10px 0 25px 0;}
+#vendorsaved img{transform: translate(25%,50%)}
+
+/****FancyBox CSS********/
+#fancybox-close {
+position: absolute;
+top: -18px;
+right: -18px;
+width: 36px;
+height: 36px;
+cursor: pointer;
+z-index: 8040;
+background-image: url(../images/fancybox_sprite.png);
+}
