@@ -123,9 +123,7 @@ body{
 .masonry-brick.loaded {
     display: block;
 }
-.remove_row {
-    line-height: 4;
-}
+
 .main-gallery {
     z-index:999999;
 }
@@ -5254,27 +5252,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
     font-size: 1.3em;
 }
 
-.home-wdgt-mid { transform: translate(3%,89%); }
 
-.home-wdgt-mid p, .home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {
-    margin: 0 !important;
-    padding: 0 !important;
-    font-style: normal;
-    font-family: font_robo;
-    color: #FFF;
-    text-shadow: 4px 4px 5px #252525 !important;
-	letter-spacing: 1px;
-}
-.home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {
-    float: left;
-    width: 18%;
-    margin-top: -9% !important;
-    font-weight: 100;
-    font-family: goth_thin;
-}
-.home-wdgt-mid p {
-    float: left;
-}
 @media (min-width: 1050px) {
 	.header-top .topRgtCol{ margin-top: -2px;}
 }
@@ -5293,4 +5271,7 @@ height: 36px;
 cursor: pointer;
 z-index: 8040;
 background-image: url(../images/fancybox_sprite.png);
+}
+.remove_row {
+line-height: 4;
 }
