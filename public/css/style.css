@@ -123,7 +123,9 @@ body{
 .masonry-brick.loaded {
     display: block;
 }
-
+.remove_row {
+    line-height: 4;
+}
 .main-gallery {
     z-index:999999;
 }
