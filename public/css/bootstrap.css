@@ -1145,6 +1145,7 @@ a.morebtn {
 	text-transform: uppercase;
     font-size: 10px;
     font-family: goth_bold;
+	letter-spacing: 1.5px;
 	}
 	a.bride-signup-anchor{ margin-left: -12%; padding: 11px 30px;}
 }
@@ -10055,9 +10056,10 @@ i.heartin{
 }
 
 .search{
-		float:right;
+	float:right;
 	position:relative;
-	width:15%;margin:1.7em 0;	
+	width:15%;
+	margin:2em 0;	
 }
 .search input[type="text"] {
 	outline: none;

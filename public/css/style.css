@@ -309,17 +309,8 @@ background:#fff;
 	display:inline-block;
 	color:#ffffff;
 	margin-right:5px;
-	
-}
-#fancybox-close {
-    position: absolute;
-    top: -18px;
-    right: -18px;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 8040;
-    background-image: url('../images/fancybox_sprite.png');
+	text-transform: capitalize;
+	font-size: 12px;
 }
 .icon ul li a:hover {
 	color: #EF4D98;
@@ -517,7 +508,7 @@ ul.round-top {
 }
 .login-form input[type="text"], .login-form  input[type="email"], .login-form input[type="password"]{
 	padding: 10px;
-	/* font-family: goth_bold; */
+	font-family: goth_book; 
 	width: 100%;
 	color: #ccc;
 	margin: 10px 0;
@@ -2147,17 +2138,18 @@ i.star {
 }
 .passion h1 {
 	font-size: 0.7em;
-	color: #000;
+	color: #9c9c92;
 	font-weight:500;
-	  line-height: 1.8em;
-	  padding:2em 0em 0.5em 0em;
-	  text-align:center;
+	line-height: 1.8em;
+	padding:2em 0em 0.5em 0em;
+	text-align:center;
+	font-family: goth_bold;
 }
 .passion h1 a {
 	color: #f7987b;
 	font-weight:500;
-	  line-height: 1.8em;
-	  padding:0.5em 0 0.5em 0em;
+	line-height: 1.8em;
+	padding:0.5em 0 0.5em 0em;
 	font-family:goth_bold;
 }
 .checkout-section{
@@ -2710,7 +2702,7 @@ font-family: goth_bold;
 	color:#acb3ba;
 }
 .bottom-menu ul li a {
-	font-size: 1.5em;
+	font-size: 1.7em;
 color: #FFF;
 text-decoration: none;
 margin: 0 0.5em;
@@ -5169,7 +5161,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .imgLast{height:333px !important}
 }
 @media (min-width: 992px) {
-.topRgtCol{ width: 28%;}
+.topRgtCol{ width: 28%; font-family: goth_med;}
 .cont-footer-dark{ margin-top: 16%;}
 .vendor_thumb .thumbnail_cir {height: 143px;  display: block;}
 .vendor_thumb .thumbnail_cir-2{height: 171px;  display: block;}
@@ -5209,8 +5201,9 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .overlay .overlay-inner p{font-family:goth_book;}   
 .overlay .overlay-inner input[type="submit"]{font-family:goth_bold; font-weight: 100;  font-size: 10px;}  
 #form-content .login-form h4{ font-family: font_eaves_roman; font-size: 1.5em; letter-spacing: 2px}  
-#form-content .login-form h3{ font-family: goth_book; font-size: 1.5em; letter-spacing: 2px}  				 
-#form-content .login-form h1{ font-family: font_eaves_roman; text-transform: none; font-size: 2.6em; margin: 4px 0 10px 0;} 
+#form-content .login-form h3, #form-reset-content .login-form h3{ font-family: goth_book; font-size: 1.5em; letter-spacing: 2px}  				 
+#form-content .login-form h1, #form-reset-content .login-form h1{ font-family: font_eaves_roman; text-transform: none; font-size: 2.6em; margin: 4px 0 10px 0;} 
+#form-reset-content .login-form h1{margin: 15px 0 10px 0;} 
 #form-content .login-form .border-right a{ font-family: goth_med; font-size: 10px; letter-spacing: 1px;} 
 #form-content .login-form a span{ font-family: goth_bold; letter-spacing: 1px; font-size: 0.6em;}
 .top-grid-top .form-grid p{ color: #5c5a58; font-family: goth_book;}

@@ -210,11 +210,11 @@
 		
 
         <div class="col-md-4 col-sm-4 col-lg-4"  ng-repeat="widget in widgets | before : widgetLimit" >
-          <div class=" top-grid">
-   <a ng-if="widget.content.type === 'Post'" href="#/main/post/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
-   <a ng-if="widget.content.type === 'Wedding'" href="#/main/post/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
- <a ng-if="widget.content.type === 'Gallery'" href="#/main/gallery/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
- <a ng-if="widget.content.type === 'Category'" href="#/main/category/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+          <div class=" top-grid vendor_thumb blog_btm">
+   <a class="thumbnail" ng-if="widget.content.type === 'Post'" href="#/main/post/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+   <a class="thumbnail" ng-if="widget.content.type === 'Wedding'" href="#/main/post/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+ <a class="thumbnail" ng-if="widget.content.type === 'Gallery'" href="#/main/gallery/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
+ <a class="thumbnail" ng-if="widget.content.type === 'Category'" href="#/main/category/{{widget.content.id}}"><img class="img-responsive" src="{{widget.cover}}" title="name" alt=""></a>
             <h3 ng-if="widget.content.type === 'Post'">{{widget.title}}</h3>
             <h3 ng-if="widget.content.type === 'Wedding'">{{widget.title}}</h3>
             <h3 ng-if="widget.content.type === 'Gallery'">{{widget.title}}</h3>
