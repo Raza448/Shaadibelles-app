@@ -86,7 +86,7 @@
 		  </a>
           <h4>{{item.title}}
           </h4>
-          <p>{{item.description.substring(0, 30)}}
+          <p  ng-bind-html="item.description.substring(0, 30)">
           </p>
           <a href="#/main/post/{{item.id}}">
           <h6>SEE THEIR WEDDING STORY</h6>
