@@ -247,11 +247,10 @@ th {
 
 .calendar .icon-location {
     position: relative;
-    top: 3px;
-    cursor: pointer;
-    font-size: 18px;
-    font-size: 18px;
-    right: 10px;
+	top: 3px;
+	cursor: pointer;
+	font-size: 18px;
+	right: 10px;
 }
 .glyphicon-chevron-right, .glyphicon-chevron-left{
     height: 78% !important;
@@ -1200,9 +1199,8 @@ a.morebtn {
 	a.bride-signup-anchor{ margin-left: -12%; padding: 11px 30px;}
 }
 @media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+  .container {  width: 1170px;  }
+  
 .container_bottom {
 	margin-top:20%;
 	margin:0 auto;
@@ -4056,25 +4054,28 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .top-tabs .nav li a {padding: 10px 26px;}
 .post .top-tabs .nav li a {padding: 10px 21px;font-family:goth_med;text-transform:uppercase;}
-.post_content p span{font-family:goth_book;}
+.post_content p span{font-family:goth_book;color: #939598 !important;}
 .nav-tabs > li > a {
   margin-right: 0px;
   line-height: 1.42857143;
   border: 1px solid transparent;
-  color:#fff;
+  color:#939598;
   font-family: goth_bold;
-      font-size: 12px;/*
-  border-radius: 4px 4px 0 0;*/
+  font-size: 12px;
+   background-color: #fff;
+   border: 1px solid #939598;
+   /* border-radius: 4px 4px 0 0;*/
 }
-.nav-tabs > li > a:hover {
-  border-color: none none #ddd;
+.nav-tabs > li:nth-child(2n+1)> a {
+	
+  
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #939598;
+  color: #fff;
   cursor: default;
-  background-color: #fff;
+  background-color: #f7987b;
   border: 1px solid #f7987b;/*
   border-bottom-color: transparent;*/
 }
@@ -10084,7 +10085,7 @@ i.heartin{
 	margin-left:10px;
 }
 .blog-top h2{
-	font-family:font_myrate;
+	font-family:font_eaves_roman;
 	color:#939598;
 	font-size:0.9em;
 	padding:0.8em;
@@ -10135,7 +10136,7 @@ i.heartin{
 	color:#4c4c4c;	
 	border-radius: 15px;
 }
-
+.bttm-3-wiget{width:73%}
 /***********
 *   MENU   *
 ***********/
@@ -10694,7 +10695,7 @@ bold	font-style: normal;
 .sign-up-inner input[type="submit"], .btn-fb span{font-family: goth_bold;} 
 .sign-up-inner h5{font-family: goth_book;}
 
-.vendr-tabs > li.active > a, .vendr-tabs > li.active > a:hover, .vendr-tabs > li.active > a:focus{ color:#939598;}
+.vendr-tabs > li.active > a, .vendr-tabs > li.active > a:hover, .vendr-tabs > li.active > a:focus{ color:#fff;}
 .blog-tabs > li.active > a, .blog-tabs > li.active > a:hover, .blog-tabs > li.active > a:focus{color:#f7987b;}
 
 

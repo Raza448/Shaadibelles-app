@@ -912,11 +912,11 @@ background-color:#fff; text-align:center;
     font-size: 18px;
 }
 .calendar span {
-    font-family: inherit;
-    right: 0px;
-    top: 0px;
-    margin: 0px;
-    font-size: 12px;
+font-family: inherit;
+right: 0px;
+top: 0px;
+margin: 0px;
+font-size: 12px;
 }
 .blobgrid h4{
 	font-family:font_eaves_roman;
@@ -939,7 +939,7 @@ background-color:#fff; text-align:center;
     letter-spacing: 0.1em;
 }
 .blobgrid h6{
-	font-family:goth_book;
+	font-family:goth_bold;
 	color:#d39465;
 	font-size:0.8em;
 	padding:0.8em;
@@ -1397,7 +1397,7 @@ i.dress:hover {
 	
 }
 ul.grid-part {
-  margin: 0.5em 1em 2em;
+  margin: 0.5em 0em 2em;
 }
  ul.star-footer li{
 	display:inline-block;
@@ -5282,3 +5282,11 @@ background-image: url(../images/fancybox_sprite.png);
 .remove_row {
 line-height: 4;
 }
+.blg-artcle .blogs-top .blog-top .mess img{  vertical-align: initial;}
+.dateYear{font-family:goth_med !important;}
+.blg_detail_tagline{ font-family: goth_light !important; font-size: 1.2em !important;}
+
+.post_content p { font-family: goth_book ; color: #939598 ; font-size: 14px;}
+p.blg_detail_rgt { display: inline; font-size: 13px; font-family: goth_book; }
+.blg-artcle .blogs-top .blog-top .blogs-top .grid-part a i.glyphicon{  margin: 0 8px -4px 0;}
+.blobgrid .txt-bttm { margin-bottom: 20px;}

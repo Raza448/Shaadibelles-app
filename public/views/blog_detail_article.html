@@ -7,13 +7,14 @@
     </carousel>
   </div>
 </div>
-<div class="content" style="margin-top: 400px;">
+<div class="content blg-artcle" style="margin-top: 400px;">
   <div class="container">
     <div class="blogs-top">
       <div class="blog-top">
         <div class="col-md-7 col-lg-7 col-xs-12 col-sm-6 blogs-top">
-          <h1>{{post.title}}</h1>
-          <h3>{{post.tagline}} <i class="mess"><img src="public/images/msg_icon.png" width="39" height="39" /></i></h3>
+         <!--  <h1>{{post.title}}</h1> -->
+          <h1>wedding stories/real weddings/sonia & vivek</h1>
+          <h3>{{post.title}} <i class="mess "><img src="public/images/msg_icon.png" width="39" height="39" /></i></h3>
           <div class="stars">
             <form action="">
               <input class="star star-5" id="star-5" ng-checked="postRating.stars === 5" type="radio" ng-click="rating(5)" name="star"/>
@@ -42,8 +43,17 @@
               <div class="clearfix"></div>
             </ul>
             </div>
-          <h2>{{post.created}}</h2>
+          <h2 class="dateYear">{{post.created}}</h2>		  
           <h2><strong>{{currentEvent.name}}</strong></h2>
+		  <p class="blg_detail_tagline">{{post.tagline}}</p>
+		  
+		  <div ng-show="post.content != null" ng-bind-html="post.content">
+        {{post.content}}
+        </div>
+       <div ng-bind-html="currentEvent.content" class="post_content">
+
+        </div>
+		  
         </div>
         <div class="col-md-5 col-lg-5 col-sm-6 blogs-top post">
           <div class="bs-example bs-example-tabs top-tabs">
@@ -53,27 +63,27 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="profile">
                 <ul class="grid-part">
-                  <li ng-repeat="vendor in currentEvent.vendors"><a href="#/main/vendordetail/{{vendor.vendor}}"><i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon"> </i>{{vendor.type}}: <span ng-repeat="i in vendors | where : { id : vendor.vendor }">{{ i.business.name }}.{{ i.location[0] }}</span></a></li>
+                  <li ng-repeat="vendor in currentEvent.vendors"><a href="#/main/vendordetail/{{vendor.vendor}}">
+				  <i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon Photography"> </i>
+				  <p class="blg_detail_rgt">{{vendor.type}}: <span ng-repeat="i in vendors | where : { id : vendor.vendor }">{{ i.business.name }}.{{ i.location[0] }}</span></p></a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="clearfix"> </div>
-        <div ng-show="post.content != null" ng-bind-html="post.content">
-        {{post.content}}
-        </div>
-       <div ng-bind-html="currentEvent.content" class="post_content">
-
-        </div>
+       
       </div>
+	  
+	  <div class="col-md-12 col-lg-12 col-sm-12 margin-top-40"></div>
 
       <div class="blobgrid">
-        <h5>OTHER REAL SOUTH EAST ASIAN INSPIRED WEDDINGS YOU MAY LIKE</h5>
+        <h5 class="txt-bttm">OTHER REAL SOUTH EAST ASIAN INSPIRED WEDDINGS YOU MAY LIKE</h5>
 
-                  <div class="col-md-8 col-lg-8 col-sm-8 blogs-top" ng-init="limit = 5">
-                    <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids vendor_thumb" ng-repeat="item in relatedPosts | before : limit">
-          <a href="#/main/post/{{item.id}}" class="thumbnail_cir"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt=""></a>
+        <div class="col-md-8 col-lg-9 col-sm-8 blogs-top bttm-3-wiget" ng-init="limit = 4">		
+           <div class="col-md-4 col-lg-4 col-sm-4 bottom-grids vendor_thumb" ng-repeat="item in relatedPosts | before : limit">
+          <a href="#/main/post/{{item.id}}" class="thumbnail_cir"><img id="bottom_grid_div" class="img-responsive" src="{{item.cover}}" title="name" alt="">
+		  </a>
           <h4>{{item.title}}
           </h4>
           <p>{{item.description.substring(0, 30)}}
@@ -81,11 +91,11 @@
           <a href="#/main/post/{{item.id}}">
           <h6>SEE THEIR WEDDING STORY</h6>
           </a>
-        </div>
+		  </div>      
         <div class="View-more">
           <a href="" class="morebtn hvr-sweep-to-top" ng-hide="limit >= relatedPosts.length" ng-click="limit = limit + 5">LOAD MORE</a>
           </div>
-</div>
+		</div>
 			 <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids">
           <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
