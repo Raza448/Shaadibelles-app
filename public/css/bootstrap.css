@@ -224,6 +224,30 @@ th {
 }
 
 /***********Slider Css*****************/
+.glyphicon-chevron-left:before {
+    content: "\e079";
+}
+.glyphicon-chevron-right:before {
+    content: "\e080";
+}
+
+.calendar .glyphicon-chevron-left {
+    background: none !important;
+}
+
+.calendar .glyphicon-chevron-right {
+    background: none !important;
+}
+
+.calendar .btn {
+    padding: 6px 12px;
+}
+
+.calendar .icon-location {
+    position: relative;
+    top: 3px;
+	cursor:pointer;
+}
 
 .glyphicon-chevron-right, .glyphicon-chevron-left{
     height: 78% !important;
@@ -3503,6 +3527,7 @@ input[type="button"].btn-block {
 }
 .dropdown-menu {
 	background-image:url(../images/menubg.png);
+	background:#fff;
   position: absolute;
   top: 100%;
   left: 0;
