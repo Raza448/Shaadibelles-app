@@ -197,7 +197,7 @@ $http.get(window.remote + '/api/vendors').then(function(res){
       });
     };
 	
-$scope.today = function() {
+	$scope.today = function() {
       $scope.dt = new Date();
     };
     $scope.today();

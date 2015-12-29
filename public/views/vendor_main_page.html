@@ -149,8 +149,9 @@
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <input type="text" placeholder="Email"  class="inpPad" ng-model="contact.email" required />
               </div>
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <input type="text" placeholder="Wedding Location" ng-model="contact.weddingplace" class="inpPad" required /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>
+              <div class="col-lg-12 col-md-12 col-sm-12 calendar">
+				<input type="text" placeholder="Wedding Date" ng-model="contact.weddingplace" class="ng-pristine ng-invalid ng-invalid-required" datepicker-popup="{{format}}" is-open="opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="" ng-required="true" close-text="Close"><span class="icon-location" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></span>
+                <!--<input type="text" placeholder="Wedding Location" ng-model="contact.weddingplace" class="inpPad" required /><span class="icon-location"><i class="glyphicon glyphicon-calendar"></i></span>-->
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">

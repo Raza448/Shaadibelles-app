@@ -248,7 +248,10 @@ th {
 .calendar .icon-location {
     position: relative;
     top: 3px;
-	cursor:pointer;
+    cursor: pointer;
+    font-size: 18px;
+    font-size: 18px;
+    right: 10px;
 }
 .glyphicon-chevron-right, .glyphicon-chevron-left{
     height: 78% !important;

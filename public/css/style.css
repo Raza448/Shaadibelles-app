@@ -911,6 +911,13 @@ background-color:#fff; text-align:center;
     margin-left: -18px;
     font-size: 18px;
 }
+.calendar span {
+    font-family: inherit;
+    right: 0px;
+    top: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
 .blobgrid h4{
 	font-family:font_eaves_roman;
 	color:#939598;
@@ -5074,7 +5081,7 @@ label.star:before {
 
 .recnt-post{ padding: 26px 27px 0px;}
 .bog-col-cir-1 h2, .bog-col-cir-2 h2, .bog-col-cir-3 h2{    text-transform: capitalize !important;}
-.icon-location{color: #ccc;  margin-left: -30px; font-size: 18px;}
+.icon-location{color: #ccc;  margin-left: -18px !important; font-size: 18px;}
 .search input[type="text"]{background: #fff; font-size: 15px; text-align: center;  padding: 6px; font-family: goth_book;}
 
 .vendor-detail-bg-img{width: 100% !important; height: 800px !important;}
