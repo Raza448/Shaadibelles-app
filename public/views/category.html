@@ -19,7 +19,7 @@
             </div>
             <h3>{{post.tagline}}</h3>
             <div class="clearfix"></div>
-            <p>{{post.description.substring(0, 30)}}</p>
+            <p ng-bind-html="post.description.substring(0, 30)"></p>
               <a class="morebtn hvr-sweep-to-top" ui-sref="main.post({id:post.id})">VIEW THIS STORY</a>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div class=" top-grid vendor_thumb" >
             <a ui-sref="main.post({id:post.id})" class="thumbnail"><img class="img-responsive" src="{{post.cover}}" title="name" alt=""></a>
                <a  ui-sref="main.post({id:post.id})"><h3>{{post.title}}</h3></a>
-            <p>{{post.description.substring(0, 60)}}</p>
+            <p ng-bind-html="post.description.substring(0, 60)"></p>
           </div>
         </div>
         <div class="clearfix"> </div>
