@@ -29,7 +29,7 @@
             <p>{{vendor.business.city}}</p>
             <p>{{vendor.business.state}} , {{vendor.business.country}}, {{vendor.business.zipcode}}</p>
           </div>
-          <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class="col-md-4 col-sm-4 col-lg-4" ng-repeat="vendor in resultsVendors | before : vendorLimit">
             <img src="{{vendor.gallery[0]}}" alt="" />
           </div>
           <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
