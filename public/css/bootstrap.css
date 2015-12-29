@@ -224,10 +224,10 @@ th {
 }
 
 /***********Slider Css*****************/
-.glyphicon-chevron-left:before {
+.calendar .glyphicon-chevron-left:before {
     content: "\e079";
 }
-.glyphicon-chevron-right:before {
+.calendar  .glyphicon-chevron-right:before {
     content: "\e080";
 }
 
@@ -248,7 +248,6 @@ th {
     top: 3px;
 	cursor:pointer;
 }
-
 .glyphicon-chevron-right, .glyphicon-chevron-left{
     height: 78% !important;
     background-size: 90px 115px !important;
@@ -6554,8 +6553,7 @@ a.morebtn {
 .banner-matter h3{
 	color: #FFF;
 	font-size: 1.5em;
-	  font-family: font_gotham;
-	  font-weight:bold;
+	  font-family: font_eaves_roman;
 	  text-align:left;
 	  float:left;
 	  margin-top:8%;
@@ -6568,6 +6566,13 @@ a.morebtn {
     margin: 1em 0 -0.5em;
     text-align: center;
 }
+
+.home-bnnr {width: 100%; top: 27%; left: 10%;}
+.home-bnnr h3{ font-size: 3.3em;  margin-top: 1%; text-shadow: 2px 2px 8px #252525;  width: 80%;  text-align: center;}
+.home-bnnr .banner_div{width: 72%;  margin-left: 2%;}
+.home-bnnr .banner_div p{ margin: 1em 0 0.5em 0; font-size: 1.1em; text-shadow: 2px 2px 8px #252525;}
+.banner-matter p.banner-base-text{ font-size: 0.7em; letter-spacing: 1px !important; text-align: center;  width: 68%; text-shadow: 2px 2px 8px #252525;} 
+
 .search {
     float: right;
     margin: 1em 0;
@@ -7799,7 +7804,6 @@ bold	font-style: normal;
 	color: #FFF;
 	font-size: 1.5em;
 	font-family: font_eaves_roman;
-	font-weight:bold;
 	text-align:left;
 	float:left;
 	margin-top:8%;
@@ -7814,6 +7818,13 @@ bold	font-style: normal;
 	margin: 1em 0 1.5em 0;
 	text-shadow: 2px 2px 8px #252525;
 }
+
+.home-bnnr h3{font-size: 2.5em;}
+.home-bnnr .banner_div{width: 28%;}
+.home-bnnr .banner_div p{ margin: 1em 0 0.5em 0; font-size: 1em;}
+.home-bnnr .banner_div a.morebtn{ font-size: 0.8em; font-family: goth_book;}
+.banner-matter p.banner-base-text{ font-size: 0.7em; letter-spacing: 2px;}
+
 .logo{
 	float:left;
 }
@@ -8912,7 +8923,6 @@ bold	font-style: normal;
 	color: #FFF;
 	font-size: 2.5em;
 	   font-family: font_eaves_roman;
-	  font-weight:bold;
 	  text-align:left;
 	  float:left;
 	  margin-top:8%;
@@ -8927,6 +8937,11 @@ bold	font-style: normal;
 	margin: 1em 0 1.5em 0;
 	text-shadow: 2px 2px 8px #252525;
 }
+.home-bnnr {width: 89%;}
+.home-bnnr h3{font-size: 3.4em; margin-top: 6%;}
+.home-bnnr .banner_div{width: 29%;  margin-left: 2%;}
+.home-bnnr .banner_div p{ margin: 1em 0 0.5em 0; font-size: 1.1em;}
+.banner-matter p.banner-base-text{ font-size: 1em;}
 .logo{
 	float:left;
 }
@@ -9528,8 +9543,9 @@ bold	font-style: normal;
   .hidden-lg { display: none !important;  }
   .text-center {  text-align: center !important;}
   .banner_div{
-	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding: 0 3%;
+	border-left:1px solid #FFF; float:left; width:26%; margin-left:3%;padding: 0 3%;
 }
+.home-bnnr  h3 {font-size: 4.2em !important;}
 .banner-vendor{
 	position: absolute;
 	/* top: 32%; */
@@ -10635,6 +10651,20 @@ bold	font-style: normal;
 .home-wdgt-mid h1, .home-wdgt-mid h2, .home-wdgt-mid h3, .home-wdgt-mid h4, .home-wdgt-mid h5, .home-wdgt-mid h6 {font-size: 3em; margin-top: 7% !important; width :10%}
 .home-wdgt-mid p {  font-size: 15px !important;}
 }
+
+@media (min-width: 480px) and (max-width: 630px){
+ .home-bnnr h3{font-size: 2.4em;}
+.home-bnnr .banner_div p{font-size: 1em;}
+.banner-matter p.banner-base-text{ letter-spacing: 0px !important;} 
+}
+@media (max-width: 479px){
+ .home-bnnr { top: 15%;}
+ .home-bnnr h3{font-size: 1.5em;}
+.home-bnnr .banner_div p{font-size: 0.7em;}
+.home-bnnr .banner_div a.morebtn{font-size: 0.7em;}
+.banner-matter p.banner-base-text{ letter-spacing: 0px !important; font-size: 7px;  width: 58%;} 
+}
+
 @media (min-width: 480px) and (max-width: 568px){
 	
 	.home-wdgt-mid {    transform: translate(15%,34%) !important;}
