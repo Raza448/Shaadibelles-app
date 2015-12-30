@@ -5290,3 +5290,5 @@ line-height: 4;
 p.blg_detail_rgt { display: inline; font-size: 13px; font-family: goth_book; }
 .blg-artcle .blogs-top .blog-top .blogs-top .grid-part a i.glyphicon{  margin: 0 8px -4px 0;}
 .blobgrid .txt-bttm { margin-bottom: 20px;}
+.vndr_dtl p{font-family: goth_book ;}
+.vndr_dtl p:first-child{font-family: goth_light;    font-size: 18px;}
