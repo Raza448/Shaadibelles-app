@@ -6761,20 +6761,23 @@ i.heartin{
 	padding: 20px;
 }
 .wedding-submission #submit-wedding-tab li{
-	/*width: 40%;*/
+	width: 50%;
 }
 .wedding-submission #submit-wedding-tab a{
 	font-weight: bold;
+	text-align: center;
 }
 .wedding-submission #submit-wedding-tab .active a{
-	color: #f4795a;
+	color: #fff;
 	border: 1px solid #f4795a;
 }
 .wedding-submission h3{
-	letter-spacing: 5px;
-	color: #f4795a;
-	padding-left: 0px;
-	font-size: 16px;
+	letter-spacing: 3px;
+    color: #f4795a;
+    padding-left: 0px;
+    font-size: 19px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 .wedding-submission .col-md-2, .wedding-submission .col-md-3, .wedding-submission .col-md-4, .wedding-submission .col-md-5, .wedding-submission .col-md-6, .wedding-submission .col-md-12{
@@ -8007,16 +8010,17 @@ i.heartin{
 }
 .wedding-submission #submit-wedding-tab a{
 	font-weight: bold;
+	font-size: 11px;
 }
 .wedding-submission #submit-wedding-tab .active a{
-	color: #f4795a;
+	color: #ffff;
 	border: 1px solid #f4795a;
 }
 .wedding-submission h3{
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 	color: #f4795a;
 	padding-left: 0px;
-	font-size: 28px;
+	font-size: 22px;
 }
 
 .wedding-submission .col-md-2, .wedding-submission .col-md-3, .wedding-submission .col-md-4, .wedding-submission .col-md-5, .wedding-submission .col-md-6, .wedding-submission .col-md-12{
@@ -8319,7 +8323,7 @@ i.heartin{
 }
 
 .nav-tabs > li > a {
-    border: 1px solid transparent;
+    border: 1px solid #939598;
     line-height: 1.42857;
     margin-right: 0;
 }
@@ -9838,7 +9842,7 @@ i.heartin{
 	font-weight: bold;
 }
 .wedding-submission #submit-wedding-tab .active a{
-	color: #f4795a;
+	color: #fff;
 	border: 1px solid #f4795a;
 }
 .wedding-submission h3{
@@ -10687,7 +10691,6 @@ bold	font-style: normal;
 @media (max-width: 320px){
 .sign-up-inner button { width: 100%;}
 
-
 }
 .banner-inner p{font-family: goth_book; text-transform: capitalize;} 
 .banner-vendor h2, .banner-vendor h3{ font-family: font_eaves_roman;}	 
@@ -10698,5 +10701,9 @@ bold	font-style: normal;
 
 .vendr-tabs > li.active > a, .vendr-tabs > li.active > a:hover, .vendr-tabs > li.active > a:focus{ color:#fff;}
 .blog-tabs > li.active > a, .blog-tabs > li.active > a:hover, .blog-tabs > li.active > a:focus{color:#f7987b;}
+.wedding-submission #submit-wedding-tab{padding-top:0px}
+.wedding-submission h3 { padding-top: 7px;}
 
-
+@media (max-width: 440px){
+	.wedding-submission #submit-wedding-tab li { width: 100%;}
+	}
