@@ -6160,6 +6160,9 @@ button.close {
   .carousel-indicators {
     bottom: 20px;
   }
+  
+  .blg-artcle .col-rgt-respv .nav-tabs > li {width:25%}
+  .blg-artcle .col-rgt-respv .nav-tabs > li > a {text-align:center;}
 }
 .clearfix:before,
 .clearfix:after,
@@ -6572,6 +6575,9 @@ a.morebtn {
     margin: 1em 0 -0.5em;
     text-align: center;
 }
+
+.blg-detl-tab{padding:20px}
+.blg-detl-tab .nav-tabs > li{width:50%}
 
 .home-bnnr {width: 100%; top: 27%; left: 10%;}
 .home-bnnr h3{ font-size: 3.3em;  margin-top: 1%; text-shadow: 2px 2px 8px #252525;  width: 80%;  text-align: center;}
@@ -7074,6 +7080,7 @@ i.heartin{
 	 margin-top: 0px;
 	z-index:999;
 	background-color:#FFF;
+	padding:20px;
 }
 .blog-top img{
 	padding:2px;
@@ -9076,6 +9083,10 @@ bold	font-style: normal;
     width: 15%;
 }
 
+p.blg_detail_rgt {  font-size: 11px !important; }
+.blg-artcle .blogs-top .blog-top .blogs-top .grid-part a i.glyphicon { margin: 0 6px -4px 0 !important;}
+ul.grid-part li a:hover {  padding-left: 0 !important;}
+
 /***********
 *   MENU   *
 ***********/
@@ -10706,4 +10717,7 @@ bold	font-style: normal;
 
 @media (max-width: 440px){
 	.wedding-submission #submit-wedding-tab li { width: 100%;}
-	}
+	.blg-detl-tab .nav-tabs > li { width: 100% !important;}
+
+}
+.col-rgt-respv{float:none}

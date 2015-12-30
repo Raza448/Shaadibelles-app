@@ -56,7 +56,7 @@
 		  
         </div>
         <div class="col-md-5 col-lg-5 col-sm-6 blogs-top post">
-          <div class="bs-example bs-example-tabs top-tabs">
+          <div class="bs-example bs-example-tabs top-tabs col-rgt-respv">
             <ul id="myTab" class="nav nav-tabs" ng-show="post.events">
               <li class="{{currentEvent === item? 'active' : ' '}}" ng-repeat="item in post.events" ><a href="" ng-click="changeEvent(item)" >{{item.name}}</a></li>
             </ul>
@@ -97,7 +97,7 @@
           </div>
 		</div>
 			 <div class="col-md-3 col-lg-3 col-sm-3 bottom-grids">
-          <div class="bs-example bs-example-tabs">
+          <div class="bs-example bs-example-tabs blg-detl-tab">
             <ul id="myTab" class="nav nav-tabs">
               <li ng-repeat="i in recommended track by $index" class="{{currentRecommended.name === i.name? 'active': ''}}"><a href=""  ng-click="changeRecommended(i)">{{i.name.toUpperCase()}}</a></li>
             </ul>
