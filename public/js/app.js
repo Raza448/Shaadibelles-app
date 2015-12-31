@@ -280,7 +280,7 @@ uiGmapGoogleMapApiProvider.configure({
         })
 
         .state('main.searchresult', {
-            url: '/searchresult',
+            url: '/searchresult?key',
             controller: 'SearchResultsCtrl',
             templateUrl: 'public/views/search_result.html',
             resolve: {

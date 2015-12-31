@@ -201,8 +201,8 @@ if(err.data.error.status === 500 && err.data.error.message === "disabled"){
 	};
 	
 	$rootScope.search = function(searchKeyword) {
-        
-	   location.href = '#/main/searchresult?key=' + searchKeyword;
+		$state.go("main.searchresult", { key: searchKeyword });
+	   //location.href = '#/main/searchresult?key=' + searchKeyword;
 	};
 	
 	
