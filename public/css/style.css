@@ -1256,59 +1256,60 @@ i.glyphicon.glyphicon-ok-sign{
   text-align: center;
     margin: 0 10px 0px 0;
 }
+i.glyphicon.glyphicon:nth-child(2){
+	font-size: 1em;
+	color: #c8305f;
+	width: 25px;
+	height: 20px;
+	text-align: center;
+    margin: 0 10px 0px 0;
+	float: none;
+    vertical-align: inherit;
+}
 i.glyphicon.glyphicon.photography{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -6px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
-i.glyphicon.glyphicon.venue{
+i.glyphicon.glyphicon.venue, i.glyphicon.glyphicon.rentals{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -148px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
-i.glyphicon.glyphicon.planner{
+i.glyphicon.glyphicon.planner, i.glyphicon.glyphicon.decor, i.glyphicon.glyphicon.transportation{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -621px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
-i.glyphicon.glyphicon.makeup{
+i.glyphicon.glyphicon.makeup, i.glyphicon.glyphicon.mehndi, i.glyphicon.glyphicon.hair, i.glyphicon.glyphicon.stationery{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -477px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
 i.glyphicon.glyphicon.bridal{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -53px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
-i.glyphicon.glyphicon.video{
+i.glyphicon.glyphicon.cakes{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -244px -10px;
+}
+i.glyphicon.glyphicon.catering{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -290px -10px;
+}
+i.glyphicon.glyphicon.dj{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -714px -10px;
+}
+i.glyphicon.glyphicon.favars, i.glyphicon.glyphicon.lighting{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -197px -10px;
+}
+i.glyphicon.glyphicon.design{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -432px -10px;
+}
+i.glyphicon.glyphicon.jewelry{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -385px -10px;
+}
+i.glyphicon.glyphicon.manswear{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -526px -10px;
+}
+i.glyphicon.glyphicon.shoes{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -105px -10px;
+}
+i.glyphicon.glyphicon.officiant{
+	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -573px -10px;
+}
+i.glyphicon.glyphicon.video, i.glyphicon.glyphicon.cinematography, i.glyphicon.glyphicon.entertainment{
 	background:rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat scroll -667px -10px;
-  font-size: 1em;
-  color: #c8305f;
-  width: 25px;
-  height: 20px;
-  text-align: center;
-    margin: 0 10px 0px 0;
 }
 .filter {
     color: #939598;
@@ -1909,7 +1910,7 @@ i.cont {
 	font-size:1em;
 	color:#FFF;
 	width:auto;
-	
+	text-align: center
 	text-decoration:none;
 }
 .hvr-sweep-to-top:before {
