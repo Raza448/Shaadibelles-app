@@ -92,9 +92,14 @@ message: ''
     $http.get(window.remote + '/api/posts/' + $scope.id )
       .then(function(res) {
         $scope.post = res.data;
-  if(res.data.events){
-        $scope.currentEvent = res.data.events[0];
-}
+		if(res.data.events){
+				$scope.currentEvent = res.data.events[0];
+		}
+		if(res.data.categoryId)
+		$http.get(window.remote + '/api/categories/' + res.data.categoryId)
+		  .then(function(res) {
+			$scope.relatedCategory = res.data.name;
+		 });
 
         if(res.data.userId){
 
@@ -135,6 +140,6 @@ $http.get(window.remote +'/api/users/' + res.data.userId + '/reviews?access_toke
         });
       });
       });
-
+	  
 
 });

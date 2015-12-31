@@ -13,7 +13,9 @@
       <div class="blog-top">
         <div class="col-md-7 col-lg-7 col-xs-12 col-sm-6 blogs-top">
          <!--  <h1>{{post.title}}</h1> -->
-          <h1>wedding stories/real weddings/sonia & vivek</h1>
+          <!--<h1>wedding stories/real weddings/sonia & vivek</h1>-->
+          <h1 ng-if="relatedCategory == 'Wedding Stories'">wedding stories/{{post.title}}</h1>
+          <h1 ng-if="relatedCategory !== 'Wedding Stories'">wedding stories/{{relatedCategory}}/{{post.title}}</h1>
           <h3>{{post.title}} <i class="mess "><img src="public/images/msg_icon.png" width="39" height="39" /></i></h3>
           <div class="stars">
             <form action="">
@@ -43,7 +45,7 @@
               <div class="clearfix"></div>
             </ul>
             </div>
-          <h2 class="dateYear">{{post.created}}</h2>		  
+          <h2 class="dateYear">{{post.created | date:'dd-MMMM-yyyy'}}</h2>		  
           <h2><strong>{{currentEvent.name}}</strong></h2>
 		  <p class="blg_detail_tagline">{{post.tagline}}</p>
 		  
@@ -64,7 +66,7 @@
               <div class="tab-pane fade in active" id="profile">
                 <ul class="grid-part">
                   <li ng-repeat="vendor in currentEvent.vendors"><a href="#/main/vendordetail/{{vendor.vendor}}">
-				  <i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon Photography"> </i>
+				  <i class="glyphicon glyphicon-ok-sign"> </i><i class="glyphicon glyphicon {{vendor.type | lowercase}}"> </i>
 				  <p class="blg_detail_rgt">{{vendor.type}}: <span ng-repeat="i in vendors | where : { id : vendor.vendor }">{{ i.business.name }}.{{ i.location[0] }}</span></p></a></li>
                 </ul>
               </div>
