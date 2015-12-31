@@ -5201,7 +5201,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .passion {margin: -62px 0 0 30px;}
 .cont-footer-dark{ width: 66%; margin-left: 16%; margin-top: 11%;}
 .vndr_inp {width:80% !important;}
-
+.vendor_thumb .blg_dtal_img img {width:60% !important;}
 }
 
 .htmlCont .btn{padding:6px 12px;}
@@ -5283,7 +5283,7 @@ background-image: url(../images/fancybox_sprite.png);
 .remove_row {
 line-height: 4;
 }
-.blg-artcle .blogs-top .blog-top .mess img{  vertical-align: initial;}
+.blg-artcle .blogs-top .blog-top .mess img, .gallery-details .blogs-top .blog-top .mess img{  vertical-align: initial;}
 .dateYear{font-family:goth_med !important;}
 .blg_detail_tagline{ font-family: goth_light !important; font-size: 1.2em !important;}
 
@@ -5293,3 +5293,4 @@ p.blg_detail_rgt { display: inline; font-size: 13px; font-family: goth_book; }
 .blobgrid .txt-bttm { margin-bottom: 20px;}
 .vndr_dtl p{font-family: goth_book ;}
 .vndr_dtl p:first-child{font-family: goth_light;    font-size: 18px;}
+.blg_dtal_img img{width:80%}
