@@ -40,8 +40,14 @@ $scope.newcontact = function(contact) {
   $scope.loginModal = function(){
    		$("#form-content").modal('show');
   }
-  $scope.closeModal = function () {
-    $("#form-content").modal('hide');
+  $scope.closeModal = function (formType) {
+	if(formType === 'login'){
+		$("#form-content").modal('hide');
+	}else if(formType === 'reset'){
+		$("#form-reset-content").modal('hide');
+	}else if(formType === 'saved'){
+		$("#vendorsaved").modal('hide');
+	}
   };
 
  $scope.reset = function(){
@@ -55,10 +61,22 @@ $scope.newcontact = function(contact) {
    var data = {
   'email' : email
  }
-  $http.post( window.remote + '/api/users/reset', data).then(function(res){
+  /* $http.post( window.remote + '/api/users/reset', data).then(function(res){
   $scope.resetSent = true;
   $rootScope.stopLoading();
-});
+}); */
+
+$http.post( window.remote + '/api/users/reset', data)
+	.success(function(res) {
+	  $scope.resetSent = true;
+	  $scope.resetError = true;
+	  $rootScope.stopLoading();
+	})
+	.error(function(res, status) {	  
+	  $scope.resetSent = true;
+	  $scope.resetError = false;
+	  $rootScope.stopLoading();
+	})
 }
   
 

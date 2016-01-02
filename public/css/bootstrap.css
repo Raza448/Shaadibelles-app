@@ -5726,7 +5726,7 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 20px;
+  padding: 20px 19px;
 }
 .modal-footer {
   padding: 19px 20px 20px;
@@ -8848,6 +8848,7 @@ bold	font-style: normal;
   .banner_div{
 	border-left:1px solid #FFF; float:left; width:25%; margin-left:3%;padding-left: 3%;
 }
+.wedding-stories-category .vendor_thumb{height:375px}
 .banner-vendor{
 	position: absolute;
 	/* top: 35%; */
@@ -9563,9 +9564,10 @@ bold	font-style: normal;
 @media (min-width: 1200px) {
   .hidden-lg { display: none !important;  }
   .text-center {  text-align: center !important;}
-  .banner_div{
-	border-left:1px solid #FFF; float:left; width:26%; margin-left:3%;padding: 0 3%;
-}
+  .banner_div{	border-left:1px solid #FFF; float:left; width:26%; margin-left:3%;padding: 0 3%;}
+  
+ .wedding-stories-category .vendor_thumb{height:375px}
+  
 .home-bnnr  h3 {font-size: 4.2em !important;}
 .banner-vendor{
 	position: absolute;

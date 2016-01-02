@@ -85,8 +85,9 @@ message: ''
   $scope.currentEvent = null;
 
   $scope.changeEvent = function(item){
+	 console.log(item);
      $scope.currentEvent = item;
-}	
+  }	
 	
 
     $http.get(window.remote + '/api/posts/' + $scope.id )
