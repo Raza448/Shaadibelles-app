@@ -5147,11 +5147,13 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .passion {
     margin: -22px 0 0 30px;
 }
+.srch-gallery-img  img {padding: 1px}
 }
 @media (max-width: 768px) {
 .topRgtCol{ width: 100%;}
 .sign-up-inner .bride-sign-col-3, .sign-up-inner .bride-sign-col-4{ width: 100%;}
 .border-right{border-right:0}
+
 }
 @media (min-width: 770px) and (max-width: 1024px) {
 .passion{margin: -62px 0 0 30px;}
@@ -5294,3 +5296,4 @@ p.blg_detail_rgt { display: inline; font-size: 13px; font-family: goth_book; }
 .vndr_dtl p{font-family: goth_book ;}
 .vndr_dtl p:first-child{font-family: goth_light;    font-size: 18px;}
 .blg_dtal_img img{width:80%}
+.srch-vndr-img img{width:100%; height:auto;}

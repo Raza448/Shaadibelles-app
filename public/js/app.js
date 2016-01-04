@@ -184,6 +184,7 @@ uiGmapGoogleMapApiProvider.configure({
                 url: '/profile',
                 controller: 'BrideProfileCtrl',
                 templateUrl: 'public/views/account.html',
+				authenticate: true,
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -525,7 +526,14 @@ uiGmapGoogleMapApiProvider.configure({
         })
     }])
     .run(function($rootScope, $state, $log, $cookieStore, $http, $timeout) {
-
+$rootScope.$on("$stateChangeStart",
+        function(event, toState, toParams, fromState, fromParams) {
+			//alert($rootScope.user.accessToken);
+            if (toState.authenticate && !$rootScope.user.accessToken) {
+                $state.go("main.home");
+                event.preventDefault();
+            }
+        });
 
 
 

@@ -9,29 +9,37 @@
           <h1>{{key}}</h1>
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12 search-results">
-          <div class="col-md-4 col-sm-4 col-lg-4">
-            <p>Vendor({{resultsVendors.length || 0}})</p>
-            <a href="" ng-click="vendorLimit = vendorlimit + 5"><article>View All Results</article></a>
-          </div>
-          <div class="col-md-4 col-sm-4 col-lg-4" ng-repeat="vendor in resultsVendors | before : vendorLimit">
-            <h5>{{vendor.title}}</h5>
-            <p><span ng-repeat="item in vendor.category">{{item}}</span></p>
-            <ul class="star-footer">
-              <li><a href="#"><i> </i></a></li>
-              <li><a href="#"><i> </i></a></li>
-              <li><a href="#"><i> </i></a></li>
-              <li><a href="#"><i> </i></a></li>
-              <li><a href="#"><i> </i></a></li>
-            </ul>
-            <h6>                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 Reviews</h6>
-            <br /><br /><br />
-            <p>{{vendor.business.street}}</p>
-            <p>{{vendor.business.city}}</p>
-            <p>{{vendor.business.state}} , {{vendor.business.country}}, {{vendor.business.zipcode}}</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-lg-4" ng-repeat="vendor in resultsVendors | before : vendorLimit">
-            <img src="{{vendor.gallery[0]}}" alt="" />
-          </div>
+			<div class="col-md-4 col-sm-4 col-lg-4">
+				<p>Vendor({{resultsVendors.length || 0}})</p>
+				<a href="" ng-click="vendorLimit = vendorlimit + 5"><article>View All Results</article></a>
+			</div>
+		  
+			<div class="col-md-8 col-sm-8 col-lg-8">
+				<div class="col-md-12 col-sm-12 col-lg-12 row" ng-repeat="vendor in resultsVendors | before : vendorLimit">
+					<div class="col-md-6 col-sm-6 col-lg-6">
+					<h5>{{vendor.title}}</h5>
+					<p><span ng-repeat="item in vendor.category">{{item}}</span></p>
+					<ul class="star-footer">
+					  <li><a href="#"><i> </i></a></li>
+					  <li><a href="#"><i> </i></a></li>
+					  <li><a href="#"><i> </i></a></li>
+					  <li><a href="#"><i> </i></a></li>
+					  <li><a href="#"><i> </i></a></li>
+					</ul>
+					<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 Reviews</h6>
+					<br />
+					<p>{{vendor.business.street}}</p>
+					<p>{{vendor.business.city}}</p>
+					<p>{{vendor.business.state}} , {{vendor.business.country}}, {{vendor.business.zipcode}}</p>
+					</div>
+					<div class="col-md-6 col-sm-6 col-lg-6 srch-vndr-img">
+					<img src="{{vendor.gallery[0]}}" alt="" />
+					</div>
+				</div>
+				<!-- <div class="View-more" ng-show="resultsVendors.length > 0">
+					<a href="" class="morebtn hvr-sweep-to-top" ng-hide="vendorLimit >= vendor.length" ng-click="vendorLimit = vendorLimit + 5">LOAD MORE</a>
+				</div> -->
+			</div>
           <div class="col-md-12 col-sm-12 col-lg-12 margin-top-40"></div>
           <div class="col-md-4 col-sm-4 col-lg-4">
             <p>Wedding Stories({{resultsPosts.length || 0}})</p>
@@ -51,13 +59,49 @@
           <div class="col-md-4 col-sm-4 col-lg-4">
             <p>galleries({{resultsGalleries.length || 0}})</p>        
 
-            <a href="" ng-click="galleryLimit = galleryLimit +  5"><article>View All Results</article></a>
+            <a href=""  ng-click="galleryLimit = galleryLimit +  5"><article>View All Results</article></a>
           </div>
           <div class="col-md-7 col-sm-7 col-lg-7">
             <div class="col-md-12 col-lg-12 col-sm-12">
-              <div ng-repeat="gallery in resultsGalleries | before : galleryLimit">                        	
+              <!-- <div class="srch-vndr-img" ng-repeat="gallery in resultsGalleries | before : galleryLimit">                        	
                 <img src="{{gallery.photos[0]}}" alt="" class="img-width" />
-              </div>
+              </div> -->			  
+				<div masonry>
+					<div class="masonry-brick col-md-3 col-sm-6 col-xs-12 col-lg-4" ng-repeat="gallery in resultsGalleries | before : galleryLimit">
+						<div class="project-item srch-gallery-img">
+							<a ui-sref="main.gallery({id:gallery.id})">
+								<img ng-src="{{gallery.cover || gallery.photos[0]}}" alt="">
+								<!-- <div class="col-md-10 col-lg-10 col-sm-12 col-md-offset-1  col-xs-12 main-gallery banner-vendor">
+									<div class="stars vendor_rating">
+										<form action="">
+											<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="gallery.averageRating === 5" type="radio" ng-click="rating(5)" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="gallery.averageRating === 4" type="radio" ng-click="rating(4)" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="gallery.averageRating === 3" type="radio" ng-click="rating(3)" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="gallery.averageRating === 2" type="radio" ng-click="rating(2)" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="gallery.averageRating === 1" type="radio" ng-click="rating(1)" name="star"/> 
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+								</div> -->
+								<!-- <div class="overlay">
+									<div class="overlay-inner vendor_rating">
+									  <h3>{{gallery.title}}</h3>
+									  <p>{{gallery.tagline}}</p>
+									  <input type="submit" class="margin-0" value="VIEW THIS WEDDING">
+									</div>
+								</div> -->
+							  <!-- End overlay -->
+							</a>
+						</div>
+					</div>
+				</div>	
+				<div class="View-more" ng-show="resultsGalleries.length > 1">
+					<a href="" class="morebtn hvr-sweep-to-top" ng-hide="galleryLimit >= galleries.length" ng-click="galleryLimit = galleryLimit + 10">LOAD MORE</a>
+				</div>				
             </div>
           </div>
         </div>

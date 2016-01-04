@@ -8,6 +8,8 @@
  * Controller of the webApp
  */
 angular.module('sbFrontEnd') .controller('BrideProfileCtrl', function($scope, $http, $rootScope, $cookieStore, $location, File) {
+	
+	//alert($rootScope.user);
 $scope.events = ["mehndi", "Sangeet", "Wedding", "Reception"];
 
      $rootScope.showSelect = false;
