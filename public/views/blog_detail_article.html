@@ -49,7 +49,7 @@
           <h2><strong>{{currentEvent.name}}</strong></h2>
 		  <p class="blg_detail_tagline">{{post.tagline}}</p>
 		  
-		  <div ng-show="post.content != null" ng-bind-html="post.content">
+		  <div ng-show="post.content != null" class="post_content" ng-bind-html="post.content">
         {{post.content}}
         </div>
        <div ng-bind-html="currentEvent.content" class="post_content">
