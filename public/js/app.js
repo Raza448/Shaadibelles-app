@@ -534,8 +534,8 @@ $rootScope.$on("$stateChangeStart",
                 event.preventDefault();
             }
         });
-
-
+//alert($rootScope.user);
+//console.log($rootScope.user);
 
  $rootScope.map = {
     "center": {
