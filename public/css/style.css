@@ -5191,6 +5191,8 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 .vendor-need{ font-size: 20px; padding: 0 0 0 15px; text-align: center;}
 .vndr-ac img{height:80px}
 }
+.vndr-ac img{width:100%; padding: 1px;}
+  
 @media (min-width: 1025px) {
 .resIframe iframe{height:219px}
 .imgLast{height:441px !important}
@@ -5223,7 +5225,10 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
 @media (max-width: 1048px) {
 .header .header-top .hidden-xs{ font-size: 12px; margin-top: 3px;}
 }
-@media (max-width: 700px) { .vndr-catg-img{display:none;}}
+@media (max-width: 700px) { 
+.vndr-catg-img{display:none;}
+.vndr-inpt input[type="submit"] {width : 100%}
+}
 .carousel-indicators{display:none;}
 
 /*****home-wiget*******/

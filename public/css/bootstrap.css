@@ -6286,6 +6286,7 @@ button.close {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
 
+	.dim {opacity:0.3}
   .visible-md { display: block !important;}
   table.visible-md {  display: table; }
   tr.visible-md { display: table-row !important; }
