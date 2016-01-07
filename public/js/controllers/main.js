@@ -9,16 +9,13 @@
  */
 angular.module('sbFrontEnd').controller('MainCtrl', function($http, $state, $modal, $modalStack, $scope, $rootScope, $cookieStore, $location) {
 
-
-
 	$scope.logoutMethod = function() {
            $rootScope.startLoading();
 		if ($rootScope.user.accessToken) {
-
 		  $http.post(window.remote + '/api/users/logout?access_token=' + $rootScope.user.accessToken).then(function() {
 			$rootScope.user = {};
-                        $rootScope.stopLoading();
-                        $state.reload();
+					$rootScope.stopLoading();
+					$state.reload();
 			});
 		}
             
@@ -208,15 +205,13 @@ $scope.vendorlogintwo= function(){
 if(err.data.error.status === 500 && err.data.error.message === "disabled"){
 	location.href = "#/main/disabled";
 	   		$("#form-content").modal('hide');
-
-
 }
  if(err.data.error.code === "LOGIN_FAILED_EMAIL_NOT_VERIFIED" ){
  $rootScope.errormsg = "Please check your email and click on activation link to activate your account then try logging in. Thanks";
 }
 }
 });
-	};
+};
 	
 	$rootScope.search = function(searchKeyword) {
 		$state.go("main.searchresult", { key: searchKeyword });

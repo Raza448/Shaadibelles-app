@@ -155,6 +155,8 @@ uiGmapGoogleMapApiProvider.configure({
             url: '/vendorsignuptwo',
             controller: 'VendorSignupTwoCtrl',
             templateUrl: 'public/views/vendor_signup2.html',
+			authenticate: true,
+			permission: 'vendor',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -169,6 +171,8 @@ uiGmapGoogleMapApiProvider.configure({
             url: '/premium',
             controller: 'VendorSignupTwoCtrl',
             templateUrl: 'public/views/premium.html',
+			authenticate: true,
+			permission: 'vendor',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -185,6 +189,7 @@ uiGmapGoogleMapApiProvider.configure({
                 controller: 'BrideProfileCtrl',
                 templateUrl: 'public/views/account.html',
 				authenticate: true,
+				permission: 'guest',
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -199,6 +204,8 @@ uiGmapGoogleMapApiProvider.configure({
                 url: '/vendorprofile',
                 controller: 'VendorProfileCtrl',
                 templateUrl: 'public/views/vendoraccount.html',
+				authenticate: true,
+				permission: 'vendor',
                 resolve: {
                     loadMyFiles: function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -501,6 +508,8 @@ uiGmapGoogleMapApiProvider.configure({
             url: '/signuptwo',
             controller: 'SignupTwoCtrl',
             templateUrl: 'public/views/revised_submission_2.html',
+			authenticate: true,
+			permission: 'guest',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -515,6 +524,8 @@ uiGmapGoogleMapApiProvider.configure({
             url: '/signupthree',
             controller: 'SignupThreeCtrl',
             templateUrl: 'public/views/revised_submission_3.html',
+			authenticate: true,
+			permission: 'guest',
             resolve: {
                 loadMyFiles: function($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -526,14 +537,7 @@ uiGmapGoogleMapApiProvider.configure({
         })
     }])
     .run(function($rootScope, $state, $log, $cookieStore, $http, $timeout) {
-$rootScope.$on("$stateChangeStart",
-        function(event, toState, toParams, fromState, fromParams) {
-			//alert($rootScope.user.accessToken);
-            if (toState.authenticate && !$rootScope.user.accessToken) {
-                $state.go("main.home");
-                event.preventDefault();
-            }
-        });
+
 //alert($rootScope.user);
 //console.log($rootScope.user);
 
@@ -588,6 +592,7 @@ $rootScope.stopLoading = function(){
                 }
             
             });
+			
         $rootScope.homeSlider = null;
         $rootScope.homeWidgets = [];
         $rootScope.featuredVendor = null;
@@ -743,9 +748,20 @@ $rootScope.stopLoading = function(){
                         $rootScope.advert = res.data;
                     });
 
+//console.log($rootScope.user.accessToken);
 
-
-
+			$rootScope.$on("$stateChangeStart",
+				function(event, toState, toParams, fromState, fromParams) {
+					if (toState.authenticate && $rootScope.user.accessToken) {
+						if(toState.permission != $rootScope.role){
+							event.preventDefault(); 
+							$state.go("main.home");
+						}
+					}else if(toState.authenticate === true){
+						event.preventDefault(); 
+						$state.go("main.home");
+					}
+				});
 
                
                 
@@ -879,25 +895,19 @@ $rootScope.stopLoading = function(){
         $rootScope.getUserData = function() {
             $http.get( '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.id).then(function(res) {
                 $rootScope.userData = res.data;
+				if(res.data.realm){
+					$rootScope.role = res.data.realm;
+				}else{
+					$rootScope.role = 'admin';
+				}
             });
         }
 
-       
-
-
-
-
-      
 
         $rootScope.$on('$stateChangeError', function() {
             $state.go('login');
         });
         $rootScope.$on('$stateChangeSuccess', function() {
-
-
-   
-
-
 
 
             $rootScope.getGalleries();
