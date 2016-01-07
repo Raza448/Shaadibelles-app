@@ -78,8 +78,16 @@ return false;
         controller: 'VendorDetailCtrl'
       });
     } else {
-      $("#form-content").modal('show');
+		var modalInstance = $modal.open({
+        templateUrl: 'public/views/vendor/review.html',
+        size: 'lg',
+        controller: 'VendorDetailCtrl'
+      });
+      //$("#form-content").modal('show');
     }
+  };
+  $scope.closeMyPopup = function () {
+    $scope.$close();
   };
   $scope.submitReview = function(review) {
   $rootScope.startLoading();
