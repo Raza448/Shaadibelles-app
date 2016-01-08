@@ -12,6 +12,7 @@ angular.module('sbFrontEnd') .controller('PostImagesCtrl', function($scope, $sta
     $scope.state = $state.current
     $scope.params = $stateParams;
     $scope.gallery = null;
+	$scope.galleryLimit = 4;
     $scope.url = $location.absUrl();
 
 
