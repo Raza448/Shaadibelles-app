@@ -98,19 +98,19 @@
           <br />
           <div class="cnts">
             <div class="stars">
-              <form action="">
-                <input class="star star-5" id="star-51" ng-checked="userReview.rating === 5" type="radio" ng-click="subrating(5)" name="star"/>
-                <label class="star star-5" for="star-51"></label>
-                <input class="star star-4" id="star-41" ng-checked="userReview.rating === 4" type="radio" ng-click="subrating(4)" name="star"/>
-                <label class="star star-4" for="star-41"></label>
-                <input class="star star-3" id="star-31" ng-checked="userReview.rating === 3" type="radio" ng-click="subrating(3)" name="star"/>
-                <label class="star star-3" for="star-31"></label>
-                <input class="star star-2" id="star-21" ng-checked="userReview.rating === 2" type="radio" ng-click="subrating(2)" name="star"/>
-                <label class="star star-2" for="star-21"></label>
-                <input class="star star-1" id="star-11" ng-checked="userReview.rating === 1" type="radio" ng-click="subrating(1)" name="star"/> 
-                <label class="star star-1" for="star-11"></label>
-              </form>
-            </div>
+		  <form action="">
+			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
+			<label class="star star-5" for="star-5"></label>
+			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
+			<label class="star star-4" for="star-4"></label>
+			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
+			<label class="star star-3" for="star-3"></label>
+			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
+			<label class="star star-2" for="star-2"></label>
+			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
+			<label class="star star-1" for="star-1"></label>
+		  </form>
+		</div>
             <ul class="star">
               <li><a href="" ng-click="shareFacebook()"><i class="fb"> </i></a></li>
               <li><a class="twitter-share-button"

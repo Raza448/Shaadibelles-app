@@ -8,13 +8,20 @@
         <a href=""><img id="bottom_grid_div" class="img-responsive" src="{{review.post.cover}}" title="name" alt=""></a>
         <h4>{{review.post.title}}
         </h4>
-        <ul class="star-footer">
-          <li><a href="#"><i> </i></a></li>
-          <li><a href="#"><i> </i></a></li>
-          <li><a href="#"><i> </i></a></li>
-          <li><a href="#"><i> </i></a></li>
-          <li><a href="#"><i> </i></a></li>
-        </ul>
+       <div class="stars">
+		  <form action="">
+			<input class="star star-5" ng-disabled="true" id="star-5" ng-checked="vendor.averageRating === 5" type="radio" name="star"/>
+			<label class="star star-5" for="star-5"></label>
+			<input class="star star-4" ng-disabled="true" id="star-4" ng-checked="vendor.averageRating  === 4" type="radio"  name="star"/>
+			<label class="star star-4" for="star-4"></label>
+			<input class="star star-3" ng-disabled="true" id="star-3" ng-checked="vendor.averageRating  === 3" type="radio"  name="star"/>
+			<label class="star star-3" for="star-3"></label>
+			<input class="star star-2" ng-disabled="true" id="star-2" ng-checked="vendor.averageRating  === 2" type="radio"  name="star"/>
+			<label class="star star-2" for="star-2"></label>
+			<input class="star star-1" ng-disabled="true" id="star-1" ng-checked="vendor.averageRating  === 1" type="radio"  name="star"/> 
+			<label class="star star-1" for="star-1"></label>
+		  </form>
+		</div>
         <p>
           {{review.content.substring(0,20)}}
         </p>
