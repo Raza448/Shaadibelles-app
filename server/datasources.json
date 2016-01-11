@@ -14,15 +14,15 @@
     "transports": [
       {
         "type": "smtp",
-        "host": "smtp.gmail.com",
-        "secure": true,
-        "port": 465,
-        "tls": {
-          "rejectUnauthorized": false
-        },
-        "auth": {
-          "user": "raza@wy-digital.com",
-          "pass": "raza@123"
+         "host": "smtp.private.com",
+         "secure": false,
+         "port": 587,
+         "tls": {
+           "rejectUnauthorized": false
+         },
+         "auth": {
+           "user": "raza@wy-digital.com",
+           "pass": "raza@123"
         }
       }
     ]
