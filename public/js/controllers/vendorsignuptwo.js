@@ -27,6 +27,16 @@ angular.module('sbFrontEnd').controller('VendorSignupTwoCtrl', function ($scope,
 }
 });
 
+$scope.newcontact = function(contact) {
+           $rootScope.startLoading();
+		$http.post('/contact' , contact).then(function(res){
+ $scope.contactsent = true;
+ $rootScope.stopLoading();
+ contact = null;
+});
+            
+};
+
  $scope.gallery = {
   title : null,
   photos : [],

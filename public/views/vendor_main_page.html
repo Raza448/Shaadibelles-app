@@ -33,7 +33,7 @@
 
 				</div>
 				<div class="col-md-12 col-lg-12 col-sm-12">
-					<a href="" class="favourite_review" style="color: #fff200;">{{vendor.reviews.length}} Reviews</a>
+					<a href="#/main/vendor/{{vendor.id}}/reviews" class="favourite_review" style="color: #fff200;">{{vendor.reviews.length}} Reviews</a>
 				</div>
 			<div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom:30px;"><a class="morebtn hvr-sweep-to-top" href="#/main/vendor/{{vendor.id}}/contact" ><!-- <i class="cont"></i> --> CONTACT {{vendor.business.name.toUpperCase()}}</a></div>
               </div>
@@ -79,7 +79,7 @@
 				  </form>
 				</div>
 			  </div>
-              <a href="" class="favourite_review">{{vendor.reviews.length}} Reviews</a>
+              <a href="#/main/vendor/{{vendor.id}}/reviews" class="favourite_review">{{vendor.reviews.length}} Reviews</a>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
 			<label class="star star-1" for="star-1"></label>
 		  </form>
 		</div>
-        <p>{{vendor.reviews.length}} Reviews </p>
+        <p><a href="#/main/vendor/{{vendor.id}}/reviews" class="favourite_review">{{vendor.reviews.length}} Reviews </a></p>
         <hr />
       </div>
       <div class="col-md-12 col-lg-12 col-sm-12 bottom-grid">
