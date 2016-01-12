@@ -20,9 +20,10 @@ angular
         'angular.filter',
         'uiGmapgoogle-maps',
         'wu.masonry',
+        'angularValidator',
         'angularPayments',
         'duScroll',
-    'textAngular'
+		'textAngular'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$sceProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $sceProvider, uiGmapGoogleMapApiProvider) {
         $ocLazyLoadProvider.config({

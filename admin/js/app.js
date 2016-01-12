@@ -21,8 +21,9 @@ angular
 	'ngCookies',
     'angular.filter',
     'textAngular',
-'youtube-embed',
-'ui.sortable'
+    'angularValidator',
+	'youtube-embed',
+	'ui.sortable'
 
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$sceProvider', function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider, $sceProvider) {
