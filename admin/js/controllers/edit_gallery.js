@@ -180,14 +180,25 @@ File.upload(file).success(function(res) {
 
 
     $scope.publish = function(gallery) {
-
-
-
+		
+	$scope.galleryImage = true;
+	$scope.coverError = true;
+	
+	if(gallery.photos.length > 0){
+		//console.log(gallery.photos);
+		 $scope.galleryImage = false;
+	}
+	if(gallery.cover){
+		 $scope.coverError = false;
+	}
+	
+	if($scope.galleryImage == false && $scope.coverError == false){
       var url = window.remote + '/api/galleries/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, gallery).then(function(res) {
         
         location.href = '#/dashboard/galleries';
       });
+	 }
     };
   });

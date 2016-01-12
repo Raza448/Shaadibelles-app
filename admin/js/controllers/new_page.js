@@ -146,16 +146,17 @@ var text = "";
 
     $scope.publish = function(page) {
 
-
+	$scope.contentError = true;
+	if(page.content){
+		$scope.contentError = false;
+	 }
+	if($scope.contentError == false){
   
-
-
-
-
       var url = window.remote + '/api/pages?access_token=' + $rootScope.user.accessToken;
       $http.post(url, page).then(function(res) {
         location.href = '#/dashboard/pages';
       });
+	};
     };
 
   });

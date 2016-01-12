@@ -9,11 +9,11 @@
           <div class="ibox-content">
             <br>
             <div class="col-lg-12">
-              <form role="form" ng-submit="submit(item)">
+             <form role="form" angular-validator-submit="createCategory(formData)" name="postForm" class="form-horizontal" novalidate angular-validator>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="shortcut">Category Name</label>
-                    <input name="shortcut" id="shortcut" type="text" class="form-control" ng-model="formData.name" placeholder="Name" required>
+                    <input name="shortcut" type="text" class="form-control" ng-model="formData.name" placeholder="Name" required-message="'This field is required.'" required>
                   </div>
                   <div class="form-group" ng-init="item.visible = true">
                     <label for="shortcut">Visiblity</label>
@@ -23,7 +23,7 @@
                   </div>
                   <div class="form-group">
                     <label>Description</label>
-                    <textarea cols="50" rows="10" name="Message" class="form-control" id="Message" placeholder="Description" ng-model="formData.description" required>
+                    <textarea cols="50" rows="10" name="description" class="form-control" id="Message" placeholder="Description" ng-model="formData.description" required-message="'This field is required.'" required>
                     </textarea>
                   </div>
 <div class="form-group">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary" ng-disabled="formData.parentId === id" ng-click="createCategory(formData)">{{buttonText}}</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="formData.parentId === id">{{buttonText}}</button>
                     <a ui-sref="shortcut.list">
                     <a type="button" class="btn btn-warning" href="#/dashboard/categories">Cancel</a>
                     </a>

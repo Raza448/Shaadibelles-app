@@ -182,6 +182,20 @@ File.upload(file).success(function(res) {
 
 
     $scope.publish = function(post) {
+		
+	 $scope.descriptionError = true;
+	 $scope.contentError = true;
+	 $scope.coverError = true;
+	 
+	 if(post.description){
+		  $scope.descriptionError = false;
+	 }
+	 if(post.content){
+		$scope.contentError = false;
+	 }
+	 if(post.cover){
+		$scope.coverError = false;
+	 }
 
       var data = {
         "title": post.title,
@@ -198,7 +212,7 @@ File.upload(file).success(function(res) {
         data.events = post.events;
         }
 
-
+if($scope.descriptionError == false && $scope.contentError == false && $scope.coverError == false){
       var url = window.remote + '/api/posts/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {
@@ -208,5 +222,6 @@ File.upload(file).success(function(res) {
           });
         location.href = '#/dashboard/posts';
       });
+};
     };
   });

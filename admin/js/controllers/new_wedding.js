@@ -179,7 +179,20 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
 
 
     $scope.publish = function(post) {
-
+		
+	 $scope.descriptionError = true;
+	 $scope.contentError = true;
+	 $scope.coverError = true;
+	 
+	 if(post.description){
+		  $scope.descriptionError = false;
+	 }
+	 if(post.content){
+		$scope.contentError = false;
+	 }
+	 if(post.cover){
+		$scope.coverError = false;
+	 }
 
       var data = {
         "wedding" : true,
@@ -196,7 +209,7 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
 
         $scope.gallery.title = post.title;
 
-
+if($scope.descriptionError == false && $scope.contentError == false && $scope.coverError == false){
       var url = window.remote + '/api/categories/' + post.category +
         '/posts?access_token=' + $rootScope.user.accessToken;
       $http.post(url, data).then(function(res) {
@@ -204,6 +217,7 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
           '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery);
         location.href = '#/dashboard/weddings';
       });
-    };
+	};
+   };
 
   });

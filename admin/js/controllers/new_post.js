@@ -148,7 +148,20 @@ angular.module('sbAdminApp')
 
 
     $scope.publish = function(post) {
-
+	 console.log(post);
+	 $scope.descriptionError = true;
+	 $scope.contentError = true;
+	 $scope.coverError = true;
+	 
+	 if(post.description){
+		  $scope.descriptionError = false;
+	 }
+	 if(post.content){
+		$scope.contentError = false;
+	 }
+	 if(post.cover){
+		$scope.coverError = false;
+	 }
 
       var data = {
          "wedding" : false,
@@ -161,18 +174,17 @@ angular.module('sbAdminApp')
         "status": post.status || 'Published'
       };
 
-
-
-
-      var url = window.remote + '/api/categories/' + post.category +
+	  if($scope.descriptionError == false && $scope.contentError == false && $scope.coverError == false){
+		  var url = window.remote + '/api/categories/' + post.category +
         '/posts?access_token=' + $rootScope.user.accessToken;
-      $http.post(url, data).then(function(res) {
-        $http.post(window.remote + '/api/posts/' + res.data.id +
-          '/galleries?access_token=' + $rootScope.user.accessToken, {
-            photos: $scope.gallery
-          });
-        location.href = '#/dashboard/posts';
-      });
+		  $http.post(url, data).then(function(res) {
+			$http.post(window.remote + '/api/posts/' + res.data.id +
+			  '/galleries?access_token=' + $rootScope.user.accessToken, {
+				photos: $scope.gallery
+			  });
+			location.href = '#/dashboard/posts';
+		  });
+	  };
     };
 
   });

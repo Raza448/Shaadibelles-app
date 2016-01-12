@@ -216,7 +216,18 @@ File.upload(file).success(function(res) {
 
 
     $scope.publish = function(post) {
-
+	 $scope.descriptionError = true;
+	 $scope.contentError = true;
+	 $scope.coverError = true;
+	 
+	 if(post.description){
+		  $scope.descriptionError = false;
+	 }
+	 
+	 if(post.cover){
+		$scope.coverError = false;
+	 }
+	 
       var data = { 
         "wedding": true,
         "title": post.title,
@@ -234,6 +245,7 @@ File.upload(file).success(function(res) {
         }
 
       $scope.gallery.title = post.title;
+	  if($scope.descriptionError == false && $scope.coverError == false){
       var url = window.remote + '/api/posts/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {
@@ -241,5 +253,6 @@ File.upload(file).success(function(res) {
           '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery);
         location.href = '#/dashboard/weddings';
       });
+	  };
     };
   });

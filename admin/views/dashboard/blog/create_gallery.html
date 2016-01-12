@@ -16,7 +16,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label>title</label>
-                <input type="text" class="form-control" name="title" ng-model="gallery.title" Placeholder="Gallery Title" required-message="'This field is required..'" required>
+                <input type="text" class="form-control" name="title" ng-model="gallery.title" Placeholder="Gallery Title" required-message="'This field is required.'" required>
               </div>
             </div>
             <div class="col-lg-6">
@@ -30,7 +30,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="Message">Description</label>
-                <textarea cols="50" rows="4" name="Message" class="form-control" id="Message" ng-model="gallery.description" required-message="'This field is required..'" required>
+                <textarea cols="50" rows="4" name="Message" class="form-control" id="Message" ng-model="gallery.description" required-message="'This field is required.'" required>
                 </textarea>
               </div>
             </div>
@@ -55,13 +55,18 @@
                       ngf-change="uploadCover(cover[0])"
                       ngf-drag-over-class="dragover"
                       ngf-accept="'image/*,application/pdf'">
-                      <input type="text" class="form-control" name="cover" ng-model="cover[0].name" placeholder="Select Or drop file" required-message="'This field is required..'" required>
+                      <input type="text" class="form-control" name="cover" ng-model="cover[0].name" placeholder="Select Or drop file">
                       <span class="input-group-btn">
                       <button class="btn btn-default" type="button"
                         ngf-change="uploadCover(cover[0])"
                         ng-model="cover" ngf-accept="'image/*,application/pdf'" ngf-select>Select File</button>
                       </span>
                     </div>
+					<div class="col-lg-6" ng-show="coverError == true">
+						<div class="form-group has-error">
+							<label class="control-label has-error validationMessage">This field is required.</label>
+						</div>
+					</div>
                   </div>
                 <div class="form-group">
                     <img src="{{gallery.cover}}" height="140px" >
@@ -88,8 +93,8 @@
 
 
            
-            </div>{{galleryImage}}
-			<div class="col-lg-6" ng-show="galleryImage == false">
+            </div>
+			<div class="col-lg-6" ng-show="galleryImage == true">
 				<div class="form-group has-error">
 					<label class="control-label has-error validationMessage">This field is required.</label>
 				</div>
@@ -114,7 +119,7 @@
                         ng-model = "form.dirty"
                         ng-pattern="/regex/"
                         invalid-message="'You must enter the word `regex`'"
-                        required-message="'Yo! This field is required..'"
+                        required-message="'Yo! This field is required.'"
                         required></div>
             </div>
             <div class="form-group">
@@ -127,7 +132,7 @@
                         ng-model = "form.blur"
                         ng-pattern="/regex/"
                         invalid-message="'You must enter the word `regex`'"
-                        required-message="'Yo! This field is required..'"
+                        required-message="'Yo! This field is required.'"
                         required></div>
             </div>
             <div class="form-group">
@@ -139,7 +144,7 @@
                         ng-model = "form.sub"
                         ng-pattern="/regex/"
                         invalid-message="'You must enter the word `regex`'"
-                        required-message="'Yo! This field is required..'"
+                        required-message="'Yo! This field is required.'"
                         required></div>
             </div>
 
@@ -178,7 +183,7 @@
                             ng-model = "form.regex"
                             ng-pattern="/regex/"
                             invalid-message="'You must enter the word `regex`'"
-                            required-message="'Yo! This field is required..'"
+                            required-message="'Yo! This field is required.'"
                             validate-on="dirty"
                             required></div>
             </div>

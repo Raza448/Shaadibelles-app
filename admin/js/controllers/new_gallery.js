@@ -181,10 +181,18 @@ angular.module('sbAdminApp')
 
     $scope.publish = function(gallery) {
      gallery.created = new Date();
-	 if(gallery.photos < 1){
+	 $scope.galleryImage = true;
+	$scope.coverError = true;
+	
+	if(gallery.photos.length > 0){
+		//console.log(gallery.photos);
 		 $scope.galleryImage = false;
-	 }else{
-		 $scope.galleryImage = true;
+	}
+	if(gallery.cover){
+		 $scope.coverError = false;
+	}
+	
+	if($scope.galleryImage == false && $scope.coverError == false){
 		 var url = window.remote + '/api/galleries?access_token=' + $rootScope.user.accessToken;
 		  $http.post(url, gallery).then(function(res) {
 		   
