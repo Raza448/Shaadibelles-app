@@ -80,7 +80,12 @@ $scope.getCategories = function() {
       });
 
     $scope.submitSlider = function(slider) {
-
+		//console.log(slides.length);
+	$scope.slideError = true;
+	if(slider.slides.length > 0){
+		$scope.slideError = false;
+	}
+	if($scope.slideError == false){
       var url = window.remote + '/api/sliders/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
 
@@ -88,6 +93,7 @@ $scope.getCategories = function() {
         .success(function(res) {
           location.href = "#/dashboard/sliders";
         });
+	}	
     }
 
 

@@ -82,18 +82,23 @@ $scope.getCategories = function() {
 
 
     $scope.submitSlider = function(slider) {
-
+		$scope.slideError = true;
+	if(slider.slides.length > 0){
+		$scope.slideError = false;
+	}
 
       $scope.CurrentDate = new Date();
+		
 
 
-
+	if($scope.slideError == false){
       var url = window.remote + '/api/sliders?access_token=' + $rootScope.user.accessToken;
 
       $http.post(url, slider)
         .success(function(res) {
           location.href = "#/dashboard/sliders";
         });
+	}
     }
 
   });

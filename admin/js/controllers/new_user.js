@@ -12,8 +12,8 @@ angular.module('sbAdminApp')
       password: null
     };
     $scope.confirmpassword = null;   
-    $scope.register = function(userData) {
-     if(userData.password === $scope.confirmpassword){
+    /* $scope.register = function(userData) {
+     if(userData.password === userData.confirmPassword){
  var data = {
          'realm' : 'guest',
         'name': userData.name,
@@ -37,5 +37,27 @@ angular.module('sbAdminApp')
  } else {
  $scope.err = "passwords not matching";
 }
+    }; */
+	$scope.register = function(userData) {
+	var data = {
+         'realm' : 'guest',
+        'name': userData.name,
+        'username': userData.username,
+        'email': userData.email,
+        'password': userData.password
+      };
+
+	var url = window.remote + '/api/users/register?access_token=' + $rootScope.user.accessToken;
+	var request = $http.post;
+      request(url, data).then(
+      function(){
+		  location.href= '#/dashboard/users';
+
+        }
+      , function(res){ 
+
+		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
+
+		});
     };
   });

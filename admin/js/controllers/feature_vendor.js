@@ -47,7 +47,12 @@ $scope.getVendors = function() {
 
  $scope.getVendors();
 
-   $scope.submit = function(){
+   $scope.submit = function(featuredVendor){
+	   $scope.slideError = true;
+	if(featuredVendor.slides.length > 0){
+		$scope.slideError = false;
+	}
+	if($scope.slideError == false){
 	   $scope.saveTxt = 'Saving';
 	   var url = window.remote + '/api/users/' + $rootScope.user.id + '?access_token=' + $rootScope.user.accessToken;
 	   $http.put(url, {
@@ -57,5 +62,6 @@ $scope.getVendors = function() {
 			   $scope.saveTxt = 'Saved';
 			   });
 	   };
+   };
 
   });

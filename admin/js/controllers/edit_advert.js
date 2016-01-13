@@ -45,7 +45,10 @@ angular.module('sbAdminApp')
  
 
     $scope.create = function(advert) {
-
+	$scope.contentError = true;
+	if(advert.content){
+		$scope.contentError = false;
+	}
 
       var data = {
         "title": advert.title,
@@ -54,10 +57,11 @@ angular.module('sbAdminApp')
       };
 
 
-
+if($scope.contentError == false){
       var url = window.remote + '/api/adverts/' + $scope.id +'?access_token=' + $rootScope.user.accessToken;
       $http.put(url, data).then(function(res) {
         location.href = '#/dashboard/adverts';
       });
+}
     };
   });

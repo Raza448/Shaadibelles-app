@@ -12,11 +12,11 @@
           <h4>Complete this form to {{buttonText}} menu</h4>
         </div>
         <div class="ibox-content">
-          <form role="form" ng-submit="submit(item)">
+           <form role="form" angular-validator-submit="submitMenu(menu)" name="menuForm" class="form-horizontal" novalidate angular-validator>
             <div class="col-lg-6">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" ng-model="menu.name" Placeholder="Menu Name" required>
+                <input type="text" name="menu" class="form-control" ng-model="menu.name" Placeholder="Menu Name" required-message="'This field is required.'" required>
               </div>
             </div>
             <div class="col-lg-6">
@@ -30,7 +30,7 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="Message">Description</label>
-                <textarea cols="50" rows="4" name="Message" class="form-control" id="Message" ng-model="menu.description" required>
+                <textarea cols="50" rows="4" name="Message" class="form-control" id="Message" ng-model="menu.description" required-message="'This field is required.'" required>
                 </textarea>
               </div>
             </div>
@@ -154,7 +154,7 @@
             </div>
             <div class="form-group col-lg-12">
               <br>
-              <a class="btn btn-primary" ng-click="submitMenu(menu)">{{buttonText}}</a>
+              <button type="submit" class="btn btn-primary">{{buttonText}}</button>
               <a href="#/dashboard/menus">
               <button type="button" class="btn btn-danger">Cancel</button>
               </a>

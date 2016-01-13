@@ -48,7 +48,7 @@ angular.module('sbAdminApp')
     $scope.locations = null;
     $scope.vendorTypes = window.vendorTypes;
 
-    $scope.register = function(vendorData, confirmpassword) {
+    /* $scope.register = function(vendorData, confirmpassword) {
          delete $scope.err;
            console.log(vendorData.password, confirmpassword);
        if(vendorData.password === $scope.confirmpassword){
@@ -77,5 +77,29 @@ angular.module('sbAdminApp')
 } else {
  $scope.err = "passwords not matching";
 }
+    }; */
+	$scope.register = function(vendorData) {
+         vendorData.location = $scope.locations.split(',');
+  var url = window.remote + '/api/users/register?access_token=' + $rootScope.user.accessToken;
+        var request = $http.post;
+      request(url, vendorData).then(
+      function(res){
+          $scope.gallery = {
+            title : res.data.title,
+            cover : res.data.gallery[0],
+            photos : res.data.gallery
+          }
+        $http.post(window.remote + '/api/users/' + res.data.id + '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery).then(function(res){
+            $scope.gallery = res.data;
+                  location.href= '#/dashboard/vendors';
+
+              });
+
+        }
+      ,function(res){ 
+
+		$scope.err = res.data.error.details.messages.email || res.data.error.details.messages.username;
+
+		});
     };
   });

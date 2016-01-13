@@ -143,7 +143,16 @@ $scope.setUrl = function(url){
       });
 
     $scope.submitWidget = function(widget) {
-   
+console.log(widget);
+	$scope.coverError = true;
+	$scope.descriptionError = true;
+	if(widget.cover.length > 0){
+		$scope.coverError = false;
+	}
+	if(widget.description){
+		$scope.descriptionError = false;
+	}
+	if($scope.coverError == false && $scope.descriptionError == false){
       var url = window.remote + '/api/widgets/' + $scope.id +
         '?access_token=' + $rootScope.user.accessToken;
 
@@ -151,6 +160,7 @@ $scope.setUrl = function(url){
         .then(function(res) {
           location.href = "#/dashboard/widgets";
         });
+	}
     }
 
 

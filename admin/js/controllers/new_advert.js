@@ -44,7 +44,10 @@ File.upload(file).success(function(res) {
  
 
     $scope.create= function(advert) {
-
+	$scope.contentError = true;
+	if(advert.content){
+		$scope.contentError = false;
+	}
 
       var data = {
         "title": advert.title,
@@ -54,10 +57,11 @@ File.upload(file).success(function(res) {
       };
 
 
-
+	if($scope.contentError == false){
       var url = window.remote + '/api/adverts?access_token=' + $rootScope.user.accessToken;
       $http.post(url, data).then(function(res) {
         location.href = '#/dashboard/adverts';
       });
+	}
     };
   });

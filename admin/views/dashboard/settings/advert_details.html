@@ -6,15 +6,15 @@
           <h4>{{buttonText}} Advert</h4>
         </div>
         <div class="ibox-content">
-          <form>
+           <form role="form" angular-validator-submit="create(advert)" name="createForm" class="form-horizontal" novalidate angular-validator>
             <div class="col-lg-6">
               <div class="form-group">
                 <label>Advert Title</label>
-                <input type="text" class="form-control" placeholder="advert title" ng-model="advert.title">
+                <input type="text" class="form-control" name="title" placeholder="advert title" ng-model="advert.title" required-message="'This field is required.'" required>
               </div>
               <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" placeholder="About Advert" ng-model="advert.description" cols="40" rows="5"></textarea>
+                <textarea class="form-control" name="description" placeholder="About Advert" ng-model="advert.description" cols="40" rows="5"required-message="'This field is required.'" required></textarea>
               </div>
             </div>
             
@@ -22,9 +22,14 @@
                 <div class="form-group">
                   <label for="Message">Advert Content</label>
                   <div text-angular ng-model="advert.content" filename="helloworld" ta-file-drop="upload"></div>
+				  <div class="col-lg-6" ng-show="contentError == true">
+				<div class="form-group has-error">
+					<label class="control-label has-error validationMessage">This field is required.</label>
+				</div>
+			  </div>
                 </div>
               <div class="form-group">
-                <a class="btn btn-primary" ng-click="create(advert)">{{buttonText}}</a>
+                <button class="btn btn-primary">{{buttonText}}</button>
                 <a class="btn btn-danger">Cancel</a>
               </div>
             </div>
