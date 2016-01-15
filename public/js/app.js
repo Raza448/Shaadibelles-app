@@ -54,7 +54,7 @@ uiGmapGoogleMapApiProvider.configure({
                 })
             }
         })
-
+ 
         .state('main.home', {
             url: '/home',
             controller: 'HomeCtrl',
