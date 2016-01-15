@@ -20,7 +20,6 @@ angular
         'angular.filter',
         'uiGmapgoogle-maps',
         'wu.masonry',
-        'angularValidator',
         'angularPayments',
         'duScroll',
 		'textAngular'
