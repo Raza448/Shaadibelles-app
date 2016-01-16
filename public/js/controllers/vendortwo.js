@@ -10,6 +10,16 @@
 angular.module('sbFrontEnd') .controller('VendorsTwoCtrl', function($scope, $http, $rootScope, $cookieStore, $location, $filter) {
 
  $scope.limit = 10;
+ 
+ $scope.newcontact = function(contact) {
+           $rootScope.startLoading();
+		$http.post('/contact' , contact).then(function(res){
+ $scope.contactsent = true;
+ $rootScope.stopLoading();
+ contact = null;
+});
+            
+	};
 
   var query = $location.search();
     $rootScope.vendorSearch = query.type;
