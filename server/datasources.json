@@ -14,16 +14,16 @@
     "transports": [
       {
         "type": "smtp",
-         "host": "smtp.private.com",
-         "secure": false,
-         "port": 587,
-         "tls": {
-           "rejectUnauthorized": false
-         },
-         "auth": {
-           "user": "raza@wy-digital.com",
-           "pass": "raza@456"
-        }
+		"host": "smtp.gmail.com",
+		"secure": true,
+		"port": 465,
+		"tls": {
+		"rejectUnauthorized": false
+		},
+		"auth": {
+			"user": "hforhari531156@gmail.com",
+			"pass": "harishkumarchellappa"
+		}
       }
     ]
   }
