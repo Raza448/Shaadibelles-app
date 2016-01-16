@@ -20,7 +20,6 @@ angular
         'angular.filter',
         'uiGmapgoogle-maps',
         'wu.masonry',
-        'angularValidator',
         'angularPayments',
         'duScroll',
 		'textAngular'
@@ -55,7 +54,7 @@ uiGmapGoogleMapApiProvider.configure({
                 })
             }
         })
-
+ 
         .state('main.home', {
             url: '/home',
             controller: 'HomeCtrl',
