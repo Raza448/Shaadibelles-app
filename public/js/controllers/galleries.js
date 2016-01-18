@@ -9,7 +9,7 @@
  */
 angular.module('sbFrontEnd').controller('GalleriesCtrl', function($http, $state, $stateParams, $window, $route, $scope, $rootScope, $cookieStore, $location) {
     $scope.galleries = [];
-     $scope.galleryLimit = 5;
+     $scope.galleryLimit = 10;
     $http.get(window.remote + '/api/galleries')
       .then(function(res) {
         $scope.galleries = res.data;

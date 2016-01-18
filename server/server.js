@@ -372,10 +372,10 @@ app.post('/contact', function (req, res) {
 
   var html = "<h3>New Contact request from" + req.body.name + "</h3></br><h4>Email : " + req.body.email +"</h4></br></br><p>content : " + req.body.content + "</p>";
    if(req.body.weddingplace){
-html += "</br><p> wedding place : " + req.body.weddingplace + "</p>";
+html += "</br><p> wedding date : " + req.body.weddingplace + "</p>";
 }
     app.models.Email.send({
-      to: 'harishkumarchellappa@gmail.com',
+      to: 'raza.scet@gmail.com',
       from: 'support@herokuapp.com',
       subject: 'Shaadibelles New Query',
       html: html
