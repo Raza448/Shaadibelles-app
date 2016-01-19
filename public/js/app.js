@@ -627,7 +627,8 @@ $rootScope.stopLoading = function(){
             var url = '/api/users';
 
             $http.get(url).then(function(res) {
-                $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});
+                // $rootScope.vendors = _.where(res.data, {'realm' : 'vendor'});
+                $rootScope.vendors = res.data;
                 $rootScope.vendors.forEach(function(vendor) {
                        if(vendor.gallery){
                         $rootScope.vendorslides.push(vendor);
