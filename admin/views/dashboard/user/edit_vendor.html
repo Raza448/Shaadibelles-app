@@ -139,7 +139,7 @@
                     <label>Drop or Click</label>
 </div>
      <div class="col-lg-6">
-<div class="col-xs-4" ng-repeat="item in formData.gallery" style="margin-top: 10px; " >
+<div class="col-xs-4" ng-repeat="item in formData.gallery track by $index" style="margin-top: 10px; " >
 
             <a style="position: absolute; color: #f25c5c;" href="" ng-click="formData.gallery.splice(formData.gallery.indexOf(item), 1)"><i class="fa fa-times-circle-o fa-5x" ng-show="item" ></i></a>
             <img src="{{item}}" ng-show="item" height="100%" width="100%">
