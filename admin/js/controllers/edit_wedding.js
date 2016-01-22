@@ -216,8 +216,8 @@ File.upload(file).success(function(res) {
 
 
     $scope.publish = function(post) {
+	console.log(post);
 	 $scope.descriptionError = true;
-	 $scope.contentError = true;
 	 $scope.coverError = true;
 	 
 	 if(post.description){
@@ -251,7 +251,7 @@ File.upload(file).success(function(res) {
       $http.put(url, data).then(function(res) {
         $http.put(window.remote + '/api/posts/' + $scope.id +
           '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery);
-        location.href = '#/dashboard/weddings';
+        //location.href = '#/dashboard/weddings';
       });
 	  };
     };

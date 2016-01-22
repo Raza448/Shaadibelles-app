@@ -187,9 +187,6 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
 	 if(post.description){
 		  $scope.descriptionError = false;
 	 }
-	 if(post.content){
-		$scope.contentError = false;
-	 }
 	 if(post.cover){
 		$scope.coverError = false;
 	 }
@@ -209,7 +206,7 @@ item.vendors.push({ type : current.type, vendor: current.vendor});
 
         $scope.gallery.title = post.title;
 
-if($scope.descriptionError == false && $scope.contentError == false && $scope.coverError == false){
+if($scope.descriptionError == false && $scope.coverError == false){
       var url = window.remote + '/api/categories/' + post.category +
         '/posts?access_token=' + $rootScope.user.accessToken;
       $http.post(url, data).then(function(res) {
