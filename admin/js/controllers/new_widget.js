@@ -142,13 +142,13 @@ $scope.setUrl = function(url){
 
 
     $scope.submitWidget = function(widget) {
-		console.log(widget)
+		//console.log(widget)
 	$scope.coverError = true;
 	$scope.descriptionError = true;
 	if(widget.cover.length > 0){
 		$scope.coverError = false;
 	}
-	if(widget.descriptionError){
+	if(widget.description){
 		$scope.descriptionError = false;
 	}
 
