@@ -232,7 +232,8 @@
                 <input type="text" placeholder="state"  ng-model="vendor.business.state" class="form-input" required >
               </div>
               <div class="col-sm-12 col-md-12 col-lg-12">
-                <textarea placeholder="About your service" cols="89" rows="5" ng-model="vendor.business.description" class="form-input" required ></textarea>
+				<div text-angular ng-model="vendor.business.description" ta-file-drop="upload"></div>
+                <!--<textarea placeholder="About your service" cols="89" rows="5" ng-model="vendor.business.description" class="form-input" required ></textarea>-->
               </div>
             </div>
             <div class="row">
