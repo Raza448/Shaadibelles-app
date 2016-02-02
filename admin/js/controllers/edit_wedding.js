@@ -112,6 +112,7 @@ File.upload(file).success(function(res) {
         '?access_token=' + $rootScope.user.accessToken)
       .then(function(res) {
         $scope.post.title = res.data.title;
+        
         $scope.post.description = res.data.description;
         $scope.post.content = res.data.content;
         $scope.post.tagline = res.data.tagline;

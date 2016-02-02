@@ -105,13 +105,17 @@
             </ul>
             <div id="myTabContent" class="tab-content" style="border:1px solid #ccc;">
               <div class="" id="editor">
-                <ul class="social-icon " >               
-                  <li ng-repeat="post in currentRecommended.posts track by $index"><a href="#/main/post/{{post.id}}"><span><i><br />
+                <ul class="social-icon " >         
+                  <li ng-repeat="post in currentRecommended.posts | before : postLimit track by $index "><a href="#/main/post/{{post.id}}"><span><i><br />
                     {{post.ratings.length}}</i>{{post.title}}</span></a>
                   </li>
                 </ul>
               </div>
+			  <div class="View-more" style="padding:0 0 20px;">
+				<a href="" class="morebtn hvr-sweep-to-top" ng-hide="postLimit >= post.length" ng-click="postLimit = postLimit + 3">LOAD MORE</a>
+			  </div>
             </div>
+			
           </div>
         </div>
 			

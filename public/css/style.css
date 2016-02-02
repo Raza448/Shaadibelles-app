@@ -166,7 +166,6 @@ body{
     font-weight: bold;
 }
 
-
 .top-grid-img{ float: none; margin: 0 auto; padding-top: 25px;}
 
 @media (max-width: 1200px) {
@@ -806,10 +805,10 @@ ul.social-icon li{
 ul.social-icon li span,ul.social-icon li a{
 	font-size:1em;
 	color:#494949;
-	margin: 0 0 3.5em;
+	margin: 0 0 3em;
 	display: block;
 	text-align:left;
-		color:#989898;
+	color:#989898;
 	font-family:goth_book;
 	font-size:12px;
 }
@@ -5148,6 +5147,7 @@ div.hidden_img a.img-col-1:hover{    text-decoration: none;}
     margin: -22px 0 0 30px;
 }
 .srch-gallery-img  img {padding: 1px}
+.vndr-rgt-img-2 img {height:150px}
 }
 @media (max-width: 768px) {
 .topRgtCol{ width: 100%;}

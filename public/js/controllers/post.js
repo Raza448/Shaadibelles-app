@@ -11,6 +11,7 @@ angular.module('sbFrontEnd') .controller('PostCtrl', function($scope, $state, $s
     $scope.state = $state.current
     $scope.params = $stateParams;
     $scope.id = $stateParams.id;
+    $scope.postLimit = 5;
     $scope.post = null;
      $rootScope.showSelect = false;
      
