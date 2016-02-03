@@ -15,15 +15,28 @@ angular.module('sbAdminApp')
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
-        $scope.formData.gallery.push(newfile);
-                $scope.gallery.photos.push(newfile);
+		$scope.formData.gallery.push(newfile);
+		$scope.gallery.photos.push(newfile);
 
       })
       return true;
 }
 
     }
+$scope.uploadCover = function(file) {
+  
+      if(file){
+File.upload(file).success(function(res) {
 
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+		//console.log(newfile);
+        $scope.formData.cover = newfile;
+      })
+}
+    }
 
 $scope.gallery = {
       title : null,
@@ -50,7 +63,19 @@ $scope.gallery = {
 
 
     $scope.register = function(vendorData) {
-    
+		console.log(vendorData);
+    $scope.descriptionError = true;
+	 $scope.coverError = true;
+	 
+	 if(vendorData.business.description){
+		  $scope.descriptionError = false;
+	 }
+	 
+	 if(vendorData.cover){
+		$scope.coverError = false;
+	 }
+	 
+	 if($scope.descriptionError == false && $scope.coverError == false){
         var url = window.remote + '/api/users/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken;
         var request = $http.put;
       request(url, vendorData).then(
@@ -60,7 +85,6 @@ $scope.gallery = {
          $http.put(window.remote + '/api/users/' + res.data.id + '/galleries?access_token=' + $rootScope.user.accessToken, $scope.gallery).then(function(res){
             $scope.gallery = res.data;
                   location.href= '#/dashboard/vendors';
-
               }); 
         }
          else {
@@ -79,5 +103,6 @@ $http.post(window.remote + '/api/users/' + res.data.id + '/galleries?access_toke
 
         }
       )
+	 };
     };
   });

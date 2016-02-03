@@ -49,7 +49,7 @@ $scope.disable = function(user) {
     }
 
     $scope.getvendors();
-
+	console.log(1);
     $scope.deletevendors = function() {
       var els = angular.element('.regular-checkbox-td:checked');
       Array.prototype.forEach.call(els, function(el) {

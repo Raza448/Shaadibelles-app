@@ -802,6 +802,14 @@ ul.social-icon {
 ul.social-icon li{
 	list-style:none;
 }
+.signup1-form-grid .htmlCont i {
+    background: transparent;
+    color: #000;
+    height: auto;
+    padding-top: initial;
+    font-weight: normal;
+    width: auto;
+}
 ul.social-icon li span,ul.social-icon li a{
 	font-size:1em;
 	color:#494949;

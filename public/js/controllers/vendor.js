@@ -97,7 +97,7 @@ $http.get('/credentials').then(function(res) {
   $scope.step1 = false;
   $scope.step2 = true;
   $scope.step3 = true;
-
+  
   $rootScope.countries = window.countries;
   $rootScope.vendorCategories = window.vendorTypes;
     $scope.saveStep1 = function(){
@@ -188,6 +188,21 @@ $rootScope.startLoading();
         $scope.vendor.gallery.push(newfile);
         $scope.gallery.photos.push(newfile);
            $rootScope.stopLoading();
+      })
+}
+}
+
+$scope.uploadCover = function(file) {
+  
+      if(file){
+File.upload(file).success(function(res) {
+
+        var containerName = res.result.files.img[0].container;
+        var fileName = res.result.files.img[0].name;
+        var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
+          fileName;
+		//console.log(newfile);
+        $scope.vendor.cover = newfile;
       })
 }
     }

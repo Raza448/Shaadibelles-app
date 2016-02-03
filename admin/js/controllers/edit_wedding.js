@@ -217,7 +217,7 @@ File.upload(file).success(function(res) {
 
 
     $scope.publish = function(post) {
-	console.log(post);
+	//console.log(post);
 	 $scope.descriptionError = true;
 	 $scope.coverError = true;
 	 
