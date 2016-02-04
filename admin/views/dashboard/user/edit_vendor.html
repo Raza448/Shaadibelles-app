@@ -141,7 +141,7 @@
 				ngf-change="uploadCover(cover[0])"
 				ngf-drag-over-class="dragover"
 				ngf-accept="'image/*,application/pdf'">
-				<input type="text" class="form-control" ng-model="cover[0].name" placeholder="Select Or drop file">
+				<input type="text" class="form-control" ng-model="cover[0].name" placeholder="Select Or drop file" ngf-validate="{width: {min: 1000, max:1400}, height: {min: 700, max: 900}}">
 				<span class="input-group-btn">
 				<button class="btn btn-default" type="button"
 				  ngf-change="uploadCover(cover[0])"

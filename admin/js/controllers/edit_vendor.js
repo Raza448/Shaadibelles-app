@@ -27,7 +27,10 @@ $scope.uploadCover = function(file) {
   
       if(file){
 File.upload(file).success(function(res) {
-
+var newImg = new Image();
+        newImg.src = document.getElementById("File1").value;
+        var height = newImg.height;
+        var width = newImg.width;
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
