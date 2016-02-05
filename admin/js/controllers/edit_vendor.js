@@ -27,15 +27,11 @@ $scope.uploadCover = function(file) {
   
       if(file){
 File.upload(file).success(function(res) {
-var newImg = new Image();
-        newImg.src = document.getElementById("File1").value;
-        var height = newImg.height;
-        var width = newImg.width;
+
         var containerName = res.result.files.img[0].container;
         var fileName = res.result.files.img[0].name;
         var newfile = 'https://' + containerName + '.s3.amazonaws.com/' +
           fileName;
-		//console.log(newfile);
         $scope.formData.cover = newfile;
       })
 }
@@ -66,9 +62,14 @@ $scope.gallery = {
 
 
     $scope.register = function(vendorData) {
-		console.log(vendorData);
-    $scope.descriptionError = true;
+		//console.log(vendorData.cover);
+		var img = new Image();
+		img.src = vendorData.cover;
+	
+    
+	 $scope.descriptionError = true;
 	 $scope.coverError = true;
+	 $scope.dimensionError = false;
 	 
 	 if(vendorData.business.description){
 		  $scope.descriptionError = false;
@@ -77,6 +78,11 @@ $scope.gallery = {
 	 if(vendorData.cover){
 		$scope.coverError = false;
 	 }
+	 
+	 if(img.width < 1000){
+		$scope.coverError = true;
+		$scope.dimensionError = true;
+	}
 	 
 	 if($scope.descriptionError == false && $scope.coverError == false){
         var url = window.remote + '/api/users/'+ $scope.id +'?access_token=' + $rootScope.user.accessToken;

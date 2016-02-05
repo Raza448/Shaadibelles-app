@@ -139,9 +139,10 @@
 			  <label>Upload Cover</label>
 			  <div class="input-group"  ngf-drop ng-model="cover"
 				ngf-change="uploadCover(cover[0])"
-				ngf-drag-over-class="dragover"
-				ngf-accept="'image/*,application/pdf'">
-				<input type="text" class="form-control" ng-model="cover[0].name" placeholder="Select Or drop file" ngf-validate="{width: {min: 1000, max:1400}, height: {min: 700, max: 900}}">
+				ngf-drag-over-class="dragover"				
+				ngf-accept="'image/*,application/pdf'"
+				ngf-min-height="1000" ngf-min-width="1000">
+				<input type="text" class="form-control" ng-model="cover[0].name" placeholder="Select Or drop file">
 				<span class="input-group-btn">
 				<button class="btn btn-default" type="button"
 				  ngf-change="uploadCover(cover[0])"
@@ -150,7 +151,8 @@
 			  </div>
 			  <div class="col-lg-6" ng-show="coverError == true">
 					<div class="form-group has-error">
-						<label class="control-label has-error validationMessage">This field is required.</label>
+						<label class="control-label has-error validationMessage" ng-show="dimensionError == false">This field is required.</label>
+						<label class="control-label has-error validationMessage" ng-show="dimensionError == true">Minimum size 1200 x 700px required.</label>
 					</div>
 				</div>
 			</div>
