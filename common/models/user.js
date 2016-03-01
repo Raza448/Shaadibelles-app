@@ -52,11 +52,6 @@ module.exports = function(UserModel) {
             next();
         });
 
-
-
-
-
-
     //send password reset link when requested
     UserModel.on('resetPasswordRequest', function(info) {
         var url = 'http://' + 'shaadibelles.herokuapp.com' + '/#/main/reset';
@@ -74,7 +69,6 @@ module.exports = function(UserModel) {
                 return console.log(error);
             }
             console.log('Message sent: ' + info.response);
-            return res.send(user);
         });
     });
 
