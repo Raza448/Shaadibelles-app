@@ -8,8 +8,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'orbi7435@gmail.com',
-        pass: 'orbi$$123#'
+        user: 'shaadibelle@gmail.com',
+        pass: 'shaadi$$123'
     }
 });
 
@@ -55,13 +55,16 @@ module.exports = function(UserModel) {
     //send password reset link when requested
     UserModel.on('resetPasswordRequest', function(info) {
         var url = 'http://' + 'shaadibelles.herokuapp.com' + '/#/main/reset';
-        var html = 'Click <a href="' + url + '?id=' + info.accessToken.userId + '&access_token=' +
-            info.accessToken.id + '">here</a> to reset your password';
+        /*var html = 'Click <a href="' + url + '?id=' + info.accessToken.userId + '&access_token=' +
+            info.accessToken.id + '">here</a> to reset your password';*/
 
-            console.log(info, url);
+          var html = 'Dear ' + info.user.username+ ',<br><br>' + 'This is a system generated mail sent for your profile registered with Shaadibelles. Click on the following link to reset the password for your account.<br> Reset My Password <a style="border: solid 6px lightgreen;background-color: lightgreen;color: blue;font-size: 15px;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;" href="' + url + '?id=' + info.accessToken.userId + '&access_token=' +info.accessToken.id + '"> Click here</a> <br><br><span style="font-size: 11px;color: red;">Note: This link will be functional for 72 hours and can only be used once. </span> <br><br>--<br>Regards...<br>Shaadibelles Team';
+            console.log(" ----- Hi Reset---------",info, html);
+    
+
         transporter.sendMail({
             to: info.email,
-            from: 'support@herokuapp.com',
+            from: 'Shaadibelles Support <support@shaadibelles.com>',
             subject: 'Password reset',
             html: html
         }, function(error, info){
@@ -120,7 +123,7 @@ module.exports = function(UserModel) {
                             console.log(url)
                             var options = {
                                 to: user.email,
-                                from: 'Orbi Support <orbi7435@gmail.com>',
+                                from: 'Shaadibelles Support <support@shaadibelles.com>',
                                 subject: 'Shaadibelles Registration Acknowledgement',
                                 html: "<p>Thankyou for register with shaadibelles. You are one step away to use your account. Kindly click on given below link to activate your account</p></br></br><a href='" + url + "'>Click here to activate</a></br></br><p>Regards</p></br><img src='http://shaadibelles.herokuapp.com/public/images/logo.png' /></br><p>Shaadibelles Inc</p>"
                             };
