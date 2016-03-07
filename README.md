@@ -20,4 +20,4 @@ slc run
 
 ### Who do I talk to? ###
 
-harishkumarchellappa@gmail.com
+ksingh@pitchandpublish.com
