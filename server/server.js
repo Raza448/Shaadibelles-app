@@ -16,7 +16,8 @@ app.use("/admin/views", loopback.static(__dirname + "/../admin/views"));
 app.use("/components", loopback.static(__dirname + "/../components"));
 
 
-app.use(Facebook.middleware({ appId: '748452378599729', secret: '935fef9dbef266953cc94756dda7f4dc' }));
+// app.use(Facebook.middleware({ appId: '748452378599729', secret: '935fef9dbef266953cc94756dda7f4dc' }));
+app.use(Facebook.middleware({ appId: '1686914201546987', secret: '6f9b32f1e0e71402faed779822219fcc' }));
 
 var ds = app.loopback.createDataSource({
     connector: require('loopback-component-storage'),
@@ -175,8 +176,6 @@ app.get('/auth/facebook', Facebook.loginRequired(), function(req, res) {
     });
 });
 
-
-
 app.get('/auth/facebook/signup', Facebook.loginRequired(), function(req, res) {
     req.facebook.api('/me?fields=email,name,id', function(err, user) {
         if (err) {
@@ -209,8 +208,6 @@ app.get('/auth/facebook/signup', Facebook.loginRequired(), function(req, res) {
                         if (err) {
                             console.log(err);
                         } else {
-
-
                             app.models.Role.findOne({ 'where': { 'name': 'guest' } }, function(err, role) {
                                 role.principals.create({
                                     principalType: app.models.RoleMapping.USER,
@@ -261,8 +258,6 @@ app.get('/auth/facebook/vendorsignup', Facebook.loginRequired(), function(req, r
                         if (err) {
                             console.log(err);
                         } else {
-
-
                             app.models.Role.findOne({ 'where': { 'name': 'vendor' } }, function(err, role) {
                                 role.principals.create({
                                     principalType: app.models.RoleMapping.USER,
