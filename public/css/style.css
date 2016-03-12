@@ -634,9 +634,15 @@ span.contact {
 }
 .top-grids{
 	position:relative;
-	Margin-top: -225px;
+	Margin-top: -165px;
 	width:100%;
 	z-index:999;
+}
+.img_hide{
+	display:none !important;
+}
+.wedding_caption{
+	bottom:100px !important;
 }
 .top-grids img{
 	width:100%;

@@ -8,10 +8,10 @@
 <!-- header-section-ends -->
 <div class="header-slider">
    <div style="height: 305px">
-    <carousel interval="3000" no-wrap="noWrapSlides">
-      <slide ng-repeat="post in posts track by $index" ng-if="post.cover" active="post.active">
-        <img style="width: 100%; height: 800px;" src="{{post.cover}}" style="margin:auto;">
-         <div class="carousel-caption">
+    <carousel interval="300000" no-wrap="noWrapSlides">
+      <slide ng-repeat="post in posts track by $index" ng-if="post.cover" active="post.active" style="background-image: url('{{post.cover}}');background-size: cover;height: 800px;background-position: center center;">
+        <img style="width: 100%; height: 800px;" src="{{post.cover}}" style="margin:auto;display:none;" class="img_hide">
+         <div class="carousel-caption wedding_caption">
           <div class="col-md-12 col-lg-12 col-xs-12 banner-matter wedding-stories">
             <h3>{{post.title}}</h3>
             <div class="banner_div">
@@ -35,7 +35,7 @@
             <h3>THERE ARE NO POSTS IN THE CATEGORY {{category.name.toUpperCase()}}</h3>
 
         </div>
-<div class="content" style="margin-top: 600px;">
+<div class="content" style="margin-top: 490px;">
   <!---->
   <div class="container">
     <div class="top-grid-top" ng-init="postLimit = 10">
