@@ -2599,6 +2599,9 @@ p.label1 {
 	font-size: 1.2em;
 	font-weight: 700;
 }
+.blog_description{
+	float:right;
+}
 .contact-grid a:hover {
 	color:#2098d1;
 }
