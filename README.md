@@ -20,4 +20,4 @@ slc run
 
 ### Who do I talk to? ###
 
-ksingh@pitchandpublish.com"# Raza-app" 
+raza.scet@gmail.com"# Raza-app" 
